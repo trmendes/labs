@@ -1,0 +1,70 @@
+----------------
+---- LISTAS ----
+----------------
+
+1) Ilustre a inserção das chaves 1, 2, 3, 4, 5, 6 no inı́cio de uma lista de inteiros inicialmente vazia.
+
+N
+1-N
+2-1-N
+3-2-1-N
+4-3-2-1-N
+5-4-3-2-1-N
+6-5-4-3-2-1-N
+
+2) Ilustre a inserção das chaves 6, 5, 4, 3, 2, 1 no inı́cio de uma lista de inteiros inicialmente vazia.
+
+N
+6-N
+5-6-N
+4-5-6-N
+3-4-5-6-N
+2-3-4-5-6-N
+1-2-3-4-5-6-N
+
+3) Quantos apontadores precisam ser atualizados para inserir um nó em uma lista? Não deixe
+de considerar o caso em que o nó inserido passa a ser o primeiro nó da lista.
+
+Para ser inserido em uma lista vazia:
+ 1 apontador: o da estrutura de lista
+
+Para ser inserido no comeco da lista que possui mais de um elemento:
+ 2 apontadores: o da estrutura da lista e proprio que deve apontar para o antigo inicio da lista
+
+para um elemento no meio da lista
+ 2 apontadores: o do elemento anterior a insercao e o proprio que deve apontar para a area de
+ memoria que o apontador anterior apontava antes da insercao
+
+para um elemento inserido no final da lista
+ 1 apontador: apenas o apontador do antigo ultimo elemento que agora deve apontar para o novo no
+ 2 apontadores: caso o apontador da nova area de memoria nao seja inicializado como null precisamos
+ fazer este apontar para null depois de atualizar o apontador descrito acima
+
+4) A funcão abaixo deveria imprimir os itens de uma lista de inteiros, mas falha de duas formas.
+Analise-a e identifique as falhas.
+
+ 1 - a estrutura possui um apontador para a proxima area de memoria cujo o nome e prox e a funcao
+ imprimir referencia o ponteiro como next, que nao existe.
+ 2 - a condicao de parada do while esta errada e nao sera imprimido o ultimo elemento da lista
+
+5) Quantas posições de memória são acessadas para encontrar o elemento na posição k de um
+vetor de tamanho n? Explique.
+
+ Apenas uma vez. Em C o acesso a uma posicao especifica de um vetor (array) e direta.
+ array[k] nos retorna o conteudo guardado nesta posicao de memoria
+
+6) Quantos nós são acessados na memória para encontrar o elemento na posição k de um lista
+de tamanho n? Explique.
+
+ Sao acessado (3*k)-1 posicoes de memoria para encontrar o elemento na posicao k.
+ Para cada no da lista e necessario acessar o endereco de memoria que contem o dado e comparar
+ com k em outra regiao de memoria e caso a comparacao nao seja satisfatoria e necessario acessar
+ o endereco de memoria do apontador para o proximo no. Sendo assim, para cada no acessamos tres
+ enderecos de memoria (3*k). Quando encontramos o dado nao e necessario acessar o endereco de memoria do
+ proximo no (-1)
+
+ 7) Qual o número médio de nós acessados ao procurar um elemento numa lista desordenada? E numa lista ordenada?
+
+ ???
+
+8 - 16 -> Codigo fonte implementado no gitlab

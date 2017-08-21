@@ -1,0 +1,3 @@
+Se saio de uma thread por return alguns estados nao vao ser limpos, correto? Esses so vao ser limpos quando a thread main der um exit(0) ou podem ser limpos em algum outro momento?
+
+Eh possivel colocar uma ordem no tratamento pos execucao da thread utilizando o pthrad_join, certo?
