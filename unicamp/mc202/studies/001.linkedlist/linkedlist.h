@@ -15,15 +15,15 @@ typedef struct snode {
 } node;
 
 typedef struct slinkedlist {
-    node     *first;
-    uint32_t last_id;
+    node     *head;
+    uint32_t tail_id;
     uint32_t length;
 } linkedlist;
 
 /* PROTOTIPOS */
 
 /* AUXILIARES */
-char *     pickup_a_color();
+int8_t     check_list(linkedlist *l);
 
 /* CRIAR/DESTRUIR */
 linkedlist* ll_create       ();
@@ -32,14 +32,14 @@ linkedlist* ll_copylist     (linkedlist *l);
 /* DEBUG */
 void     ll_print                 (linkedlist *l, int8_t index, char *extra);
 /* INSERIR */
-int8_t   ll_insert_first          (linkedlist *l, char *color);
-int8_t   ll_insert_last           (linkedlist *l, char *color);
+int8_t   ll_insert_head           (linkedlist *l, char *color);
+int8_t   ll_insert_tail           (linkedlist *l, char *color);
 int8_t   ll_insert_at_index       (linkedlist *l, char *color, uint32_t index);
-int8_t   ll_insert_last_copy      (linkedlist *l, node *np);
+int8_t   ll_insert_tail_copy      (linkedlist *l, node *np);
 /* REMOVER */
-int8_t   ll_remove_first          (linkedlist *l);
-int8_t   ll_remove_last           (linkedlist *l);
-int8_t   ll_remove_last_but_one   (linkedlist *l);
+int8_t   ll_remove_head           (linkedlist *l);
+int8_t   ll_remove_tail           (linkedlist *l);
+int8_t   ll_remove_tail_but_one   (linkedlist *l);
 int8_t   ll_remove_specific_node  (linkedlist *l, node *p);
 int8_t   ll_remove_specific_index (linkedlist *l, uint32_t index);
 int8_t   ll_remove_specific_color (linkedlist *l, char *color);

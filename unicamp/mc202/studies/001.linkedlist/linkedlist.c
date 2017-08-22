@@ -16,142 +16,6 @@
 #include "linkedlist.h"
 #include "trace.h"
 
-#define NCOLOR 6
-#define ELEMENTS 5
-#define NTODELETE 5
-
-int8_t  check_list(linkedlist *l);
-
-int main(int argc, char **argv) {
-    /* variaveis para automatizar o programa */
-    uint32_t r_color_index = 0;
-    uint32_t r_index = 0;
-    time_t t;
-    node *node_tmp = NULL;
-    /* Inicializa um gerador de numero randomico */
-    srand((unsigned) time(&t));
-
-    /* um array e cores para nos auxiliar */
-    char *colors[NCOLOR] = {"AMARELO","PRETO", "AZUL", "MARROM", "BRANCO", "ROXO"};
-
-    /* nossa lista ligada em l */
-    linkedlist *l = ll_create();
-    /* nossa copia em l2 */
-    linkedlist *l2 = NULL;
-
-    /* verificando se foi possivel alocar l */
-    if (l == NULL) {
-	printf("Nao foi possivel alocar espaco de memoria para a listai\n");
-	return EXIT_FAILURE;
-    }
-
-    /* lista alocada e podemos inserir dados mas primeiro vamos consultar
-     * quantos nos temos nessa lista */
-    printf("-----------------------------------------------\n");
-    printf("\t\tInserindo\n");
-    printf("-----------------------------------------------\n");
-
-    printf("# de elementos em l: %d\n",ll_len(l));
-
-    /* Vamos inserir algumas cores em l */
-    for (int i = 0; i < ELEMENTS; i++) {
-	r_color_index = rand() % (NCOLOR);
-	/* 3 funcoes de insert */
-	switch (rand() % 3) {
-	    case 0:
-		ll_insert_first(l, colors[r_color_index]);
-		break;
-	    case 1:
-		ll_insert_last(l, colors[r_color_index]);
-		break;
-	    case 2:
-		r_index = rand() % (ll_len(l) + 1);
-		ll_insert_at_index(l, colors[r_color_index], r_index);
-		break;
-	}
-    }
-
-    printf("\n-----------------------------------------------\n");
-    printf("\t\tEditando\n");
-    printf("-----------------------------------------------\n");
-    printf("# de elementos em l: %d\n",ll_len(l));
-
-    r_index = rand() % ll_len(l);
-    node_tmp = ll_get_index_node(l, r_index);
-    ll_move_next_to_front(l, node_tmp);
-
-    printf("\n-----------------------------------------------\n");
-    printf("\t\tCopiando L para L2\n");
-    printf("-----------------------------------------------\n");
-    printf("# de elementos em l: %d\n",ll_len(l));
-    l2 = ll_copylist(l);
-    ll_print(l2, -1, "\nCopia da lista l\n");
-    printf("-> Verificando se l2 e igual a l: ");
-
-    if (ll_check_data(l,l2) == 0) {
-	printf("[OK]\n");
-    } else {
-	printf("[NOK]\n");
-    }
-
-    printf("-> Modificando a ordem de um elemento de L2\n");
-    r_index = rand() % ll_len(l);
-    node_tmp = ll_get_index_node(l, r_index);
-    ll_move_next_to_front(l2, node_tmp);
-
-    printf("-> Verificando se l2 ainda tem os mesmos elementos: ");
-    if (ll_check_data(l,l2) == 0) {
-	printf("[OK]\n");
-    } else {
-	printf("[NOK]\n");
-    }
-
-    printf("\n-----------------------------------------------\n");
-    printf("\t\tRemovendo L\n");
-    printf("-----------------------------------------------\n");
-    printf("# de elementos em l: %d\n",ll_len(l));
-
-    for (int i = 0; i < NTODELETE ; i++) {
-	/* 8 funcoes de remove rand() % 7 */
-	//switch (rand() % 8) {
-	switch (7) {
-	    case 0:
-		ll_remove_first(l);
-		break;
-	    case 1:
-		ll_remove_last(l);
-		break;
-	    case 2:
-		ll_remove_last_but_one(l);
-		break;
-	    case 3:
-		r_index = rand() % (ll_len(l) + 1);
-		node_tmp = ll_get_index_node(l, r_index);
-		ll_remove_specific_node(l,node_tmp);
-		break;
-	    case 4:
-		r_index = rand() % (ll_len(l) + 1);
-		ll_remove_specific_index(l, r_index);
-		break;
-	    case 5:
-		r_color_index = rand() % (NCOLOR);
-		ll_remove_specific_color(l,colors[r_color_index]);
-		break;
-	    case 6:
-		r_color_index = rand() % (NCOLOR);
-		ll_remove_all_color(l, colors[r_color_index]);
-		break;
-	    case 7:
-		ll_remove_min_id(l);
-		break;
-	}
-    }
-
-    /* ja que chegamos ao final do main vamos destruir a lista */
-    ll_destroy(&l);
-    return EXIT_SUCCESS;
-}
-
 /**
     Verifica o ponteiro da estrutura de controle da lista ligada
 
@@ -195,10 +59,10 @@ int8_t ll_destroy(linkedlist **l) {
     node *p = NULL;
 
 
-    while ((*l)->first != NULL) {
-	p = (*l)->first;
+    while ((*l)->head != NULL) {
+	p = (*l)->head;
 	ll_print(*l,0 , "\nAntes :");
-	(*l)->first = (*l)->first->next;
+	(*l)->head = (*l)->head->next;
 	(*l)->length--;
 	printf("-> Removendo o elemento [LS%d] - #ID %d | COR %s\n\n", (*l)->length, p->id, p->cor);
 	ll_print(*l,-1, "Depois:");
@@ -206,7 +70,7 @@ int8_t ll_destroy(linkedlist **l) {
 	free(p);
     }
 
-    (*l)->first = NULL;
+    (*l)->head = NULL;
     l = NULL;
 
     return 0;
@@ -225,7 +89,7 @@ void ll_print(linkedlist *l, int8_t color_index, char *extra) {
     }
 
     int8_t index = 0;
-    node *p = l->first;
+    node *p = l->head;
 
     if (extra != NULL)
 	printf("%s%s%s ", ANSI_COLOR_YELLOW, extra, ANSI_COLOR_RESET);
@@ -252,7 +116,7 @@ void ll_print(linkedlist *l, int8_t color_index, char *extra) {
              0 se a cor foi inserida na lista
              1 se a cor nao foi inserida na lista
 */
-int8_t ll_insert_first(linkedlist *l, char *color) {
+int8_t ll_insert_head(linkedlist *l, char *color) {
 
     if (check_list(l) == -1) {
 	return -1;
@@ -261,18 +125,18 @@ int8_t ll_insert_first(linkedlist *l, char *color) {
     ll_print(l,-1, "\nAntes :");
 
     node *p = calloc(1, sizeof(node));
-    p->id = l->last_id++;
+    p->id = l->tail_id++;
     p->cor = calloc(1,strlen(color));
     strcpy(p->cor, color);
     /* Esse passo nao e necessario pois a estrutura ja foi inicializada
      * com zero pelo calloc */
     p->next = NULL;
 
-    if (l->first == NULL) {
-	l->first = p;
+    if (l->head == NULL) {
+	l->head = p;
     } else {
-	p->next = l->first;
-	l->first = p;
+	p->next = l->head;
+	l->head = p;
     }
 
     l->length++;
@@ -292,7 +156,7 @@ int8_t ll_insert_first(linkedlist *l, char *color) {
              0 se a cor foi inserida na lista
              1 se a cor nao foi inserida na lista
 */
-int8_t ll_insert_last(linkedlist *l, char *color) {
+int8_t ll_insert_tail(linkedlist *l, char *color) {
     if (check_list(l) == -1) {
 	return -1;
     }
@@ -301,15 +165,15 @@ int8_t ll_insert_last(linkedlist *l, char *color) {
 
     node *p = NULL;
     node *np = calloc(1,sizeof(node));
-    np->id = l->last_id++;
+    np->id = l->tail_id++;
     np->cor = calloc(1,strlen(color));
     strcpy(np->cor, color);
     np->next = NULL;
 
-    if (l->first == NULL) {
-	l->first = np;
+    if (l->head == NULL) {
+	l->head = np;
     } else {
-	p = l->first;
+	p = l->head;
 	while (p->next != NULL) {
 	    p = p->next;
 	}
@@ -348,7 +212,7 @@ int8_t ll_insert_at_index(linkedlist *l, char *color, uint32_t index) {
     ll_print(l,-1, "\nAntes :");
 
     node *np = calloc(1, sizeof(node));
-    np->id = l->last_id++;
+    np->id = l->tail_id++;
     np->cor = calloc(1,strlen(color));
     strcpy(np->cor, color);
     np->next = NULL;
@@ -359,16 +223,16 @@ int8_t ll_insert_at_index(linkedlist *l, char *color, uint32_t index) {
 	index = l->length-1;
     }
 
-    if (l->first == NULL) {
-	l->first = np;
+    if (l->head == NULL) {
+	l->head = np;
     } else {
-	p = l->first;
-	pp = l->first;
+	p = l->head;
+	pp = l->head;
 	while (p != NULL) {
 	    if (index == i) {
 		if (p == pp) {
 		    np->next = p;
-		    l->first = np;
+		    l->head = np;
 		    break;
 		} else {
 		    pp->next = np;
@@ -390,18 +254,18 @@ int8_t ll_insert_at_index(linkedlist *l, char *color, uint32_t index) {
     return 0;
 }
 
-int8_t ll_remove_first(linkedlist *l) {
+int8_t ll_remove_head(linkedlist *l) {
     if (check_list(l) == -1) {
 	return -1;
     }
 
-    if (l->first == NULL)
+    if (l->head == NULL)
 	return -1;
 
     ll_print(l, 0, "\nAntes :");
 
-    node *p = l->first;
-    l->first = p->next;
+    node *p = l->head;
+    l->head = p->next;
 
     l->length--;
 
@@ -414,17 +278,17 @@ int8_t ll_remove_first(linkedlist *l) {
     return 0;
 }
 
-int8_t ll_remove_last(linkedlist *l) {
+int8_t ll_remove_tail(linkedlist *l) {
     if (check_list(l) == -1) {
 	return -1;
     }
 
-    if (l->first == NULL)
+    if (l->head == NULL)
 	return -1;
 
     ll_print(l,l->length-1, "\nAntes :");
 
-    node *p = l->first;
+    node *p = l->head;
     node *pp = NULL;
 
     while (p->next != NULL) {
@@ -432,8 +296,8 @@ int8_t ll_remove_last(linkedlist *l) {
 	p = pp->next;
     }
 
-    if (p == l->first) {
-	l->first = NULL;
+    if (p == l->head) {
+	l->head = NULL;
     } else {
 	pp->next = NULL;
     }
@@ -449,19 +313,19 @@ int8_t ll_remove_last(linkedlist *l) {
     return 0;
 }
 
-int8_t ll_remove_last_but_one(linkedlist *l) {
+int8_t ll_remove_tail_but_one(linkedlist *l) {
    if (check_list(l) == -1) {
        return -1;
    }
 
    /* nenhum ou um elemento */
-   if ((l->first == NULL) || (l->first->next == NULL)) {
+   if ((l->head == NULL) || (l->head->next == NULL)) {
        return -1;
    }
 
 
-   node *pp = l->first;
-   node *p = l->first;
+   node *pp = l->head;
+   node *p = l->head;
    uint32_t i = 0;
 
    while (p->next->next != NULL) {
@@ -474,7 +338,7 @@ int8_t ll_remove_last_but_one(linkedlist *l) {
 
    if (pp == p) {
        /* uma lista com somente dois elementos */
-       l->first = p->next;
+       l->head = p->next;
    } else {
        /* uma lista com mais de dois elementos */
        pp->next = p->next;
@@ -499,19 +363,19 @@ int8_t ll_remove_specific_node(linkedlist *l, node *_p) {
 	return -1;
 
     /* nenhum elemento na lista */
-    if (l->first == NULL)
+    if (l->head == NULL)
 	return -1;
 
     uint32_t i = 0;
-    node *p = l->first;
-    node *pp = l->first;
+    node *p = l->head;
+    node *pp = l->head;
 
     while (p != NULL) {
 	if (p->id == _p->id) {
 	    ll_print(l, i, "\nAntes :");
 
 	    if (p == pp) {
-		l->first = p->next;
+		l->head = p->next;
 	    } else {
 		pp->next = p->next;
 	    }
@@ -537,18 +401,18 @@ int8_t ll_remove_specific_index(linkedlist *l, uint32_t index) {
     if (l->length < index)
 	return -1;
 
-    if (l->first == NULL)
+    if (l->head == NULL)
 	return -1;
 
     uint32_t i = 0;
-    node *p = l->first;
-    node *pp = l->first;
+    node *p = l->head;
+    node *pp = l->head;
 
     while (p != NULL) {
 	if (i == index) {
 	    ll_print(l, index, "\nAntes :");
 	    if (pp == p) {
-		l->first = p->next;
+		l->head = p->next;
 	    } else {
 		pp->next = p->next;
 	    }
@@ -577,11 +441,11 @@ int8_t ll_remove_specific_color(linkedlist *l, char *color) {
     if (color == NULL)
 	return -1;
 
-    if (l->first == NULL)
+    if (l->head == NULL)
 	return -1;
 
-    node *p = l->first;
-    node *pp = l->first;
+    node *p = l->head;
+    node *pp = l->head;
     uint32_t i = 0;
 
     while (p != NULL) {
@@ -589,7 +453,7 @@ int8_t ll_remove_specific_color(linkedlist *l, char *color) {
 	    ll_print(l, i, "\nAntes :");
 
 	    if (p == pp) {
-		l->first = p->next;
+		l->head = p->next;
 	    } else {
 		pp->next = p->next;
 	    }
@@ -618,13 +482,13 @@ int8_t ll_remove_all_color(linkedlist *l, char *color) {
     if (color == NULL)
 	return -1;
 
-    if (l->first == NULL)
+    if (l->head == NULL)
 	return -1;
 
     uint32_t i = 0, j = 0;
-    node *p = l->first;
-    node *pp = l->first;
-    node *prem = l->first;
+    node *p = l->head;
+    node *pp = l->head;
+    node *prem = l->head;
 
     while (p != NULL) {
 	if (strcmp(p->cor,color) == 0) {
@@ -632,9 +496,9 @@ int8_t ll_remove_all_color(linkedlist *l, char *color) {
 	    prem = p;
 
 	    if (p == pp) {
-		l->first = p->next;
-		p = l->first;
-		pp = l->first;
+		l->head = p->next;
+		p = l->head;
+		pp = l->head;
 	    } else {
 		pp->next = p->next;
 		p = p->next;
@@ -662,11 +526,11 @@ node* ll_get_index_node(linkedlist *l, uint32_t index) {
     if (check_list(l) == -1)
 	return NULL;
 
-    if ((l->first == NULL) || (l->length < index))
+    if ((l->head == NULL) || (l->length < index))
 	return NULL;
 
     uint32_t i = 0;
-    node *p = l->first;
+    node *p = l->head;
 
     while (p != NULL) {
 	if (i==index)
@@ -678,15 +542,15 @@ node* ll_get_index_node(linkedlist *l, uint32_t index) {
     return NULL;
 }
 
-uint32_t ll_get_index_first_specific_node(linkedlist *l, node *_p) {
+uint32_t ll_get_index_head_specific_node(linkedlist *l, node *_p) {
     if (check_list(l) == -1)
 	return -1;
 
-    if (l->first == NULL)
+    if (l->head == NULL)
 	return -1;
 
     uint32_t i = 0;
-    node *p = l->first;
+    node *p = l->head;
 
     while (p != NULL) {
 	if (p->id == _p->id)
@@ -723,10 +587,10 @@ int8_t ll_move_next_to_front (linkedlist *l, node *_p) {
     if (l == NULL)
 	return -1;
 
-    if (l->first == NULL)
+    if (l->head == NULL)
 	return -1;
 
-    node *p = l->first;
+    node *p = l->head;
     node *pn = NULL;
     uint32_t i = 1;
 
@@ -735,8 +599,8 @@ int8_t ll_move_next_to_front (linkedlist *l, node *_p) {
 	    ll_print(l, i, "Antes :");
 	    pn = p->next;
 	    p->next = pn->next;
-	    pn->next = l->first;
-	    l->first = pn;
+	    pn->next = l->head;
+	    l->head = pn;
 	    printf("-> Movendo o elemento apontado por [%d|%s|NEXT] para o inicio da lista\n", _p->id, _p->cor);
 	    ll_print(l, 0, "Depois:");
 	    break;
@@ -751,13 +615,13 @@ int8_t ll_move_next_to_front (linkedlist *l, node *_p) {
 int8_t ll_remove_min_id(linkedlist *l) {
     if (check_list(l) == -1)
 	return -1;
-    if (l->first == NULL)
+    if (l->head == NULL)
 	return -1;
 
-    node *p = l->first;
-    node *pp = l->first;
-    node *ppmin = l->first;
-    node *pmin = l->first;
+    node *p = l->head;
+    node *pp = l->head;
+    node *ppmin = l->head;
+    node *pmin = l->head;
     uint32_t i = 0, imin = 0;
 
     while (p != NULL) {
@@ -773,8 +637,8 @@ int8_t ll_remove_min_id(linkedlist *l) {
 
     ll_print(l, imin, "\nAntes :");
     printf("-> Removendo no com valor de ID menor [%d|%s|NEXT]\n", pmin->id, pmin->cor);
-    if (l->first == pmin) {
-	l->first = pmin->next;
+    if (l->head == pmin) {
+	l->head = pmin->next;
     }
     ppmin->next = pmin->next;
     free(pmin->cor);
@@ -792,16 +656,16 @@ linkedlist * ll_copylist(linkedlist *l) {
 	printf("Nao foi possivel alocar memoria para a copia da lista\n");
 
     l2->length = l->length;
-    l2->last_id = l->last_id;
+    l2->tail_id = l->tail_id;
 
-    if (l->first != NULL) {
-	node * p = l->first;
+    if (l->head != NULL) {
+	node * p = l->head;
 	while (p != NULL) {
 	    node * nn = calloc(1, sizeof(node));
 	    nn->id = p->id;
 	    nn->cor = calloc(1, sizeof(p->cor));
 	    strcpy(nn->cor, p->cor);
-	    ll_insert_last_copy(l2,nn);
+	    ll_insert_tail_copy(l2,nn);
 	    p = p->next;
 	}
     }
@@ -809,7 +673,7 @@ linkedlist * ll_copylist(linkedlist *l) {
     return l2;
 }
 
-int8_t ll_insert_last_copy(linkedlist *l, node *np) {
+int8_t ll_insert_tail_copy(linkedlist *l, node *np) {
     if (check_list(l) == -1) {
 	return -1;
     }
@@ -819,10 +683,10 @@ int8_t ll_insert_last_copy(linkedlist *l, node *np) {
 
     node *p;
 
-    if (l->first == NULL) {
-	l->first = np;
+    if (l->head == NULL) {
+	l->head = np;
     } else {
-	p = l->first;
+	p = l->head;
 	while (p->next != NULL) {
 	    p = p->next;
 	}
@@ -836,15 +700,15 @@ int8_t ll_insert_last_copy(linkedlist *l, node *np) {
 int8_t ll_check_data(linkedlist *l1, linkedlist *l2) {
     if ((l1 == NULL) || (l2 == NULL))
 	return -1;
-    if ((l1->first == NULL) || (l2->first == NULL))
+    if ((l1->head == NULL) || (l2->head == NULL))
 	return -1;
 
     uint8_t found = 0;
-    node *p1 = l1->first;
+    node *p1 = l1->head;
     node *p2 = NULL;
 
     while (p1 != NULL) {
-	p2 = l2->first;
+	p2 = l2->head;
 	while (p2 != NULL) {
 	    if ((p1->id == p2->id) && (strcmp(p1->cor, p2->cor) == 0)) {
 		found = 1;
