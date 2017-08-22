@@ -17,9 +17,9 @@ typedef struct snode {
 
 typedef struct sdllist {
     int32_t  len;
-    int32_t  last_id;
-    node    *first;
-    node    *last;
+    int32_t  tail_id;
+    node    *head;
+    node    *tail;
 } dllist;
 
 dllist * dl_create            ();
