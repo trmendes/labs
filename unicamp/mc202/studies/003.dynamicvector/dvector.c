@@ -27,30 +27,22 @@ int8_t dv_realloc(dvector *v) {
     if (v == NULL)
 	return ERR_NO_VECTOR;
 
-    int32_t nel = v->size + v->orsize;
-    int32_t * nv = calloc(nel, sizeof(int32_t));
+    int32_t ns = v->size + v->orsize;
+    int32_t * nv = calloc(ns, sizeof(int32_t));
 
     if (nv == NULL)
 	return ERR_CANT_EXPAND;
 
-    int32_t j = 0;
-
-    for (int32_t i = 0; i < v->len; i++) {
-	if (i >= v->head_idx) {
-	    nv[nel-j] = v->array[v->len-j];
-	    j++;
-	}
-	if (i <= v->tail_idx) {
-	    nv[i] = v->array[i];
-	}
+    for (int32_t i = 0, j = v->head_idx+1; i < v->len; i++, j++) {
+	nv[(j+v->orsize)%ns] = v->array[(j)%v->size];
     }
     printf("\n");
 
     free(v->array);
     v->array = nv;
-    v->head_idx = nel - j;
+    v->head_idx = v->head_idx + v->orsize;
     v->alloc_cnt++;
-    v->size = nel;
+    v->size = ns;
     dv_print_array_info(v);
 
     return SUCCESS;
@@ -95,9 +87,10 @@ int8_t dv_insert_tail(dvector *v, int32_t value) {
 	    return ERR_CANT_EXPAND;
     }
 
-    v->array[v->tail_idx] = value;
+    int32_t pos = ((v->head_idx + 1) + v->len) % v->size;
+
+    v->array[pos] = value;
     v->len++;
-    v->tail_idx++;
 
     return SUCCESS;
 }
@@ -124,7 +117,9 @@ void dv_print(dvector *v, char *head) {
     if (head != NULL)
 	printf("%s%s%s\n", ANSI_COLOR_RED, head, ANSI_COLOR_RESET);
 
-    printf("[%s[tail]%s[head]%s]:[SIZE %d|LEN %d|T_IDX %d|H_IDX %d]\n> [", ANSI_COLOR_GREEN, ANSI_COLOR_MAGENTA, ANSI_COLOR_RESET, v->size, v->len, v->tail_idx, v->head_idx);
+    int32_t tail_idx = (((v->head_idx + 1) + v->len) % v->size) - 1;
+
+    printf("[%s[tail]%s[head]%s]:[SIZE %d|LEN %d|T_IDX %d|H_IDX %d]\n> [", ANSI_COLOR_GREEN, ANSI_COLOR_MAGENTA, ANSI_COLOR_RESET, v->size, v->len, tail_idx, v->head_idx);
 
     for (int32_t i = 0; i < v->size; i++) {
 	if (i > v->head_idx) {
@@ -133,7 +128,7 @@ void dv_print(dvector *v, char *head) {
 	    else 
 		printf(" %d ", v->array[i]);
 	} else {
-	    if ((i == v->tail_idx-1) || ((i == v->tail_idx) && (i == 0)))
+	    if ((i == tail_idx) || ((i == tail_idx) && (i == 0)))
 		printf(" %s%d%s ",ANSI_COLOR_GREEN, v->array[i], ANSI_COLOR_RESET);
 	    else
 		printf(" %d ", v->array[i]);

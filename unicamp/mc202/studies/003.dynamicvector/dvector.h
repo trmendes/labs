@@ -14,7 +14,6 @@ typedef struct sdvector {
     int32_t  len;
     uint8_t  alloc_cnt;
     int32_t  head_idx;
-    int32_t  tail_idx;
     int32_t *array;
 } dvector;
 

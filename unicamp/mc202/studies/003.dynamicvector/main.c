@@ -7,11 +7,11 @@
 
 #define ARRAYSIZE 6
 
-#define INSERT 14
+#define INSERT 50
 
 int32_t main(int32_t argc, char **argv) {
     dvector * v = dv_create(ARRAYSIZE);
-    
+
     time_t t;
     int32_t i = 0;
     /* Inicializa um gerador de numero randomico */
@@ -23,7 +23,7 @@ int32_t main(int32_t argc, char **argv) {
     printf("\t\tInserindo\n");
     printf("------------------------------------\n");
     for (i = 0; i < INSERT; i++) {
-	switch (rand() %2) {
+	switch (rand() % 2) {
 	    case 0:
 		dv_insert_head(v, i+1);
 		dv_print(v, "(Inserir HEAD): ");
