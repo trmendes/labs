@@ -326,7 +326,3 @@ int8_t dl_remove_prev(dllist *l, int32_t key) {
 
     return SUCCESS;
 }
-int8_t dl_remove_all_values(dllist *l, int32_t value);
-int8_t dl_remove(dllist *l, int32_t id);
-
-node *dl_get_node(dllist *l, int32_t value);

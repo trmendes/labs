@@ -13,7 +13,6 @@ int32_t main(int32_t argc, char **argv) {
     /* Inicializa um gerador de numero randomico */
     srand((unsigned) time(&t));
 
-
     dllist *l1 = dl_create();
 
     printf("------------------------------------\n");
@@ -40,9 +39,6 @@ int32_t main(int32_t argc, char **argv) {
 		break;
 	}
     }
-
-    //node *teste = dl_get_node(l1, 2);
-    //printf("INDEX %d, DATA %d\n", teste->id, teste->data);
 
     printf("------------------------------------\n");
     printf("\t\tRemovendo\n");
