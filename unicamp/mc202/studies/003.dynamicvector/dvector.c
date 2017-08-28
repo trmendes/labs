@@ -75,6 +75,26 @@ int8_t dv_insert_head(dvector *v, int32_t value) {
     return SUCCESS;
 }
 
+int8_t dv_remove_head(dvector *v) {
+    if (v == NULL)
+	return ERR_NO_VECTOR;
+
+    if (v->array == NULL)
+	return ERR_NO_ARRAY;
+
+    if (v->len <= 0)
+	return EMPTY_ARRAY;
+
+    if (v->head_idx >= v->size - 1)
+	return NO_HEAD;
+
+    v->len--;
+    v->head_idx++;
+    v->array[v->head_idx] = 0;
+
+    return SUCCESS;
+}
+
 int8_t dv_insert_tail(dvector *v, int32_t value) {
     if (v == NULL)
 	return ERR_NO_VECTOR;
@@ -91,6 +111,27 @@ int8_t dv_insert_tail(dvector *v, int32_t value) {
 
     v->array[pos] = value;
     v->len++;
+
+    return SUCCESS;
+}
+
+int8_t dv_remove_tail(dvector *v) {
+    if (v == NULL)
+	return ERR_NO_VECTOR;
+
+    if (v->array == NULL)
+	return ERR_NO_ARRAY;
+
+    if (v->len <= 0)
+	return EMPTY_ARRAY;
+
+    int32_t pos = (((v->head_idx + 1) + v->len) % v->size) -1;
+
+    if (pos <= -1)
+	return NO_TAIL;
+
+    v->len--;
+    v->array[pos] = 0;
 
     return SUCCESS;
 }
