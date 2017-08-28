@@ -262,19 +262,70 @@ int8_t dl_remove_next(dllist *l, int32_t key) {
 	return ERR_EMPTY_LIST;
 
     node *p = l->head;
+    node *r = NULL;
     int32_t i = 0;
 
     while (p->next != NULL) {
-	if (p->data == key) {
-	    if (p->next == l->tail) {
+	if (p->id == key) {
+	    dl_print(l, "Antes :", i+1, 0);
+
+	    r = p->next;
+
+	    if (r->next == NULL) {
 		l->tail = p;
+		p->next = NULL;
 	    } else {
+		r->next->prev = p;
+		p->next = r->next;
 	    }
+
+	    free(r);
+	    l->len--;
+	    r = NULL;
+	    dl_print(l, "Depois:", -1, 0);
+	    break;
+	}
+	i++;
+	p = p->next;
+    }
+
+    return SUCCESS;
+}
+
+int8_t dl_remove_prev(dllist *l, int32_t key) {
+    if (l == NULL)
+	return ERR_NO_LIST;
+    if (l->head == NULL)
+	return ERR_EMPTY_LIST;
+
+    node *p = l->head->next;
+    node *r = NULL;
+    int32_t i = 1;
+
+    while (p != NULL) {
+	if (p->id == key) {
+	    dl_print(l, "Antes :", i-1, 0);
+	    r = p->prev;
+	    if (r == l->head) {
+		l->head = p;
+		p->prev = NULL;
+	    } else {
+		p->prev = r->prev;
+		r->prev->next = p;
+	    }
+	    free(r);
+	    l->len--;
+	    r = NULL;
+	    break;
 	}
 	p = p->next;
     }
+
+    if (p != NULL)
+	dl_print(l, "Depois:", -1, 0);
+
+    return SUCCESS;
 }
-int8_t dl_remove_prev(dllist *l, int32_t id);
 int8_t dl_remove_all_values(dllist *l, int32_t value);
 int8_t dl_remove(dllist *l, int32_t id);
 

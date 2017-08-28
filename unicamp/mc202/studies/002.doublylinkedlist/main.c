@@ -41,16 +41,14 @@ int32_t main(int32_t argc, char **argv) {
 	}
     }
 
-    node *teste = dl_get_index(l1, 2);
-    printf("INDEX %d, DATA %d\n", teste->id, teste->data);
-
-    return SUCCESS;
+    //node *teste = dl_get_node(l1, 2);
+    //printf("INDEX %d, DATA %d\n", teste->id, teste->data);
 
     printf("------------------------------------\n");
     printf("\t\tRemovendo\n");
     printf("------------------------------------\n");
-    for (i = 0; i < ELEMENTS+10; i++) {
-	switch (1) {
+    for (i = ELEMENTS+10; i != 0; i--) {
+	switch (2) {
 	    case 0:
 		printf("--> Removendo do Inicio da lista\n");
 		dl_remove_beginning(l1);
@@ -58,6 +56,16 @@ int32_t main(int32_t argc, char **argv) {
 	    case 1:
 		printf("--> Removendo do fim da lista\n");
 		dl_remove_end(l1);
+		break;
+	    case 2:
+		iindex = rand() % i;
+		printf("--> Removendo o proximo do I%d\n", iindex);
+		dl_remove_next(l1, iindex);
+		break;
+	    case 3:
+		iindex = rand() %i;
+		printf("--> Removendo o anterior do I%d\n", iindex);
+		dl_remove_prev(l1, iindex);
 		break;
 	}
     }
