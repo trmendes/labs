@@ -19,6 +19,8 @@ int qe_destroy(queue_t *q) {
 	p = q->head;;
     }
 
+    q->len = 0;
+
     return SUCCESS;
 }
 
