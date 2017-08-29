@@ -15,6 +15,8 @@ void st_destroy(stack_t *s) {
     while ((p = st_pop(s)) != NULL) {
 	free(p);
     }
+
+    s->len = 0;
 }
 
 node_t * st_pop(stack_t *s) {
