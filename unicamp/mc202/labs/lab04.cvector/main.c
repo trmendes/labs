@@ -38,9 +38,8 @@ int main(int argc, char **argv) {
 	}
 
 	while (cv_len(baralho) != 1) {
-	    printf("[%d]\n",cv_get(baralho));
-//	    cv_insert(descartadas, cv_get(baralho));
-//	    cv_insert(baralho, cv_get(baralho));
+	    cv_insert(descartadas, cv_get(baralho));
+	    cv_insert(baralho, cv_get(baralho));
 	}
 
 	printf("Cartas jogadas: ");
