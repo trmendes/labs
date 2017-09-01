@@ -17,9 +17,13 @@ hd * hd_create_part(long _psize) {
     return hd;
 }
 
-int hd_format(hd *_hd) {
-    if (_hd == NULL)
+int hd_destroy(hd **_hd) {
+    if (*_hd == NULL)
 	return ERR_NO_HD;
+
+    free(*_hd);
+
+    *_hd = NULL;
 
     return SUCCESS;
 }
@@ -221,9 +225,16 @@ void hd_print_out(hd *_hd) {
 	p = p->next;
     }
 
-    printf("\n");
+    /*onde C é ' ', '-' ou '#', dependendo se 75 < P <= 100, 25 < P <= 75 ou 0 <= P <= 25, respectivamente. Caso um arquivo não possa ser inserido por falta de espaço, seu programa deve produzir uma linha contendo a expressão ERRO: disco cheio; nesse caso, operações subseqüentes do caso de teste devem ser ignoradas. */
+    int blockper;
     for (i = 0; i < PRINTBLOCK; i++) {
-	printf("[%d]",blocks[i]);
+	blockper = (blocks[i]/block)*100;
+	if ((blockper > 75) && (blockper <= 100))
+	    printf("[#]");
+	else if ((blockper > 25) && (blockper <= 75))
+	    printf("[-]");
+	else if ((blockper >= 0) && (blockper <= 25))
+	    printf("[ ]");
     }
     printf("\n");
 

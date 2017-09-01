@@ -3,49 +3,57 @@
 #include <string.h>
 #include "hd.h"
 
+#define BUFSIZE 200
+
+long get_size(long init, char *type);
+
+
 int main(int argc, char **argv) {
+    hd * h = NULL;
+    int cmdcnt = 1;
+    long partsize = 0;
+    long filesize = 0;
 
-    FILE * ifp;
-    int cmdcnt = 0;
-    char part_size[200];
-    char cmd1[200];
-    char cmd2[200];
-    char cmd3[200];
+    char type[BUFSIZE];
+    char cmd1[BUFSIZE];
+    char cmd2[BUFSIZE];
+    char cmd3[BUFSIZE];
 
-    if (argc < 2) {
-	printf("Eh necessario especificar o arquivo para o teste\n");
-	return EXIT_FAILURE;
-    }
+    while (cmdcnt > 0) {
+	scanf("%d", &cmdcnt);
+	scanf("%ld%s", &partsize, type);
 
-    ifp = fopen(argv[1], "r");
 
-    if (ifp == NULL) {
-	fprintf(stderr, "Nao consegui abrir o arquivo!\n");
-	exit(1);
-    }
+	hd_destroy(&h);
+	h = hd_create_part(get_size(partsize, type));
 
-    while (!feof(ifp)) {
-	fscanf(ifp, "%d", &cmdcnt);
-	printf("Numero de comandos: %d\n", cmdcnt);
-	fscanf(ifp, "%s", part_size);
-	printf("Tamanho da particao: %s\n", part_size);
 	for (int i = 0; i < cmdcnt; i++) {
-	    fscanf(ifp, "%s %s %s", cmd1, cmd2, cmd3);
-	    printf("comando: %s %s %s\n", cmd1, cmd2, cmd3);
+	    scanf("%s", cmd1);
+	    if (strcmp(cmd1 ,"insere") == 0) {
+		scanf("%s %ld%s", cmd2, &filesize, cmd3);
+		hd_insert_file(h, cmd2, get_size(filesize, cmd3));
+	    } else if (strcmp(cmd1 , "remove") == 0) {
+		scanf("%s", cmd2);
+		hd_remove_file(h, cmd2);
+	    } else if (strcmp(cmd1 , "otimiza") == 0) {
+		hd_optimize(h);
+	    }
 	}
+    hd_print_out(h);
     }
+
 
     return EXIT_SUCCESS;
 }
 
-void exec_cmd(hd *_hd, char *_name, long _size, char *_cmd) {
-    if (strcmp(_cmd,"insere") > 0) {
-	hd_insert_file(_hd, _name, _size);
-    } else if (strcmp(_cmd, "remove") > 0) {
-	hd_remove_file(_hd, _name);
-    } else if (strcmp(_cmd, "otimiza") > 0) {
-	hd_optimize(_hd);
-    } else {
-	printf("Comando desconhecido\n");
-    }
+long get_size(long init, char *type) {
+    long ret = 0;
+    if (strcmp(type, "Kb") == 0)
+	ret = init * 1204;
+    else if (strcmp(type, "Mb") == 0)
+	ret = init * 1024 * 1024;
+    else if (strcmp(type, "Gb") == 0)
+	ret = init * 1024 * 1024 * 1024;
+
+    return ret;
 }

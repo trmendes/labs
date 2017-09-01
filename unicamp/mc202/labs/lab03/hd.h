@@ -36,7 +36,7 @@ hd   * hd_create_part (long _psize);
 int    hd_insert_file (hd *_hd, char *_name, long _fsize);
 int    hd_remove_file (hd *_hd, char *_name);
 int    hd_optimize    (hd *_hd);
-int    hd_format      (hd *_hd);
+int    hd_destroy     (hd **_hd);
 file * hd_find_file   (hd *_hd, char *_name);
 void   hd_free        (hd *_hd);
 void   hd_ls          (hd *_hd);
