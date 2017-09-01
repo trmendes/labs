@@ -36,9 +36,5 @@ int8_t   dl_remove_beginning  (dllist *l);
 int8_t   dl_remove_end        (dllist *l);
 int8_t   dl_remove_next       (dllist *l, int32_t key);
 int8_t   dl_remove_prev       (dllist *l, int32_t key);
-int8_t   dl_remove_all_values (dllist *l, int32_t value);
-int8_t   dl_remove            (dllist *l, int32_t key);
-
-node   * dl_get_node          (dllist *l, int32_t value);
 
 #endif

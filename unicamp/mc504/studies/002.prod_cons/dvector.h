@@ -33,5 +33,6 @@ int8_t    dv_remove_head        (dvector *v);
 
 void      dv_print_array_info   (dvector *v);
 void      dv_print              (dvector *v, char *head);
+int32_t   dv_len                (dvector *v);
 
 #endif

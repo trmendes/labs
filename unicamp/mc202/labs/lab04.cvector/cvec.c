@@ -33,13 +33,15 @@ int cv_insert(cvector_t *c, int data) {
     if (c->array == NULL)
 	return ERR_VECTOR_NULL;
 
-    int pos = c->head % c->max;
+    int pos = (c->head + c->len) % c->max;
+
     c->array[pos] = data;
 
-    if (c->len < (c->max - 1))
-	c->len++;
+    if (c->len == c->max)
+	c->head++;
 
-    c->head++;
+    else if (c->len < c->max)
+	c->len++;
 
     return SUCCESS;
 }
@@ -52,14 +54,12 @@ int cv_get(cvector_t *c) {
     if (c->len <= 0)
 	return ERR_VECTOR_EMPTY;
 
-    int pos = c->max - (c->len + 1);
-    int data = c->array[pos];
+    int data = c->array[c->head%c->max];
 
-    //FIXME: Arrumar aqui e o LEN
-    c->array[pos] = 0;
-    
+    c->array[c->head%c->max] = 0;
+
     c->len--;
-    
+    c->head++;
 
     return data;
 }
@@ -68,19 +68,50 @@ int cv_len(cvector_t *c) {
     if (c == NULL)
 	return ERR_VECTOR_NULL;
 
-    return c->len - 1;
+    return c->len;
 }
 
-void cv_print(cvector_t *c) {
+void cv_print(cvector_t *c, char *msg) {
     if (c == NULL)
 	return;
     if (c->array == NULL)
 	return;
+    if (msg != NULL)
+	printf("%s",msg);
 
-    int i = c->len;
-    while (i >= 0) {
-	printf("%d, ", c->array[i]);
-	i--;
+    int i = 0;
+    if (c->len > 0)
+	printf(" ");
+
+    while (i < c->len) {
+	printf("%d", c->array[(i+c->head)%c->max]);
+	i++;
+	if (i < c->len)
+	    printf(", ");
     }
-    printf("\b\b ");
+    printf("\n");
+}
+
+void cv_write_output(FILE *ofd, cvector_t *c, char *msg) {
+    if (ofd == NULL)
+	return;
+    if (c == NULL)
+	return;
+    if (c->array == NULL)
+	return;
+    if (msg != NULL)
+	fprintf(ofd, msg);
+
+    int i = 0;
+    if (c->len > 0)
+	fprintf(ofd, " ");
+
+    while (i < c->len) {
+	fprintf(ofd, "%d", c->array[(i+c->head)%c->max]);
+	i++;
+	if (i < c->len)
+	    fprintf(ofd, ", ");
+    }
+
+    fprintf(ofd,"\n");
 }

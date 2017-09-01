@@ -36,14 +36,12 @@ int8_t dv_realloc(dvector *v) {
     for (int32_t i = 0, j = v->head_idx+1; i < v->len; i++, j++) {
 	nv[(j+v->orsize)%ns] = v->array[(j)%v->size];
     }
-    printf("\n");
 
     free(v->array);
     v->array = nv;
     v->head_idx = v->head_idx + v->orsize;
     v->alloc_cnt++;
     v->size = ns;
-    dv_print_array_info(v);
 
     return SUCCESS;
 }
@@ -176,5 +174,15 @@ void dv_print(dvector *v, char *head) {
 	}
     }
     printf("]\n");
+
+}
+
+int32_t dv_len(dvector *v) {
+    if (v == NULL)
+	return 0;
+    if (v->array == NULL)
+	return 0;
+
+    return v->len;
 
 }
