@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
     int cmdCounter = 1, command, data, i = 0;
     stack_t *stack = NULL;
     queue_t *queue = NULL;
-    int isQueue = 0, isStack = 0, ret;
+    int isQueue = 1, isStack = 1, ret;
 
     while (cmdCounter > 0) {
 	scanf("%d", &cmdCounter);
