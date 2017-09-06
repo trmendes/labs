@@ -8,7 +8,7 @@
  * ser criado.*/
 bits_t * bt_create(int32_t size) {
     bits_t * bitCtrl = calloc(1, sizeof(bits_t));
-    bitCtrl->size = size;
+    bitCtrl->nelements = size;
     bitCtrl->bitArray = calloc(BIT_NBSLOTS(size), sizeof(int8_t));
     return bitCtrl;
 }
@@ -18,6 +18,9 @@ int8_t bt_add(bits_t * bCtrl, int32_t element) {
 	return ERR_BITCTRL_NULL;
     if (bCtrl->bitArray == NULL)
 	return ERR_BITCTRL_NULL;
+
+    if (element > bCtrl->nelements)
+	return ERR_OVERFLOW;
 
     BIT_SET(bCtrl->bitArray, element);
 
@@ -31,6 +34,9 @@ int8_t bt_remove(bits_t * bCtrl, int32_t element) {
     if (bCtrl->bitArray == NULL)
 	return ERR_BITCTRL_NULL;
 
+    if (element > bCtrl->nelements)
+	return ERR_OVERFLOW;
+
     BIT_CLEAR(bCtrl->bitArray, element);
 
     return SUCCESS;
@@ -43,6 +49,9 @@ int8_t bt_is_in(bits_t * bCtrl, int32_t element) {
 	return ERR_BITCTRL_NULL;
     if (bCtrl->bitArray == NULL)
 	return ERR_BITCTRL_NULL;
+
+    if (element > bCtrl->nelements)
+	return ERR_OVERFLOW;
 
     printf("belongs(%d) = ", element);
     if (BIT_TEST(bCtrl->bitArray, element))
@@ -62,21 +71,79 @@ int8_t bt_rank(bits_t * bCtrl, int32_t element) {
     if (bCtrl->bitArray == NULL)
 	return ERR_BITCTRL_NULL;
 
-    int count = 0;
+    int32_t count = 0, i;
+
+    if (element < bCtrl->nelements) {
+	for (i = element; i != 0; i--) {
+	    if (BIT_TEST(bCtrl->bitArray, i))
+		count++;
+	}
+    }
+
+    printf("rank(%d) = %d\n", element, count);
+
     return SUCCESS;
 }
 
 /* Imprime "select(i) = " e o i-ésimo menor elemento em S. Se i for maior
  * que |S|, o programa deve imprimir "select(i) = 0". */
-int8_t   bt_select   (bits_t * bCtrl, int32_t element);
+int8_t bt_select(bits_t * bCtrl, int32_t element) {
+    return SUCCESS;
+}
 
 /* Imprime "rangecount(j,k) = " e o número de elementos em S no
  * intervalo [j,k]. */
-int8_t   bt_rangecnt (bits_t * bCtrl, int32_t j, int32_t k);
+int8_t bt_rangecnt(bits_t * bCtrl, int32_t j, int32_t k) {
+    if (bCtrl == NULL)
+	return ERR_BITCTRL_NULL;
+    if (bCtrl->bitArray == NULL)
+	return ERR_BITCTRL_NULL;
+
+    int32_t count = 0, i;
+
+    if ((j > 0) && (k < bCtrl->nelements)) {
+	for (i = j; i != k; i--) {
+	    if (BIT_TEST(bCtrl->bitArray, i))
+		count++;
+	}
+	printf("rangecount(%d,%d) = %d\n", j, k, count);
+    }
+
+    return SUCCESS;
+}
 
 /* Imprime "S = " e os elementos em S em ordem crescente em uma única linha,
  * dentro de chaves e separados por vírgulas. */
-int8_t   bt_print    (bits_t * bCtrl);
+int8_t bt_print(bits_t * bCtrl) {
+    if (bCtrl == NULL)
+	return ERR_BITCTRL_NULL;
+    if (bCtrl->bitArray == NULL)
+	return ERR_BITCTRL_NULL;
+
+    int32_t i;
+
+    printf("S = {");
+    for (i = 0; i < bCtrl->nelements; i++) {
+	if (BIT_TEST(bCtrl->bitArray, i))
+	    printf("%d ", i);
+	printf(",");
+    }
+    printf("}\n");
+
+    return SUCCESS;
+}
 
 /* Termina o programa. */
-int8_t   bt_exit     (bits_t * bCtrl);
+int8_t bt_exit(bits_t **bCtrl) {
+    if (*bCtrl == NULL)
+	return ERR_BITCTRL_NULL;
+
+    if ((*bCtrl)->bitArray != NULL)
+	free((*bCtrl)->bitArray);
+
+    free(*bCtrl);
+
+    *bCtrl = NULL;
+
+    return SUCCESS;
+}

@@ -37,7 +37,7 @@ int32_t main(int32_t argc, char ** argv) {
 	} else if (strcmp(cmd, CMD_PRINT) == 0) {
 	    bt_print(bCtrl);
 	} else if (strcmp(cmd, CMD_EXIT) == 0) {
-	    bt_exit(bCtrl);
+	    bt_exit(&bCtrl);
 	    break;
 	}
     }

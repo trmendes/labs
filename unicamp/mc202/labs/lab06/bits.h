@@ -5,7 +5,7 @@
 #include <stdint.h>
 
 typedef struct bits_s {
-    int32_t     size;
+    int32_t     nelements;
     int8_t    * bitArray;
 } bits_t;
 
@@ -29,6 +29,7 @@ typedef struct bits_s {
 #define CMD_PRINT    "print"
 #define CMD_EXIT     "exit"
 
+#define ERR_OVERFLOW     -3
 #define ERR_BITARR_NULL  -2
 #define ERR_BITCTRL_NULL -1
 #define SUCCESS           0
@@ -58,6 +59,6 @@ int8_t   bt_rangecnt (bits_t * bCtrl, int32_t j, int32_t k);
  * dentro de chaves e separados por vírgulas. */
 int8_t   bt_print    (bits_t * bCtrl);
 /* Termina o programa. */
-int8_t   bt_exit     (bits_t * bCtrl);
+int8_t   bt_exit     (bits_t ** bCtrl);
 
 #endif
