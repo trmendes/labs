@@ -51,7 +51,7 @@ int8_t   bt_is_in    (bits_t * bCtrl, int32_t element);
 int8_t   bt_rank     (bits_t * bCtrl, int32_t element);
 /* Imprime "select(i) = " e o i-ésimo menor elemento em S. Se i for maior
  * que |S|, o programa deve imprimir "select(i) = 0". */
-int8_t   bt_select   (bits_t * bCtrl, int32_t element);
+int32_t   bt_select   (bits_t * bCtrl, int32_t i);
 /* Imprime "rangecount(j,k) = " e o número de elementos em S no
  * intervalo [j,k]. */
 int8_t   bt_rangecnt (bits_t * bCtrl, int32_t j, int32_t k);

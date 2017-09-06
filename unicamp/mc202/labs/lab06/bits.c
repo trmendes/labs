@@ -87,7 +87,30 @@ int8_t bt_rank(bits_t * bCtrl, int32_t element) {
 
 /* Imprime "select(i) = " e o i-ésimo menor elemento em S. Se i for maior
  * que |S|, o programa deve imprimir "select(i) = 0". */
-int8_t bt_select(bits_t * bCtrl, int32_t element) {
+int32_t bt_select(bits_t * bCtrl, int32_t i) {
+    if (bCtrl == NULL)
+	return ERR_BITCTRL_NULL;
+    if (bCtrl->bitArray == NULL)
+	return ERR_BITCTRL_NULL;
+
+    int32_t ret = 0;
+    int32_t cnt = 0;
+    int32_t iTmp = i;
+
+    if (bCtrl->nelements > i) {
+	for ( i = 0; i < bCtrl->nelements ; i++) {
+	    if (BIT_TEST(bCtrl->bitArray, i)) {
+		cnt++;
+		if (cnt == iTmp) {
+		    ret = i;
+		    break;
+		}
+	    }
+	}
+    }
+
+    printf("select(%d): %d\n", iTmp, ret);
+
     return SUCCESS;
 }
 
@@ -102,7 +125,7 @@ int8_t bt_rangecnt(bits_t * bCtrl, int32_t j, int32_t k) {
     int32_t count = 0, i;
 
     if ((j > 0) && (k < bCtrl->nelements)) {
-	for (i = j; i != k; i--) {
+	for (i = j; i != k; i++) {
 	    if (BIT_TEST(bCtrl->bitArray, i))
 		count++;
 	}
@@ -120,22 +143,27 @@ int8_t bt_print(bits_t * bCtrl) {
     if (bCtrl->bitArray == NULL)
 	return ERR_BITCTRL_NULL;
 
-    int32_t i;
+    int32_t i, back = 0;
 
     printf("S = {");
     for (i = 0; i < bCtrl->nelements; i++) {
-	if (BIT_TEST(bCtrl->bitArray, i))
-	    printf("%d ", i);
-	printf(",");
+	if (BIT_TEST(bCtrl->bitArray, i)) {
+	    printf("%d,", i);
+	    back = 1;
+	}
     }
+
+    if (back == 1)
+	printf("\b");
+
     printf("}\n");
 
     return SUCCESS;
 }
 
 /* Termina o programa. */
-int8_t bt_exit(bits_t **bCtrl) {
-    if (*bCtrl == NULL)
+int8_t bt_exit(bits_t ** bCtrl) {
+    if (bCtrl == NULL)
 	return ERR_BITCTRL_NULL;
 
     if ((*bCtrl)->bitArray != NULL)
@@ -143,7 +171,7 @@ int8_t bt_exit(bits_t **bCtrl) {
 
     free(*bCtrl);
 
-    *bCtrl = NULL;
+    bCtrl = NULL;
 
     return SUCCESS;
 }
