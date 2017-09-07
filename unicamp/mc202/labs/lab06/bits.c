@@ -19,6 +19,9 @@ int8_t bt_add(bits_t * bCtrl, int32_t element) {
     if (bCtrl->bitArray == NULL)
 	return ERR_BITCTRL_NULL;
 
+    /* vai de 1 a n (convertendo para 0 a n-1)*/
+    element--;
+
     if (element > bCtrl->nelements)
 	return ERR_OVERFLOW;
 
@@ -33,6 +36,9 @@ int8_t bt_remove(bits_t * bCtrl, int32_t element) {
 	return ERR_BITCTRL_NULL;
     if (bCtrl->bitArray == NULL)
 	return ERR_BITCTRL_NULL;
+
+    /* vai de 1 a n (convertendo para 0 a n-1)*/
+    element--;
 
     if (element > bCtrl->nelements)
 	return ERR_OVERFLOW;
@@ -53,7 +59,10 @@ int8_t bt_is_in(bits_t * bCtrl, int32_t element) {
     if (element > bCtrl->nelements)
 	return ERR_OVERFLOW;
 
-    printf("belongs(%d) = ", element);
+    /* vai de 1 a n (convertendo para 0 a n-1)*/
+    element--;
+
+    printf("belongs(%d) = ", element + 1);
     if (BIT_TEST(bCtrl->bitArray, element))
 	printf("true\n");
     else
@@ -73,14 +82,17 @@ int8_t bt_rank(bits_t * bCtrl, int32_t element) {
 
     int32_t count = 0, i;
 
+    /* vai de 1 a n (convertendo para 0 a n-1)*/
+    element--;
+
     if (element < bCtrl->nelements) {
-	for (i = element; i != 0; i--) {
+	for (i = element; i >= 0; i--) {
 	    if (BIT_TEST(bCtrl->bitArray, i))
 		count++;
 	}
     }
 
-    printf("rank(%d) = %d\n", element, count);
+    printf("rank(%d) = %d\n", element + 1, count);
 
     return SUCCESS;
 }
@@ -93,23 +105,26 @@ int32_t bt_select(bits_t * bCtrl, int32_t i) {
     if (bCtrl->bitArray == NULL)
 	return ERR_BITCTRL_NULL;
 
+    /* vai de 1 a n (convertendo para 0 a n-1)*/
+    i--;
+
     int32_t ret = 0;
     int32_t cnt = 0;
-    int32_t iTmp = i;
+    int32_t j = 0;
 
-    if (bCtrl->nelements > i) {
-	for ( i = 0; i < bCtrl->nelements ; i++) {
-	    if (BIT_TEST(bCtrl->bitArray, i)) {
+    if (bCtrl->nelements >= i) {
+	for ( j = 0; j < bCtrl->nelements ; j++) {
+	    if (BIT_TEST(bCtrl->bitArray, j)) {
 		cnt++;
-		if (cnt == iTmp) {
-		    ret = i;
+		if (j == i) {
+		    ret = j + 1;
 		    break;
 		}
 	    }
 	}
     }
 
-    printf("select(%d): %d\n", iTmp, ret);
+    printf("select(%d) = %d\n", i + 1, ret);
 
     return SUCCESS;
 }
@@ -124,13 +139,18 @@ int8_t bt_rangecnt(bits_t * bCtrl, int32_t j, int32_t k) {
 
     int32_t count = 0, i;
 
-    if ((j > 0) && (k < bCtrl->nelements)) {
-	for (i = j; i != k; i++) {
+    /* vai de 1 a n (convertendo para 0 a n-1)*/
+    j--;
+    k--;
+
+    if ((j >= 0) && (k < bCtrl->nelements)) {
+	for (i = j; i <= k; i++) {
 	    if (BIT_TEST(bCtrl->bitArray, i))
 		count++;
 	}
-	printf("rangecount(%d,%d) = %d\n", j, k, count);
     }
+
+    printf("rangecount(%d,%d) = %d\n", j + 1, k + 1, count);
 
     return SUCCESS;
 }
