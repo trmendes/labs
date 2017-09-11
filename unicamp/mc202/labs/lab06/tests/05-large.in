@@ -1,0 +1,13 @@
+create 75000000
+add 1
+add 75000000
+in 1
+in 75000000
+create 75000000
+in 1
+in 75000000
+add 1
+add 75000000
+in 1
+in 75000000
+exit
