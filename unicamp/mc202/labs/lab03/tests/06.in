@@ -1,0 +1,31 @@
+8
+8Kb
+insere arq1 1Kb
+insere arq2 1Kb
+insere arq3 1Kb
+insere arq4 1Kb
+insere arq5 1Kb
+insere arq6 1Kb
+insere arq7 1Kb
+insere arq8 1Kb
+8
+8Kb
+insere arq1 1Kb
+insere arq2 1Kb
+insere arq3 1Kb
+insere arq4 1Mb
+insere arq5 1Mb
+insere arq6 1Mb
+remove arq1
+otimiza
+8
+8Gb
+insere arq1 1Mb
+insere arq2 1Mb
+insere arq3 1Mb
+insere arq4 1Mb
+insere arq5 1Mb
+insere arq6 1Mb
+insere arq7 1Mb
+insere arq8 1Mb
+0

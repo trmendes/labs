@@ -1,0 +1,49 @@
+7
+8Kb
+insere arq1 2Kb
+insere arq2 2Kb
+insere arq3 2Kb
+insere arq4 2Kb
+remove arq1
+remove arq3
+insere arq1 4Kb
+7
+8Kb
+insere arq1 2Kb
+insere arq2 2Kb
+insere arq3 2Kb
+insere arq4 2Kb
+remove arq2
+remove arq3
+insere arq1 4Kb
+8
+8Kb
+insere arq1 2Kb
+insere arq2 2Kb
+insere arq3 2Kb
+insere arq4 2Kb
+remove arq1
+remove arq3
+remove arq2
+insere arq1 6Kb
+7
+8Kb
+insere arq1 2Kb
+insere arq2 2Kb
+insere arq3 2Kb
+insere arq4 2Kb
+remove arq1
+remove arq4
+insere arq1 4Kb
+9
+8Kb
+insere arq1 2Kb
+insere arq2 2Kb
+insere arq3 2Kb
+insere arq4 2Kb
+remove arq1
+remove arq2
+remove arq3
+remove arq4
+insere arq1 7Kb
+0

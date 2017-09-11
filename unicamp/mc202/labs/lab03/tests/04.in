@@ -1,0 +1,8484 @@
+17
+40Kb
+insere arq001 3Kb
+insere arq002 3Kb
+insere arq003 3Kb
+insere arq004 3Kb
+insere arq005 3Kb
+insere arq006 3Kb
+insere arq007 3Kb
+insere arq008 3Kb
+remove arq002
+remove arq003
+remove arq007
+insere arq002 11Kb
+insere arq003 14Kb
+otimiza
+remove arq001
+remove arq008
+otimiza
+30
+40Kb
+insere arq001 3Kb
+otimiza
+insere arq002 3Kb
+otimiza
+insere arq003 3Kb
+otimiza
+insere arq004 3Kb
+otimiza
+insere arq005 3Kb
+otimiza
+insere arq006 3Kb
+otimiza
+insere arq007 3Kb
+otimiza
+insere arq008 3Kb
+otimiza
+remove arq002
+otimiza
+remove arq003
+otimiza
+remove arq007
+otimiza
+insere arq002 11Kb
+otimiza
+insere arq003 14Kb
+otimiza
+remove arq001
+otimiza
+remove arq008
+otimiza
+100
+800Kb
+insere arq0 43Kb
+insere arq1 364Kb
+remove arq0
+remove arq1
+insere arq2 89Kb
+insere arq3 331Kb
+insere arq4 17Kb
+remove arq4
+remove arq2
+remove arq3
+insere arq5 344Kb
+insere arq6 213Kb
+insere arq7 121Kb
+insere arq8 35Kb
+remove arq6
+insere arq9 87Kb
+remove arq8
+insere arq10 12Kb
+remove arq5
+insere arq11 132Kb
+remove arq10
+insere arq12 44Kb
+insere arq13 97Kb
+remove arq13
+insere arq14 156Kb
+remove arq7
+insere arq15 35Kb
+insere arq16 16Kb
+remove arq9
+insere arq17 59Kb
+remove arq15
+insere arq18 46Kb
+remove arq16
+insere arq19 85Kb
+insere arq20 61Kb
+insere arq21 85Kb
+remove arq14
+insere arq22 123Kb
+insere arq23 69Kb
+insere arq24 14Kb
+insere arq25 24Kb
+remove arq17
+insere arq26 26Kb
+remove arq19
+insere arq27 20Kb
+insere arq28 76Kb
+insere arq29 18Kb
+remove arq12
+remove arq29
+insere arq30 25Kb
+remove arq24
+remove arq21
+insere arq31 34Kb
+insere arq32 4Kb
+remove arq22
+insere arq33 65Kb
+insere arq34 72Kb
+remove arq34
+remove arq31
+insere arq35 38Kb
+remove arq18
+remove arq28
+remove arq35
+remove arq25
+insere arq36 137Kb
+insere arq37 68Kb
+insere arq38 22Kb
+insere arq39 12Kb
+insere arq40 36Kb
+remove arq37
+insere arq41 87Kb
+insere arq42 33Kb
+insere arq43 5Kb
+insere arq44 22Kb
+insere arq45 17Kb
+insere arq46 4Kb
+remove arq41
+insere arq47 13Kb
+insere arq48 24Kb
+insere arq49 34Kb
+remove arq36
+insere arq50 13Kb
+insere arq51 30Kb
+insere arq52 19Kb
+insere arq53 21Kb
+insere arq54 2Kb
+insere arq55 22Kb
+insere arq56 21Kb
+insere arq57 23Kb
+remove arq39
+remove arq44
+remove arq23
+insere arq58 9Kb
+insere arq59 6Kb
+insere arq60 22Kb
+insere arq61 9Kb
+insere arq62 20Kb
+insere arq63 14Kb
+remove arq20
+remove arq40
+8126
+1016Mb
+insere arq0 256Kb
+insere arq1 256Kb
+insere arq2 256Kb
+insere arq3 256Kb
+insere arq4 256Kb
+insere arq5 256Kb
+insere arq6 256Kb
+insere arq7 256Kb
+insere arq8 256Kb
+insere arq9 256Kb
+insere arq10 256Kb
+insere arq11 256Kb
+insere arq12 256Kb
+insere arq13 256Kb
+insere arq14 256Kb
+insere arq15 256Kb
+insere arq16 256Kb
+insere arq17 256Kb
+insere arq18 256Kb
+insere arq19 256Kb
+insere arq20 256Kb
+insere arq21 256Kb
+insere arq22 256Kb
+insere arq23 256Kb
+insere arq24 256Kb
+insere arq25 256Kb
+insere arq26 256Kb
+insere arq27 256Kb
+insere arq28 256Kb
+insere arq29 256Kb
+insere arq30 256Kb
+insere arq31 256Kb
+insere arq32 256Kb
+insere arq33 256Kb
+insere arq34 256Kb
+insere arq35 256Kb
+insere arq36 256Kb
+insere arq37 256Kb
+insere arq38 256Kb
+insere arq39 256Kb
+insere arq40 256Kb
+insere arq41 256Kb
+insere arq42 256Kb
+insere arq43 256Kb
+insere arq44 256Kb
+insere arq45 256Kb
+insere arq46 256Kb
+insere arq47 256Kb
+insere arq48 256Kb
+insere arq49 256Kb
+insere arq50 256Kb
+insere arq51 256Kb
+insere arq52 256Kb
+insere arq53 256Kb
+insere arq54 256Kb
+insere arq55 256Kb
+insere arq56 256Kb
+insere arq57 256Kb
+insere arq58 256Kb
+insere arq59 256Kb
+insere arq60 256Kb
+insere arq61 256Kb
+insere arq62 256Kb
+insere arq63 256Kb
+insere arq64 256Kb
+insere arq65 256Kb
+insere arq66 256Kb
+insere arq67 256Kb
+insere arq68 256Kb
+insere arq69 256Kb
+insere arq70 256Kb
+insere arq71 256Kb
+insere arq72 256Kb
+insere arq73 256Kb
+insere arq74 256Kb
+insere arq75 256Kb
+insere arq76 256Kb
+insere arq77 256Kb
+insere arq78 256Kb
+insere arq79 256Kb
+insere arq80 256Kb
+insere arq81 256Kb
+insere arq82 256Kb
+insere arq83 256Kb
+insere arq84 256Kb
+insere arq85 256Kb
+insere arq86 256Kb
+insere arq87 256Kb
+insere arq88 256Kb
+insere arq89 256Kb
+insere arq90 256Kb
+insere arq91 256Kb
+insere arq92 256Kb
+insere arq93 256Kb
+insere arq94 256Kb
+insere arq95 256Kb
+insere arq96 256Kb
+insere arq97 256Kb
+insere arq98 256Kb
+insere arq99 256Kb
+insere arq100 256Kb
+insere arq101 256Kb
+insere arq102 256Kb
+insere arq103 256Kb
+insere arq104 256Kb
+insere arq105 256Kb
+insere arq106 256Kb
+insere arq107 256Kb
+insere arq108 256Kb
+insere arq109 256Kb
+insere arq110 256Kb
+insere arq111 256Kb
+insere arq112 256Kb
+insere arq113 256Kb
+insere arq114 256Kb
+insere arq115 256Kb
+insere arq116 256Kb
+insere arq117 256Kb
+insere arq118 256Kb
+insere arq119 256Kb
+insere arq120 256Kb
+insere arq121 256Kb
+insere arq122 256Kb
+insere arq123 256Kb
+insere arq124 256Kb
+insere arq125 256Kb
+insere arq126 256Kb
+insere arq127 256Kb
+insere arq128 256Kb
+insere arq129 256Kb
+insere arq130 256Kb
+insere arq131 256Kb
+insere arq132 256Kb
+insere arq133 256Kb
+insere arq134 256Kb
+insere arq135 256Kb
+insere arq136 256Kb
+insere arq137 256Kb
+insere arq138 256Kb
+insere arq139 256Kb
+insere arq140 256Kb
+insere arq141 256Kb
+insere arq142 256Kb
+insere arq143 256Kb
+insere arq144 256Kb
+insere arq145 256Kb
+insere arq146 256Kb
+insere arq147 256Kb
+insere arq148 256Kb
+insere arq149 256Kb
+insere arq150 256Kb
+insere arq151 256Kb
+insere arq152 256Kb
+insere arq153 256Kb
+insere arq154 256Kb
+insere arq155 256Kb
+insere arq156 256Kb
+insere arq157 256Kb
+insere arq158 256Kb
+insere arq159 256Kb
+insere arq160 256Kb
+insere arq161 256Kb
+insere arq162 256Kb
+insere arq163 256Kb
+insere arq164 256Kb
+insere arq165 256Kb
+insere arq166 256Kb
+insere arq167 256Kb
+insere arq168 256Kb
+insere arq169 256Kb
+insere arq170 256Kb
+insere arq171 256Kb
+insere arq172 256Kb
+insere arq173 256Kb
+insere arq174 256Kb
+insere arq175 256Kb
+insere arq176 256Kb
+insere arq177 256Kb
+insere arq178 256Kb
+insere arq179 256Kb
+insere arq180 256Kb
+insere arq181 256Kb
+insere arq182 256Kb
+insere arq183 256Kb
+insere arq184 256Kb
+insere arq185 256Kb
+insere arq186 256Kb
+insere arq187 256Kb
+insere arq188 256Kb
+insere arq189 256Kb
+insere arq190 256Kb
+insere arq191 256Kb
+insere arq192 256Kb
+insere arq193 256Kb
+insere arq194 256Kb
+insere arq195 256Kb
+insere arq196 256Kb
+insere arq197 256Kb
+insere arq198 256Kb
+insere arq199 256Kb
+insere arq200 256Kb
+insere arq201 256Kb
+insere arq202 256Kb
+insere arq203 256Kb
+insere arq204 256Kb
+insere arq205 256Kb
+insere arq206 256Kb
+insere arq207 256Kb
+insere arq208 256Kb
+insere arq209 256Kb
+insere arq210 256Kb
+insere arq211 256Kb
+insere arq212 256Kb
+insere arq213 256Kb
+insere arq214 256Kb
+insere arq215 256Kb
+insere arq216 256Kb
+insere arq217 256Kb
+insere arq218 256Kb
+insere arq219 256Kb
+insere arq220 256Kb
+insere arq221 256Kb
+insere arq222 256Kb
+insere arq223 256Kb
+insere arq224 256Kb
+insere arq225 256Kb
+insere arq226 256Kb
+insere arq227 256Kb
+insere arq228 256Kb
+insere arq229 256Kb
+insere arq230 256Kb
+insere arq231 256Kb
+insere arq232 256Kb
+insere arq233 256Kb
+insere arq234 256Kb
+insere arq235 256Kb
+insere arq236 256Kb
+insere arq237 256Kb
+insere arq238 256Kb
+insere arq239 256Kb
+insere arq240 256Kb
+insere arq241 256Kb
+insere arq242 256Kb
+insere arq243 256Kb
+insere arq244 256Kb
+insere arq245 256Kb
+insere arq246 256Kb
+insere arq247 256Kb
+insere arq248 256Kb
+insere arq249 256Kb
+insere arq250 256Kb
+insere arq251 256Kb
+insere arq252 256Kb
+insere arq253 256Kb
+insere arq254 256Kb
+insere arq255 256Kb
+insere arq256 256Kb
+insere arq257 256Kb
+insere arq258 256Kb
+insere arq259 256Kb
+insere arq260 256Kb
+insere arq261 256Kb
+insere arq262 256Kb
+insere arq263 256Kb
+insere arq264 256Kb
+insere arq265 256Kb
+insere arq266 256Kb
+insere arq267 256Kb
+insere arq268 256Kb
+insere arq269 256Kb
+insere arq270 256Kb
+insere arq271 256Kb
+insere arq272 256Kb
+insere arq273 256Kb
+insere arq274 256Kb
+insere arq275 256Kb
+insere arq276 256Kb
+insere arq277 256Kb
+insere arq278 256Kb
+insere arq279 256Kb
+insere arq280 256Kb
+insere arq281 256Kb
+insere arq282 256Kb
+insere arq283 256Kb
+insere arq284 256Kb
+insere arq285 256Kb
+insere arq286 256Kb
+insere arq287 256Kb
+insere arq288 256Kb
+insere arq289 256Kb
+insere arq290 256Kb
+insere arq291 256Kb
+insere arq292 256Kb
+insere arq293 256Kb
+insere arq294 256Kb
+insere arq295 256Kb
+insere arq296 256Kb
+insere arq297 256Kb
+insere arq298 256Kb
+insere arq299 256Kb
+insere arq300 256Kb
+insere arq301 256Kb
+insere arq302 256Kb
+insere arq303 256Kb
+insere arq304 256Kb
+insere arq305 256Kb
+insere arq306 256Kb
+insere arq307 256Kb
+insere arq308 256Kb
+insere arq309 256Kb
+insere arq310 256Kb
+insere arq311 256Kb
+insere arq312 256Kb
+insere arq313 256Kb
+insere arq314 256Kb
+insere arq315 256Kb
+insere arq316 256Kb
+insere arq317 256Kb
+insere arq318 256Kb
+insere arq319 256Kb
+insere arq320 256Kb
+insere arq321 256Kb
+insere arq322 256Kb
+insere arq323 256Kb
+insere arq324 256Kb
+insere arq325 256Kb
+insere arq326 256Kb
+insere arq327 256Kb
+insere arq328 256Kb
+insere arq329 256Kb
+insere arq330 256Kb
+insere arq331 256Kb
+insere arq332 256Kb
+insere arq333 256Kb
+insere arq334 256Kb
+insere arq335 256Kb
+insere arq336 256Kb
+insere arq337 256Kb
+insere arq338 256Kb
+insere arq339 256Kb
+insere arq340 256Kb
+insere arq341 256Kb
+insere arq342 256Kb
+insere arq343 256Kb
+insere arq344 256Kb
+insere arq345 256Kb
+insere arq346 256Kb
+insere arq347 256Kb
+insere arq348 256Kb
+insere arq349 256Kb
+insere arq350 256Kb
+insere arq351 256Kb
+insere arq352 256Kb
+insere arq353 256Kb
+insere arq354 256Kb
+insere arq355 256Kb
+insere arq356 256Kb
+insere arq357 256Kb
+insere arq358 256Kb
+insere arq359 256Kb
+insere arq360 256Kb
+insere arq361 256Kb
+insere arq362 256Kb
+insere arq363 256Kb
+insere arq364 256Kb
+insere arq365 256Kb
+insere arq366 256Kb
+insere arq367 256Kb
+insere arq368 256Kb
+insere arq369 256Kb
+insere arq370 256Kb
+insere arq371 256Kb
+insere arq372 256Kb
+insere arq373 256Kb
+insere arq374 256Kb
+insere arq375 256Kb
+insere arq376 256Kb
+insere arq377 256Kb
+insere arq378 256Kb
+insere arq379 256Kb
+insere arq380 256Kb
+insere arq381 256Kb
+insere arq382 256Kb
+insere arq383 256Kb
+insere arq384 256Kb
+insere arq385 256Kb
+insere arq386 256Kb
+insere arq387 256Kb
+insere arq388 256Kb
+insere arq389 256Kb
+insere arq390 256Kb
+insere arq391 256Kb
+insere arq392 256Kb
+insere arq393 256Kb
+insere arq394 256Kb
+insere arq395 256Kb
+insere arq396 256Kb
+insere arq397 256Kb
+insere arq398 256Kb
+insere arq399 256Kb
+insere arq400 256Kb
+insere arq401 256Kb
+insere arq402 256Kb
+insere arq403 256Kb
+insere arq404 256Kb
+insere arq405 256Kb
+insere arq406 256Kb
+insere arq407 256Kb
+insere arq408 256Kb
+insere arq409 256Kb
+insere arq410 256Kb
+insere arq411 256Kb
+insere arq412 256Kb
+insere arq413 256Kb
+insere arq414 256Kb
+insere arq415 256Kb
+insere arq416 256Kb
+insere arq417 256Kb
+insere arq418 256Kb
+insere arq419 256Kb
+insere arq420 256Kb
+insere arq421 256Kb
+insere arq422 256Kb
+insere arq423 256Kb
+insere arq424 256Kb
+insere arq425 256Kb
+insere arq426 256Kb
+insere arq427 256Kb
+insere arq428 256Kb
+insere arq429 256Kb
+insere arq430 256Kb
+insere arq431 256Kb
+insere arq432 256Kb
+insere arq433 256Kb
+insere arq434 256Kb
+insere arq435 256Kb
+insere arq436 256Kb
+insere arq437 256Kb
+insere arq438 256Kb
+insere arq439 256Kb
+insere arq440 256Kb
+insere arq441 256Kb
+insere arq442 256Kb
+insere arq443 256Kb
+insere arq444 256Kb
+insere arq445 256Kb
+insere arq446 256Kb
+insere arq447 256Kb
+insere arq448 256Kb
+insere arq449 256Kb
+insere arq450 256Kb
+insere arq451 256Kb
+insere arq452 256Kb
+insere arq453 256Kb
+insere arq454 256Kb
+insere arq455 256Kb
+insere arq456 256Kb
+insere arq457 256Kb
+insere arq458 256Kb
+insere arq459 256Kb
+insere arq460 256Kb
+insere arq461 256Kb
+insere arq462 256Kb
+insere arq463 256Kb
+insere arq464 256Kb
+insere arq465 256Kb
+insere arq466 256Kb
+insere arq467 256Kb
+insere arq468 256Kb
+insere arq469 256Kb
+insere arq470 256Kb
+insere arq471 256Kb
+insere arq472 256Kb
+insere arq473 256Kb
+insere arq474 256Kb
+insere arq475 256Kb
+insere arq476 256Kb
+insere arq477 256Kb
+insere arq478 256Kb
+insere arq479 256Kb
+insere arq480 256Kb
+insere arq481 256Kb
+insere arq482 256Kb
+insere arq483 256Kb
+insere arq484 256Kb
+insere arq485 256Kb
+insere arq486 256Kb
+insere arq487 256Kb
+insere arq488 256Kb
+insere arq489 256Kb
+insere arq490 256Kb
+insere arq491 256Kb
+insere arq492 256Kb
+insere arq493 256Kb
+insere arq494 256Kb
+insere arq495 256Kb
+insere arq496 256Kb
+insere arq497 256Kb
+insere arq498 256Kb
+insere arq499 256Kb
+insere arq500 256Kb
+insere arq501 256Kb
+insere arq502 256Kb
+insere arq503 256Kb
+insere arq504 256Kb
+insere arq505 256Kb
+insere arq506 256Kb
+insere arq507 256Kb
+insere arq508 256Kb
+insere arq509 256Kb
+insere arq510 256Kb
+insere arq511 256Kb
+insere arq512 256Kb
+insere arq513 256Kb
+insere arq514 256Kb
+insere arq515 256Kb
+insere arq516 256Kb
+insere arq517 256Kb
+insere arq518 256Kb
+insere arq519 256Kb
+insere arq520 256Kb
+insere arq521 256Kb
+insere arq522 256Kb
+insere arq523 256Kb
+insere arq524 256Kb
+insere arq525 256Kb
+insere arq526 256Kb
+insere arq527 256Kb
+insere arq528 256Kb
+insere arq529 256Kb
+insere arq530 256Kb
+insere arq531 256Kb
+insere arq532 256Kb
+insere arq533 256Kb
+insere arq534 256Kb
+insere arq535 256Kb
+insere arq536 256Kb
+insere arq537 256Kb
+insere arq538 256Kb
+insere arq539 256Kb
+insere arq540 256Kb
+insere arq541 256Kb
+insere arq542 256Kb
+insere arq543 256Kb
+insere arq544 256Kb
+insere arq545 256Kb
+insere arq546 256Kb
+insere arq547 256Kb
+insere arq548 256Kb
+insere arq549 256Kb
+insere arq550 256Kb
+insere arq551 256Kb
+insere arq552 256Kb
+insere arq553 256Kb
+insere arq554 256Kb
+insere arq555 256Kb
+insere arq556 256Kb
+insere arq557 256Kb
+insere arq558 256Kb
+insere arq559 256Kb
+insere arq560 256Kb
+insere arq561 256Kb
+insere arq562 256Kb
+insere arq563 256Kb
+insere arq564 256Kb
+insere arq565 256Kb
+insere arq566 256Kb
+insere arq567 256Kb
+insere arq568 256Kb
+insere arq569 256Kb
+insere arq570 256Kb
+insere arq571 256Kb
+insere arq572 256Kb
+insere arq573 256Kb
+insere arq574 256Kb
+insere arq575 256Kb
+insere arq576 256Kb
+insere arq577 256Kb
+insere arq578 256Kb
+insere arq579 256Kb
+insere arq580 256Kb
+insere arq581 256Kb
+insere arq582 256Kb
+insere arq583 256Kb
+insere arq584 256Kb
+insere arq585 256Kb
+insere arq586 256Kb
+insere arq587 256Kb
+insere arq588 256Kb
+insere arq589 256Kb
+insere arq590 256Kb
+insere arq591 256Kb
+insere arq592 256Kb
+insere arq593 256Kb
+insere arq594 256Kb
+insere arq595 256Kb
+insere arq596 256Kb
+insere arq597 256Kb
+insere arq598 256Kb
+insere arq599 256Kb
+insere arq600 256Kb
+insere arq601 256Kb
+insere arq602 256Kb
+insere arq603 256Kb
+insere arq604 256Kb
+insere arq605 256Kb
+insere arq606 256Kb
+insere arq607 256Kb
+insere arq608 256Kb
+insere arq609 256Kb
+insere arq610 256Kb
+insere arq611 256Kb
+insere arq612 256Kb
+insere arq613 256Kb
+insere arq614 256Kb
+insere arq615 256Kb
+insere arq616 256Kb
+insere arq617 256Kb
+insere arq618 256Kb
+insere arq619 256Kb
+insere arq620 256Kb
+insere arq621 256Kb
+insere arq622 256Kb
+insere arq623 256Kb
+insere arq624 256Kb
+insere arq625 256Kb
+insere arq626 256Kb
+insere arq627 256Kb
+insere arq628 256Kb
+insere arq629 256Kb
+insere arq630 256Kb
+insere arq631 256Kb
+insere arq632 256Kb
+insere arq633 256Kb
+insere arq634 256Kb
+insere arq635 256Kb
+insere arq636 256Kb
+insere arq637 256Kb
+insere arq638 256Kb
+insere arq639 256Kb
+insere arq640 256Kb
+insere arq641 256Kb
+insere arq642 256Kb
+insere arq643 256Kb
+insere arq644 256Kb
+insere arq645 256Kb
+insere arq646 256Kb
+insere arq647 256Kb
+insere arq648 256Kb
+insere arq649 256Kb
+insere arq650 256Kb
+insere arq651 256Kb
+insere arq652 256Kb
+insere arq653 256Kb
+insere arq654 256Kb
+insere arq655 256Kb
+insere arq656 256Kb
+insere arq657 256Kb
+insere arq658 256Kb
+insere arq659 256Kb
+insere arq660 256Kb
+insere arq661 256Kb
+insere arq662 256Kb
+insere arq663 256Kb
+insere arq664 256Kb
+insere arq665 256Kb
+insere arq666 256Kb
+insere arq667 256Kb
+insere arq668 256Kb
+insere arq669 256Kb
+insere arq670 256Kb
+insere arq671 256Kb
+insere arq672 256Kb
+insere arq673 256Kb
+insere arq674 256Kb
+insere arq675 256Kb
+insere arq676 256Kb
+insere arq677 256Kb
+insere arq678 256Kb
+insere arq679 256Kb
+insere arq680 256Kb
+insere arq681 256Kb
+insere arq682 256Kb
+insere arq683 256Kb
+insere arq684 256Kb
+insere arq685 256Kb
+insere arq686 256Kb
+insere arq687 256Kb
+insere arq688 256Kb
+insere arq689 256Kb
+insere arq690 256Kb
+insere arq691 256Kb
+insere arq692 256Kb
+insere arq693 256Kb
+insere arq694 256Kb
+insere arq695 256Kb
+insere arq696 256Kb
+insere arq697 256Kb
+insere arq698 256Kb
+insere arq699 256Kb
+insere arq700 256Kb
+insere arq701 256Kb
+insere arq702 256Kb
+insere arq703 256Kb
+insere arq704 256Kb
+insere arq705 256Kb
+insere arq706 256Kb
+insere arq707 256Kb
+insere arq708 256Kb
+insere arq709 256Kb
+insere arq710 256Kb
+insere arq711 256Kb
+insere arq712 256Kb
+insere arq713 256Kb
+insere arq714 256Kb
+insere arq715 256Kb
+insere arq716 256Kb
+insere arq717 256Kb
+insere arq718 256Kb
+insere arq719 256Kb
+insere arq720 256Kb
+insere arq721 256Kb
+insere arq722 256Kb
+insere arq723 256Kb
+insere arq724 256Kb
+insere arq725 256Kb
+insere arq726 256Kb
+insere arq727 256Kb
+insere arq728 256Kb
+insere arq729 256Kb
+insere arq730 256Kb
+insere arq731 256Kb
+insere arq732 256Kb
+insere arq733 256Kb
+insere arq734 256Kb
+insere arq735 256Kb
+insere arq736 256Kb
+insere arq737 256Kb
+insere arq738 256Kb
+insere arq739 256Kb
+insere arq740 256Kb
+insere arq741 256Kb
+insere arq742 256Kb
+insere arq743 256Kb
+insere arq744 256Kb
+insere arq745 256Kb
+insere arq746 256Kb
+insere arq747 256Kb
+insere arq748 256Kb
+insere arq749 256Kb
+insere arq750 256Kb
+insere arq751 256Kb
+insere arq752 256Kb
+insere arq753 256Kb
+insere arq754 256Kb
+insere arq755 256Kb
+insere arq756 256Kb
+insere arq757 256Kb
+insere arq758 256Kb
+insere arq759 256Kb
+insere arq760 256Kb
+insere arq761 256Kb
+insere arq762 256Kb
+insere arq763 256Kb
+insere arq764 256Kb
+insere arq765 256Kb
+insere arq766 256Kb
+insere arq767 256Kb
+insere arq768 256Kb
+insere arq769 256Kb
+insere arq770 256Kb
+insere arq771 256Kb
+insere arq772 256Kb
+insere arq773 256Kb
+insere arq774 256Kb
+insere arq775 256Kb
+insere arq776 256Kb
+insere arq777 256Kb
+insere arq778 256Kb
+insere arq779 256Kb
+insere arq780 256Kb
+insere arq781 256Kb
+insere arq782 256Kb
+insere arq783 256Kb
+insere arq784 256Kb
+insere arq785 256Kb
+insere arq786 256Kb
+insere arq787 256Kb
+insere arq788 256Kb
+insere arq789 256Kb
+insere arq790 256Kb
+insere arq791 256Kb
+insere arq792 256Kb
+insere arq793 256Kb
+insere arq794 256Kb
+insere arq795 256Kb
+insere arq796 256Kb
+insere arq797 256Kb
+insere arq798 256Kb
+insere arq799 256Kb
+insere arq800 256Kb
+insere arq801 256Kb
+insere arq802 256Kb
+insere arq803 256Kb
+insere arq804 256Kb
+insere arq805 256Kb
+insere arq806 256Kb
+insere arq807 256Kb
+insere arq808 256Kb
+insere arq809 256Kb
+insere arq810 256Kb
+insere arq811 256Kb
+insere arq812 256Kb
+insere arq813 256Kb
+insere arq814 256Kb
+insere arq815 256Kb
+insere arq816 256Kb
+insere arq817 256Kb
+insere arq818 256Kb
+insere arq819 256Kb
+insere arq820 256Kb
+insere arq821 256Kb
+insere arq822 256Kb
+insere arq823 256Kb
+insere arq824 256Kb
+insere arq825 256Kb
+insere arq826 256Kb
+insere arq827 256Kb
+insere arq828 256Kb
+insere arq829 256Kb
+insere arq830 256Kb
+insere arq831 256Kb
+insere arq832 256Kb
+insere arq833 256Kb
+insere arq834 256Kb
+insere arq835 256Kb
+insere arq836 256Kb
+insere arq837 256Kb
+insere arq838 256Kb
+insere arq839 256Kb
+insere arq840 256Kb
+insere arq841 256Kb
+insere arq842 256Kb
+insere arq843 256Kb
+insere arq844 256Kb
+insere arq845 256Kb
+insere arq846 256Kb
+insere arq847 256Kb
+insere arq848 256Kb
+insere arq849 256Kb
+insere arq850 256Kb
+insere arq851 256Kb
+insere arq852 256Kb
+insere arq853 256Kb
+insere arq854 256Kb
+insere arq855 256Kb
+insere arq856 256Kb
+insere arq857 256Kb
+insere arq858 256Kb
+insere arq859 256Kb
+insere arq860 256Kb
+insere arq861 256Kb
+insere arq862 256Kb
+insere arq863 256Kb
+insere arq864 256Kb
+insere arq865 256Kb
+insere arq866 256Kb
+insere arq867 256Kb
+insere arq868 256Kb
+insere arq869 256Kb
+insere arq870 256Kb
+insere arq871 256Kb
+insere arq872 256Kb
+insere arq873 256Kb
+insere arq874 256Kb
+insere arq875 256Kb
+insere arq876 256Kb
+insere arq877 256Kb
+insere arq878 256Kb
+insere arq879 256Kb
+insere arq880 256Kb
+insere arq881 256Kb
+insere arq882 256Kb
+insere arq883 256Kb
+insere arq884 256Kb
+insere arq885 256Kb
+insere arq886 256Kb
+insere arq887 256Kb
+insere arq888 256Kb
+insere arq889 256Kb
+insere arq890 256Kb
+insere arq891 256Kb
+insere arq892 256Kb
+insere arq893 256Kb
+insere arq894 256Kb
+insere arq895 256Kb
+insere arq896 256Kb
+insere arq897 256Kb
+insere arq898 256Kb
+insere arq899 256Kb
+insere arq900 256Kb
+insere arq901 256Kb
+insere arq902 256Kb
+insere arq903 256Kb
+insere arq904 256Kb
+insere arq905 256Kb
+insere arq906 256Kb
+insere arq907 256Kb
+insere arq908 256Kb
+insere arq909 256Kb
+insere arq910 256Kb
+insere arq911 256Kb
+insere arq912 256Kb
+insere arq913 256Kb
+insere arq914 256Kb
+insere arq915 256Kb
+insere arq916 256Kb
+insere arq917 256Kb
+insere arq918 256Kb
+insere arq919 256Kb
+insere arq920 256Kb
+insere arq921 256Kb
+insere arq922 256Kb
+insere arq923 256Kb
+insere arq924 256Kb
+insere arq925 256Kb
+insere arq926 256Kb
+insere arq927 256Kb
+insere arq928 256Kb
+insere arq929 256Kb
+insere arq930 256Kb
+insere arq931 256Kb
+insere arq932 256Kb
+insere arq933 256Kb
+insere arq934 256Kb
+insere arq935 256Kb
+insere arq936 256Kb
+insere arq937 256Kb
+insere arq938 256Kb
+insere arq939 256Kb
+insere arq940 256Kb
+insere arq941 256Kb
+insere arq942 256Kb
+insere arq943 256Kb
+insere arq944 256Kb
+insere arq945 256Kb
+insere arq946 256Kb
+insere arq947 256Kb
+insere arq948 256Kb
+insere arq949 256Kb
+insere arq950 256Kb
+insere arq951 256Kb
+insere arq952 256Kb
+insere arq953 256Kb
+insere arq954 256Kb
+insere arq955 256Kb
+insere arq956 256Kb
+insere arq957 256Kb
+insere arq958 256Kb
+insere arq959 256Kb
+insere arq960 256Kb
+insere arq961 256Kb
+insere arq962 256Kb
+insere arq963 256Kb
+insere arq964 256Kb
+insere arq965 256Kb
+insere arq966 256Kb
+insere arq967 256Kb
+insere arq968 256Kb
+insere arq969 256Kb
+insere arq970 256Kb
+insere arq971 256Kb
+insere arq972 256Kb
+insere arq973 256Kb
+insere arq974 256Kb
+insere arq975 256Kb
+insere arq976 256Kb
+insere arq977 256Kb
+insere arq978 256Kb
+insere arq979 256Kb
+insere arq980 256Kb
+insere arq981 256Kb
+insere arq982 256Kb
+insere arq983 256Kb
+insere arq984 256Kb
+insere arq985 256Kb
+insere arq986 256Kb
+insere arq987 256Kb
+insere arq988 256Kb
+insere arq989 256Kb
+insere arq990 256Kb
+insere arq991 256Kb
+insere arq992 256Kb
+insere arq993 256Kb
+insere arq994 256Kb
+insere arq995 256Kb
+insere arq996 256Kb
+insere arq997 256Kb
+insere arq998 256Kb
+insere arq999 256Kb
+insere arq1000 256Kb
+insere arq1001 256Kb
+insere arq1002 256Kb
+insere arq1003 256Kb
+insere arq1004 256Kb
+insere arq1005 256Kb
+insere arq1006 256Kb
+insere arq1007 256Kb
+insere arq1008 256Kb
+insere arq1009 256Kb
+insere arq1010 256Kb
+insere arq1011 256Kb
+insere arq1012 256Kb
+insere arq1013 256Kb
+insere arq1014 256Kb
+insere arq1015 256Kb
+insere arq1016 256Kb
+insere arq1017 256Kb
+insere arq1018 256Kb
+insere arq1019 256Kb
+insere arq1020 256Kb
+insere arq1021 256Kb
+insere arq1022 256Kb
+insere arq1023 256Kb
+insere arq1024 256Kb
+insere arq1025 256Kb
+insere arq1026 256Kb
+insere arq1027 256Kb
+insere arq1028 256Kb
+insere arq1029 256Kb
+insere arq1030 256Kb
+insere arq1031 256Kb
+insere arq1032 256Kb
+insere arq1033 256Kb
+insere arq1034 256Kb
+insere arq1035 256Kb
+insere arq1036 256Kb
+insere arq1037 256Kb
+insere arq1038 256Kb
+insere arq1039 256Kb
+insere arq1040 256Kb
+insere arq1041 256Kb
+insere arq1042 256Kb
+insere arq1043 256Kb
+insere arq1044 256Kb
+insere arq1045 256Kb
+insere arq1046 256Kb
+insere arq1047 256Kb
+insere arq1048 256Kb
+insere arq1049 256Kb
+insere arq1050 256Kb
+insere arq1051 256Kb
+insere arq1052 256Kb
+insere arq1053 256Kb
+insere arq1054 256Kb
+insere arq1055 256Kb
+insere arq1056 256Kb
+insere arq1057 256Kb
+insere arq1058 256Kb
+insere arq1059 256Kb
+insere arq1060 256Kb
+insere arq1061 256Kb
+insere arq1062 256Kb
+insere arq1063 256Kb
+insere arq1064 256Kb
+insere arq1065 256Kb
+insere arq1066 256Kb
+insere arq1067 256Kb
+insere arq1068 256Kb
+insere arq1069 256Kb
+insere arq1070 256Kb
+insere arq1071 256Kb
+insere arq1072 256Kb
+insere arq1073 256Kb
+insere arq1074 256Kb
+insere arq1075 256Kb
+insere arq1076 256Kb
+insere arq1077 256Kb
+insere arq1078 256Kb
+insere arq1079 256Kb
+insere arq1080 256Kb
+insere arq1081 256Kb
+insere arq1082 256Kb
+insere arq1083 256Kb
+insere arq1084 256Kb
+insere arq1085 256Kb
+insere arq1086 256Kb
+insere arq1087 256Kb
+insere arq1088 256Kb
+insere arq1089 256Kb
+insere arq1090 256Kb
+insere arq1091 256Kb
+insere arq1092 256Kb
+insere arq1093 256Kb
+insere arq1094 256Kb
+insere arq1095 256Kb
+insere arq1096 256Kb
+insere arq1097 256Kb
+insere arq1098 256Kb
+insere arq1099 256Kb
+insere arq1100 256Kb
+insere arq1101 256Kb
+insere arq1102 256Kb
+insere arq1103 256Kb
+insere arq1104 256Kb
+insere arq1105 256Kb
+insere arq1106 256Kb
+insere arq1107 256Kb
+insere arq1108 256Kb
+insere arq1109 256Kb
+insere arq1110 256Kb
+insere arq1111 256Kb
+insere arq1112 256Kb
+insere arq1113 256Kb
+insere arq1114 256Kb
+insere arq1115 256Kb
+insere arq1116 256Kb
+insere arq1117 256Kb
+insere arq1118 256Kb
+insere arq1119 256Kb
+insere arq1120 256Kb
+insere arq1121 256Kb
+insere arq1122 256Kb
+insere arq1123 256Kb
+insere arq1124 256Kb
+insere arq1125 256Kb
+insere arq1126 256Kb
+insere arq1127 256Kb
+insere arq1128 256Kb
+insere arq1129 256Kb
+insere arq1130 256Kb
+insere arq1131 256Kb
+insere arq1132 256Kb
+insere arq1133 256Kb
+insere arq1134 256Kb
+insere arq1135 256Kb
+insere arq1136 256Kb
+insere arq1137 256Kb
+insere arq1138 256Kb
+insere arq1139 256Kb
+insere arq1140 256Kb
+insere arq1141 256Kb
+insere arq1142 256Kb
+insere arq1143 256Kb
+insere arq1144 256Kb
+insere arq1145 256Kb
+insere arq1146 256Kb
+insere arq1147 256Kb
+insere arq1148 256Kb
+insere arq1149 256Kb
+insere arq1150 256Kb
+insere arq1151 256Kb
+insere arq1152 256Kb
+insere arq1153 256Kb
+insere arq1154 256Kb
+insere arq1155 256Kb
+insere arq1156 256Kb
+insere arq1157 256Kb
+insere arq1158 256Kb
+insere arq1159 256Kb
+insere arq1160 256Kb
+insere arq1161 256Kb
+insere arq1162 256Kb
+insere arq1163 256Kb
+insere arq1164 256Kb
+insere arq1165 256Kb
+insere arq1166 256Kb
+insere arq1167 256Kb
+insere arq1168 256Kb
+insere arq1169 256Kb
+insere arq1170 256Kb
+insere arq1171 256Kb
+insere arq1172 256Kb
+insere arq1173 256Kb
+insere arq1174 256Kb
+insere arq1175 256Kb
+insere arq1176 256Kb
+insere arq1177 256Kb
+insere arq1178 256Kb
+insere arq1179 256Kb
+insere arq1180 256Kb
+insere arq1181 256Kb
+insere arq1182 256Kb
+insere arq1183 256Kb
+insere arq1184 256Kb
+insere arq1185 256Kb
+insere arq1186 256Kb
+insere arq1187 256Kb
+insere arq1188 256Kb
+insere arq1189 256Kb
+insere arq1190 256Kb
+insere arq1191 256Kb
+insere arq1192 256Kb
+insere arq1193 256Kb
+insere arq1194 256Kb
+insere arq1195 256Kb
+insere arq1196 256Kb
+insere arq1197 256Kb
+insere arq1198 256Kb
+insere arq1199 256Kb
+insere arq1200 256Kb
+insere arq1201 256Kb
+insere arq1202 256Kb
+insere arq1203 256Kb
+insere arq1204 256Kb
+insere arq1205 256Kb
+insere arq1206 256Kb
+insere arq1207 256Kb
+insere arq1208 256Kb
+insere arq1209 256Kb
+insere arq1210 256Kb
+insere arq1211 256Kb
+insere arq1212 256Kb
+insere arq1213 256Kb
+insere arq1214 256Kb
+insere arq1215 256Kb
+insere arq1216 256Kb
+insere arq1217 256Kb
+insere arq1218 256Kb
+insere arq1219 256Kb
+insere arq1220 256Kb
+insere arq1221 256Kb
+insere arq1222 256Kb
+insere arq1223 256Kb
+insere arq1224 256Kb
+insere arq1225 256Kb
+insere arq1226 256Kb
+insere arq1227 256Kb
+insere arq1228 256Kb
+insere arq1229 256Kb
+insere arq1230 256Kb
+insere arq1231 256Kb
+insere arq1232 256Kb
+insere arq1233 256Kb
+insere arq1234 256Kb
+insere arq1235 256Kb
+insere arq1236 256Kb
+insere arq1237 256Kb
+insere arq1238 256Kb
+insere arq1239 256Kb
+insere arq1240 256Kb
+insere arq1241 256Kb
+insere arq1242 256Kb
+insere arq1243 256Kb
+insere arq1244 256Kb
+insere arq1245 256Kb
+insere arq1246 256Kb
+insere arq1247 256Kb
+insere arq1248 256Kb
+insere arq1249 256Kb
+insere arq1250 256Kb
+insere arq1251 256Kb
+insere arq1252 256Kb
+insere arq1253 256Kb
+insere arq1254 256Kb
+insere arq1255 256Kb
+insere arq1256 256Kb
+insere arq1257 256Kb
+insere arq1258 256Kb
+insere arq1259 256Kb
+insere arq1260 256Kb
+insere arq1261 256Kb
+insere arq1262 256Kb
+insere arq1263 256Kb
+insere arq1264 256Kb
+insere arq1265 256Kb
+insere arq1266 256Kb
+insere arq1267 256Kb
+insere arq1268 256Kb
+insere arq1269 256Kb
+insere arq1270 256Kb
+insere arq1271 256Kb
+insere arq1272 256Kb
+insere arq1273 256Kb
+insere arq1274 256Kb
+insere arq1275 256Kb
+insere arq1276 256Kb
+insere arq1277 256Kb
+insere arq1278 256Kb
+insere arq1279 256Kb
+insere arq1280 256Kb
+insere arq1281 256Kb
+insere arq1282 256Kb
+insere arq1283 256Kb
+insere arq1284 256Kb
+insere arq1285 256Kb
+insere arq1286 256Kb
+insere arq1287 256Kb
+insere arq1288 256Kb
+insere arq1289 256Kb
+insere arq1290 256Kb
+insere arq1291 256Kb
+insere arq1292 256Kb
+insere arq1293 256Kb
+insere arq1294 256Kb
+insere arq1295 256Kb
+insere arq1296 256Kb
+insere arq1297 256Kb
+insere arq1298 256Kb
+insere arq1299 256Kb
+insere arq1300 256Kb
+insere arq1301 256Kb
+insere arq1302 256Kb
+insere arq1303 256Kb
+insere arq1304 256Kb
+insere arq1305 256Kb
+insere arq1306 256Kb
+insere arq1307 256Kb
+insere arq1308 256Kb
+insere arq1309 256Kb
+insere arq1310 256Kb
+insere arq1311 256Kb
+insere arq1312 256Kb
+insere arq1313 256Kb
+insere arq1314 256Kb
+insere arq1315 256Kb
+insere arq1316 256Kb
+insere arq1317 256Kb
+insere arq1318 256Kb
+insere arq1319 256Kb
+insere arq1320 256Kb
+insere arq1321 256Kb
+insere arq1322 256Kb
+insere arq1323 256Kb
+insere arq1324 256Kb
+insere arq1325 256Kb
+insere arq1326 256Kb
+insere arq1327 256Kb
+insere arq1328 256Kb
+insere arq1329 256Kb
+insere arq1330 256Kb
+insere arq1331 256Kb
+insere arq1332 256Kb
+insere arq1333 256Kb
+insere arq1334 256Kb
+insere arq1335 256Kb
+insere arq1336 256Kb
+insere arq1337 256Kb
+insere arq1338 256Kb
+insere arq1339 256Kb
+insere arq1340 256Kb
+insere arq1341 256Kb
+insere arq1342 256Kb
+insere arq1343 256Kb
+insere arq1344 256Kb
+insere arq1345 256Kb
+insere arq1346 256Kb
+insere arq1347 256Kb
+insere arq1348 256Kb
+insere arq1349 256Kb
+insere arq1350 256Kb
+insere arq1351 256Kb
+insere arq1352 256Kb
+insere arq1353 256Kb
+insere arq1354 256Kb
+insere arq1355 256Kb
+insere arq1356 256Kb
+insere arq1357 256Kb
+insere arq1358 256Kb
+insere arq1359 256Kb
+insere arq1360 256Kb
+insere arq1361 256Kb
+insere arq1362 256Kb
+insere arq1363 256Kb
+insere arq1364 256Kb
+insere arq1365 256Kb
+insere arq1366 256Kb
+insere arq1367 256Kb
+insere arq1368 256Kb
+insere arq1369 256Kb
+insere arq1370 256Kb
+insere arq1371 256Kb
+insere arq1372 256Kb
+insere arq1373 256Kb
+insere arq1374 256Kb
+insere arq1375 256Kb
+insere arq1376 256Kb
+insere arq1377 256Kb
+insere arq1378 256Kb
+insere arq1379 256Kb
+insere arq1380 256Kb
+insere arq1381 256Kb
+insere arq1382 256Kb
+insere arq1383 256Kb
+insere arq1384 256Kb
+insere arq1385 256Kb
+insere arq1386 256Kb
+insere arq1387 256Kb
+insere arq1388 256Kb
+insere arq1389 256Kb
+insere arq1390 256Kb
+insere arq1391 256Kb
+insere arq1392 256Kb
+insere arq1393 256Kb
+insere arq1394 256Kb
+insere arq1395 256Kb
+insere arq1396 256Kb
+insere arq1397 256Kb
+insere arq1398 256Kb
+insere arq1399 256Kb
+insere arq1400 256Kb
+insere arq1401 256Kb
+insere arq1402 256Kb
+insere arq1403 256Kb
+insere arq1404 256Kb
+insere arq1405 256Kb
+insere arq1406 256Kb
+insere arq1407 256Kb
+insere arq1408 256Kb
+insere arq1409 256Kb
+insere arq1410 256Kb
+insere arq1411 256Kb
+insere arq1412 256Kb
+insere arq1413 256Kb
+insere arq1414 256Kb
+insere arq1415 256Kb
+insere arq1416 256Kb
+insere arq1417 256Kb
+insere arq1418 256Kb
+insere arq1419 256Kb
+insere arq1420 256Kb
+insere arq1421 256Kb
+insere arq1422 256Kb
+insere arq1423 256Kb
+insere arq1424 256Kb
+insere arq1425 256Kb
+insere arq1426 256Kb
+insere arq1427 256Kb
+insere arq1428 256Kb
+insere arq1429 256Kb
+insere arq1430 256Kb
+insere arq1431 256Kb
+insere arq1432 256Kb
+insere arq1433 256Kb
+insere arq1434 256Kb
+insere arq1435 256Kb
+insere arq1436 256Kb
+insere arq1437 256Kb
+insere arq1438 256Kb
+insere arq1439 256Kb
+insere arq1440 256Kb
+insere arq1441 256Kb
+insere arq1442 256Kb
+insere arq1443 256Kb
+insere arq1444 256Kb
+insere arq1445 256Kb
+insere arq1446 256Kb
+insere arq1447 256Kb
+insere arq1448 256Kb
+insere arq1449 256Kb
+insere arq1450 256Kb
+insere arq1451 256Kb
+insere arq1452 256Kb
+insere arq1453 256Kb
+insere arq1454 256Kb
+insere arq1455 256Kb
+insere arq1456 256Kb
+insere arq1457 256Kb
+insere arq1458 256Kb
+insere arq1459 256Kb
+insere arq1460 256Kb
+insere arq1461 256Kb
+insere arq1462 256Kb
+insere arq1463 256Kb
+insere arq1464 256Kb
+insere arq1465 256Kb
+insere arq1466 256Kb
+insere arq1467 256Kb
+insere arq1468 256Kb
+insere arq1469 256Kb
+insere arq1470 256Kb
+insere arq1471 256Kb
+insere arq1472 256Kb
+insere arq1473 256Kb
+insere arq1474 256Kb
+insere arq1475 256Kb
+insere arq1476 256Kb
+insere arq1477 256Kb
+insere arq1478 256Kb
+insere arq1479 256Kb
+insere arq1480 256Kb
+insere arq1481 256Kb
+insere arq1482 256Kb
+insere arq1483 256Kb
+insere arq1484 256Kb
+insere arq1485 256Kb
+insere arq1486 256Kb
+insere arq1487 256Kb
+insere arq1488 256Kb
+insere arq1489 256Kb
+insere arq1490 256Kb
+insere arq1491 256Kb
+insere arq1492 256Kb
+insere arq1493 256Kb
+insere arq1494 256Kb
+insere arq1495 256Kb
+insere arq1496 256Kb
+insere arq1497 256Kb
+insere arq1498 256Kb
+insere arq1499 256Kb
+insere arq1500 256Kb
+insere arq1501 256Kb
+insere arq1502 256Kb
+insere arq1503 256Kb
+insere arq1504 256Kb
+insere arq1505 256Kb
+insere arq1506 256Kb
+insere arq1507 256Kb
+insere arq1508 256Kb
+insere arq1509 256Kb
+insere arq1510 256Kb
+insere arq1511 256Kb
+insere arq1512 256Kb
+insere arq1513 256Kb
+insere arq1514 256Kb
+insere arq1515 256Kb
+insere arq1516 256Kb
+insere arq1517 256Kb
+insere arq1518 256Kb
+insere arq1519 256Kb
+insere arq1520 256Kb
+insere arq1521 256Kb
+insere arq1522 256Kb
+insere arq1523 256Kb
+insere arq1524 256Kb
+insere arq1525 256Kb
+insere arq1526 256Kb
+insere arq1527 256Kb
+insere arq1528 256Kb
+insere arq1529 256Kb
+insere arq1530 256Kb
+insere arq1531 256Kb
+insere arq1532 256Kb
+insere arq1533 256Kb
+insere arq1534 256Kb
+insere arq1535 256Kb
+insere arq1536 256Kb
+insere arq1537 256Kb
+insere arq1538 256Kb
+insere arq1539 256Kb
+insere arq1540 256Kb
+insere arq1541 256Kb
+insere arq1542 256Kb
+insere arq1543 256Kb
+insere arq1544 256Kb
+insere arq1545 256Kb
+insere arq1546 256Kb
+insere arq1547 256Kb
+insere arq1548 256Kb
+insere arq1549 256Kb
+insere arq1550 256Kb
+insere arq1551 256Kb
+insere arq1552 256Kb
+insere arq1553 256Kb
+insere arq1554 256Kb
+insere arq1555 256Kb
+insere arq1556 256Kb
+insere arq1557 256Kb
+insere arq1558 256Kb
+insere arq1559 256Kb
+insere arq1560 256Kb
+insere arq1561 256Kb
+insere arq1562 256Kb
+insere arq1563 256Kb
+insere arq1564 256Kb
+insere arq1565 256Kb
+insere arq1566 256Kb
+insere arq1567 256Kb
+insere arq1568 256Kb
+insere arq1569 256Kb
+insere arq1570 256Kb
+insere arq1571 256Kb
+insere arq1572 256Kb
+insere arq1573 256Kb
+insere arq1574 256Kb
+insere arq1575 256Kb
+insere arq1576 256Kb
+insere arq1577 256Kb
+insere arq1578 256Kb
+insere arq1579 256Kb
+insere arq1580 256Kb
+insere arq1581 256Kb
+insere arq1582 256Kb
+insere arq1583 256Kb
+insere arq1584 256Kb
+insere arq1585 256Kb
+insere arq1586 256Kb
+insere arq1587 256Kb
+insere arq1588 256Kb
+insere arq1589 256Kb
+insere arq1590 256Kb
+insere arq1591 256Kb
+insere arq1592 256Kb
+insere arq1593 256Kb
+insere arq1594 256Kb
+insere arq1595 256Kb
+insere arq1596 256Kb
+insere arq1597 256Kb
+insere arq1598 256Kb
+insere arq1599 256Kb
+insere arq1600 256Kb
+insere arq1601 256Kb
+insere arq1602 256Kb
+insere arq1603 256Kb
+insere arq1604 256Kb
+insere arq1605 256Kb
+insere arq1606 256Kb
+insere arq1607 256Kb
+insere arq1608 256Kb
+insere arq1609 256Kb
+insere arq1610 256Kb
+insere arq1611 256Kb
+insere arq1612 256Kb
+insere arq1613 256Kb
+insere arq1614 256Kb
+insere arq1615 256Kb
+insere arq1616 256Kb
+insere arq1617 256Kb
+insere arq1618 256Kb
+insere arq1619 256Kb
+insere arq1620 256Kb
+insere arq1621 256Kb
+insere arq1622 256Kb
+insere arq1623 256Kb
+insere arq1624 256Kb
+insere arq1625 256Kb
+insere arq1626 256Kb
+insere arq1627 256Kb
+insere arq1628 256Kb
+insere arq1629 256Kb
+insere arq1630 256Kb
+insere arq1631 256Kb
+insere arq1632 256Kb
+insere arq1633 256Kb
+insere arq1634 256Kb
+insere arq1635 256Kb
+insere arq1636 256Kb
+insere arq1637 256Kb
+insere arq1638 256Kb
+insere arq1639 256Kb
+insere arq1640 256Kb
+insere arq1641 256Kb
+insere arq1642 256Kb
+insere arq1643 256Kb
+insere arq1644 256Kb
+insere arq1645 256Kb
+insere arq1646 256Kb
+insere arq1647 256Kb
+insere arq1648 256Kb
+insere arq1649 256Kb
+insere arq1650 256Kb
+insere arq1651 256Kb
+insere arq1652 256Kb
+insere arq1653 256Kb
+insere arq1654 256Kb
+insere arq1655 256Kb
+insere arq1656 256Kb
+insere arq1657 256Kb
+insere arq1658 256Kb
+insere arq1659 256Kb
+insere arq1660 256Kb
+insere arq1661 256Kb
+insere arq1662 256Kb
+insere arq1663 256Kb
+insere arq1664 256Kb
+insere arq1665 256Kb
+insere arq1666 256Kb
+insere arq1667 256Kb
+insere arq1668 256Kb
+insere arq1669 256Kb
+insere arq1670 256Kb
+insere arq1671 256Kb
+insere arq1672 256Kb
+insere arq1673 256Kb
+insere arq1674 256Kb
+insere arq1675 256Kb
+insere arq1676 256Kb
+insere arq1677 256Kb
+insere arq1678 256Kb
+insere arq1679 256Kb
+insere arq1680 256Kb
+insere arq1681 256Kb
+insere arq1682 256Kb
+insere arq1683 256Kb
+insere arq1684 256Kb
+insere arq1685 256Kb
+insere arq1686 256Kb
+insere arq1687 256Kb
+insere arq1688 256Kb
+insere arq1689 256Kb
+insere arq1690 256Kb
+insere arq1691 256Kb
+insere arq1692 256Kb
+insere arq1693 256Kb
+insere arq1694 256Kb
+insere arq1695 256Kb
+insere arq1696 256Kb
+insere arq1697 256Kb
+insere arq1698 256Kb
+insere arq1699 256Kb
+insere arq1700 256Kb
+insere arq1701 256Kb
+insere arq1702 256Kb
+insere arq1703 256Kb
+insere arq1704 256Kb
+insere arq1705 256Kb
+insere arq1706 256Kb
+insere arq1707 256Kb
+insere arq1708 256Kb
+insere arq1709 256Kb
+insere arq1710 256Kb
+insere arq1711 256Kb
+insere arq1712 256Kb
+insere arq1713 256Kb
+insere arq1714 256Kb
+insere arq1715 256Kb
+insere arq1716 256Kb
+insere arq1717 256Kb
+insere arq1718 256Kb
+insere arq1719 256Kb
+insere arq1720 256Kb
+insere arq1721 256Kb
+insere arq1722 256Kb
+insere arq1723 256Kb
+insere arq1724 256Kb
+insere arq1725 256Kb
+insere arq1726 256Kb
+insere arq1727 256Kb
+insere arq1728 256Kb
+insere arq1729 256Kb
+insere arq1730 256Kb
+insere arq1731 256Kb
+insere arq1732 256Kb
+insere arq1733 256Kb
+insere arq1734 256Kb
+insere arq1735 256Kb
+insere arq1736 256Kb
+insere arq1737 256Kb
+insere arq1738 256Kb
+insere arq1739 256Kb
+insere arq1740 256Kb
+insere arq1741 256Kb
+insere arq1742 256Kb
+insere arq1743 256Kb
+insere arq1744 256Kb
+insere arq1745 256Kb
+insere arq1746 256Kb
+insere arq1747 256Kb
+insere arq1748 256Kb
+insere arq1749 256Kb
+insere arq1750 256Kb
+insere arq1751 256Kb
+insere arq1752 256Kb
+insere arq1753 256Kb
+insere arq1754 256Kb
+insere arq1755 256Kb
+insere arq1756 256Kb
+insere arq1757 256Kb
+insere arq1758 256Kb
+insere arq1759 256Kb
+insere arq1760 256Kb
+insere arq1761 256Kb
+insere arq1762 256Kb
+insere arq1763 256Kb
+insere arq1764 256Kb
+insere arq1765 256Kb
+insere arq1766 256Kb
+insere arq1767 256Kb
+insere arq1768 256Kb
+insere arq1769 256Kb
+insere arq1770 256Kb
+insere arq1771 256Kb
+insere arq1772 256Kb
+insere arq1773 256Kb
+insere arq1774 256Kb
+insere arq1775 256Kb
+insere arq1776 256Kb
+insere arq1777 256Kb
+insere arq1778 256Kb
+insere arq1779 256Kb
+insere arq1780 256Kb
+insere arq1781 256Kb
+insere arq1782 256Kb
+insere arq1783 256Kb
+insere arq1784 256Kb
+insere arq1785 256Kb
+insere arq1786 256Kb
+insere arq1787 256Kb
+insere arq1788 256Kb
+insere arq1789 256Kb
+insere arq1790 256Kb
+insere arq1791 256Kb
+insere arq1792 256Kb
+insere arq1793 256Kb
+insere arq1794 256Kb
+insere arq1795 256Kb
+insere arq1796 256Kb
+insere arq1797 256Kb
+insere arq1798 256Kb
+insere arq1799 256Kb
+insere arq1800 256Kb
+insere arq1801 256Kb
+insere arq1802 256Kb
+insere arq1803 256Kb
+insere arq1804 256Kb
+insere arq1805 256Kb
+insere arq1806 256Kb
+insere arq1807 256Kb
+insere arq1808 256Kb
+insere arq1809 256Kb
+insere arq1810 256Kb
+insere arq1811 256Kb
+insere arq1812 256Kb
+insere arq1813 256Kb
+insere arq1814 256Kb
+insere arq1815 256Kb
+insere arq1816 256Kb
+insere arq1817 256Kb
+insere arq1818 256Kb
+insere arq1819 256Kb
+insere arq1820 256Kb
+insere arq1821 256Kb
+insere arq1822 256Kb
+insere arq1823 256Kb
+insere arq1824 256Kb
+insere arq1825 256Kb
+insere arq1826 256Kb
+insere arq1827 256Kb
+insere arq1828 256Kb
+insere arq1829 256Kb
+insere arq1830 256Kb
+insere arq1831 256Kb
+insere arq1832 256Kb
+insere arq1833 256Kb
+insere arq1834 256Kb
+insere arq1835 256Kb
+insere arq1836 256Kb
+insere arq1837 256Kb
+insere arq1838 256Kb
+insere arq1839 256Kb
+insere arq1840 256Kb
+insere arq1841 256Kb
+insere arq1842 256Kb
+insere arq1843 256Kb
+insere arq1844 256Kb
+insere arq1845 256Kb
+insere arq1846 256Kb
+insere arq1847 256Kb
+insere arq1848 256Kb
+insere arq1849 256Kb
+insere arq1850 256Kb
+insere arq1851 256Kb
+insere arq1852 256Kb
+insere arq1853 256Kb
+insere arq1854 256Kb
+insere arq1855 256Kb
+insere arq1856 256Kb
+insere arq1857 256Kb
+insere arq1858 256Kb
+insere arq1859 256Kb
+insere arq1860 256Kb
+insere arq1861 256Kb
+insere arq1862 256Kb
+insere arq1863 256Kb
+insere arq1864 256Kb
+insere arq1865 256Kb
+insere arq1866 256Kb
+insere arq1867 256Kb
+insere arq1868 256Kb
+insere arq1869 256Kb
+insere arq1870 256Kb
+insere arq1871 256Kb
+insere arq1872 256Kb
+insere arq1873 256Kb
+insere arq1874 256Kb
+insere arq1875 256Kb
+insere arq1876 256Kb
+insere arq1877 256Kb
+insere arq1878 256Kb
+insere arq1879 256Kb
+insere arq1880 256Kb
+insere arq1881 256Kb
+insere arq1882 256Kb
+insere arq1883 256Kb
+insere arq1884 256Kb
+insere arq1885 256Kb
+insere arq1886 256Kb
+insere arq1887 256Kb
+insere arq1888 256Kb
+insere arq1889 256Kb
+insere arq1890 256Kb
+insere arq1891 256Kb
+insere arq1892 256Kb
+insere arq1893 256Kb
+insere arq1894 256Kb
+insere arq1895 256Kb
+insere arq1896 256Kb
+insere arq1897 256Kb
+insere arq1898 256Kb
+insere arq1899 256Kb
+insere arq1900 256Kb
+insere arq1901 256Kb
+insere arq1902 256Kb
+insere arq1903 256Kb
+insere arq1904 256Kb
+insere arq1905 256Kb
+insere arq1906 256Kb
+insere arq1907 256Kb
+insere arq1908 256Kb
+insere arq1909 256Kb
+insere arq1910 256Kb
+insere arq1911 256Kb
+insere arq1912 256Kb
+insere arq1913 256Kb
+insere arq1914 256Kb
+insere arq1915 256Kb
+insere arq1916 256Kb
+insere arq1917 256Kb
+insere arq1918 256Kb
+insere arq1919 256Kb
+insere arq1920 256Kb
+insere arq1921 256Kb
+insere arq1922 256Kb
+insere arq1923 256Kb
+insere arq1924 256Kb
+insere arq1925 256Kb
+insere arq1926 256Kb
+insere arq1927 256Kb
+insere arq1928 256Kb
+insere arq1929 256Kb
+insere arq1930 256Kb
+insere arq1931 256Kb
+insere arq1932 256Kb
+insere arq1933 256Kb
+insere arq1934 256Kb
+insere arq1935 256Kb
+insere arq1936 256Kb
+insere arq1937 256Kb
+insere arq1938 256Kb
+insere arq1939 256Kb
+insere arq1940 256Kb
+insere arq1941 256Kb
+insere arq1942 256Kb
+insere arq1943 256Kb
+insere arq1944 256Kb
+insere arq1945 256Kb
+insere arq1946 256Kb
+insere arq1947 256Kb
+insere arq1948 256Kb
+insere arq1949 256Kb
+insere arq1950 256Kb
+insere arq1951 256Kb
+insere arq1952 256Kb
+insere arq1953 256Kb
+insere arq1954 256Kb
+insere arq1955 256Kb
+insere arq1956 256Kb
+insere arq1957 256Kb
+insere arq1958 256Kb
+insere arq1959 256Kb
+insere arq1960 256Kb
+insere arq1961 256Kb
+insere arq1962 256Kb
+insere arq1963 256Kb
+insere arq1964 256Kb
+insere arq1965 256Kb
+insere arq1966 256Kb
+insere arq1967 256Kb
+insere arq1968 256Kb
+insere arq1969 256Kb
+insere arq1970 256Kb
+insere arq1971 256Kb
+insere arq1972 256Kb
+insere arq1973 256Kb
+insere arq1974 256Kb
+insere arq1975 256Kb
+insere arq1976 256Kb
+insere arq1977 256Kb
+insere arq1978 256Kb
+insere arq1979 256Kb
+insere arq1980 256Kb
+insere arq1981 256Kb
+insere arq1982 256Kb
+insere arq1983 256Kb
+insere arq1984 256Kb
+insere arq1985 256Kb
+insere arq1986 256Kb
+insere arq1987 256Kb
+insere arq1988 256Kb
+insere arq1989 256Kb
+insere arq1990 256Kb
+insere arq1991 256Kb
+insere arq1992 256Kb
+insere arq1993 256Kb
+insere arq1994 256Kb
+insere arq1995 256Kb
+insere arq1996 256Kb
+insere arq1997 256Kb
+insere arq1998 256Kb
+insere arq1999 256Kb
+insere arq2000 256Kb
+insere arq2001 256Kb
+insere arq2002 256Kb
+insere arq2003 256Kb
+insere arq2004 256Kb
+insere arq2005 256Kb
+insere arq2006 256Kb
+insere arq2007 256Kb
+insere arq2008 256Kb
+insere arq2009 256Kb
+insere arq2010 256Kb
+insere arq2011 256Kb
+insere arq2012 256Kb
+insere arq2013 256Kb
+insere arq2014 256Kb
+insere arq2015 256Kb
+insere arq2016 256Kb
+insere arq2017 256Kb
+insere arq2018 256Kb
+insere arq2019 256Kb
+insere arq2020 256Kb
+insere arq2021 256Kb
+insere arq2022 256Kb
+insere arq2023 256Kb
+insere arq2024 256Kb
+insere arq2025 256Kb
+insere arq2026 256Kb
+insere arq2027 256Kb
+insere arq2028 256Kb
+insere arq2029 256Kb
+insere arq2030 256Kb
+insere arq2031 256Kb
+insere arq2032 256Kb
+insere arq2033 256Kb
+insere arq2034 256Kb
+insere arq2035 256Kb
+insere arq2036 256Kb
+insere arq2037 256Kb
+insere arq2038 256Kb
+insere arq2039 256Kb
+insere arq2040 256Kb
+insere arq2041 256Kb
+insere arq2042 256Kb
+insere arq2043 256Kb
+insere arq2044 256Kb
+insere arq2045 256Kb
+insere arq2046 256Kb
+insere arq2047 256Kb
+insere arq2048 256Kb
+insere arq2049 256Kb
+insere arq2050 256Kb
+insere arq2051 256Kb
+insere arq2052 256Kb
+insere arq2053 256Kb
+insere arq2054 256Kb
+insere arq2055 256Kb
+insere arq2056 256Kb
+insere arq2057 256Kb
+insere arq2058 256Kb
+insere arq2059 256Kb
+insere arq2060 256Kb
+insere arq2061 256Kb
+insere arq2062 256Kb
+insere arq2063 256Kb
+insere arq2064 256Kb
+insere arq2065 256Kb
+insere arq2066 256Kb
+insere arq2067 256Kb
+insere arq2068 256Kb
+insere arq2069 256Kb
+insere arq2070 256Kb
+insere arq2071 256Kb
+insere arq2072 256Kb
+insere arq2073 256Kb
+insere arq2074 256Kb
+insere arq2075 256Kb
+insere arq2076 256Kb
+insere arq2077 256Kb
+insere arq2078 256Kb
+insere arq2079 256Kb
+insere arq2080 256Kb
+insere arq2081 256Kb
+insere arq2082 256Kb
+insere arq2083 256Kb
+insere arq2084 256Kb
+insere arq2085 256Kb
+insere arq2086 256Kb
+insere arq2087 256Kb
+insere arq2088 256Kb
+insere arq2089 256Kb
+insere arq2090 256Kb
+insere arq2091 256Kb
+insere arq2092 256Kb
+insere arq2093 256Kb
+insere arq2094 256Kb
+insere arq2095 256Kb
+insere arq2096 256Kb
+insere arq2097 256Kb
+insere arq2098 256Kb
+insere arq2099 256Kb
+insere arq2100 256Kb
+insere arq2101 256Kb
+insere arq2102 256Kb
+insere arq2103 256Kb
+insere arq2104 256Kb
+insere arq2105 256Kb
+insere arq2106 256Kb
+insere arq2107 256Kb
+insere arq2108 256Kb
+insere arq2109 256Kb
+insere arq2110 256Kb
+insere arq2111 256Kb
+insere arq2112 256Kb
+insere arq2113 256Kb
+insere arq2114 256Kb
+insere arq2115 256Kb
+insere arq2116 256Kb
+insere arq2117 256Kb
+insere arq2118 256Kb
+insere arq2119 256Kb
+insere arq2120 256Kb
+insere arq2121 256Kb
+insere arq2122 256Kb
+insere arq2123 256Kb
+insere arq2124 256Kb
+insere arq2125 256Kb
+insere arq2126 256Kb
+insere arq2127 256Kb
+insere arq2128 256Kb
+insere arq2129 256Kb
+insere arq2130 256Kb
+insere arq2131 256Kb
+insere arq2132 256Kb
+insere arq2133 256Kb
+insere arq2134 256Kb
+insere arq2135 256Kb
+insere arq2136 256Kb
+insere arq2137 256Kb
+insere arq2138 256Kb
+insere arq2139 256Kb
+insere arq2140 256Kb
+insere arq2141 256Kb
+insere arq2142 256Kb
+insere arq2143 256Kb
+insere arq2144 256Kb
+insere arq2145 256Kb
+insere arq2146 256Kb
+insere arq2147 256Kb
+insere arq2148 256Kb
+insere arq2149 256Kb
+insere arq2150 256Kb
+insere arq2151 256Kb
+insere arq2152 256Kb
+insere arq2153 256Kb
+insere arq2154 256Kb
+insere arq2155 256Kb
+insere arq2156 256Kb
+insere arq2157 256Kb
+insere arq2158 256Kb
+insere arq2159 256Kb
+insere arq2160 256Kb
+insere arq2161 256Kb
+insere arq2162 256Kb
+insere arq2163 256Kb
+insere arq2164 256Kb
+insere arq2165 256Kb
+insere arq2166 256Kb
+insere arq2167 256Kb
+insere arq2168 256Kb
+insere arq2169 256Kb
+insere arq2170 256Kb
+insere arq2171 256Kb
+insere arq2172 256Kb
+insere arq2173 256Kb
+insere arq2174 256Kb
+insere arq2175 256Kb
+insere arq2176 256Kb
+insere arq2177 256Kb
+insere arq2178 256Kb
+insere arq2179 256Kb
+insere arq2180 256Kb
+insere arq2181 256Kb
+insere arq2182 256Kb
+insere arq2183 256Kb
+insere arq2184 256Kb
+insere arq2185 256Kb
+insere arq2186 256Kb
+insere arq2187 256Kb
+insere arq2188 256Kb
+insere arq2189 256Kb
+insere arq2190 256Kb
+insere arq2191 256Kb
+insere arq2192 256Kb
+insere arq2193 256Kb
+insere arq2194 256Kb
+insere arq2195 256Kb
+insere arq2196 256Kb
+insere arq2197 256Kb
+insere arq2198 256Kb
+insere arq2199 256Kb
+insere arq2200 256Kb
+insere arq2201 256Kb
+insere arq2202 256Kb
+insere arq2203 256Kb
+insere arq2204 256Kb
+insere arq2205 256Kb
+insere arq2206 256Kb
+insere arq2207 256Kb
+insere arq2208 256Kb
+insere arq2209 256Kb
+insere arq2210 256Kb
+insere arq2211 256Kb
+insere arq2212 256Kb
+insere arq2213 256Kb
+insere arq2214 256Kb
+insere arq2215 256Kb
+insere arq2216 256Kb
+insere arq2217 256Kb
+insere arq2218 256Kb
+insere arq2219 256Kb
+insere arq2220 256Kb
+insere arq2221 256Kb
+insere arq2222 256Kb
+insere arq2223 256Kb
+insere arq2224 256Kb
+insere arq2225 256Kb
+insere arq2226 256Kb
+insere arq2227 256Kb
+insere arq2228 256Kb
+insere arq2229 256Kb
+insere arq2230 256Kb
+insere arq2231 256Kb
+insere arq2232 256Kb
+insere arq2233 256Kb
+insere arq2234 256Kb
+insere arq2235 256Kb
+insere arq2236 256Kb
+insere arq2237 256Kb
+insere arq2238 256Kb
+insere arq2239 256Kb
+insere arq2240 256Kb
+insere arq2241 256Kb
+insere arq2242 256Kb
+insere arq2243 256Kb
+insere arq2244 256Kb
+insere arq2245 256Kb
+insere arq2246 256Kb
+insere arq2247 256Kb
+insere arq2248 256Kb
+insere arq2249 256Kb
+insere arq2250 256Kb
+insere arq2251 256Kb
+insere arq2252 256Kb
+insere arq2253 256Kb
+insere arq2254 256Kb
+insere arq2255 256Kb
+insere arq2256 256Kb
+insere arq2257 256Kb
+insere arq2258 256Kb
+insere arq2259 256Kb
+insere arq2260 256Kb
+insere arq2261 256Kb
+insere arq2262 256Kb
+insere arq2263 256Kb
+insere arq2264 256Kb
+insere arq2265 256Kb
+insere arq2266 256Kb
+insere arq2267 256Kb
+insere arq2268 256Kb
+insere arq2269 256Kb
+insere arq2270 256Kb
+insere arq2271 256Kb
+insere arq2272 256Kb
+insere arq2273 256Kb
+insere arq2274 256Kb
+insere arq2275 256Kb
+insere arq2276 256Kb
+insere arq2277 256Kb
+insere arq2278 256Kb
+insere arq2279 256Kb
+insere arq2280 256Kb
+insere arq2281 256Kb
+insere arq2282 256Kb
+insere arq2283 256Kb
+insere arq2284 256Kb
+insere arq2285 256Kb
+insere arq2286 256Kb
+insere arq2287 256Kb
+insere arq2288 256Kb
+insere arq2289 256Kb
+insere arq2290 256Kb
+insere arq2291 256Kb
+insere arq2292 256Kb
+insere arq2293 256Kb
+insere arq2294 256Kb
+insere arq2295 256Kb
+insere arq2296 256Kb
+insere arq2297 256Kb
+insere arq2298 256Kb
+insere arq2299 256Kb
+insere arq2300 256Kb
+insere arq2301 256Kb
+insere arq2302 256Kb
+insere arq2303 256Kb
+insere arq2304 256Kb
+insere arq2305 256Kb
+insere arq2306 256Kb
+insere arq2307 256Kb
+insere arq2308 256Kb
+insere arq2309 256Kb
+insere arq2310 256Kb
+insere arq2311 256Kb
+insere arq2312 256Kb
+insere arq2313 256Kb
+insere arq2314 256Kb
+insere arq2315 256Kb
+insere arq2316 256Kb
+insere arq2317 256Kb
+insere arq2318 256Kb
+insere arq2319 256Kb
+insere arq2320 256Kb
+insere arq2321 256Kb
+insere arq2322 256Kb
+insere arq2323 256Kb
+insere arq2324 256Kb
+insere arq2325 256Kb
+insere arq2326 256Kb
+insere arq2327 256Kb
+insere arq2328 256Kb
+insere arq2329 256Kb
+insere arq2330 256Kb
+insere arq2331 256Kb
+insere arq2332 256Kb
+insere arq2333 256Kb
+insere arq2334 256Kb
+insere arq2335 256Kb
+insere arq2336 256Kb
+insere arq2337 256Kb
+insere arq2338 256Kb
+insere arq2339 256Kb
+insere arq2340 256Kb
+insere arq2341 256Kb
+insere arq2342 256Kb
+insere arq2343 256Kb
+insere arq2344 256Kb
+insere arq2345 256Kb
+insere arq2346 256Kb
+insere arq2347 256Kb
+insere arq2348 256Kb
+insere arq2349 256Kb
+insere arq2350 256Kb
+insere arq2351 256Kb
+insere arq2352 256Kb
+insere arq2353 256Kb
+insere arq2354 256Kb
+insere arq2355 256Kb
+insere arq2356 256Kb
+insere arq2357 256Kb
+insere arq2358 256Kb
+insere arq2359 256Kb
+insere arq2360 256Kb
+insere arq2361 256Kb
+insere arq2362 256Kb
+insere arq2363 256Kb
+insere arq2364 256Kb
+insere arq2365 256Kb
+insere arq2366 256Kb
+insere arq2367 256Kb
+insere arq2368 256Kb
+insere arq2369 256Kb
+insere arq2370 256Kb
+insere arq2371 256Kb
+insere arq2372 256Kb
+insere arq2373 256Kb
+insere arq2374 256Kb
+insere arq2375 256Kb
+insere arq2376 256Kb
+insere arq2377 256Kb
+insere arq2378 256Kb
+insere arq2379 256Kb
+insere arq2380 256Kb
+insere arq2381 256Kb
+insere arq2382 256Kb
+insere arq2383 256Kb
+insere arq2384 256Kb
+insere arq2385 256Kb
+insere arq2386 256Kb
+insere arq2387 256Kb
+insere arq2388 256Kb
+insere arq2389 256Kb
+insere arq2390 256Kb
+insere arq2391 256Kb
+insere arq2392 256Kb
+insere arq2393 256Kb
+insere arq2394 256Kb
+insere arq2395 256Kb
+insere arq2396 256Kb
+insere arq2397 256Kb
+insere arq2398 256Kb
+insere arq2399 256Kb
+insere arq2400 256Kb
+insere arq2401 256Kb
+insere arq2402 256Kb
+insere arq2403 256Kb
+insere arq2404 256Kb
+insere arq2405 256Kb
+insere arq2406 256Kb
+insere arq2407 256Kb
+insere arq2408 256Kb
+insere arq2409 256Kb
+insere arq2410 256Kb
+insere arq2411 256Kb
+insere arq2412 256Kb
+insere arq2413 256Kb
+insere arq2414 256Kb
+insere arq2415 256Kb
+insere arq2416 256Kb
+insere arq2417 256Kb
+insere arq2418 256Kb
+insere arq2419 256Kb
+insere arq2420 256Kb
+insere arq2421 256Kb
+insere arq2422 256Kb
+insere arq2423 256Kb
+insere arq2424 256Kb
+insere arq2425 256Kb
+insere arq2426 256Kb
+insere arq2427 256Kb
+insere arq2428 256Kb
+insere arq2429 256Kb
+insere arq2430 256Kb
+insere arq2431 256Kb
+insere arq2432 256Kb
+insere arq2433 256Kb
+insere arq2434 256Kb
+insere arq2435 256Kb
+insere arq2436 256Kb
+insere arq2437 256Kb
+insere arq2438 256Kb
+insere arq2439 256Kb
+insere arq2440 256Kb
+insere arq2441 256Kb
+insere arq2442 256Kb
+insere arq2443 256Kb
+insere arq2444 256Kb
+insere arq2445 256Kb
+insere arq2446 256Kb
+insere arq2447 256Kb
+insere arq2448 256Kb
+insere arq2449 256Kb
+insere arq2450 256Kb
+insere arq2451 256Kb
+insere arq2452 256Kb
+insere arq2453 256Kb
+insere arq2454 256Kb
+insere arq2455 256Kb
+insere arq2456 256Kb
+insere arq2457 256Kb
+insere arq2458 256Kb
+insere arq2459 256Kb
+insere arq2460 256Kb
+insere arq2461 256Kb
+insere arq2462 256Kb
+insere arq2463 256Kb
+insere arq2464 256Kb
+insere arq2465 256Kb
+insere arq2466 256Kb
+insere arq2467 256Kb
+insere arq2468 256Kb
+insere arq2469 256Kb
+insere arq2470 256Kb
+insere arq2471 256Kb
+insere arq2472 256Kb
+insere arq2473 256Kb
+insere arq2474 256Kb
+insere arq2475 256Kb
+insere arq2476 256Kb
+insere arq2477 256Kb
+insere arq2478 256Kb
+insere arq2479 256Kb
+insere arq2480 256Kb
+insere arq2481 256Kb
+insere arq2482 256Kb
+insere arq2483 256Kb
+insere arq2484 256Kb
+insere arq2485 256Kb
+insere arq2486 256Kb
+insere arq2487 256Kb
+insere arq2488 256Kb
+insere arq2489 256Kb
+insere arq2490 256Kb
+insere arq2491 256Kb
+insere arq2492 256Kb
+insere arq2493 256Kb
+insere arq2494 256Kb
+insere arq2495 256Kb
+insere arq2496 256Kb
+insere arq2497 256Kb
+insere arq2498 256Kb
+insere arq2499 256Kb
+insere arq2500 256Kb
+insere arq2501 256Kb
+insere arq2502 256Kb
+insere arq2503 256Kb
+insere arq2504 256Kb
+insere arq2505 256Kb
+insere arq2506 256Kb
+insere arq2507 256Kb
+insere arq2508 256Kb
+insere arq2509 256Kb
+insere arq2510 256Kb
+insere arq2511 256Kb
+insere arq2512 256Kb
+insere arq2513 256Kb
+insere arq2514 256Kb
+insere arq2515 256Kb
+insere arq2516 256Kb
+insere arq2517 256Kb
+insere arq2518 256Kb
+insere arq2519 256Kb
+insere arq2520 256Kb
+insere arq2521 256Kb
+insere arq2522 256Kb
+insere arq2523 256Kb
+insere arq2524 256Kb
+insere arq2525 256Kb
+insere arq2526 256Kb
+insere arq2527 256Kb
+insere arq2528 256Kb
+insere arq2529 256Kb
+insere arq2530 256Kb
+insere arq2531 256Kb
+insere arq2532 256Kb
+insere arq2533 256Kb
+insere arq2534 256Kb
+insere arq2535 256Kb
+insere arq2536 256Kb
+insere arq2537 256Kb
+insere arq2538 256Kb
+insere arq2539 256Kb
+insere arq2540 256Kb
+insere arq2541 256Kb
+insere arq2542 256Kb
+insere arq2543 256Kb
+insere arq2544 256Kb
+insere arq2545 256Kb
+insere arq2546 256Kb
+insere arq2547 256Kb
+insere arq2548 256Kb
+insere arq2549 256Kb
+insere arq2550 256Kb
+insere arq2551 256Kb
+insere arq2552 256Kb
+insere arq2553 256Kb
+insere arq2554 256Kb
+insere arq2555 256Kb
+insere arq2556 256Kb
+insere arq2557 256Kb
+insere arq2558 256Kb
+insere arq2559 256Kb
+insere arq2560 256Kb
+insere arq2561 256Kb
+insere arq2562 256Kb
+insere arq2563 256Kb
+insere arq2564 256Kb
+insere arq2565 256Kb
+insere arq2566 256Kb
+insere arq2567 256Kb
+insere arq2568 256Kb
+insere arq2569 256Kb
+insere arq2570 256Kb
+insere arq2571 256Kb
+insere arq2572 256Kb
+insere arq2573 256Kb
+insere arq2574 256Kb
+insere arq2575 256Kb
+insere arq2576 256Kb
+insere arq2577 256Kb
+insere arq2578 256Kb
+insere arq2579 256Kb
+insere arq2580 256Kb
+insere arq2581 256Kb
+insere arq2582 256Kb
+insere arq2583 256Kb
+insere arq2584 256Kb
+insere arq2585 256Kb
+insere arq2586 256Kb
+insere arq2587 256Kb
+insere arq2588 256Kb
+insere arq2589 256Kb
+insere arq2590 256Kb
+insere arq2591 256Kb
+insere arq2592 256Kb
+insere arq2593 256Kb
+insere arq2594 256Kb
+insere arq2595 256Kb
+insere arq2596 256Kb
+insere arq2597 256Kb
+insere arq2598 256Kb
+insere arq2599 256Kb
+insere arq2600 256Kb
+insere arq2601 256Kb
+insere arq2602 256Kb
+insere arq2603 256Kb
+insere arq2604 256Kb
+insere arq2605 256Kb
+insere arq2606 256Kb
+insere arq2607 256Kb
+insere arq2608 256Kb
+insere arq2609 256Kb
+insere arq2610 256Kb
+insere arq2611 256Kb
+insere arq2612 256Kb
+insere arq2613 256Kb
+insere arq2614 256Kb
+insere arq2615 256Kb
+insere arq2616 256Kb
+insere arq2617 256Kb
+insere arq2618 256Kb
+insere arq2619 256Kb
+insere arq2620 256Kb
+insere arq2621 256Kb
+insere arq2622 256Kb
+insere arq2623 256Kb
+insere arq2624 256Kb
+insere arq2625 256Kb
+insere arq2626 256Kb
+insere arq2627 256Kb
+insere arq2628 256Kb
+insere arq2629 256Kb
+insere arq2630 256Kb
+insere arq2631 256Kb
+insere arq2632 256Kb
+insere arq2633 256Kb
+insere arq2634 256Kb
+insere arq2635 256Kb
+insere arq2636 256Kb
+insere arq2637 256Kb
+insere arq2638 256Kb
+insere arq2639 256Kb
+insere arq2640 256Kb
+insere arq2641 256Kb
+insere arq2642 256Kb
+insere arq2643 256Kb
+insere arq2644 256Kb
+insere arq2645 256Kb
+insere arq2646 256Kb
+insere arq2647 256Kb
+insere arq2648 256Kb
+insere arq2649 256Kb
+insere arq2650 256Kb
+insere arq2651 256Kb
+insere arq2652 256Kb
+insere arq2653 256Kb
+insere arq2654 256Kb
+insere arq2655 256Kb
+insere arq2656 256Kb
+insere arq2657 256Kb
+insere arq2658 256Kb
+insere arq2659 256Kb
+insere arq2660 256Kb
+insere arq2661 256Kb
+insere arq2662 256Kb
+insere arq2663 256Kb
+insere arq2664 256Kb
+insere arq2665 256Kb
+insere arq2666 256Kb
+insere arq2667 256Kb
+insere arq2668 256Kb
+insere arq2669 256Kb
+insere arq2670 256Kb
+insere arq2671 256Kb
+insere arq2672 256Kb
+insere arq2673 256Kb
+insere arq2674 256Kb
+insere arq2675 256Kb
+insere arq2676 256Kb
+insere arq2677 256Kb
+insere arq2678 256Kb
+insere arq2679 256Kb
+insere arq2680 256Kb
+insere arq2681 256Kb
+insere arq2682 256Kb
+insere arq2683 256Kb
+insere arq2684 256Kb
+insere arq2685 256Kb
+insere arq2686 256Kb
+insere arq2687 256Kb
+insere arq2688 256Kb
+insere arq2689 256Kb
+insere arq2690 256Kb
+insere arq2691 256Kb
+insere arq2692 256Kb
+insere arq2693 256Kb
+insere arq2694 256Kb
+insere arq2695 256Kb
+insere arq2696 256Kb
+insere arq2697 256Kb
+insere arq2698 256Kb
+insere arq2699 256Kb
+insere arq2700 256Kb
+insere arq2701 256Kb
+insere arq2702 256Kb
+insere arq2703 256Kb
+insere arq2704 256Kb
+insere arq2705 256Kb
+insere arq2706 256Kb
+insere arq2707 256Kb
+insere arq2708 256Kb
+insere arq2709 256Kb
+insere arq2710 256Kb
+insere arq2711 256Kb
+insere arq2712 256Kb
+insere arq2713 256Kb
+insere arq2714 256Kb
+insere arq2715 256Kb
+insere arq2716 256Kb
+insere arq2717 256Kb
+insere arq2718 256Kb
+insere arq2719 256Kb
+insere arq2720 256Kb
+insere arq2721 256Kb
+insere arq2722 256Kb
+insere arq2723 256Kb
+insere arq2724 256Kb
+insere arq2725 256Kb
+insere arq2726 256Kb
+insere arq2727 256Kb
+insere arq2728 256Kb
+insere arq2729 256Kb
+insere arq2730 256Kb
+insere arq2731 256Kb
+insere arq2732 256Kb
+insere arq2733 256Kb
+insere arq2734 256Kb
+insere arq2735 256Kb
+insere arq2736 256Kb
+insere arq2737 256Kb
+insere arq2738 256Kb
+insere arq2739 256Kb
+insere arq2740 256Kb
+insere arq2741 256Kb
+insere arq2742 256Kb
+insere arq2743 256Kb
+insere arq2744 256Kb
+insere arq2745 256Kb
+insere arq2746 256Kb
+insere arq2747 256Kb
+insere arq2748 256Kb
+insere arq2749 256Kb
+insere arq2750 256Kb
+insere arq2751 256Kb
+insere arq2752 256Kb
+insere arq2753 256Kb
+insere arq2754 256Kb
+insere arq2755 256Kb
+insere arq2756 256Kb
+insere arq2757 256Kb
+insere arq2758 256Kb
+insere arq2759 256Kb
+insere arq2760 256Kb
+insere arq2761 256Kb
+insere arq2762 256Kb
+insere arq2763 256Kb
+insere arq2764 256Kb
+insere arq2765 256Kb
+insere arq2766 256Kb
+insere arq2767 256Kb
+insere arq2768 256Kb
+insere arq2769 256Kb
+insere arq2770 256Kb
+insere arq2771 256Kb
+insere arq2772 256Kb
+insere arq2773 256Kb
+insere arq2774 256Kb
+insere arq2775 256Kb
+insere arq2776 256Kb
+insere arq2777 256Kb
+insere arq2778 256Kb
+insere arq2779 256Kb
+insere arq2780 256Kb
+insere arq2781 256Kb
+insere arq2782 256Kb
+insere arq2783 256Kb
+insere arq2784 256Kb
+insere arq2785 256Kb
+insere arq2786 256Kb
+insere arq2787 256Kb
+insere arq2788 256Kb
+insere arq2789 256Kb
+insere arq2790 256Kb
+insere arq2791 256Kb
+insere arq2792 256Kb
+insere arq2793 256Kb
+insere arq2794 256Kb
+insere arq2795 256Kb
+insere arq2796 256Kb
+insere arq2797 256Kb
+insere arq2798 256Kb
+insere arq2799 256Kb
+insere arq2800 256Kb
+insere arq2801 256Kb
+insere arq2802 256Kb
+insere arq2803 256Kb
+insere arq2804 256Kb
+insere arq2805 256Kb
+insere arq2806 256Kb
+insere arq2807 256Kb
+insere arq2808 256Kb
+insere arq2809 256Kb
+insere arq2810 256Kb
+insere arq2811 256Kb
+insere arq2812 256Kb
+insere arq2813 256Kb
+insere arq2814 256Kb
+insere arq2815 256Kb
+insere arq2816 256Kb
+insere arq2817 256Kb
+insere arq2818 256Kb
+insere arq2819 256Kb
+insere arq2820 256Kb
+insere arq2821 256Kb
+insere arq2822 256Kb
+insere arq2823 256Kb
+insere arq2824 256Kb
+insere arq2825 256Kb
+insere arq2826 256Kb
+insere arq2827 256Kb
+insere arq2828 256Kb
+insere arq2829 256Kb
+insere arq2830 256Kb
+insere arq2831 256Kb
+insere arq2832 256Kb
+insere arq2833 256Kb
+insere arq2834 256Kb
+insere arq2835 256Kb
+insere arq2836 256Kb
+insere arq2837 256Kb
+insere arq2838 256Kb
+insere arq2839 256Kb
+insere arq2840 256Kb
+insere arq2841 256Kb
+insere arq2842 256Kb
+insere arq2843 256Kb
+insere arq2844 256Kb
+insere arq2845 256Kb
+insere arq2846 256Kb
+insere arq2847 256Kb
+insere arq2848 256Kb
+insere arq2849 256Kb
+insere arq2850 256Kb
+insere arq2851 256Kb
+insere arq2852 256Kb
+insere arq2853 256Kb
+insere arq2854 256Kb
+insere arq2855 256Kb
+insere arq2856 256Kb
+insere arq2857 256Kb
+insere arq2858 256Kb
+insere arq2859 256Kb
+insere arq2860 256Kb
+insere arq2861 256Kb
+insere arq2862 256Kb
+insere arq2863 256Kb
+insere arq2864 256Kb
+insere arq2865 256Kb
+insere arq2866 256Kb
+insere arq2867 256Kb
+insere arq2868 256Kb
+insere arq2869 256Kb
+insere arq2870 256Kb
+insere arq2871 256Kb
+insere arq2872 256Kb
+insere arq2873 256Kb
+insere arq2874 256Kb
+insere arq2875 256Kb
+insere arq2876 256Kb
+insere arq2877 256Kb
+insere arq2878 256Kb
+insere arq2879 256Kb
+insere arq2880 256Kb
+insere arq2881 256Kb
+insere arq2882 256Kb
+insere arq2883 256Kb
+insere arq2884 256Kb
+insere arq2885 256Kb
+insere arq2886 256Kb
+insere arq2887 256Kb
+insere arq2888 256Kb
+insere arq2889 256Kb
+insere arq2890 256Kb
+insere arq2891 256Kb
+insere arq2892 256Kb
+insere arq2893 256Kb
+insere arq2894 256Kb
+insere arq2895 256Kb
+insere arq2896 256Kb
+insere arq2897 256Kb
+insere arq2898 256Kb
+insere arq2899 256Kb
+insere arq2900 256Kb
+insere arq2901 256Kb
+insere arq2902 256Kb
+insere arq2903 256Kb
+insere arq2904 256Kb
+insere arq2905 256Kb
+insere arq2906 256Kb
+insere arq2907 256Kb
+insere arq2908 256Kb
+insere arq2909 256Kb
+insere arq2910 256Kb
+insere arq2911 256Kb
+insere arq2912 256Kb
+insere arq2913 256Kb
+insere arq2914 256Kb
+insere arq2915 256Kb
+insere arq2916 256Kb
+insere arq2917 256Kb
+insere arq2918 256Kb
+insere arq2919 256Kb
+insere arq2920 256Kb
+insere arq2921 256Kb
+insere arq2922 256Kb
+insere arq2923 256Kb
+insere arq2924 256Kb
+insere arq2925 256Kb
+insere arq2926 256Kb
+insere arq2927 256Kb
+insere arq2928 256Kb
+insere arq2929 256Kb
+insere arq2930 256Kb
+insere arq2931 256Kb
+insere arq2932 256Kb
+insere arq2933 256Kb
+insere arq2934 256Kb
+insere arq2935 256Kb
+insere arq2936 256Kb
+insere arq2937 256Kb
+insere arq2938 256Kb
+insere arq2939 256Kb
+insere arq2940 256Kb
+insere arq2941 256Kb
+insere arq2942 256Kb
+insere arq2943 256Kb
+insere arq2944 256Kb
+insere arq2945 256Kb
+insere arq2946 256Kb
+insere arq2947 256Kb
+insere arq2948 256Kb
+insere arq2949 256Kb
+insere arq2950 256Kb
+insere arq2951 256Kb
+insere arq2952 256Kb
+insere arq2953 256Kb
+insere arq2954 256Kb
+insere arq2955 256Kb
+insere arq2956 256Kb
+insere arq2957 256Kb
+insere arq2958 256Kb
+insere arq2959 256Kb
+insere arq2960 256Kb
+insere arq2961 256Kb
+insere arq2962 256Kb
+insere arq2963 256Kb
+insere arq2964 256Kb
+insere arq2965 256Kb
+insere arq2966 256Kb
+insere arq2967 256Kb
+insere arq2968 256Kb
+insere arq2969 256Kb
+insere arq2970 256Kb
+insere arq2971 256Kb
+insere arq2972 256Kb
+insere arq2973 256Kb
+insere arq2974 256Kb
+insere arq2975 256Kb
+insere arq2976 256Kb
+insere arq2977 256Kb
+insere arq2978 256Kb
+insere arq2979 256Kb
+insere arq2980 256Kb
+insere arq2981 256Kb
+insere arq2982 256Kb
+insere arq2983 256Kb
+insere arq2984 256Kb
+insere arq2985 256Kb
+insere arq2986 256Kb
+insere arq2987 256Kb
+insere arq2988 256Kb
+insere arq2989 256Kb
+insere arq2990 256Kb
+insere arq2991 256Kb
+insere arq2992 256Kb
+insere arq2993 256Kb
+insere arq2994 256Kb
+insere arq2995 256Kb
+insere arq2996 256Kb
+insere arq2997 256Kb
+insere arq2998 256Kb
+insere arq2999 256Kb
+insere arq3000 256Kb
+insere arq3001 256Kb
+insere arq3002 256Kb
+insere arq3003 256Kb
+insere arq3004 256Kb
+insere arq3005 256Kb
+insere arq3006 256Kb
+insere arq3007 256Kb
+insere arq3008 256Kb
+insere arq3009 256Kb
+insere arq3010 256Kb
+insere arq3011 256Kb
+insere arq3012 256Kb
+insere arq3013 256Kb
+insere arq3014 256Kb
+insere arq3015 256Kb
+insere arq3016 256Kb
+insere arq3017 256Kb
+insere arq3018 256Kb
+insere arq3019 256Kb
+insere arq3020 256Kb
+insere arq3021 256Kb
+insere arq3022 256Kb
+insere arq3023 256Kb
+insere arq3024 256Kb
+insere arq3025 256Kb
+insere arq3026 256Kb
+insere arq3027 256Kb
+insere arq3028 256Kb
+insere arq3029 256Kb
+insere arq3030 256Kb
+insere arq3031 256Kb
+insere arq3032 256Kb
+insere arq3033 256Kb
+insere arq3034 256Kb
+insere arq3035 256Kb
+insere arq3036 256Kb
+insere arq3037 256Kb
+insere arq3038 256Kb
+insere arq3039 256Kb
+insere arq3040 256Kb
+insere arq3041 256Kb
+insere arq3042 256Kb
+insere arq3043 256Kb
+insere arq3044 256Kb
+insere arq3045 256Kb
+insere arq3046 256Kb
+insere arq3047 256Kb
+insere arq3048 256Kb
+insere arq3049 256Kb
+insere arq3050 256Kb
+insere arq3051 256Kb
+insere arq3052 256Kb
+insere arq3053 256Kb
+insere arq3054 256Kb
+insere arq3055 256Kb
+insere arq3056 256Kb
+insere arq3057 256Kb
+insere arq3058 256Kb
+insere arq3059 256Kb
+insere arq3060 256Kb
+insere arq3061 256Kb
+insere arq3062 256Kb
+insere arq3063 256Kb
+insere arq3064 256Kb
+insere arq3065 256Kb
+insere arq3066 256Kb
+insere arq3067 256Kb
+insere arq3068 256Kb
+insere arq3069 256Kb
+insere arq3070 256Kb
+insere arq3071 256Kb
+insere arq3072 256Kb
+insere arq3073 256Kb
+insere arq3074 256Kb
+insere arq3075 256Kb
+insere arq3076 256Kb
+insere arq3077 256Kb
+insere arq3078 256Kb
+insere arq3079 256Kb
+insere arq3080 256Kb
+insere arq3081 256Kb
+insere arq3082 256Kb
+insere arq3083 256Kb
+insere arq3084 256Kb
+insere arq3085 256Kb
+insere arq3086 256Kb
+insere arq3087 256Kb
+insere arq3088 256Kb
+insere arq3089 256Kb
+insere arq3090 256Kb
+insere arq3091 256Kb
+insere arq3092 256Kb
+insere arq3093 256Kb
+insere arq3094 256Kb
+insere arq3095 256Kb
+insere arq3096 256Kb
+insere arq3097 256Kb
+insere arq3098 256Kb
+insere arq3099 256Kb
+insere arq3100 256Kb
+insere arq3101 256Kb
+insere arq3102 256Kb
+insere arq3103 256Kb
+insere arq3104 256Kb
+insere arq3105 256Kb
+insere arq3106 256Kb
+insere arq3107 256Kb
+insere arq3108 256Kb
+insere arq3109 256Kb
+insere arq3110 256Kb
+insere arq3111 256Kb
+insere arq3112 256Kb
+insere arq3113 256Kb
+insere arq3114 256Kb
+insere arq3115 256Kb
+insere arq3116 256Kb
+insere arq3117 256Kb
+insere arq3118 256Kb
+insere arq3119 256Kb
+insere arq3120 256Kb
+insere arq3121 256Kb
+insere arq3122 256Kb
+insere arq3123 256Kb
+insere arq3124 256Kb
+insere arq3125 256Kb
+insere arq3126 256Kb
+insere arq3127 256Kb
+insere arq3128 256Kb
+insere arq3129 256Kb
+insere arq3130 256Kb
+insere arq3131 256Kb
+insere arq3132 256Kb
+insere arq3133 256Kb
+insere arq3134 256Kb
+insere arq3135 256Kb
+insere arq3136 256Kb
+insere arq3137 256Kb
+insere arq3138 256Kb
+insere arq3139 256Kb
+insere arq3140 256Kb
+insere arq3141 256Kb
+insere arq3142 256Kb
+insere arq3143 256Kb
+insere arq3144 256Kb
+insere arq3145 256Kb
+insere arq3146 256Kb
+insere arq3147 256Kb
+insere arq3148 256Kb
+insere arq3149 256Kb
+insere arq3150 256Kb
+insere arq3151 256Kb
+insere arq3152 256Kb
+insere arq3153 256Kb
+insere arq3154 256Kb
+insere arq3155 256Kb
+insere arq3156 256Kb
+insere arq3157 256Kb
+insere arq3158 256Kb
+insere arq3159 256Kb
+insere arq3160 256Kb
+insere arq3161 256Kb
+insere arq3162 256Kb
+insere arq3163 256Kb
+insere arq3164 256Kb
+insere arq3165 256Kb
+insere arq3166 256Kb
+insere arq3167 256Kb
+insere arq3168 256Kb
+insere arq3169 256Kb
+insere arq3170 256Kb
+insere arq3171 256Kb
+insere arq3172 256Kb
+insere arq3173 256Kb
+insere arq3174 256Kb
+insere arq3175 256Kb
+insere arq3176 256Kb
+insere arq3177 256Kb
+insere arq3178 256Kb
+insere arq3179 256Kb
+insere arq3180 256Kb
+insere arq3181 256Kb
+insere arq3182 256Kb
+insere arq3183 256Kb
+insere arq3184 256Kb
+insere arq3185 256Kb
+insere arq3186 256Kb
+insere arq3187 256Kb
+insere arq3188 256Kb
+insere arq3189 256Kb
+insere arq3190 256Kb
+insere arq3191 256Kb
+insere arq3192 256Kb
+insere arq3193 256Kb
+insere arq3194 256Kb
+insere arq3195 256Kb
+insere arq3196 256Kb
+insere arq3197 256Kb
+insere arq3198 256Kb
+insere arq3199 256Kb
+insere arq3200 256Kb
+insere arq3201 256Kb
+insere arq3202 256Kb
+insere arq3203 256Kb
+insere arq3204 256Kb
+insere arq3205 256Kb
+insere arq3206 256Kb
+insere arq3207 256Kb
+insere arq3208 256Kb
+insere arq3209 256Kb
+insere arq3210 256Kb
+insere arq3211 256Kb
+insere arq3212 256Kb
+insere arq3213 256Kb
+insere arq3214 256Kb
+insere arq3215 256Kb
+insere arq3216 256Kb
+insere arq3217 256Kb
+insere arq3218 256Kb
+insere arq3219 256Kb
+insere arq3220 256Kb
+insere arq3221 256Kb
+insere arq3222 256Kb
+insere arq3223 256Kb
+insere arq3224 256Kb
+insere arq3225 256Kb
+insere arq3226 256Kb
+insere arq3227 256Kb
+insere arq3228 256Kb
+insere arq3229 256Kb
+insere arq3230 256Kb
+insere arq3231 256Kb
+insere arq3232 256Kb
+insere arq3233 256Kb
+insere arq3234 256Kb
+insere arq3235 256Kb
+insere arq3236 256Kb
+insere arq3237 256Kb
+insere arq3238 256Kb
+insere arq3239 256Kb
+insere arq3240 256Kb
+insere arq3241 256Kb
+insere arq3242 256Kb
+insere arq3243 256Kb
+insere arq3244 256Kb
+insere arq3245 256Kb
+insere arq3246 256Kb
+insere arq3247 256Kb
+insere arq3248 256Kb
+insere arq3249 256Kb
+insere arq3250 256Kb
+insere arq3251 256Kb
+insere arq3252 256Kb
+insere arq3253 256Kb
+insere arq3254 256Kb
+insere arq3255 256Kb
+insere arq3256 256Kb
+insere arq3257 256Kb
+insere arq3258 256Kb
+insere arq3259 256Kb
+insere arq3260 256Kb
+insere arq3261 256Kb
+insere arq3262 256Kb
+insere arq3263 256Kb
+insere arq3264 256Kb
+insere arq3265 256Kb
+insere arq3266 256Kb
+insere arq3267 256Kb
+insere arq3268 256Kb
+insere arq3269 256Kb
+insere arq3270 256Kb
+insere arq3271 256Kb
+insere arq3272 256Kb
+insere arq3273 256Kb
+insere arq3274 256Kb
+insere arq3275 256Kb
+insere arq3276 256Kb
+insere arq3277 256Kb
+insere arq3278 256Kb
+insere arq3279 256Kb
+insere arq3280 256Kb
+insere arq3281 256Kb
+insere arq3282 256Kb
+insere arq3283 256Kb
+insere arq3284 256Kb
+insere arq3285 256Kb
+insere arq3286 256Kb
+insere arq3287 256Kb
+insere arq3288 256Kb
+insere arq3289 256Kb
+insere arq3290 256Kb
+insere arq3291 256Kb
+insere arq3292 256Kb
+insere arq3293 256Kb
+insere arq3294 256Kb
+insere arq3295 256Kb
+insere arq3296 256Kb
+insere arq3297 256Kb
+insere arq3298 256Kb
+insere arq3299 256Kb
+insere arq3300 256Kb
+insere arq3301 256Kb
+insere arq3302 256Kb
+insere arq3303 256Kb
+insere arq3304 256Kb
+insere arq3305 256Kb
+insere arq3306 256Kb
+insere arq3307 256Kb
+insere arq3308 256Kb
+insere arq3309 256Kb
+insere arq3310 256Kb
+insere arq3311 256Kb
+insere arq3312 256Kb
+insere arq3313 256Kb
+insere arq3314 256Kb
+insere arq3315 256Kb
+insere arq3316 256Kb
+insere arq3317 256Kb
+insere arq3318 256Kb
+insere arq3319 256Kb
+insere arq3320 256Kb
+insere arq3321 256Kb
+insere arq3322 256Kb
+insere arq3323 256Kb
+insere arq3324 256Kb
+insere arq3325 256Kb
+insere arq3326 256Kb
+insere arq3327 256Kb
+insere arq3328 256Kb
+insere arq3329 256Kb
+insere arq3330 256Kb
+insere arq3331 256Kb
+insere arq3332 256Kb
+insere arq3333 256Kb
+insere arq3334 256Kb
+insere arq3335 256Kb
+insere arq3336 256Kb
+insere arq3337 256Kb
+insere arq3338 256Kb
+insere arq3339 256Kb
+insere arq3340 256Kb
+insere arq3341 256Kb
+insere arq3342 256Kb
+insere arq3343 256Kb
+insere arq3344 256Kb
+insere arq3345 256Kb
+insere arq3346 256Kb
+insere arq3347 256Kb
+insere arq3348 256Kb
+insere arq3349 256Kb
+insere arq3350 256Kb
+insere arq3351 256Kb
+insere arq3352 256Kb
+insere arq3353 256Kb
+insere arq3354 256Kb
+insere arq3355 256Kb
+insere arq3356 256Kb
+insere arq3357 256Kb
+insere arq3358 256Kb
+insere arq3359 256Kb
+insere arq3360 256Kb
+insere arq3361 256Kb
+insere arq3362 256Kb
+insere arq3363 256Kb
+insere arq3364 256Kb
+insere arq3365 256Kb
+insere arq3366 256Kb
+insere arq3367 256Kb
+insere arq3368 256Kb
+insere arq3369 256Kb
+insere arq3370 256Kb
+insere arq3371 256Kb
+insere arq3372 256Kb
+insere arq3373 256Kb
+insere arq3374 256Kb
+insere arq3375 256Kb
+insere arq3376 256Kb
+insere arq3377 256Kb
+insere arq3378 256Kb
+insere arq3379 256Kb
+insere arq3380 256Kb
+insere arq3381 256Kb
+insere arq3382 256Kb
+insere arq3383 256Kb
+insere arq3384 256Kb
+insere arq3385 256Kb
+insere arq3386 256Kb
+insere arq3387 256Kb
+insere arq3388 256Kb
+insere arq3389 256Kb
+insere arq3390 256Kb
+insere arq3391 256Kb
+insere arq3392 256Kb
+insere arq3393 256Kb
+insere arq3394 256Kb
+insere arq3395 256Kb
+insere arq3396 256Kb
+insere arq3397 256Kb
+insere arq3398 256Kb
+insere arq3399 256Kb
+insere arq3400 256Kb
+insere arq3401 256Kb
+insere arq3402 256Kb
+insere arq3403 256Kb
+insere arq3404 256Kb
+insere arq3405 256Kb
+insere arq3406 256Kb
+insere arq3407 256Kb
+insere arq3408 256Kb
+insere arq3409 256Kb
+insere arq3410 256Kb
+insere arq3411 256Kb
+insere arq3412 256Kb
+insere arq3413 256Kb
+insere arq3414 256Kb
+insere arq3415 256Kb
+insere arq3416 256Kb
+insere arq3417 256Kb
+insere arq3418 256Kb
+insere arq3419 256Kb
+insere arq3420 256Kb
+insere arq3421 256Kb
+insere arq3422 256Kb
+insere arq3423 256Kb
+insere arq3424 256Kb
+insere arq3425 256Kb
+insere arq3426 256Kb
+insere arq3427 256Kb
+insere arq3428 256Kb
+insere arq3429 256Kb
+insere arq3430 256Kb
+insere arq3431 256Kb
+insere arq3432 256Kb
+insere arq3433 256Kb
+insere arq3434 256Kb
+insere arq3435 256Kb
+insere arq3436 256Kb
+insere arq3437 256Kb
+insere arq3438 256Kb
+insere arq3439 256Kb
+insere arq3440 256Kb
+insere arq3441 256Kb
+insere arq3442 256Kb
+insere arq3443 256Kb
+insere arq3444 256Kb
+insere arq3445 256Kb
+insere arq3446 256Kb
+insere arq3447 256Kb
+insere arq3448 256Kb
+insere arq3449 256Kb
+insere arq3450 256Kb
+insere arq3451 256Kb
+insere arq3452 256Kb
+insere arq3453 256Kb
+insere arq3454 256Kb
+insere arq3455 256Kb
+insere arq3456 256Kb
+insere arq3457 256Kb
+insere arq3458 256Kb
+insere arq3459 256Kb
+insere arq3460 256Kb
+insere arq3461 256Kb
+insere arq3462 256Kb
+insere arq3463 256Kb
+insere arq3464 256Kb
+insere arq3465 256Kb
+insere arq3466 256Kb
+insere arq3467 256Kb
+insere arq3468 256Kb
+insere arq3469 256Kb
+insere arq3470 256Kb
+insere arq3471 256Kb
+insere arq3472 256Kb
+insere arq3473 256Kb
+insere arq3474 256Kb
+insere arq3475 256Kb
+insere arq3476 256Kb
+insere arq3477 256Kb
+insere arq3478 256Kb
+insere arq3479 256Kb
+insere arq3480 256Kb
+insere arq3481 256Kb
+insere arq3482 256Kb
+insere arq3483 256Kb
+insere arq3484 256Kb
+insere arq3485 256Kb
+insere arq3486 256Kb
+insere arq3487 256Kb
+insere arq3488 256Kb
+insere arq3489 256Kb
+insere arq3490 256Kb
+insere arq3491 256Kb
+insere arq3492 256Kb
+insere arq3493 256Kb
+insere arq3494 256Kb
+insere arq3495 256Kb
+insere arq3496 256Kb
+insere arq3497 256Kb
+insere arq3498 256Kb
+insere arq3499 256Kb
+insere arq3500 256Kb
+insere arq3501 256Kb
+insere arq3502 256Kb
+insere arq3503 256Kb
+insere arq3504 256Kb
+insere arq3505 256Kb
+insere arq3506 256Kb
+insere arq3507 256Kb
+insere arq3508 256Kb
+insere arq3509 256Kb
+insere arq3510 256Kb
+insere arq3511 256Kb
+insere arq3512 256Kb
+insere arq3513 256Kb
+insere arq3514 256Kb
+insere arq3515 256Kb
+insere arq3516 256Kb
+insere arq3517 256Kb
+insere arq3518 256Kb
+insere arq3519 256Kb
+insere arq3520 256Kb
+insere arq3521 256Kb
+insere arq3522 256Kb
+insere arq3523 256Kb
+insere arq3524 256Kb
+insere arq3525 256Kb
+insere arq3526 256Kb
+insere arq3527 256Kb
+insere arq3528 256Kb
+insere arq3529 256Kb
+insere arq3530 256Kb
+insere arq3531 256Kb
+insere arq3532 256Kb
+insere arq3533 256Kb
+insere arq3534 256Kb
+insere arq3535 256Kb
+insere arq3536 256Kb
+insere arq3537 256Kb
+insere arq3538 256Kb
+insere arq3539 256Kb
+insere arq3540 256Kb
+insere arq3541 256Kb
+insere arq3542 256Kb
+insere arq3543 256Kb
+insere arq3544 256Kb
+insere arq3545 256Kb
+insere arq3546 256Kb
+insere arq3547 256Kb
+insere arq3548 256Kb
+insere arq3549 256Kb
+insere arq3550 256Kb
+insere arq3551 256Kb
+insere arq3552 256Kb
+insere arq3553 256Kb
+insere arq3554 256Kb
+insere arq3555 256Kb
+insere arq3556 256Kb
+insere arq3557 256Kb
+insere arq3558 256Kb
+insere arq3559 256Kb
+insere arq3560 256Kb
+insere arq3561 256Kb
+insere arq3562 256Kb
+insere arq3563 256Kb
+insere arq3564 256Kb
+insere arq3565 256Kb
+insere arq3566 256Kb
+insere arq3567 256Kb
+insere arq3568 256Kb
+insere arq3569 256Kb
+insere arq3570 256Kb
+insere arq3571 256Kb
+insere arq3572 256Kb
+insere arq3573 256Kb
+insere arq3574 256Kb
+insere arq3575 256Kb
+insere arq3576 256Kb
+insere arq3577 256Kb
+insere arq3578 256Kb
+insere arq3579 256Kb
+insere arq3580 256Kb
+insere arq3581 256Kb
+insere arq3582 256Kb
+insere arq3583 256Kb
+insere arq3584 256Kb
+insere arq3585 256Kb
+insere arq3586 256Kb
+insere arq3587 256Kb
+insere arq3588 256Kb
+insere arq3589 256Kb
+insere arq3590 256Kb
+insere arq3591 256Kb
+insere arq3592 256Kb
+insere arq3593 256Kb
+insere arq3594 256Kb
+insere arq3595 256Kb
+insere arq3596 256Kb
+insere arq3597 256Kb
+insere arq3598 256Kb
+insere arq3599 256Kb
+insere arq3600 256Kb
+insere arq3601 256Kb
+insere arq3602 256Kb
+insere arq3603 256Kb
+insere arq3604 256Kb
+insere arq3605 256Kb
+insere arq3606 256Kb
+insere arq3607 256Kb
+insere arq3608 256Kb
+insere arq3609 256Kb
+insere arq3610 256Kb
+insere arq3611 256Kb
+insere arq3612 256Kb
+insere arq3613 256Kb
+insere arq3614 256Kb
+insere arq3615 256Kb
+insere arq3616 256Kb
+insere arq3617 256Kb
+insere arq3618 256Kb
+insere arq3619 256Kb
+insere arq3620 256Kb
+insere arq3621 256Kb
+insere arq3622 256Kb
+insere arq3623 256Kb
+insere arq3624 256Kb
+insere arq3625 256Kb
+insere arq3626 256Kb
+insere arq3627 256Kb
+insere arq3628 256Kb
+insere arq3629 256Kb
+insere arq3630 256Kb
+insere arq3631 256Kb
+insere arq3632 256Kb
+insere arq3633 256Kb
+insere arq3634 256Kb
+insere arq3635 256Kb
+insere arq3636 256Kb
+insere arq3637 256Kb
+insere arq3638 256Kb
+insere arq3639 256Kb
+insere arq3640 256Kb
+insere arq3641 256Kb
+insere arq3642 256Kb
+insere arq3643 256Kb
+insere arq3644 256Kb
+insere arq3645 256Kb
+insere arq3646 256Kb
+insere arq3647 256Kb
+insere arq3648 256Kb
+insere arq3649 256Kb
+insere arq3650 256Kb
+insere arq3651 256Kb
+insere arq3652 256Kb
+insere arq3653 256Kb
+insere arq3654 256Kb
+insere arq3655 256Kb
+insere arq3656 256Kb
+insere arq3657 256Kb
+insere arq3658 256Kb
+insere arq3659 256Kb
+insere arq3660 256Kb
+insere arq3661 256Kb
+insere arq3662 256Kb
+insere arq3663 256Kb
+insere arq3664 256Kb
+insere arq3665 256Kb
+insere arq3666 256Kb
+insere arq3667 256Kb
+insere arq3668 256Kb
+insere arq3669 256Kb
+insere arq3670 256Kb
+insere arq3671 256Kb
+insere arq3672 256Kb
+insere arq3673 256Kb
+insere arq3674 256Kb
+insere arq3675 256Kb
+insere arq3676 256Kb
+insere arq3677 256Kb
+insere arq3678 256Kb
+insere arq3679 256Kb
+insere arq3680 256Kb
+insere arq3681 256Kb
+insere arq3682 256Kb
+insere arq3683 256Kb
+insere arq3684 256Kb
+insere arq3685 256Kb
+insere arq3686 256Kb
+insere arq3687 256Kb
+insere arq3688 256Kb
+insere arq3689 256Kb
+insere arq3690 256Kb
+insere arq3691 256Kb
+insere arq3692 256Kb
+insere arq3693 256Kb
+insere arq3694 256Kb
+insere arq3695 256Kb
+insere arq3696 256Kb
+insere arq3697 256Kb
+insere arq3698 256Kb
+insere arq3699 256Kb
+insere arq3700 256Kb
+insere arq3701 256Kb
+insere arq3702 256Kb
+insere arq3703 256Kb
+insere arq3704 256Kb
+insere arq3705 256Kb
+insere arq3706 256Kb
+insere arq3707 256Kb
+insere arq3708 256Kb
+insere arq3709 256Kb
+insere arq3710 256Kb
+insere arq3711 256Kb
+insere arq3712 256Kb
+insere arq3713 256Kb
+insere arq3714 256Kb
+insere arq3715 256Kb
+insere arq3716 256Kb
+insere arq3717 256Kb
+insere arq3718 256Kb
+insere arq3719 256Kb
+insere arq3720 256Kb
+insere arq3721 256Kb
+insere arq3722 256Kb
+insere arq3723 256Kb
+insere arq3724 256Kb
+insere arq3725 256Kb
+insere arq3726 256Kb
+insere arq3727 256Kb
+insere arq3728 256Kb
+insere arq3729 256Kb
+insere arq3730 256Kb
+insere arq3731 256Kb
+insere arq3732 256Kb
+insere arq3733 256Kb
+insere arq3734 256Kb
+insere arq3735 256Kb
+insere arq3736 256Kb
+insere arq3737 256Kb
+insere arq3738 256Kb
+insere arq3739 256Kb
+insere arq3740 256Kb
+insere arq3741 256Kb
+insere arq3742 256Kb
+insere arq3743 256Kb
+insere arq3744 256Kb
+insere arq3745 256Kb
+insere arq3746 256Kb
+insere arq3747 256Kb
+insere arq3748 256Kb
+insere arq3749 256Kb
+insere arq3750 256Kb
+insere arq3751 256Kb
+insere arq3752 256Kb
+insere arq3753 256Kb
+insere arq3754 256Kb
+insere arq3755 256Kb
+insere arq3756 256Kb
+insere arq3757 256Kb
+insere arq3758 256Kb
+insere arq3759 256Kb
+insere arq3760 256Kb
+insere arq3761 256Kb
+insere arq3762 256Kb
+insere arq3763 256Kb
+insere arq3764 256Kb
+insere arq3765 256Kb
+insere arq3766 256Kb
+insere arq3767 256Kb
+insere arq3768 256Kb
+insere arq3769 256Kb
+insere arq3770 256Kb
+insere arq3771 256Kb
+insere arq3772 256Kb
+insere arq3773 256Kb
+insere arq3774 256Kb
+insere arq3775 256Kb
+insere arq3776 256Kb
+insere arq3777 256Kb
+insere arq3778 256Kb
+insere arq3779 256Kb
+insere arq3780 256Kb
+insere arq3781 256Kb
+insere arq3782 256Kb
+insere arq3783 256Kb
+insere arq3784 256Kb
+insere arq3785 256Kb
+insere arq3786 256Kb
+insere arq3787 256Kb
+insere arq3788 256Kb
+insere arq3789 256Kb
+insere arq3790 256Kb
+insere arq3791 256Kb
+insere arq3792 256Kb
+insere arq3793 256Kb
+insere arq3794 256Kb
+insere arq3795 256Kb
+insere arq3796 256Kb
+insere arq3797 256Kb
+insere arq3798 256Kb
+insere arq3799 256Kb
+insere arq3800 256Kb
+insere arq3801 256Kb
+insere arq3802 256Kb
+insere arq3803 256Kb
+insere arq3804 256Kb
+insere arq3805 256Kb
+insere arq3806 256Kb
+insere arq3807 256Kb
+insere arq3808 256Kb
+insere arq3809 256Kb
+insere arq3810 256Kb
+insere arq3811 256Kb
+insere arq3812 256Kb
+insere arq3813 256Kb
+insere arq3814 256Kb
+insere arq3815 256Kb
+insere arq3816 256Kb
+insere arq3817 256Kb
+insere arq3818 256Kb
+insere arq3819 256Kb
+insere arq3820 256Kb
+insere arq3821 256Kb
+insere arq3822 256Kb
+insere arq3823 256Kb
+insere arq3824 256Kb
+insere arq3825 256Kb
+insere arq3826 256Kb
+insere arq3827 256Kb
+insere arq3828 256Kb
+insere arq3829 256Kb
+insere arq3830 256Kb
+insere arq3831 256Kb
+insere arq3832 256Kb
+insere arq3833 256Kb
+insere arq3834 256Kb
+insere arq3835 256Kb
+insere arq3836 256Kb
+insere arq3837 256Kb
+insere arq3838 256Kb
+insere arq3839 256Kb
+insere arq3840 256Kb
+insere arq3841 256Kb
+insere arq3842 256Kb
+insere arq3843 256Kb
+insere arq3844 256Kb
+insere arq3845 256Kb
+insere arq3846 256Kb
+insere arq3847 256Kb
+insere arq3848 256Kb
+insere arq3849 256Kb
+insere arq3850 256Kb
+insere arq3851 256Kb
+insere arq3852 256Kb
+insere arq3853 256Kb
+insere arq3854 256Kb
+insere arq3855 256Kb
+insere arq3856 256Kb
+insere arq3857 256Kb
+insere arq3858 256Kb
+insere arq3859 256Kb
+insere arq3860 256Kb
+insere arq3861 256Kb
+insere arq3862 256Kb
+insere arq3863 256Kb
+insere arq3864 256Kb
+insere arq3865 256Kb
+insere arq3866 256Kb
+insere arq3867 256Kb
+insere arq3868 256Kb
+insere arq3869 256Kb
+insere arq3870 256Kb
+insere arq3871 256Kb
+insere arq3872 256Kb
+insere arq3873 256Kb
+insere arq3874 256Kb
+insere arq3875 256Kb
+insere arq3876 256Kb
+insere arq3877 256Kb
+insere arq3878 256Kb
+insere arq3879 256Kb
+insere arq3880 256Kb
+insere arq3881 256Kb
+insere arq3882 256Kb
+insere arq3883 256Kb
+insere arq3884 256Kb
+insere arq3885 256Kb
+insere arq3886 256Kb
+insere arq3887 256Kb
+insere arq3888 256Kb
+insere arq3889 256Kb
+insere arq3890 256Kb
+insere arq3891 256Kb
+insere arq3892 256Kb
+insere arq3893 256Kb
+insere arq3894 256Kb
+insere arq3895 256Kb
+insere arq3896 256Kb
+insere arq3897 256Kb
+insere arq3898 256Kb
+insere arq3899 256Kb
+insere arq3900 256Kb
+insere arq3901 256Kb
+insere arq3902 256Kb
+insere arq3903 256Kb
+insere arq3904 256Kb
+insere arq3905 256Kb
+insere arq3906 256Kb
+insere arq3907 256Kb
+insere arq3908 256Kb
+insere arq3909 256Kb
+insere arq3910 256Kb
+insere arq3911 256Kb
+insere arq3912 256Kb
+insere arq3913 256Kb
+insere arq3914 256Kb
+insere arq3915 256Kb
+insere arq3916 256Kb
+insere arq3917 256Kb
+insere arq3918 256Kb
+insere arq3919 256Kb
+insere arq3920 256Kb
+insere arq3921 256Kb
+insere arq3922 256Kb
+insere arq3923 256Kb
+insere arq3924 256Kb
+insere arq3925 256Kb
+insere arq3926 256Kb
+insere arq3927 256Kb
+insere arq3928 256Kb
+insere arq3929 256Kb
+insere arq3930 256Kb
+insere arq3931 256Kb
+insere arq3932 256Kb
+insere arq3933 256Kb
+insere arq3934 256Kb
+insere arq3935 256Kb
+insere arq3936 256Kb
+insere arq3937 256Kb
+insere arq3938 256Kb
+insere arq3939 256Kb
+insere arq3940 256Kb
+insere arq3941 256Kb
+insere arq3942 256Kb
+insere arq3943 256Kb
+insere arq3944 256Kb
+insere arq3945 256Kb
+insere arq3946 256Kb
+insere arq3947 256Kb
+insere arq3948 256Kb
+insere arq3949 256Kb
+insere arq3950 256Kb
+insere arq3951 256Kb
+insere arq3952 256Kb
+insere arq3953 256Kb
+insere arq3954 256Kb
+insere arq3955 256Kb
+insere arq3956 256Kb
+insere arq3957 256Kb
+insere arq3958 256Kb
+insere arq3959 256Kb
+insere arq3960 256Kb
+insere arq3961 256Kb
+insere arq3962 256Kb
+insere arq3963 256Kb
+insere arq3964 256Kb
+insere arq3965 256Kb
+insere arq3966 256Kb
+insere arq3967 256Kb
+insere arq3968 256Kb
+insere arq3969 256Kb
+insere arq3970 256Kb
+insere arq3971 256Kb
+insere arq3972 256Kb
+insere arq3973 256Kb
+insere arq3974 256Kb
+insere arq3975 256Kb
+insere arq3976 256Kb
+insere arq3977 256Kb
+insere arq3978 256Kb
+insere arq3979 256Kb
+insere arq3980 256Kb
+insere arq3981 256Kb
+insere arq3982 256Kb
+insere arq3983 256Kb
+insere arq3984 256Kb
+insere arq3985 256Kb
+insere arq3986 256Kb
+insere arq3987 256Kb
+insere arq3988 256Kb
+insere arq3989 256Kb
+insere arq3990 256Kb
+insere arq3991 256Kb
+insere arq3992 256Kb
+insere arq3993 256Kb
+insere arq3994 256Kb
+insere arq3995 256Kb
+insere arq3996 256Kb
+insere arq3997 256Kb
+insere arq3998 256Kb
+insere arq3999 256Kb
+insere arq4000 256Kb
+insere arq4001 256Kb
+insere arq4002 256Kb
+insere arq4003 256Kb
+insere arq4004 256Kb
+insere arq4005 256Kb
+insere arq4006 256Kb
+insere arq4007 256Kb
+insere arq4008 256Kb
+insere arq4009 256Kb
+insere arq4010 256Kb
+insere arq4011 256Kb
+insere arq4012 256Kb
+insere arq4013 256Kb
+insere arq4014 256Kb
+insere arq4015 256Kb
+insere arq4016 256Kb
+insere arq4017 256Kb
+insere arq4018 256Kb
+insere arq4019 256Kb
+insere arq4020 256Kb
+insere arq4021 256Kb
+insere arq4022 256Kb
+insere arq4023 256Kb
+insere arq4024 256Kb
+insere arq4025 256Kb
+insere arq4026 256Kb
+insere arq4027 256Kb
+insere arq4028 256Kb
+insere arq4029 256Kb
+insere arq4030 256Kb
+insere arq4031 256Kb
+insere arq4032 256Kb
+insere arq4033 256Kb
+insere arq4034 256Kb
+insere arq4035 256Kb
+insere arq4036 256Kb
+insere arq4037 256Kb
+insere arq4038 256Kb
+insere arq4039 256Kb
+insere arq4040 256Kb
+insere arq4041 256Kb
+insere arq4042 256Kb
+insere arq4043 256Kb
+insere arq4044 256Kb
+insere arq4045 256Kb
+insere arq4046 256Kb
+insere arq4047 256Kb
+insere arq4048 256Kb
+insere arq4049 256Kb
+insere arq4050 256Kb
+insere arq4051 256Kb
+insere arq4052 256Kb
+insere arq4053 256Kb
+insere arq4054 256Kb
+insere arq4055 256Kb
+insere arq4056 256Kb
+insere arq4057 256Kb
+insere arq4058 256Kb
+insere arq4059 256Kb
+insere arq4060 256Kb
+insere arq4061 256Kb
+insere arq4062 256Kb
+insere arq4063 256Kb
+remove arq0
+otimiza
+insere arq4064 256Kb
+remove arq1
+otimiza
+insere arq4065 256Kb
+remove arq2
+otimiza
+insere arq4066 256Kb
+remove arq3
+otimiza
+insere arq4067 256Kb
+remove arq4
+otimiza
+insere arq4068 256Kb
+remove arq5
+otimiza
+insere arq4069 256Kb
+remove arq6
+otimiza
+insere arq4070 256Kb
+remove arq7
+otimiza
+insere arq4071 256Kb
+remove arq8
+otimiza
+insere arq4072 256Kb
+remove arq9
+otimiza
+insere arq4073 256Kb
+remove arq10
+otimiza
+insere arq4074 256Kb
+remove arq11
+otimiza
+insere arq4075 256Kb
+remove arq12
+otimiza
+insere arq4076 256Kb
+remove arq13
+otimiza
+insere arq4077 256Kb
+remove arq14
+otimiza
+insere arq4078 256Kb
+remove arq15
+otimiza
+insere arq4079 256Kb
+remove arq16
+otimiza
+insere arq4080 256Kb
+remove arq17
+otimiza
+insere arq4081 256Kb
+remove arq18
+otimiza
+insere arq4082 256Kb
+remove arq19
+otimiza
+insere arq4083 256Kb
+remove arq20
+otimiza
+insere arq4084 256Kb
+remove arq21
+otimiza
+insere arq4085 256Kb
+remove arq22
+otimiza
+insere arq4086 256Kb
+remove arq23
+otimiza
+insere arq4087 256Kb
+remove arq24
+otimiza
+insere arq4088 256Kb
+remove arq25
+otimiza
+insere arq4089 256Kb
+remove arq26
+otimiza
+insere arq4090 256Kb
+remove arq27
+otimiza
+insere arq4091 256Kb
+remove arq28
+otimiza
+insere arq4092 256Kb
+remove arq29
+otimiza
+insere arq4093 256Kb
+remove arq30
+otimiza
+insere arq4094 256Kb
+remove arq31
+otimiza
+insere arq4095 256Kb
+remove arq32
+otimiza
+insere arq4096 256Kb
+remove arq33
+otimiza
+insere arq4097 256Kb
+remove arq34
+otimiza
+insere arq4098 256Kb
+remove arq35
+otimiza
+insere arq4099 256Kb
+remove arq36
+otimiza
+insere arq4100 256Kb
+remove arq37
+otimiza
+insere arq4101 256Kb
+remove arq38
+otimiza
+insere arq4102 256Kb
+remove arq39
+otimiza
+insere arq4103 256Kb
+remove arq40
+otimiza
+insere arq4104 256Kb
+remove arq41
+otimiza
+insere arq4105 256Kb
+remove arq42
+otimiza
+insere arq4106 256Kb
+remove arq43
+otimiza
+insere arq4107 256Kb
+remove arq44
+otimiza
+insere arq4108 256Kb
+remove arq45
+otimiza
+insere arq4109 256Kb
+remove arq46
+otimiza
+insere arq4110 256Kb
+remove arq47
+otimiza
+insere arq4111 256Kb
+remove arq48
+otimiza
+insere arq4112 256Kb
+remove arq49
+otimiza
+insere arq4113 256Kb
+remove arq50
+otimiza
+insere arq4114 256Kb
+remove arq51
+otimiza
+insere arq4115 256Kb
+remove arq52
+otimiza
+insere arq4116 256Kb
+remove arq53
+otimiza
+insere arq4117 256Kb
+remove arq54
+otimiza
+insere arq4118 256Kb
+remove arq55
+otimiza
+insere arq4119 256Kb
+remove arq56
+otimiza
+insere arq4120 256Kb
+remove arq57
+otimiza
+insere arq4121 256Kb
+remove arq58
+otimiza
+insere arq4122 256Kb
+remove arq59
+otimiza
+insere arq4123 256Kb
+remove arq60
+otimiza
+insere arq4124 256Kb
+remove arq61
+otimiza
+insere arq4125 256Kb
+remove arq62
+otimiza
+insere arq4126 256Kb
+remove arq63
+otimiza
+insere arq4127 256Kb
+remove arq64
+otimiza
+insere arq4128 256Kb
+remove arq65
+otimiza
+insere arq4129 256Kb
+remove arq66
+otimiza
+insere arq4130 256Kb
+remove arq67
+otimiza
+insere arq4131 256Kb
+remove arq68
+otimiza
+insere arq4132 256Kb
+remove arq69
+otimiza
+insere arq4133 256Kb
+remove arq70
+otimiza
+insere arq4134 256Kb
+remove arq71
+otimiza
+insere arq4135 256Kb
+remove arq72
+otimiza
+insere arq4136 256Kb
+remove arq73
+otimiza
+insere arq4137 256Kb
+remove arq74
+otimiza
+insere arq4138 256Kb
+remove arq75
+otimiza
+insere arq4139 256Kb
+remove arq76
+otimiza
+insere arq4140 256Kb
+remove arq77
+otimiza
+insere arq4141 256Kb
+remove arq78
+otimiza
+insere arq4142 256Kb
+remove arq79
+otimiza
+insere arq4143 256Kb
+remove arq80
+otimiza
+insere arq4144 256Kb
+remove arq81
+otimiza
+insere arq4145 256Kb
+remove arq82
+otimiza
+insere arq4146 256Kb
+remove arq83
+otimiza
+insere arq4147 256Kb
+remove arq84
+otimiza
+insere arq4148 256Kb
+remove arq85
+otimiza
+insere arq4149 256Kb
+remove arq86
+otimiza
+insere arq4150 256Kb
+remove arq87
+otimiza
+insere arq4151 256Kb
+remove arq88
+otimiza
+insere arq4152 256Kb
+remove arq89
+otimiza
+insere arq4153 256Kb
+remove arq90
+otimiza
+insere arq4154 256Kb
+remove arq91
+otimiza
+insere arq4155 256Kb
+remove arq92
+otimiza
+insere arq4156 256Kb
+remove arq93
+otimiza
+insere arq4157 256Kb
+remove arq94
+otimiza
+insere arq4158 256Kb
+remove arq95
+otimiza
+insere arq4159 256Kb
+remove arq96
+otimiza
+insere arq4160 256Kb
+remove arq97
+otimiza
+insere arq4161 256Kb
+remove arq98
+otimiza
+insere arq4162 256Kb
+remove arq99
+otimiza
+insere arq4163 256Kb
+remove arq100
+otimiza
+insere arq4164 256Kb
+remove arq101
+otimiza
+insere arq4165 256Kb
+remove arq102
+otimiza
+insere arq4166 256Kb
+remove arq103
+otimiza
+insere arq4167 256Kb
+remove arq104
+otimiza
+insere arq4168 256Kb
+remove arq105
+otimiza
+insere arq4169 256Kb
+remove arq106
+otimiza
+insere arq4170 256Kb
+remove arq107
+otimiza
+insere arq4171 256Kb
+remove arq108
+otimiza
+insere arq4172 256Kb
+remove arq109
+otimiza
+insere arq4173 256Kb
+remove arq110
+otimiza
+insere arq4174 256Kb
+remove arq111
+otimiza
+insere arq4175 256Kb
+remove arq112
+otimiza
+insere arq4176 256Kb
+remove arq113
+otimiza
+insere arq4177 256Kb
+remove arq114
+otimiza
+insere arq4178 256Kb
+remove arq115
+otimiza
+insere arq4179 256Kb
+remove arq116
+otimiza
+insere arq4180 256Kb
+remove arq117
+otimiza
+insere arq4181 256Kb
+remove arq118
+otimiza
+insere arq4182 256Kb
+remove arq119
+otimiza
+insere arq4183 256Kb
+remove arq120
+otimiza
+insere arq4184 256Kb
+remove arq121
+otimiza
+insere arq4185 256Kb
+remove arq122
+otimiza
+insere arq4186 256Kb
+remove arq123
+otimiza
+insere arq4187 256Kb
+remove arq124
+otimiza
+insere arq4188 256Kb
+remove arq125
+otimiza
+insere arq4189 256Kb
+remove arq126
+otimiza
+insere arq4190 256Kb
+remove arq127
+otimiza
+insere arq4191 256Kb
+remove arq128
+otimiza
+insere arq4192 256Kb
+remove arq129
+otimiza
+insere arq4193 256Kb
+remove arq130
+otimiza
+insere arq4194 256Kb
+remove arq131
+otimiza
+insere arq4195 256Kb
+remove arq132
+otimiza
+insere arq4196 256Kb
+remove arq133
+otimiza
+insere arq4197 256Kb
+remove arq134
+otimiza
+insere arq4198 256Kb
+remove arq135
+otimiza
+insere arq4199 256Kb
+remove arq136
+otimiza
+insere arq4200 256Kb
+remove arq137
+otimiza
+insere arq4201 256Kb
+remove arq138
+otimiza
+insere arq4202 256Kb
+remove arq139
+otimiza
+insere arq4203 256Kb
+remove arq140
+otimiza
+insere arq4204 256Kb
+remove arq141
+otimiza
+insere arq4205 256Kb
+remove arq142
+otimiza
+insere arq4206 256Kb
+remove arq143
+otimiza
+insere arq4207 256Kb
+remove arq144
+otimiza
+insere arq4208 256Kb
+remove arq145
+otimiza
+insere arq4209 256Kb
+remove arq146
+otimiza
+insere arq4210 256Kb
+remove arq147
+otimiza
+insere arq4211 256Kb
+remove arq148
+otimiza
+insere arq4212 256Kb
+remove arq149
+otimiza
+insere arq4213 256Kb
+remove arq150
+otimiza
+insere arq4214 256Kb
+remove arq151
+otimiza
+insere arq4215 256Kb
+remove arq152
+otimiza
+insere arq4216 256Kb
+remove arq153
+otimiza
+insere arq4217 256Kb
+remove arq154
+otimiza
+insere arq4218 256Kb
+remove arq155
+otimiza
+insere arq4219 256Kb
+remove arq156
+otimiza
+insere arq4220 256Kb
+remove arq157
+otimiza
+insere arq4221 256Kb
+remove arq158
+otimiza
+insere arq4222 256Kb
+remove arq159
+otimiza
+insere arq4223 256Kb
+remove arq160
+otimiza
+insere arq4224 256Kb
+remove arq161
+otimiza
+insere arq4225 256Kb
+remove arq162
+otimiza
+insere arq4226 256Kb
+remove arq163
+otimiza
+insere arq4227 256Kb
+remove arq164
+otimiza
+insere arq4228 256Kb
+remove arq165
+otimiza
+insere arq4229 256Kb
+remove arq166
+otimiza
+insere arq4230 256Kb
+remove arq167
+otimiza
+insere arq4231 256Kb
+remove arq168
+otimiza
+insere arq4232 256Kb
+remove arq169
+otimiza
+insere arq4233 256Kb
+remove arq170
+otimiza
+insere arq4234 256Kb
+remove arq171
+otimiza
+insere arq4235 256Kb
+remove arq172
+otimiza
+insere arq4236 256Kb
+remove arq173
+otimiza
+insere arq4237 256Kb
+remove arq174
+otimiza
+insere arq4238 256Kb
+remove arq175
+otimiza
+insere arq4239 256Kb
+remove arq176
+otimiza
+insere arq4240 256Kb
+remove arq177
+otimiza
+insere arq4241 256Kb
+remove arq178
+otimiza
+insere arq4242 256Kb
+remove arq179
+otimiza
+insere arq4243 256Kb
+remove arq180
+otimiza
+insere arq4244 256Kb
+remove arq181
+otimiza
+insere arq4245 256Kb
+remove arq182
+otimiza
+insere arq4246 256Kb
+remove arq183
+otimiza
+insere arq4247 256Kb
+remove arq184
+otimiza
+insere arq4248 256Kb
+remove arq185
+otimiza
+insere arq4249 256Kb
+remove arq186
+otimiza
+insere arq4250 256Kb
+remove arq187
+otimiza
+insere arq4251 256Kb
+remove arq188
+otimiza
+insere arq4252 256Kb
+remove arq189
+otimiza
+insere arq4253 256Kb
+remove arq190
+otimiza
+insere arq4254 256Kb
+remove arq191
+otimiza
+insere arq4255 256Kb
+remove arq192
+otimiza
+insere arq4256 256Kb
+remove arq193
+otimiza
+insere arq4257 256Kb
+remove arq194
+otimiza
+insere arq4258 256Kb
+remove arq195
+otimiza
+insere arq4259 256Kb
+remove arq196
+otimiza
+insere arq4260 256Kb
+remove arq197
+otimiza
+insere arq4261 256Kb
+remove arq198
+otimiza
+insere arq4262 256Kb
+remove arq199
+otimiza
+insere arq4263 256Kb
+remove arq200
+otimiza
+insere arq4264 256Kb
+remove arq201
+otimiza
+insere arq4265 256Kb
+remove arq202
+otimiza
+insere arq4266 256Kb
+remove arq203
+otimiza
+insere arq4267 256Kb
+remove arq204
+otimiza
+insere arq4268 256Kb
+remove arq205
+otimiza
+insere arq4269 256Kb
+remove arq206
+otimiza
+insere arq4270 256Kb
+remove arq207
+otimiza
+insere arq4271 256Kb
+remove arq208
+otimiza
+insere arq4272 256Kb
+remove arq209
+otimiza
+insere arq4273 256Kb
+remove arq210
+otimiza
+insere arq4274 256Kb
+remove arq211
+otimiza
+insere arq4275 256Kb
+remove arq212
+otimiza
+insere arq4276 256Kb
+remove arq213
+otimiza
+insere arq4277 256Kb
+remove arq214
+otimiza
+insere arq4278 256Kb
+remove arq215
+otimiza
+insere arq4279 256Kb
+remove arq216
+otimiza
+insere arq4280 256Kb
+remove arq217
+otimiza
+insere arq4281 256Kb
+remove arq218
+otimiza
+insere arq4282 256Kb
+remove arq219
+otimiza
+insere arq4283 256Kb
+remove arq220
+otimiza
+insere arq4284 256Kb
+remove arq221
+otimiza
+insere arq4285 256Kb
+remove arq222
+otimiza
+insere arq4286 256Kb
+remove arq223
+otimiza
+insere arq4287 256Kb
+remove arq224
+otimiza
+insere arq4288 256Kb
+remove arq225
+otimiza
+insere arq4289 256Kb
+remove arq226
+otimiza
+insere arq4290 256Kb
+remove arq227
+otimiza
+insere arq4291 256Kb
+remove arq228
+otimiza
+insere arq4292 256Kb
+remove arq229
+otimiza
+insere arq4293 256Kb
+remove arq230
+otimiza
+insere arq4294 256Kb
+remove arq231
+otimiza
+insere arq4295 256Kb
+remove arq232
+otimiza
+insere arq4296 256Kb
+remove arq233
+otimiza
+insere arq4297 256Kb
+remove arq234
+otimiza
+insere arq4298 256Kb
+remove arq235
+otimiza
+insere arq4299 256Kb
+remove arq236
+otimiza
+insere arq4300 256Kb
+remove arq237
+otimiza
+insere arq4301 256Kb
+remove arq238
+otimiza
+insere arq4302 256Kb
+remove arq239
+otimiza
+insere arq4303 256Kb
+remove arq240
+otimiza
+insere arq4304 256Kb
+remove arq241
+otimiza
+insere arq4305 256Kb
+remove arq242
+otimiza
+insere arq4306 256Kb
+remove arq243
+otimiza
+insere arq4307 256Kb
+remove arq244
+otimiza
+insere arq4308 256Kb
+remove arq245
+otimiza
+insere arq4309 256Kb
+remove arq246
+otimiza
+insere arq4310 256Kb
+remove arq247
+otimiza
+insere arq4311 256Kb
+remove arq248
+otimiza
+insere arq4312 256Kb
+remove arq249
+otimiza
+insere arq4313 256Kb
+remove arq250
+otimiza
+insere arq4314 256Kb
+remove arq251
+otimiza
+insere arq4315 256Kb
+remove arq252
+otimiza
+insere arq4316 256Kb
+remove arq253
+otimiza
+insere arq4317 256Kb
+remove arq254
+otimiza
+insere arq4318 256Kb
+remove arq255
+otimiza
+insere arq4319 256Kb
+remove arq256
+otimiza
+insere arq4320 256Kb
+remove arq257
+otimiza
+insere arq4321 256Kb
+remove arq258
+otimiza
+insere arq4322 256Kb
+remove arq259
+otimiza
+insere arq4323 256Kb
+remove arq260
+otimiza
+insere arq4324 256Kb
+remove arq261
+otimiza
+insere arq4325 256Kb
+remove arq262
+otimiza
+insere arq4326 256Kb
+remove arq263
+otimiza
+insere arq4327 256Kb
+remove arq264
+otimiza
+insere arq4328 256Kb
+remove arq265
+otimiza
+insere arq4329 256Kb
+remove arq266
+otimiza
+insere arq4330 256Kb
+remove arq267
+otimiza
+insere arq4331 256Kb
+remove arq268
+otimiza
+insere arq4332 256Kb
+remove arq269
+otimiza
+insere arq4333 256Kb
+remove arq270
+otimiza
+insere arq4334 256Kb
+remove arq271
+otimiza
+insere arq4335 256Kb
+remove arq272
+otimiza
+insere arq4336 256Kb
+remove arq273
+otimiza
+insere arq4337 256Kb
+remove arq274
+otimiza
+insere arq4338 256Kb
+remove arq275
+otimiza
+insere arq4339 256Kb
+remove arq276
+otimiza
+insere arq4340 256Kb
+remove arq277
+otimiza
+insere arq4341 256Kb
+remove arq278
+otimiza
+insere arq4342 256Kb
+remove arq279
+otimiza
+insere arq4343 256Kb
+remove arq280
+otimiza
+insere arq4344 256Kb
+remove arq281
+otimiza
+insere arq4345 256Kb
+remove arq282
+otimiza
+insere arq4346 256Kb
+remove arq283
+otimiza
+insere arq4347 256Kb
+remove arq284
+otimiza
+insere arq4348 256Kb
+remove arq285
+otimiza
+insere arq4349 256Kb
+remove arq286
+otimiza
+insere arq4350 256Kb
+remove arq287
+otimiza
+insere arq4351 256Kb
+remove arq288
+otimiza
+insere arq4352 256Kb
+remove arq289
+otimiza
+insere arq4353 256Kb
+remove arq290
+otimiza
+insere arq4354 256Kb
+remove arq291
+otimiza
+insere arq4355 256Kb
+remove arq292
+otimiza
+insere arq4356 256Kb
+remove arq293
+otimiza
+insere arq4357 256Kb
+remove arq294
+otimiza
+insere arq4358 256Kb
+remove arq295
+otimiza
+insere arq4359 256Kb
+remove arq296
+otimiza
+insere arq4360 256Kb
+remove arq297
+otimiza
+insere arq4361 256Kb
+remove arq298
+otimiza
+insere arq4362 256Kb
+remove arq299
+otimiza
+insere arq4363 256Kb
+remove arq300
+otimiza
+insere arq4364 256Kb
+remove arq301
+otimiza
+insere arq4365 256Kb
+remove arq302
+otimiza
+insere arq4366 256Kb
+remove arq303
+otimiza
+insere arq4367 256Kb
+remove arq304
+otimiza
+insere arq4368 256Kb
+remove arq305
+otimiza
+insere arq4369 256Kb
+remove arq306
+otimiza
+insere arq4370 256Kb
+remove arq307
+otimiza
+insere arq4371 256Kb
+remove arq308
+otimiza
+insere arq4372 256Kb
+remove arq309
+otimiza
+insere arq4373 256Kb
+remove arq310
+otimiza
+insere arq4374 256Kb
+remove arq311
+otimiza
+insere arq4375 256Kb
+remove arq312
+otimiza
+insere arq4376 256Kb
+remove arq313
+otimiza
+insere arq4377 256Kb
+remove arq314
+otimiza
+insere arq4378 256Kb
+remove arq315
+otimiza
+insere arq4379 256Kb
+remove arq316
+otimiza
+insere arq4380 256Kb
+remove arq317
+otimiza
+insere arq4381 256Kb
+remove arq318
+otimiza
+insere arq4382 256Kb
+remove arq319
+otimiza
+insere arq4383 256Kb
+remove arq320
+otimiza
+insere arq4384 256Kb
+remove arq321
+otimiza
+insere arq4385 256Kb
+remove arq322
+otimiza
+insere arq4386 256Kb
+remove arq323
+otimiza
+insere arq4387 256Kb
+remove arq324
+otimiza
+insere arq4388 256Kb
+remove arq325
+otimiza
+insere arq4389 256Kb
+remove arq326
+otimiza
+insere arq4390 256Kb
+remove arq327
+otimiza
+insere arq4391 256Kb
+remove arq328
+otimiza
+insere arq4392 256Kb
+remove arq329
+otimiza
+insere arq4393 256Kb
+remove arq330
+otimiza
+insere arq4394 256Kb
+remove arq331
+otimiza
+insere arq4395 256Kb
+remove arq332
+otimiza
+insere arq4396 256Kb
+remove arq333
+otimiza
+insere arq4397 256Kb
+remove arq334
+otimiza
+insere arq4398 256Kb
+remove arq335
+otimiza
+insere arq4399 256Kb
+remove arq336
+otimiza
+insere arq4400 256Kb
+remove arq337
+otimiza
+insere arq4401 256Kb
+remove arq338
+otimiza
+insere arq4402 256Kb
+remove arq339
+otimiza
+insere arq4403 256Kb
+remove arq340
+otimiza
+insere arq4404 256Kb
+remove arq341
+otimiza
+insere arq4405 256Kb
+remove arq342
+otimiza
+insere arq4406 256Kb
+remove arq343
+otimiza
+insere arq4407 256Kb
+remove arq344
+otimiza
+insere arq4408 256Kb
+remove arq345
+otimiza
+insere arq4409 256Kb
+remove arq346
+otimiza
+insere arq4410 256Kb
+remove arq347
+otimiza
+insere arq4411 256Kb
+remove arq348
+otimiza
+insere arq4412 256Kb
+remove arq349
+otimiza
+insere arq4413 256Kb
+remove arq350
+otimiza
+insere arq4414 256Kb
+remove arq351
+otimiza
+insere arq4415 256Kb
+remove arq352
+otimiza
+insere arq4416 256Kb
+remove arq353
+otimiza
+insere arq4417 256Kb
+remove arq354
+otimiza
+insere arq4418 256Kb
+remove arq355
+otimiza
+insere arq4419 256Kb
+remove arq356
+otimiza
+insere arq4420 256Kb
+remove arq357
+otimiza
+insere arq4421 256Kb
+remove arq358
+otimiza
+insere arq4422 256Kb
+remove arq359
+otimiza
+insere arq4423 256Kb
+remove arq360
+otimiza
+insere arq4424 256Kb
+remove arq361
+otimiza
+insere arq4425 256Kb
+remove arq362
+otimiza
+insere arq4426 256Kb
+remove arq363
+otimiza
+insere arq4427 256Kb
+remove arq364
+otimiza
+insere arq4428 256Kb
+remove arq365
+otimiza
+insere arq4429 256Kb
+remove arq366
+otimiza
+insere arq4430 256Kb
+remove arq367
+otimiza
+insere arq4431 256Kb
+remove arq368
+otimiza
+insere arq4432 256Kb
+remove arq369
+otimiza
+insere arq4433 256Kb
+remove arq370
+otimiza
+insere arq4434 256Kb
+remove arq371
+otimiza
+insere arq4435 256Kb
+remove arq372
+otimiza
+insere arq4436 256Kb
+remove arq373
+otimiza
+insere arq4437 256Kb
+remove arq374
+otimiza
+insere arq4438 256Kb
+remove arq375
+otimiza
+insere arq4439 256Kb
+remove arq376
+otimiza
+insere arq4440 256Kb
+remove arq377
+otimiza
+insere arq4441 256Kb
+remove arq378
+otimiza
+insere arq4442 256Kb
+remove arq379
+otimiza
+insere arq4443 256Kb
+remove arq380
+otimiza
+insere arq4444 256Kb
+remove arq381
+otimiza
+insere arq4445 256Kb
+remove arq382
+otimiza
+insere arq4446 256Kb
+remove arq383
+otimiza
+insere arq4447 256Kb
+remove arq384
+otimiza
+insere arq4448 256Kb
+remove arq385
+otimiza
+insere arq4449 256Kb
+remove arq386
+otimiza
+insere arq4450 256Kb
+remove arq387
+otimiza
+insere arq4451 256Kb
+remove arq388
+otimiza
+insere arq4452 256Kb
+remove arq389
+otimiza
+insere arq4453 256Kb
+remove arq390
+otimiza
+insere arq4454 256Kb
+remove arq391
+otimiza
+insere arq4455 256Kb
+remove arq392
+otimiza
+insere arq4456 256Kb
+remove arq393
+otimiza
+insere arq4457 256Kb
+remove arq394
+otimiza
+insere arq4458 256Kb
+remove arq395
+otimiza
+insere arq4459 256Kb
+remove arq396
+otimiza
+insere arq4460 256Kb
+remove arq397
+otimiza
+insere arq4461 256Kb
+remove arq398
+otimiza
+insere arq4462 256Kb
+remove arq399
+otimiza
+insere arq4463 256Kb
+remove arq400
+otimiza
+insere arq4464 256Kb
+remove arq401
+otimiza
+insere arq4465 256Kb
+remove arq402
+otimiza
+insere arq4466 256Kb
+remove arq403
+otimiza
+insere arq4467 256Kb
+remove arq404
+otimiza
+insere arq4468 256Kb
+remove arq405
+otimiza
+insere arq4469 256Kb
+remove arq406
+otimiza
+insere arq4470 256Kb
+remove arq407
+otimiza
+insere arq4471 256Kb
+remove arq408
+otimiza
+insere arq4472 256Kb
+remove arq409
+otimiza
+insere arq4473 256Kb
+remove arq410
+otimiza
+insere arq4474 256Kb
+remove arq411
+otimiza
+insere arq4475 256Kb
+remove arq412
+otimiza
+insere arq4476 256Kb
+remove arq413
+otimiza
+insere arq4477 256Kb
+remove arq414
+otimiza
+insere arq4478 256Kb
+remove arq415
+otimiza
+insere arq4479 256Kb
+remove arq416
+otimiza
+insere arq4480 256Kb
+remove arq417
+otimiza
+insere arq4481 256Kb
+remove arq418
+otimiza
+insere arq4482 256Kb
+remove arq419
+otimiza
+insere arq4483 256Kb
+remove arq420
+otimiza
+insere arq4484 256Kb
+remove arq421
+otimiza
+insere arq4485 256Kb
+remove arq422
+otimiza
+insere arq4486 256Kb
+remove arq423
+otimiza
+insere arq4487 256Kb
+remove arq424
+otimiza
+insere arq4488 256Kb
+remove arq425
+otimiza
+insere arq4489 256Kb
+remove arq426
+otimiza
+insere arq4490 256Kb
+remove arq427
+otimiza
+insere arq4491 256Kb
+remove arq428
+otimiza
+insere arq4492 256Kb
+remove arq429
+otimiza
+insere arq4493 256Kb
+remove arq430
+otimiza
+insere arq4494 256Kb
+remove arq431
+otimiza
+insere arq4495 256Kb
+remove arq432
+otimiza
+insere arq4496 256Kb
+remove arq433
+otimiza
+insere arq4497 256Kb
+remove arq434
+otimiza
+insere arq4498 256Kb
+remove arq435
+otimiza
+insere arq4499 256Kb
+remove arq436
+otimiza
+insere arq4500 256Kb
+remove arq437
+otimiza
+insere arq4501 256Kb
+remove arq438
+otimiza
+insere arq4502 256Kb
+remove arq439
+otimiza
+insere arq4503 256Kb
+remove arq440
+otimiza
+insere arq4504 256Kb
+remove arq441
+otimiza
+insere arq4505 256Kb
+remove arq442
+otimiza
+insere arq4506 256Kb
+remove arq443
+otimiza
+insere arq4507 256Kb
+remove arq444
+otimiza
+insere arq4508 256Kb
+remove arq445
+otimiza
+insere arq4509 256Kb
+remove arq446
+otimiza
+insere arq4510 256Kb
+remove arq447
+otimiza
+insere arq4511 256Kb
+remove arq448
+otimiza
+insere arq4512 256Kb
+remove arq449
+otimiza
+insere arq4513 256Kb
+remove arq450
+otimiza
+insere arq4514 256Kb
+remove arq451
+otimiza
+insere arq4515 256Kb
+remove arq452
+otimiza
+insere arq4516 256Kb
+remove arq453
+otimiza
+insere arq4517 256Kb
+remove arq454
+otimiza
+insere arq4518 256Kb
+remove arq455
+otimiza
+insere arq4519 256Kb
+remove arq456
+otimiza
+insere arq4520 256Kb
+remove arq457
+otimiza
+insere arq4521 256Kb
+remove arq458
+otimiza
+insere arq4522 256Kb
+remove arq459
+otimiza
+insere arq4523 256Kb
+remove arq460
+otimiza
+insere arq4524 256Kb
+remove arq461
+otimiza
+insere arq4525 256Kb
+remove arq462
+otimiza
+insere arq4526 256Kb
+remove arq463
+otimiza
+insere arq4527 256Kb
+remove arq464
+otimiza
+insere arq4528 256Kb
+remove arq465
+otimiza
+insere arq4529 256Kb
+remove arq466
+otimiza
+insere arq4530 256Kb
+remove arq467
+otimiza
+insere arq4531 256Kb
+remove arq468
+otimiza
+insere arq4532 256Kb
+remove arq469
+otimiza
+insere arq4533 256Kb
+remove arq470
+otimiza
+insere arq4534 256Kb
+remove arq471
+otimiza
+insere arq4535 256Kb
+remove arq472
+otimiza
+insere arq4536 256Kb
+remove arq473
+otimiza
+insere arq4537 256Kb
+remove arq474
+otimiza
+insere arq4538 256Kb
+remove arq475
+otimiza
+insere arq4539 256Kb
+remove arq476
+otimiza
+insere arq4540 256Kb
+remove arq477
+otimiza
+insere arq4541 256Kb
+remove arq478
+otimiza
+insere arq4542 256Kb
+remove arq479
+otimiza
+insere arq4543 256Kb
+remove arq480
+otimiza
+insere arq4544 256Kb
+remove arq481
+otimiza
+insere arq4545 256Kb
+remove arq482
+otimiza
+insere arq4546 256Kb
+remove arq483
+otimiza
+insere arq4547 256Kb
+remove arq484
+otimiza
+insere arq4548 256Kb
+remove arq485
+otimiza
+insere arq4549 256Kb
+remove arq486
+otimiza
+insere arq4550 256Kb
+remove arq487
+otimiza
+insere arq4551 256Kb
+remove arq488
+otimiza
+insere arq4552 256Kb
+remove arq489
+otimiza
+insere arq4553 256Kb
+remove arq490
+otimiza
+insere arq4554 256Kb
+remove arq491
+otimiza
+insere arq4555 256Kb
+remove arq492
+otimiza
+insere arq4556 256Kb
+remove arq493
+otimiza
+insere arq4557 256Kb
+remove arq494
+otimiza
+insere arq4558 256Kb
+remove arq495
+otimiza
+insere arq4559 256Kb
+remove arq496
+otimiza
+insere arq4560 256Kb
+remove arq497
+otimiza
+insere arq4561 256Kb
+remove arq498
+otimiza
+insere arq4562 256Kb
+remove arq499
+otimiza
+insere arq4563 256Kb
+remove arq500
+otimiza
+insere arq4564 256Kb
+remove arq501
+otimiza
+insere arq4565 256Kb
+remove arq502
+otimiza
+insere arq4566 256Kb
+remove arq503
+otimiza
+insere arq4567 256Kb
+remove arq504
+otimiza
+insere arq4568 256Kb
+remove arq505
+otimiza
+insere arq4569 256Kb
+remove arq506
+otimiza
+insere arq4570 256Kb
+remove arq507
+otimiza
+insere arq4571 256Kb
+remove arq508
+otimiza
+insere arq4572 256Kb
+remove arq509
+otimiza
+insere arq4573 256Kb
+remove arq510
+otimiza
+insere arq4574 256Kb
+remove arq511
+otimiza
+insere arq4575 256Kb
+remove arq512
+otimiza
+insere arq4576 256Kb
+remove arq513
+otimiza
+insere arq4577 256Kb
+remove arq514
+otimiza
+insere arq4578 256Kb
+remove arq515
+otimiza
+insere arq4579 256Kb
+remove arq516
+otimiza
+insere arq4580 256Kb
+remove arq517
+otimiza
+insere arq4581 256Kb
+remove arq518
+otimiza
+insere arq4582 256Kb
+remove arq519
+otimiza
+insere arq4583 256Kb
+remove arq520
+otimiza
+insere arq4584 256Kb
+remove arq521
+otimiza
+insere arq4585 256Kb
+remove arq522
+otimiza
+insere arq4586 256Kb
+remove arq523
+otimiza
+insere arq4587 256Kb
+remove arq524
+otimiza
+insere arq4588 256Kb
+remove arq525
+otimiza
+insere arq4589 256Kb
+remove arq526
+otimiza
+insere arq4590 256Kb
+remove arq527
+otimiza
+insere arq4591 256Kb
+remove arq528
+otimiza
+insere arq4592 256Kb
+remove arq529
+otimiza
+insere arq4593 256Kb
+remove arq530
+otimiza
+insere arq4594 256Kb
+remove arq531
+otimiza
+insere arq4595 256Kb
+remove arq532
+otimiza
+insere arq4596 256Kb
+remove arq533
+otimiza
+insere arq4597 256Kb
+remove arq534
+otimiza
+insere arq4598 256Kb
+remove arq535
+otimiza
+insere arq4599 256Kb
+remove arq536
+otimiza
+insere arq4600 256Kb
+remove arq537
+otimiza
+insere arq4601 256Kb
+remove arq538
+otimiza
+insere arq4602 256Kb
+remove arq539
+otimiza
+insere arq4603 256Kb
+remove arq540
+otimiza
+insere arq4604 256Kb
+remove arq541
+otimiza
+insere arq4605 256Kb
+remove arq542
+otimiza
+insere arq4606 256Kb
+remove arq543
+otimiza
+insere arq4607 256Kb
+remove arq544
+otimiza
+insere arq4608 256Kb
+remove arq545
+otimiza
+insere arq4609 256Kb
+remove arq546
+otimiza
+insere arq4610 256Kb
+remove arq547
+otimiza
+insere arq4611 256Kb
+remove arq548
+otimiza
+insere arq4612 256Kb
+remove arq549
+otimiza
+insere arq4613 256Kb
+remove arq550
+otimiza
+insere arq4614 256Kb
+remove arq551
+otimiza
+insere arq4615 256Kb
+remove arq552
+otimiza
+insere arq4616 256Kb
+remove arq553
+otimiza
+insere arq4617 256Kb
+remove arq554
+otimiza
+insere arq4618 256Kb
+remove arq555
+otimiza
+insere arq4619 256Kb
+remove arq556
+otimiza
+insere arq4620 256Kb
+remove arq557
+otimiza
+insere arq4621 256Kb
+remove arq558
+otimiza
+insere arq4622 256Kb
+remove arq559
+otimiza
+insere arq4623 256Kb
+remove arq560
+otimiza
+insere arq4624 256Kb
+remove arq561
+otimiza
+insere arq4625 256Kb
+remove arq562
+otimiza
+insere arq4626 256Kb
+remove arq563
+otimiza
+insere arq4627 256Kb
+remove arq564
+otimiza
+insere arq4628 256Kb
+remove arq565
+otimiza
+insere arq4629 256Kb
+remove arq566
+otimiza
+insere arq4630 256Kb
+remove arq567
+otimiza
+insere arq4631 256Kb
+remove arq568
+otimiza
+insere arq4632 256Kb
+remove arq569
+otimiza
+insere arq4633 256Kb
+remove arq570
+otimiza
+insere arq4634 256Kb
+remove arq571
+otimiza
+insere arq4635 256Kb
+remove arq572
+otimiza
+insere arq4636 256Kb
+remove arq573
+otimiza
+insere arq4637 256Kb
+remove arq574
+otimiza
+insere arq4638 256Kb
+remove arq575
+otimiza
+insere arq4639 256Kb
+remove arq576
+otimiza
+insere arq4640 256Kb
+remove arq577
+otimiza
+insere arq4641 256Kb
+remove arq578
+otimiza
+insere arq4642 256Kb
+remove arq579
+otimiza
+insere arq4643 256Kb
+remove arq580
+otimiza
+insere arq4644 256Kb
+remove arq581
+otimiza
+insere arq4645 256Kb
+remove arq582
+otimiza
+insere arq4646 256Kb
+remove arq583
+otimiza
+insere arq4647 256Kb
+remove arq584
+otimiza
+insere arq4648 256Kb
+remove arq585
+otimiza
+insere arq4649 256Kb
+remove arq586
+otimiza
+insere arq4650 256Kb
+remove arq587
+otimiza
+insere arq4651 256Kb
+remove arq588
+otimiza
+insere arq4652 256Kb
+remove arq589
+otimiza
+insere arq4653 256Kb
+remove arq590
+otimiza
+insere arq4654 256Kb
+remove arq591
+otimiza
+insere arq4655 256Kb
+remove arq592
+otimiza
+insere arq4656 256Kb
+remove arq593
+otimiza
+insere arq4657 256Kb
+remove arq594
+otimiza
+insere arq4658 256Kb
+remove arq595
+otimiza
+insere arq4659 256Kb
+remove arq596
+otimiza
+insere arq4660 256Kb
+remove arq597
+otimiza
+insere arq4661 256Kb
+remove arq598
+otimiza
+insere arq4662 256Kb
+remove arq599
+otimiza
+insere arq4663 256Kb
+remove arq600
+otimiza
+insere arq4664 256Kb
+remove arq601
+otimiza
+insere arq4665 256Kb
+remove arq602
+otimiza
+insere arq4666 256Kb
+remove arq603
+otimiza
+insere arq4667 256Kb
+remove arq604
+otimiza
+insere arq4668 256Kb
+remove arq605
+otimiza
+insere arq4669 256Kb
+remove arq606
+otimiza
+insere arq4670 256Kb
+remove arq607
+otimiza
+insere arq4671 256Kb
+remove arq608
+otimiza
+insere arq4672 256Kb
+remove arq609
+otimiza
+insere arq4673 256Kb
+remove arq610
+otimiza
+insere arq4674 256Kb
+remove arq611
+otimiza
+insere arq4675 256Kb
+remove arq612
+otimiza
+insere arq4676 256Kb
+remove arq613
+otimiza
+insere arq4677 256Kb
+remove arq614
+otimiza
+insere arq4678 256Kb
+remove arq615
+otimiza
+insere arq4679 256Kb
+remove arq616
+otimiza
+insere arq4680 256Kb
+remove arq617
+otimiza
+insere arq4681 256Kb
+remove arq618
+otimiza
+insere arq4682 256Kb
+remove arq619
+otimiza
+insere arq4683 256Kb
+remove arq620
+otimiza
+insere arq4684 256Kb
+remove arq621
+otimiza
+insere arq4685 256Kb
+remove arq622
+otimiza
+insere arq4686 256Kb
+remove arq623
+otimiza
+insere arq4687 256Kb
+remove arq624
+otimiza
+insere arq4688 256Kb
+remove arq625
+otimiza
+insere arq4689 256Kb
+remove arq626
+otimiza
+insere arq4690 256Kb
+remove arq627
+otimiza
+insere arq4691 256Kb
+remove arq628
+otimiza
+insere arq4692 256Kb
+remove arq629
+otimiza
+insere arq4693 256Kb
+remove arq630
+otimiza
+insere arq4694 256Kb
+remove arq631
+otimiza
+insere arq4695 256Kb
+remove arq632
+otimiza
+insere arq4696 256Kb
+remove arq633
+otimiza
+insere arq4697 256Kb
+remove arq634
+otimiza
+insere arq4698 256Kb
+remove arq635
+otimiza
+insere arq4699 256Kb
+remove arq636
+otimiza
+insere arq4700 256Kb
+remove arq637
+otimiza
+insere arq4701 256Kb
+remove arq638
+otimiza
+insere arq4702 256Kb
+remove arq639
+otimiza
+insere arq4703 256Kb
+remove arq640
+otimiza
+insere arq4704 256Kb
+remove arq641
+otimiza
+insere arq4705 256Kb
+remove arq642
+otimiza
+insere arq4706 256Kb
+remove arq643
+otimiza
+insere arq4707 256Kb
+remove arq644
+otimiza
+insere arq4708 256Kb
+remove arq645
+otimiza
+insere arq4709 256Kb
+remove arq646
+otimiza
+insere arq4710 256Kb
+remove arq647
+otimiza
+insere arq4711 256Kb
+remove arq648
+otimiza
+insere arq4712 256Kb
+remove arq649
+otimiza
+insere arq4713 256Kb
+remove arq650
+otimiza
+insere arq4714 256Kb
+remove arq651
+otimiza
+insere arq4715 256Kb
+remove arq652
+otimiza
+insere arq4716 256Kb
+remove arq653
+otimiza
+insere arq4717 256Kb
+remove arq654
+otimiza
+insere arq4718 256Kb
+remove arq655
+otimiza
+insere arq4719 256Kb
+remove arq656
+otimiza
+insere arq4720 256Kb
+remove arq657
+otimiza
+insere arq4721 256Kb
+remove arq658
+otimiza
+insere arq4722 256Kb
+remove arq659
+otimiza
+insere arq4723 256Kb
+remove arq660
+otimiza
+insere arq4724 256Kb
+remove arq661
+otimiza
+insere arq4725 256Kb
+remove arq662
+otimiza
+insere arq4726 256Kb
+remove arq663
+otimiza
+insere arq4727 256Kb
+remove arq664
+otimiza
+insere arq4728 256Kb
+remove arq665
+otimiza
+insere arq4729 256Kb
+remove arq666
+otimiza
+insere arq4730 256Kb
+remove arq667
+otimiza
+insere arq4731 256Kb
+remove arq668
+otimiza
+insere arq4732 256Kb
+remove arq669
+otimiza
+insere arq4733 256Kb
+remove arq670
+otimiza
+insere arq4734 256Kb
+remove arq671
+otimiza
+insere arq4735 256Kb
+remove arq672
+otimiza
+insere arq4736 256Kb
+remove arq673
+otimiza
+insere arq4737 256Kb
+remove arq674
+otimiza
+insere arq4738 256Kb
+remove arq675
+otimiza
+insere arq4739 256Kb
+remove arq676
+otimiza
+insere arq4740 256Kb
+remove arq677
+otimiza
+insere arq4741 256Kb
+remove arq678
+otimiza
+insere arq4742 256Kb
+remove arq679
+otimiza
+insere arq4743 256Kb
+remove arq680
+otimiza
+insere arq4744 256Kb
+remove arq681
+otimiza
+insere arq4745 256Kb
+remove arq682
+otimiza
+insere arq4746 256Kb
+remove arq683
+otimiza
+insere arq4747 256Kb
+remove arq684
+otimiza
+insere arq4748 256Kb
+remove arq685
+otimiza
+insere arq4749 256Kb
+remove arq686
+otimiza
+insere arq4750 256Kb
+remove arq687
+otimiza
+insere arq4751 256Kb
+remove arq688
+otimiza
+insere arq4752 256Kb
+remove arq689
+otimiza
+insere arq4753 256Kb
+remove arq690
+otimiza
+insere arq4754 256Kb
+remove arq691
+otimiza
+insere arq4755 256Kb
+remove arq692
+otimiza
+insere arq4756 256Kb
+remove arq693
+otimiza
+insere arq4757 256Kb
+remove arq694
+otimiza
+insere arq4758 256Kb
+remove arq695
+otimiza
+insere arq4759 256Kb
+remove arq696
+otimiza
+insere arq4760 256Kb
+remove arq697
+otimiza
+insere arq4761 256Kb
+remove arq698
+otimiza
+insere arq4762 256Kb
+remove arq699
+otimiza
+insere arq4763 256Kb
+remove arq700
+otimiza
+insere arq4764 256Kb
+remove arq701
+otimiza
+insere arq4765 256Kb
+remove arq702
+otimiza
+insere arq4766 256Kb
+remove arq703
+otimiza
+insere arq4767 256Kb
+remove arq704
+otimiza
+insere arq4768 256Kb
+remove arq705
+otimiza
+insere arq4769 256Kb
+remove arq706
+otimiza
+insere arq4770 256Kb
+remove arq707
+otimiza
+insere arq4771 256Kb
+remove arq708
+otimiza
+insere arq4772 256Kb
+remove arq709
+otimiza
+insere arq4773 256Kb
+remove arq710
+otimiza
+insere arq4774 256Kb
+remove arq711
+otimiza
+insere arq4775 256Kb
+remove arq712
+otimiza
+insere arq4776 256Kb
+remove arq713
+otimiza
+insere arq4777 256Kb
+remove arq714
+otimiza
+insere arq4778 256Kb
+remove arq715
+otimiza
+insere arq4779 256Kb
+remove arq716
+otimiza
+insere arq4780 256Kb
+remove arq717
+otimiza
+insere arq4781 256Kb
+remove arq718
+otimiza
+insere arq4782 256Kb
+remove arq719
+otimiza
+insere arq4783 256Kb
+remove arq720
+otimiza
+insere arq4784 256Kb
+remove arq721
+otimiza
+insere arq4785 256Kb
+remove arq722
+otimiza
+insere arq4786 256Kb
+remove arq723
+otimiza
+insere arq4787 256Kb
+remove arq724
+otimiza
+insere arq4788 256Kb
+remove arq725
+otimiza
+insere arq4789 256Kb
+remove arq726
+otimiza
+insere arq4790 256Kb
+remove arq727
+otimiza
+insere arq4791 256Kb
+remove arq728
+otimiza
+insere arq4792 256Kb
+remove arq729
+otimiza
+insere arq4793 256Kb
+remove arq730
+otimiza
+insere arq4794 256Kb
+remove arq731
+otimiza
+insere arq4795 256Kb
+remove arq732
+otimiza
+insere arq4796 256Kb
+remove arq733
+otimiza
+insere arq4797 256Kb
+remove arq734
+otimiza
+insere arq4798 256Kb
+remove arq735
+otimiza
+insere arq4799 256Kb
+remove arq736
+otimiza
+insere arq4800 256Kb
+remove arq737
+otimiza
+insere arq4801 256Kb
+remove arq738
+otimiza
+insere arq4802 256Kb
+remove arq739
+otimiza
+insere arq4803 256Kb
+remove arq740
+otimiza
+insere arq4804 256Kb
+remove arq741
+otimiza
+insere arq4805 256Kb
+remove arq742
+otimiza
+insere arq4806 256Kb
+remove arq743
+otimiza
+insere arq4807 256Kb
+remove arq744
+otimiza
+insere arq4808 256Kb
+remove arq745
+otimiza
+insere arq4809 256Kb
+remove arq746
+otimiza
+insere arq4810 256Kb
+remove arq747
+otimiza
+insere arq4811 256Kb
+remove arq748
+otimiza
+insere arq4812 256Kb
+remove arq749
+otimiza
+insere arq4813 256Kb
+remove arq750
+otimiza
+insere arq4814 256Kb
+remove arq751
+otimiza
+insere arq4815 256Kb
+remove arq752
+otimiza
+insere arq4816 256Kb
+remove arq753
+otimiza
+insere arq4817 256Kb
+remove arq754
+otimiza
+insere arq4818 256Kb
+remove arq755
+otimiza
+insere arq4819 256Kb
+remove arq756
+otimiza
+insere arq4820 256Kb
+remove arq757
+otimiza
+insere arq4821 256Kb
+remove arq758
+otimiza
+insere arq4822 256Kb
+remove arq759
+otimiza
+insere arq4823 256Kb
+remove arq760
+otimiza
+insere arq4824 256Kb
+remove arq761
+otimiza
+insere arq4825 256Kb
+remove arq762
+otimiza
+insere arq4826 256Kb
+remove arq763
+otimiza
+insere arq4827 256Kb
+remove arq764
+otimiza
+insere arq4828 256Kb
+remove arq765
+otimiza
+insere arq4829 256Kb
+remove arq766
+otimiza
+insere arq4830 256Kb
+remove arq767
+otimiza
+insere arq4831 256Kb
+remove arq768
+otimiza
+insere arq4832 256Kb
+remove arq769
+otimiza
+insere arq4833 256Kb
+remove arq770
+otimiza
+insere arq4834 256Kb
+remove arq771
+otimiza
+insere arq4835 256Kb
+remove arq772
+otimiza
+insere arq4836 256Kb
+remove arq773
+otimiza
+insere arq4837 256Kb
+remove arq774
+otimiza
+insere arq4838 256Kb
+remove arq775
+otimiza
+insere arq4839 256Kb
+remove arq776
+otimiza
+insere arq4840 256Kb
+remove arq777
+otimiza
+insere arq4841 256Kb
+remove arq778
+otimiza
+insere arq4842 256Kb
+remove arq779
+otimiza
+insere arq4843 256Kb
+remove arq780
+otimiza
+insere arq4844 256Kb
+remove arq781
+otimiza
+insere arq4845 256Kb
+remove arq782
+otimiza
+insere arq4846 256Kb
+remove arq783
+otimiza
+insere arq4847 256Kb
+remove arq784
+otimiza
+insere arq4848 256Kb
+remove arq785
+otimiza
+insere arq4849 256Kb
+remove arq786
+otimiza
+insere arq4850 256Kb
+remove arq787
+otimiza
+insere arq4851 256Kb
+remove arq788
+otimiza
+insere arq4852 256Kb
+remove arq789
+otimiza
+insere arq4853 256Kb
+remove arq790
+otimiza
+insere arq4854 256Kb
+remove arq791
+otimiza
+insere arq4855 256Kb
+remove arq792
+otimiza
+insere arq4856 256Kb
+remove arq793
+otimiza
+insere arq4857 256Kb
+remove arq794
+otimiza
+insere arq4858 256Kb
+remove arq795
+otimiza
+insere arq4859 256Kb
+remove arq796
+otimiza
+insere arq4860 256Kb
+remove arq797
+otimiza
+insere arq4861 256Kb
+remove arq798
+otimiza
+insere arq4862 256Kb
+remove arq799
+otimiza
+insere arq4863 256Kb
+remove arq800
+otimiza
+insere arq4864 256Kb
+remove arq801
+otimiza
+insere arq4865 256Kb
+remove arq802
+otimiza
+insere arq4866 256Kb
+remove arq803
+otimiza
+insere arq4867 256Kb
+remove arq804
+otimiza
+insere arq4868 256Kb
+remove arq805
+otimiza
+insere arq4869 256Kb
+remove arq806
+otimiza
+insere arq4870 256Kb
+remove arq807
+otimiza
+insere arq4871 256Kb
+remove arq808
+otimiza
+insere arq4872 256Kb
+remove arq809
+otimiza
+insere arq4873 256Kb
+remove arq810
+otimiza
+insere arq4874 256Kb
+remove arq811
+otimiza
+insere arq4875 256Kb
+remove arq812
+otimiza
+insere arq4876 256Kb
+remove arq813
+otimiza
+insere arq4877 256Kb
+remove arq814
+otimiza
+insere arq4878 256Kb
+remove arq815
+otimiza
+insere arq4879 256Kb
+remove arq816
+otimiza
+insere arq4880 256Kb
+remove arq817
+otimiza
+insere arq4881 256Kb
+remove arq818
+otimiza
+insere arq4882 256Kb
+remove arq819
+otimiza
+insere arq4883 256Kb
+remove arq820
+otimiza
+insere arq4884 256Kb
+remove arq821
+otimiza
+insere arq4885 256Kb
+remove arq822
+otimiza
+insere arq4886 256Kb
+remove arq823
+otimiza
+insere arq4887 256Kb
+remove arq824
+otimiza
+insere arq4888 256Kb
+remove arq825
+otimiza
+insere arq4889 256Kb
+remove arq826
+otimiza
+insere arq4890 256Kb
+remove arq827
+otimiza
+insere arq4891 256Kb
+remove arq828
+otimiza
+insere arq4892 256Kb
+remove arq829
+otimiza
+insere arq4893 256Kb
+remove arq830
+otimiza
+insere arq4894 256Kb
+remove arq831
+otimiza
+insere arq4895 256Kb
+remove arq832
+otimiza
+insere arq4896 256Kb
+remove arq833
+otimiza
+insere arq4897 256Kb
+remove arq834
+otimiza
+insere arq4898 256Kb
+remove arq835
+otimiza
+insere arq4899 256Kb
+remove arq836
+otimiza
+insere arq4900 256Kb
+remove arq837
+otimiza
+insere arq4901 256Kb
+remove arq838
+otimiza
+insere arq4902 256Kb
+remove arq839
+otimiza
+insere arq4903 256Kb
+remove arq840
+otimiza
+insere arq4904 256Kb
+remove arq841
+otimiza
+insere arq4905 256Kb
+remove arq842
+otimiza
+insere arq4906 256Kb
+remove arq843
+otimiza
+insere arq4907 256Kb
+remove arq844
+otimiza
+insere arq4908 256Kb
+remove arq845
+otimiza
+insere arq4909 256Kb
+remove arq846
+otimiza
+insere arq4910 256Kb
+remove arq847
+otimiza
+insere arq4911 256Kb
+remove arq848
+otimiza
+insere arq4912 256Kb
+remove arq849
+otimiza
+insere arq4913 256Kb
+remove arq850
+otimiza
+insere arq4914 256Kb
+remove arq851
+otimiza
+insere arq4915 256Kb
+remove arq852
+otimiza
+insere arq4916 256Kb
+remove arq853
+otimiza
+insere arq4917 256Kb
+remove arq854
+otimiza
+insere arq4918 256Kb
+remove arq855
+otimiza
+insere arq4919 256Kb
+remove arq856
+otimiza
+insere arq4920 256Kb
+remove arq857
+otimiza
+insere arq4921 256Kb
+remove arq858
+otimiza
+insere arq4922 256Kb
+remove arq859
+otimiza
+insere arq4923 256Kb
+remove arq860
+otimiza
+insere arq4924 256Kb
+remove arq861
+otimiza
+insere arq4925 256Kb
+remove arq862
+otimiza
+insere arq4926 256Kb
+remove arq863
+otimiza
+insere arq4927 256Kb
+remove arq864
+otimiza
+insere arq4928 256Kb
+remove arq865
+otimiza
+insere arq4929 256Kb
+remove arq866
+otimiza
+insere arq4930 256Kb
+remove arq867
+otimiza
+insere arq4931 256Kb
+remove arq868
+otimiza
+insere arq4932 256Kb
+remove arq869
+otimiza
+insere arq4933 256Kb
+remove arq870
+otimiza
+insere arq4934 256Kb
+remove arq871
+otimiza
+insere arq4935 256Kb
+remove arq872
+otimiza
+insere arq4936 256Kb
+remove arq873
+otimiza
+insere arq4937 256Kb
+remove arq874
+otimiza
+insere arq4938 256Kb
+remove arq875
+otimiza
+insere arq4939 256Kb
+remove arq876
+otimiza
+insere arq4940 256Kb
+remove arq877
+otimiza
+insere arq4941 256Kb
+remove arq878
+otimiza
+insere arq4942 256Kb
+remove arq879
+otimiza
+insere arq4943 256Kb
+remove arq880
+otimiza
+insere arq4944 256Kb
+remove arq881
+otimiza
+insere arq4945 256Kb
+remove arq882
+otimiza
+insere arq4946 256Kb
+remove arq883
+otimiza
+insere arq4947 256Kb
+remove arq884
+otimiza
+insere arq4948 256Kb
+remove arq885
+otimiza
+insere arq4949 256Kb
+remove arq886
+otimiza
+insere arq4950 256Kb
+remove arq887
+otimiza
+insere arq4951 256Kb
+remove arq888
+otimiza
+insere arq4952 256Kb
+remove arq889
+otimiza
+insere arq4953 256Kb
+remove arq890
+otimiza
+insere arq4954 256Kb
+remove arq891
+otimiza
+insere arq4955 256Kb
+remove arq892
+otimiza
+insere arq4956 256Kb
+remove arq893
+otimiza
+insere arq4957 256Kb
+remove arq894
+otimiza
+insere arq4958 256Kb
+remove arq895
+otimiza
+insere arq4959 256Kb
+remove arq896
+otimiza
+insere arq4960 256Kb
+remove arq897
+otimiza
+insere arq4961 256Kb
+remove arq898
+otimiza
+insere arq4962 256Kb
+remove arq899
+otimiza
+insere arq4963 256Kb
+remove arq900
+otimiza
+insere arq4964 256Kb
+remove arq901
+otimiza
+insere arq4965 256Kb
+remove arq902
+otimiza
+insere arq4966 256Kb
+remove arq903
+otimiza
+insere arq4967 256Kb
+remove arq904
+otimiza
+insere arq4968 256Kb
+remove arq905
+otimiza
+insere arq4969 256Kb
+remove arq906
+otimiza
+insere arq4970 256Kb
+remove arq907
+otimiza
+insere arq4971 256Kb
+remove arq908
+otimiza
+insere arq4972 256Kb
+remove arq909
+otimiza
+insere arq4973 256Kb
+remove arq910
+otimiza
+insere arq4974 256Kb
+remove arq911
+otimiza
+insere arq4975 256Kb
+remove arq912
+otimiza
+insere arq4976 256Kb
+remove arq913
+otimiza
+insere arq4977 256Kb
+remove arq914
+otimiza
+insere arq4978 256Kb
+remove arq915
+otimiza
+insere arq4979 256Kb
+remove arq916
+otimiza
+insere arq4980 256Kb
+remove arq917
+otimiza
+insere arq4981 256Kb
+remove arq918
+otimiza
+insere arq4982 256Kb
+remove arq919
+otimiza
+insere arq4983 256Kb
+remove arq920
+otimiza
+insere arq4984 256Kb
+remove arq921
+otimiza
+insere arq4985 256Kb
+remove arq922
+otimiza
+insere arq4986 256Kb
+remove arq923
+otimiza
+insere arq4987 256Kb
+remove arq924
+otimiza
+insere arq4988 256Kb
+remove arq925
+otimiza
+insere arq4989 256Kb
+remove arq926
+otimiza
+insere arq4990 256Kb
+remove arq927
+otimiza
+insere arq4991 256Kb
+remove arq928
+otimiza
+insere arq4992 256Kb
+remove arq929
+otimiza
+insere arq4993 256Kb
+remove arq930
+otimiza
+insere arq4994 256Kb
+remove arq931
+otimiza
+insere arq4995 256Kb
+remove arq932
+otimiza
+insere arq4996 256Kb
+remove arq933
+otimiza
+insere arq4997 256Kb
+remove arq934
+otimiza
+insere arq4998 256Kb
+remove arq935
+otimiza
+insere arq4999 256Kb
+remove arq936
+otimiza
+insere arq5000 256Kb
+remove arq937
+otimiza
+insere arq5001 256Kb
+remove arq938
+otimiza
+insere arq5002 256Kb
+remove arq939
+otimiza
+insere arq5003 256Kb
+remove arq940
+otimiza
+insere arq5004 256Kb
+remove arq941
+otimiza
+insere arq5005 256Kb
+remove arq942
+otimiza
+insere arq5006 256Kb
+remove arq943
+otimiza
+insere arq5007 256Kb
+remove arq944
+otimiza
+insere arq5008 256Kb
+remove arq945
+otimiza
+insere arq5009 256Kb
+remove arq946
+otimiza
+insere arq5010 256Kb
+remove arq947
+otimiza
+insere arq5011 256Kb
+remove arq948
+otimiza
+insere arq5012 256Kb
+remove arq949
+otimiza
+insere arq5013 256Kb
+remove arq950
+otimiza
+insere arq5014 256Kb
+remove arq951
+otimiza
+insere arq5015 256Kb
+remove arq952
+otimiza
+insere arq5016 256Kb
+remove arq953
+otimiza
+insere arq5017 256Kb
+remove arq954
+otimiza
+insere arq5018 256Kb
+remove arq955
+otimiza
+insere arq5019 256Kb
+remove arq956
+otimiza
+insere arq5020 256Kb
+remove arq957
+otimiza
+insere arq5021 256Kb
+remove arq958
+otimiza
+insere arq5022 256Kb
+remove arq959
+otimiza
+insere arq5023 256Kb
+remove arq960
+otimiza
+insere arq5024 256Kb
+remove arq961
+otimiza
+insere arq5025 256Kb
+remove arq962
+otimiza
+insere arq5026 256Kb
+remove arq963
+otimiza
+insere arq5027 256Kb
+remove arq964
+otimiza
+insere arq5028 256Kb
+remove arq965
+otimiza
+insere arq5029 256Kb
+remove arq966
+otimiza
+insere arq5030 256Kb
+remove arq967
+otimiza
+insere arq5031 256Kb
+remove arq968
+otimiza
+insere arq5032 256Kb
+remove arq969
+otimiza
+insere arq5033 256Kb
+remove arq970
+otimiza
+insere arq5034 256Kb
+remove arq971
+otimiza
+insere arq5035 256Kb
+remove arq972
+otimiza
+insere arq5036 256Kb
+remove arq973
+otimiza
+insere arq5037 256Kb
+remove arq974
+otimiza
+insere arq5038 256Kb
+remove arq975
+otimiza
+insere arq5039 256Kb
+remove arq976
+otimiza
+insere arq5040 256Kb
+remove arq977
+otimiza
+insere arq5041 256Kb
+remove arq978
+otimiza
+insere arq5042 256Kb
+remove arq979
+otimiza
+insere arq5043 256Kb
+remove arq980
+otimiza
+insere arq5044 256Kb
+remove arq981
+otimiza
+insere arq5045 256Kb
+remove arq982
+otimiza
+insere arq5046 256Kb
+remove arq983
+otimiza
+insere arq5047 256Kb
+remove arq984
+otimiza
+insere arq5048 256Kb
+remove arq985
+otimiza
+insere arq5049 256Kb
+remove arq986
+otimiza
+insere arq5050 256Kb
+remove arq987
+otimiza
+insere arq5051 256Kb
+remove arq988
+otimiza
+insere arq5052 256Kb
+remove arq989
+otimiza
+insere arq5053 256Kb
+remove arq990
+otimiza
+insere arq5054 256Kb
+remove arq991
+otimiza
+insere arq5055 256Kb
+remove arq992
+otimiza
+insere arq5056 256Kb
+remove arq993
+otimiza
+insere arq5057 256Kb
+remove arq994
+otimiza
+insere arq5058 256Kb
+remove arq995
+otimiza
+insere arq5059 256Kb
+remove arq996
+otimiza
+insere arq5060 256Kb
+remove arq997
+otimiza
+insere arq5061 256Kb
+remove arq998
+otimiza
+insere arq5062 256Kb
+remove arq999
+otimiza
+insere arq5063 256Kb
+remove arq1000
+otimiza
+insere arq5064 256Kb
+remove arq1001
+otimiza
+insere arq5065 256Kb
+remove arq1002
+otimiza
+insere arq5066 256Kb
+remove arq1003
+otimiza
+insere arq5067 256Kb
+remove arq1004
+otimiza
+insere arq5068 256Kb
+remove arq1005
+otimiza
+insere arq5069 256Kb
+remove arq1006
+otimiza
+insere arq5070 256Kb
+remove arq1007
+otimiza
+insere arq5071 256Kb
+remove arq1008
+otimiza
+insere arq5072 256Kb
+remove arq1009
+otimiza
+insere arq5073 256Kb
+remove arq1010
+otimiza
+insere arq5074 256Kb
+remove arq1011
+otimiza
+insere arq5075 256Kb
+remove arq1012
+otimiza
+insere arq5076 256Kb
+remove arq1013
+otimiza
+insere arq5077 256Kb
+remove arq1014
+otimiza
+insere arq5078 256Kb
+remove arq1015
+otimiza
+insere arq5079 256Kb
+remove arq1016
+otimiza
+insere arq5080 256Kb
+remove arq1017
+otimiza
+insere arq5081 256Kb
+remove arq1018
+otimiza
+insere arq5082 256Kb
+remove arq1019
+otimiza
+insere arq5083 256Kb
+remove arq1020
+otimiza
+insere arq5084 256Kb
+remove arq1021
+otimiza
+insere arq5085 256Kb
+remove arq1022
+otimiza
+insere arq5086 256Kb
+remove arq1023
+otimiza
+insere arq5087 256Kb
+remove arq1024
+otimiza
+insere arq5088 256Kb
+remove arq1025
+otimiza
+insere arq5089 256Kb
+remove arq1026
+otimiza
+insere arq5090 256Kb
+remove arq1027
+otimiza
+insere arq5091 256Kb
+remove arq1028
+otimiza
+insere arq5092 256Kb
+remove arq1029
+otimiza
+insere arq5093 256Kb
+remove arq1030
+otimiza
+insere arq5094 256Kb
+remove arq1031
+otimiza
+insere arq5095 256Kb
+remove arq1032
+otimiza
+insere arq5096 256Kb
+remove arq1033
+otimiza
+insere arq5097 256Kb
+remove arq1034
+otimiza
+insere arq5098 256Kb
+remove arq1035
+otimiza
+insere arq5099 256Kb
+remove arq1036
+otimiza
+insere arq5100 256Kb
+remove arq1037
+otimiza
+insere arq5101 256Kb
+remove arq1038
+otimiza
+insere arq5102 256Kb
+remove arq1039
+otimiza
+insere arq5103 256Kb
+remove arq1040
+otimiza
+insere arq5104 256Kb
+remove arq1041
+otimiza
+insere arq5105 256Kb
+remove arq1042
+otimiza
+insere arq5106 256Kb
+remove arq1043
+otimiza
+insere arq5107 256Kb
+remove arq1044
+otimiza
+insere arq5108 256Kb
+remove arq1045
+otimiza
+insere arq5109 256Kb
+remove arq1046
+otimiza
+insere arq5110 256Kb
+remove arq1047
+otimiza
+insere arq5111 256Kb
+remove arq1048
+otimiza
+insere arq5112 256Kb
+remove arq1049
+otimiza
+insere arq5113 256Kb
+remove arq1050
+otimiza
+insere arq5114 256Kb
+remove arq1051
+otimiza
+insere arq5115 256Kb
+remove arq1052
+otimiza
+insere arq5116 256Kb
+remove arq1053
+otimiza
+insere arq5117 256Kb
+remove arq1054
+otimiza
+insere arq5118 256Kb
+remove arq1055
+otimiza
+insere arq5119 256Kb
+remove arq1056
+otimiza
+insere arq5120 256Kb
+remove arq1057
+otimiza
+insere arq5121 256Kb
+remove arq1058
+otimiza
+insere arq5122 256Kb
+remove arq1059
+otimiza
+insere arq5123 256Kb
+remove arq1060
+otimiza
+insere arq5124 256Kb
+remove arq1061
+otimiza
+insere arq5125 256Kb
+remove arq1062
+otimiza
+insere arq5126 256Kb
+remove arq1063
+otimiza
+insere arq5127 256Kb
+remove arq1064
+otimiza
+insere arq5128 256Kb
+remove arq1065
+otimiza
+insere arq5129 256Kb
+remove arq1066
+otimiza
+insere arq5130 256Kb
+remove arq1067
+otimiza
+insere arq5131 256Kb
+remove arq1068
+otimiza
+insere arq5132 256Kb
+remove arq1069
+otimiza
+insere arq5133 256Kb
+remove arq1070
+otimiza
+insere arq5134 256Kb
+remove arq1071
+otimiza
+insere arq5135 256Kb
+remove arq1072
+otimiza
+insere arq5136 256Kb
+remove arq1073
+otimiza
+insere arq5137 256Kb
+remove arq1074
+otimiza
+insere arq5138 256Kb
+remove arq1075
+otimiza
+insere arq5139 256Kb
+remove arq1076
+otimiza
+insere arq5140 256Kb
+remove arq1077
+otimiza
+insere arq5141 256Kb
+remove arq1078
+otimiza
+insere arq5142 256Kb
+remove arq1079
+otimiza
+insere arq5143 256Kb
+remove arq1080
+otimiza
+insere arq5144 256Kb
+remove arq1081
+otimiza
+insere arq5145 256Kb
+remove arq1082
+otimiza
+insere arq5146 256Kb
+remove arq1083
+otimiza
+insere arq5147 256Kb
+remove arq1084
+otimiza
+insere arq5148 256Kb
+remove arq1085
+otimiza
+insere arq5149 256Kb
+remove arq1086
+otimiza
+insere arq5150 256Kb
+remove arq1087
+otimiza
+insere arq5151 256Kb
+remove arq1088
+otimiza
+insere arq5152 256Kb
+remove arq1089
+otimiza
+insere arq5153 256Kb
+remove arq1090
+otimiza
+insere arq5154 256Kb
+remove arq1091
+otimiza
+insere arq5155 256Kb
+remove arq1092
+otimiza
+insere arq5156 256Kb
+remove arq1093
+otimiza
+insere arq5157 256Kb
+remove arq1094
+otimiza
+insere arq5158 256Kb
+remove arq1095
+otimiza
+insere arq5159 256Kb
+remove arq1096
+otimiza
+insere arq5160 256Kb
+remove arq1097
+otimiza
+insere arq5161 256Kb
+remove arq1098
+otimiza
+insere arq5162 256Kb
+remove arq1099
+otimiza
+insere arq5163 256Kb
+remove arq1100
+otimiza
+insere arq5164 256Kb
+remove arq1101
+otimiza
+insere arq5165 256Kb
+remove arq1102
+otimiza
+insere arq5166 256Kb
+remove arq1103
+otimiza
+insere arq5167 256Kb
+remove arq1104
+otimiza
+insere arq5168 256Kb
+remove arq1105
+otimiza
+insere arq5169 256Kb
+remove arq1106
+otimiza
+insere arq5170 256Kb
+remove arq1107
+otimiza
+insere arq5171 256Kb
+remove arq1108
+otimiza
+insere arq5172 256Kb
+remove arq1109
+otimiza
+insere arq5173 256Kb
+remove arq1110
+otimiza
+insere arq5174 256Kb
+remove arq1111
+otimiza
+insere arq5175 256Kb
+remove arq1112
+otimiza
+insere arq5176 256Kb
+remove arq1113
+otimiza
+insere arq5177 256Kb
+remove arq1114
+otimiza
+insere arq5178 256Kb
+remove arq1115
+otimiza
+insere arq5179 256Kb
+remove arq1116
+otimiza
+insere arq5180 256Kb
+remove arq1117
+otimiza
+insere arq5181 256Kb
+remove arq1118
+otimiza
+insere arq5182 256Kb
+remove arq1119
+otimiza
+insere arq5183 256Kb
+remove arq1120
+otimiza
+insere arq5184 256Kb
+remove arq1121
+otimiza
+insere arq5185 256Kb
+remove arq1122
+otimiza
+insere arq5186 256Kb
+remove arq1123
+otimiza
+insere arq5187 256Kb
+remove arq1124
+otimiza
+insere arq5188 256Kb
+remove arq1125
+otimiza
+insere arq5189 256Kb
+remove arq1126
+otimiza
+insere arq5190 256Kb
+remove arq1127
+otimiza
+insere arq5191 256Kb
+remove arq1128
+otimiza
+insere arq5192 256Kb
+remove arq1129
+otimiza
+insere arq5193 256Kb
+remove arq1130
+otimiza
+insere arq5194 256Kb
+remove arq1131
+otimiza
+insere arq5195 256Kb
+remove arq1132
+otimiza
+insere arq5196 256Kb
+remove arq1133
+otimiza
+insere arq5197 256Kb
+remove arq1134
+otimiza
+insere arq5198 256Kb
+remove arq1135
+otimiza
+insere arq5199 256Kb
+remove arq1136
+otimiza
+insere arq5200 256Kb
+remove arq1137
+otimiza
+insere arq5201 256Kb
+remove arq1138
+otimiza
+insere arq5202 256Kb
+remove arq1139
+otimiza
+insere arq5203 256Kb
+remove arq1140
+otimiza
+insere arq5204 256Kb
+remove arq1141
+otimiza
+insere arq5205 256Kb
+remove arq1142
+otimiza
+insere arq5206 256Kb
+remove arq1143
+otimiza
+insere arq5207 256Kb
+remove arq1144
+otimiza
+insere arq5208 256Kb
+remove arq1145
+otimiza
+insere arq5209 256Kb
+remove arq1146
+otimiza
+insere arq5210 256Kb
+remove arq1147
+otimiza
+insere arq5211 256Kb
+remove arq1148
+otimiza
+insere arq5212 256Kb
+remove arq1149
+otimiza
+insere arq5213 256Kb
+remove arq1150
+otimiza
+insere arq5214 256Kb
+remove arq1151
+otimiza
+insere arq5215 256Kb
+remove arq1152
+otimiza
+insere arq5216 256Kb
+remove arq1153
+otimiza
+insere arq5217 256Kb
+remove arq1154
+otimiza
+insere arq5218 256Kb
+remove arq1155
+otimiza
+insere arq5219 256Kb
+remove arq1156
+otimiza
+insere arq5220 256Kb
+remove arq1157
+otimiza
+insere arq5221 256Kb
+remove arq1158
+otimiza
+insere arq5222 256Kb
+remove arq1159
+otimiza
+insere arq5223 256Kb
+remove arq1160
+otimiza
+insere arq5224 256Kb
+remove arq1161
+otimiza
+insere arq5225 256Kb
+remove arq1162
+otimiza
+insere arq5226 256Kb
+remove arq1163
+otimiza
+insere arq5227 256Kb
+remove arq1164
+otimiza
+insere arq5228 256Kb
+remove arq1165
+otimiza
+insere arq5229 256Kb
+remove arq1166
+otimiza
+insere arq5230 256Kb
+remove arq1167
+otimiza
+insere arq5231 256Kb
+remove arq1168
+otimiza
+insere arq5232 256Kb
+remove arq1169
+otimiza
+insere arq5233 256Kb
+remove arq1170
+otimiza
+insere arq5234 256Kb
+remove arq1171
+otimiza
+insere arq5235 256Kb
+remove arq1172
+otimiza
+insere arq5236 256Kb
+remove arq1173
+otimiza
+insere arq5237 256Kb
+remove arq1174
+otimiza
+insere arq5238 256Kb
+remove arq1175
+otimiza
+insere arq5239 256Kb
+remove arq1176
+otimiza
+insere arq5240 256Kb
+remove arq1177
+otimiza
+insere arq5241 256Kb
+remove arq1178
+otimiza
+insere arq5242 256Kb
+remove arq1179
+otimiza
+insere arq5243 256Kb
+remove arq1180
+otimiza
+insere arq5244 256Kb
+remove arq1181
+otimiza
+insere arq5245 256Kb
+remove arq1182
+otimiza
+insere arq5246 256Kb
+remove arq1183
+otimiza
+insere arq5247 256Kb
+remove arq1184
+otimiza
+insere arq5248 256Kb
+remove arq1185
+otimiza
+insere arq5249 256Kb
+remove arq1186
+otimiza
+insere arq5250 256Kb
+remove arq1187
+otimiza
+insere arq5251 256Kb
+remove arq1188
+otimiza
+insere arq5252 256Kb
+remove arq1189
+otimiza
+insere arq5253 256Kb
+remove arq1190
+otimiza
+insere arq5254 256Kb
+remove arq1191
+otimiza
+insere arq5255 256Kb
+remove arq1192
+otimiza
+insere arq5256 256Kb
+remove arq1193
+otimiza
+insere arq5257 256Kb
+remove arq1194
+otimiza
+insere arq5258 256Kb
+remove arq1195
+otimiza
+insere arq5259 256Kb
+remove arq1196
+otimiza
+insere arq5260 256Kb
+remove arq1197
+otimiza
+insere arq5261 256Kb
+remove arq1198
+otimiza
+insere arq5262 256Kb
+remove arq1199
+otimiza
+insere arq5263 256Kb
+remove arq1200
+otimiza
+insere arq5264 256Kb
+remove arq1201
+otimiza
+insere arq5265 256Kb
+remove arq1202
+otimiza
+insere arq5266 256Kb
+remove arq1203
+otimiza
+insere arq5267 256Kb
+remove arq1204
+otimiza
+insere arq5268 256Kb
+remove arq1205
+otimiza
+insere arq5269 256Kb
+remove arq1206
+otimiza
+insere arq5270 256Kb
+remove arq1207
+otimiza
+insere arq5271 256Kb
+remove arq1208
+otimiza
+insere arq5272 256Kb
+remove arq1209
+otimiza
+insere arq5273 256Kb
+remove arq1210
+otimiza
+insere arq5274 256Kb
+remove arq1211
+otimiza
+insere arq5275 256Kb
+remove arq1212
+otimiza
+insere arq5276 256Kb
+remove arq1213
+otimiza
+insere arq5277 256Kb
+remove arq1214
+otimiza
+insere arq5278 256Kb
+remove arq1215
+otimiza
+insere arq5279 256Kb
+remove arq1216
+otimiza
+insere arq5280 256Kb
+remove arq1217
+otimiza
+insere arq5281 256Kb
+remove arq1218
+otimiza
+insere arq5282 256Kb
+remove arq1219
+otimiza
+insere arq5283 256Kb
+remove arq1220
+otimiza
+insere arq5284 256Kb
+remove arq1221
+otimiza
+insere arq5285 256Kb
+remove arq1222
+otimiza
+insere arq5286 256Kb
+remove arq1223
+otimiza
+insere arq5287 256Kb
+remove arq1224
+otimiza
+insere arq5288 256Kb
+remove arq1225
+otimiza
+insere arq5289 256Kb
+remove arq1226
+otimiza
+insere arq5290 256Kb
+remove arq1227
+otimiza
+insere arq5291 256Kb
+remove arq1228
+otimiza
+insere arq5292 256Kb
+remove arq1229
+otimiza
+insere arq5293 256Kb
+remove arq1230
+otimiza
+insere arq5294 256Kb
+remove arq1231
+otimiza
+insere arq5295 256Kb
+remove arq1232
+otimiza
+insere arq5296 256Kb
+remove arq1233
+otimiza
+insere arq5297 256Kb
+remove arq1234
+otimiza
+insere arq5298 256Kb
+remove arq1235
+otimiza
+insere arq5299 256Kb
+remove arq1236
+otimiza
+insere arq5300 256Kb
+remove arq1237
+otimiza
+insere arq5301 256Kb
+remove arq1238
+otimiza
+insere arq5302 256Kb
+remove arq1239
+otimiza
+insere arq5303 256Kb
+remove arq1240
+otimiza
+insere arq5304 256Kb
+remove arq1241
+otimiza
+insere arq5305 256Kb
+remove arq1242
+otimiza
+insere arq5306 256Kb
+remove arq1243
+otimiza
+insere arq5307 256Kb
+remove arq1244
+otimiza
+insere arq5308 256Kb
+remove arq1245
+otimiza
+insere arq5309 256Kb
+remove arq1246
+otimiza
+insere arq5310 256Kb
+remove arq1247
+otimiza
+insere arq5311 256Kb
+remove arq1248
+otimiza
+insere arq5312 256Kb
+remove arq1249
+otimiza
+insere arq5313 256Kb
+remove arq1250
+otimiza
+insere arq5314 256Kb
+remove arq1251
+otimiza
+insere arq5315 256Kb
+remove arq1252
+otimiza
+insere arq5316 256Kb
+remove arq1253
+otimiza
+insere arq5317 256Kb
+remove arq1254
+otimiza
+insere arq5318 256Kb
+remove arq1255
+otimiza
+insere arq5319 256Kb
+remove arq1256
+otimiza
+insere arq5320 256Kb
+remove arq1257
+otimiza
+insere arq5321 256Kb
+remove arq1258
+otimiza
+insere arq5322 256Kb
+remove arq1259
+otimiza
+insere arq5323 256Kb
+remove arq1260
+otimiza
+insere arq5324 256Kb
+remove arq1261
+otimiza
+insere arq5325 256Kb
+remove arq1262
+otimiza
+insere arq5326 256Kb
+remove arq1263
+otimiza
+insere arq5327 256Kb
+remove arq1264
+otimiza
+insere arq5328 256Kb
+remove arq1265
+otimiza
+insere arq5329 256Kb
+remove arq1266
+otimiza
+insere arq5330 256Kb
+remove arq1267
+otimiza
+insere arq5331 256Kb
+remove arq1268
+otimiza
+insere arq5332 256Kb
+remove arq1269
+otimiza
+insere arq5333 256Kb
+remove arq1270
+otimiza
+insere arq5334 256Kb
+remove arq1271
+otimiza
+insere arq5335 256Kb
+remove arq1272
+otimiza
+insere arq5336 256Kb
+remove arq1273
+otimiza
+insere arq5337 256Kb
+remove arq1274
+otimiza
+insere arq5338 256Kb
+remove arq1275
+otimiza
+insere arq5339 256Kb
+remove arq1276
+otimiza
+insere arq5340 256Kb
+remove arq1277
+otimiza
+insere arq5341 256Kb
+remove arq1278
+otimiza
+insere arq5342 256Kb
+remove arq1279
+otimiza
+insere arq5343 256Kb
+remove arq1280
+otimiza
+insere arq5344 256Kb
+remove arq1281
+otimiza
+insere arq5345 256Kb
+remove arq1282
+otimiza
+insere arq5346 256Kb
+remove arq1283
+otimiza
+insere arq5347 256Kb
+remove arq1284
+otimiza
+insere arq5348 256Kb
+remove arq1285
+otimiza
+insere arq5349 256Kb
+remove arq1286
+otimiza
+insere arq5350 256Kb
+remove arq1287
+otimiza
+insere arq5351 256Kb
+remove arq1288
+otimiza
+insere arq5352 256Kb
+remove arq1289
+otimiza
+insere arq5353 256Kb
+remove arq1290
+otimiza
+insere arq5354 256Kb
+remove arq1291
+otimiza
+insere arq5355 256Kb
+remove arq1292
+otimiza
+insere arq5356 256Kb
+remove arq1293
+otimiza
+insere arq5357 256Kb
+remove arq1294
+otimiza
+insere arq5358 256Kb
+remove arq1295
+otimiza
+insere arq5359 256Kb
+remove arq1296
+otimiza
+insere arq5360 256Kb
+remove arq1297
+otimiza
+insere arq5361 256Kb
+remove arq1298
+otimiza
+insere arq5362 256Kb
+remove arq1299
+otimiza
+insere arq5363 256Kb
+remove arq1300
+otimiza
+insere arq5364 256Kb
+remove arq1301
+otimiza
+insere arq5365 256Kb
+remove arq1302
+otimiza
+insere arq5366 256Kb
+remove arq1303
+otimiza
+insere arq5367 256Kb
+remove arq1304
+otimiza
+insere arq5368 256Kb
+remove arq1305
+otimiza
+insere arq5369 256Kb
+remove arq1306
+otimiza
+insere arq5370 256Kb
+remove arq1307
+otimiza
+insere arq5371 256Kb
+remove arq1308
+otimiza
+insere arq5372 256Kb
+remove arq1309
+otimiza
+insere arq5373 256Kb
+remove arq1310
+otimiza
+insere arq5374 256Kb
+remove arq1311
+otimiza
+insere arq5375 256Kb
+remove arq1312
+otimiza
+insere arq5376 256Kb
+remove arq1313
+otimiza
+insere arq5377 256Kb
+remove arq1314
+otimiza
+insere arq5378 256Kb
+remove arq1315
+otimiza
+insere arq5379 256Kb
+remove arq1316
+otimiza
+insere arq5380 256Kb
+remove arq1317
+otimiza
+insere arq5381 256Kb
+remove arq1318
+otimiza
+insere arq5382 256Kb
+remove arq1319
+otimiza
+insere arq5383 256Kb
+remove arq1320
+otimiza
+insere arq5384 256Kb
+remove arq1321
+otimiza
+insere arq5385 256Kb
+remove arq1322
+otimiza
+insere arq5386 256Kb
+remove arq1323
+otimiza
+insere arq5387 256Kb
+remove arq1324
+otimiza
+insere arq5388 256Kb
+remove arq1325
+otimiza
+insere arq5389 256Kb
+remove arq1326
+otimiza
+insere arq5390 256Kb
+remove arq1327
+otimiza
+insere arq5391 256Kb
+remove arq1328
+otimiza
+insere arq5392 256Kb
+remove arq1329
+otimiza
+insere arq5393 256Kb
+remove arq1330
+otimiza
+insere arq5394 256Kb
+remove arq1331
+otimiza
+insere arq5395 256Kb
+remove arq1332
+otimiza
+insere arq5396 256Kb
+remove arq1333
+otimiza
+insere arq5397 256Kb
+remove arq1334
+otimiza
+insere arq5398 256Kb
+remove arq1335
+otimiza
+insere arq5399 256Kb
+remove arq1336
+otimiza
+insere arq5400 256Kb
+remove arq1337
+otimiza
+insere arq5401 256Kb
+remove arq1338
+otimiza
+insere arq5402 256Kb
+remove arq1339
+otimiza
+insere arq5403 256Kb
+remove arq1340
+otimiza
+insere arq5404 256Kb
+remove arq1341
+otimiza
+insere arq5405 256Kb
+remove arq1342
+otimiza
+insere arq5406 256Kb
+remove arq1343
+otimiza
+insere arq5407 256Kb
+remove arq1344
+otimiza
+insere arq5408 256Kb
+remove arq1345
+otimiza
+insere arq5409 256Kb
+remove arq1346
+otimiza
+insere arq5410 256Kb
+remove arq1347
+otimiza
+insere arq5411 256Kb
+remove arq1348
+otimiza
+insere arq5412 256Kb
+remove arq1349
+otimiza
+insere arq5413 256Kb
+remove arq1350
+otimiza
+insere arq5414 256Kb
+remove arq1351
+otimiza
+insere arq5415 256Kb
+remove arq1352
+otimiza
+insere arq5416 256Kb
+remove arq1353
+otimiza
+insere arq5417 256Kb
+200
+256Kb
+insere arq0 17Kb
+otimiza
+remove arq0
+insere arq1 70Kb
+remove arq1
+insere arq2 123Kb
+insere arq3 24Kb
+insere arq4 44Kb
+insere arq5 3Kb
+insere arq6 19Kb
+insere arq7 9Kb
+insere arq8 16Kb
+insere arq9 4Kb
+otimiza
+remove arq8
+insere arq10 12Kb
+remove arq6
+insere arq11 4Kb
+insere arq12 9Kb
+insere arq13 8Kb
+remove arq3
+insere arq14 21Kb
+insere arq15 8Kb
+insere arq16 6Kb
+remove arq16
+insere arq17 2Kb
+insere arq18 2Kb
+insere arq19 3Kb
+remove arq12
+insere arq20 7Kb
+insere arq21 4Kb
+insere arq22 2Kb
+remove arq18
+insere arq23 1Kb
+insere arq24 1Kb
+remove arq20
+otimiza
+otimiza
+insere arq25 3Kb
+insere arq26 2Kb
+insere arq27 2Kb
+remove arq25
+insere arq28 1Kb
+otimiza
+insere arq29 1Kb
+insere arq30 1Kb
+otimiza
+remove arq29
+insere arq31 1Kb
+remove arq17
+insere arq32 2Kb
+remove arq15
+insere arq33 1Kb
+remove arq19
+insere arq34 3Kb
+insere arq35 4Kb
+insere arq36 1Kb
+insere arq37 1Kb
+remove arq22
+insere arq38 2Kb
+insere arq39 1Kb
+remove arq7
+insere arq40 2Kb
+remove arq31
+insere arq41 3Kb
+insere arq42 2Kb
+insere arq43 2Kb
+insere arq44 1Kb
+remove arq13
+insere arq45 1Kb
+insere arq46 4Kb
+remove arq5
+insere arq47 2Kb
+insere arq48 3Kb
+remove arq14
+insere arq49 9Kb
+otimiza
+insere arq50 6Kb
+insere arq51 3Kb
+insere arq52 2Kb
+remove arq24
+insere arq53 1Kb
+insere arq54 2Kb
+otimiza
+remove arq32
+insere arq55 1Kb
+insere arq56 1Kb
+remove arq23
+insere arq57 1Kb
+remove arq21
+insere arq58 2Kb
+insere arq59 1Kb
+insere arq60 1Kb
+remove arq35
+insere arq61 3Kb
+insere arq62 1Kb
+otimiza
+otimiza
+remove arq26
+otimiza
+insere arq63 2Kb
+remove arq62
+insere arq64 1Kb
+otimiza
+remove arq50
+remove arq9
+insere arq65 1Kb
+insere arq66 3Kb
+insere arq67 2Kb
+insere arq68 3Kb
+insere arq69 1Kb
+remove arq40
+insere arq70 1Kb
+remove arq56
+insere arq71 2Kb
+remove arq69
+insere arq72 1Kb
+remove arq46
+insere arq73 1Kb
+remove arq41
+insere arq74 1Kb
+insere arq75 2Kb
+remove arq66
+insere arq76 4Kb
+insere arq77 1Kb
+remove arq53
+insere arq78 2Kb
+remove arq51
+insere arq79 2Kb
+insere arq80 1Kb
+otimiza
+remove arq61
+insere arq81 1Kb
+remove arq73
+otimiza
+insere arq82 1Kb
+insere arq83 1Kb
+insere arq84 1Kb
+remove arq49
+insere arq85 3Kb
+insere arq86 1Kb
+insere arq87 2Kb
+otimiza
+insere arq88 1Kb
+insere arq89 1Kb
+insere arq90 1Kb
+remove arq85
+remove arq79
+insere arq91 2Kb
+insere arq92 1Kb
+insere arq93 1Kb
+insere arq94 1Kb
+remove arq63
+insere arq95 1Kb
+insere arq96 1Kb
+remove arq52
+insere arq97 2Kb
+remove arq37
+insere arq98 1Kb
+remove arq96
+remove arq86
+insere arq99 2Kb
+remove arq71
+remove arq97
+insere arq100 2Kb
+insere arq101 1Kb
+insere arq102 1Kb
+remove arq48
+insere arq103 2Kb
+insere arq104 1Kb
+remove arq10
+insere arq105 1Kb
+otimiza
+otimiza
+remove arq94
+insere arq106 1Kb
+remove arq43
+insere arq107 4Kb
+insere arq108 3Kb
+insere arq109 3Kb
+remove arq84
+remove arq59
+remove arq93
+remove arq102
+remove arq87
+remove arq90
+remove arq70
+remove arq57
+remove arq99
+remove arq33
+remove arq47
+remove arq75
+remove arq58
+remove arq82
+remove arq45
+remove arq91
+remove arq106
+remove arq108
+remove arq77
+remove arq67
+0

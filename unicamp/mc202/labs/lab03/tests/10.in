@@ -1,0 +1,37 @@
+5
+80Mb
+insere arq1 501Kb
+insere arq2 70Mb
+insere arq3 501Kb
+remove arq2
+insere arq4 79Mb
+5
+80Mb
+insere arq1 800Kb
+insere arq2 70Mb
+insere arq3 800Kb
+remove arq2
+insere arq4 79Mb
+20
+128Gb
+insere arq1 500Mb
+insere arq2 5Gb
+insere arq3 50Gb
+insere arq4 50Gb
+insere arq5 5Gb
+insere arq6 500Mb
+remove arq2
+remove arq3
+otimiza
+insere arq7 50Gb
+insere arq8 5Gb
+insere arq9 500Mb
+insere arq10 5Gb
+insere arq11 500Mb
+insere arq12 5Gb
+remove arq7
+remove arq9
+remove arq8
+remove arq1
+remove arq11
+0
