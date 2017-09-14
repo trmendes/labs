@@ -16,21 +16,27 @@ typedef struct leaf_s {
     data_t          data;
     struct leaf_s * left;
     struct leaf_s * right;
+    struct leaf_s * parent;
     uint8_t         flags;
 } leaf_t;
-
-typedef struct tree_s {
-    int32_t     len;
-    leaf_t    * root;
-} tree_t;
 
 typedef enum printType {
     IN_ODER = 1,
 } printType_e;
 
-tree_t    * tr_create           ();
-int32_t     tr_destroy          (tree_t * t);
-int32_t     tr_insert_by_value  (tree_t * t, int32_t data);
-void        tr_print            (leaf_t * root, printType_e pType);
+leaf_t    * tr_create             ();
+int32_t     tr_destroy            (leaf_t ** root);
+int32_t     tr_insert_by_value    (leaf_t **l, int32_t key);
+int32_t     tr_insert_by_value_rc (leaf_t **l, int32_t key);
+leaf_t    * tr_find_leaf          (leaf_t *l, int32_t key);
+leaf_t    * tr_find_leaf_rc       (leaf_t *l, int32_t key);
+leaf_t    * tr_find_min           (leaf_t *l);
+leaf_t    * tr_find_min_rc        (leaf_t *l);
+leaf_t    * tr_find_max           (leaf_t *l);
+leaf_t    * tr_find_max_rc        (leaf_t *l);
+leaf_t    * tr_find_pre           (leaf_t *l);
+leaf_t    * tr_find_suc           (leaf_t *l);
+int32_t     tr_delete             (leaf_t *l);
+void        tr_print              (leaf_t * root, printType_e pType);
 
 #endif
