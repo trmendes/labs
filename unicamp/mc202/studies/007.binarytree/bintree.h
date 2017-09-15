@@ -22,6 +22,7 @@ typedef struct leaf_s {
 
 typedef enum printType {
     IN_ODER = 1,
+    PRE_ORDER = 2,
 } printType_e;
 
 leaf_t    * tr_create             ();
