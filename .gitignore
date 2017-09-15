@@ -1,3 +1,4 @@
 *.swp
+cscope*
 unicamp/mc202/theory/*
 unicamp/mc504/theory/*
