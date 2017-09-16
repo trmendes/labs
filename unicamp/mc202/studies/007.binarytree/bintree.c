@@ -179,15 +179,17 @@ void tr_print(leaf_t * root, printType_e pType) {
     if (root == NULL)
 	return;
 
-    if (pType == IN_ODER) {
-	tr_print(root->left , pType);
-	printf("%d ", root->data.id);
-	tr_print(root->right, pType);
-    }  else if (pType == PRE_ORDER) {
+    if (pType == PRE_ORDER) {
 	printf("%d ", root->data.id);
 	tr_print(root->left , pType);
 	tr_print(root->right, pType);
-
+    } else if (pType == IN_ORDER) {
+	tr_print(root->left , pType);
+	printf("%d ", root->data.id);
+	tr_print(root->right, pType);
+    } else if (pType == POS_ORDER) {
+	tr_print(root->left , pType);
+	tr_print(root->right, pType);
+	printf("%d ", root->data.id);
     }
-
 }
