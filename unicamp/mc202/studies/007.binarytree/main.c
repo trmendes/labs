@@ -12,7 +12,7 @@ int32_t main() {
 
     /*             /-------------200---------------\
      *      /------150------\             /------250------\
-     *  /---130---\     /-150-\         /-230---\     /-260-\
+     *  /---130---\     /-160-\         /-230---\     /-260-\
      *  110     140     N     N         N     240     N     N
      *
      */
@@ -44,13 +44,31 @@ int32_t main() {
     printf("Max: %d\n", max->data.id);
     printf("\n");
 
-    leaf = tr_find_leaf(root, 1);
+    leaf = tr_find_leaf(root, 150);
     suc = tr_find_suc(leaf);
-    printf("Suc of %d is %d\n", leaf->data.id, suc->data.id);
 
-    leaf = tr_find_leaf(root, 5);
+    if (leaf != NULL)
+	printf("Searching the suc of %d\n", leaf->data.id);
+    else
+	printf("leaf not found\n");
+
+    if (suc != NULL)
+	printf("Which is %d\n", suc->data.id);
+    else
+	printf("there is no suc\n");
+
+    leaf = tr_find_leaf(root, 110);
     pre = tr_find_pre(leaf);
-    printf("Pre of %d is %d\n", leaf->data.id, pre->data.id);
+
+    if (leaf != NULL)
+	printf("Searching the pre of %d\n", leaf->data.id);
+    else
+	printf("leaf not found\n");
+
+    if (pre != NULL)
+	printf("Which is %d\n", pre->data.id);
+    else
+	printf("this is no pre\n");
 
     return EXIT_SUCCESS;
 }
