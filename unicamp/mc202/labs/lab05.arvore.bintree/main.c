@@ -20,6 +20,7 @@ int32_t main() {
 	preIdx = 0;
 	leaf_t * root = tr_rebuild_tree(prb, inb, 0, strlen(prb), &preIdx);
 	tr_print_pos(root);
+	tr_destroy(root);
 	printf("\n");
     }
 

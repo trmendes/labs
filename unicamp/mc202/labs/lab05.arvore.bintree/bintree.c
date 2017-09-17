@@ -5,6 +5,15 @@
 #include <ctype.h>
 #include "bintree.h"
 
+void tr_destroy(leaf_t *root) {
+    if (root == NULL)
+	return;
+    tr_destroy(root->left);
+    tr_destroy(root->right);
+    free(root);
+    root = NULL;
+}
+
 leaf_t * tr_find_leaf(leaf_t *l, int32_t key) {
     while (l != NULL && l->data.id != key) {
 	if (key < l->data.id) {

@@ -28,6 +28,7 @@ leaf_t    * tr_find_leaf          (leaf_t *l, int32_t key);
 void        tr_print_pre          (leaf_t * root);
 void        tr_print_in           (leaf_t * root);
 void        tr_print_pos          (leaf_t * root);
+void        tr_destroy            (leaf_t *root);
 leaf_t    * tr_rebuild_tree       (char * pre_order_str, char * in_order_str, size_t start, size_t end, size_t * preIdx);
 leaf_t    * tr_create_leaf        (char c);
 
