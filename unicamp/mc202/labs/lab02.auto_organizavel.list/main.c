@@ -4,34 +4,34 @@
 
 #include "lista.h"
 
-#define REQSIZE 7
+#define REQSIZE 10000
 
-int32_t main(int argc, char **argv) {
+int32_t main() {
     list *lmtf = calloc(1, sizeof(list));
     list *ltsp = calloc(1, sizeof(list));
     list *lcnt = calloc(1, sizeof(list));
-    int32_t cmtf = 0, ctsp = 0, ccnt = 0;
-    int32_t req[REQSIZE] = {4, 2, 2, 4, 3, 1, 3};
 
-    for (int i = 5; i > 0 ; i--) {
+    int32_t cmtf = 0, ctsp = 0, ccnt = 0;
+    int32_t n, r, req;
+
+    scanf("%d", &n);
+    scanf("%d", &r);
+
+    for (int i = n; i > 0 ; --i) {
 	inserir_lista(lmtf, i);
 	inserir_lista(ltsp, i);
 	inserir_lista(lcnt, i);
     }
 
-    for (int i = 0; i < REQSIZE; i++) {
-	cmtf += req_move_to_front(lmtf, req[i]);
-	ctsp += req_transpose(ltsp, req[i]);
-	ccnt += req_count(lcnt, req[i]);
+
+    for (int i = 0; i < r; ++i) {
+	scanf("%d ", &req);
+	cmtf += req_move_to_front(lmtf, req);
+	ctsp += req_transpose(ltsp, req);
+	ccnt += req_count(lcnt, req);
     }
 
-    printf("Custo mtf: %d\n", cmtf);
-    printf("Custo tsp: %d\n", ctsp);
-    printf("Custo cnt: %d\n", ccnt);
-
-    imprimir_lista(lmtf, "lmtf");
-    imprimir_lista(ltsp, "ltsp");
-    imprimir_lista(lcnt, "lcnt");
+    printf("%d %d %d\n", cmtf, ctsp, ccnt);
 
     return EXIT_SUCCESS;
 }

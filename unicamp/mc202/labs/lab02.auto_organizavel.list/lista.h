@@ -13,8 +13,7 @@ typedef struct slist {
     no * init;
 } list;
 
-void    imprimir_crui      (list *l);
-void    imprimir_lista     (list *l, char *name);
+void    imprimir_list      (list *l);
 void    inserir_lista      (list *l, int32_t dado);
 int32_t req_move_to_front  (list *l, int32_t dado);
 int32_t req_transpose      (list *l, int32_t dado);
