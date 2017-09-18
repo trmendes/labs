@@ -27,7 +27,7 @@ typedef enum printType {
 } printType_e;
 
 leaf_t    * tr_create             ();
-int32_t     tr_destroy            (leaf_t ** root);
+int32_t     tr_destroy            (leaf_t * root);
 int32_t     tr_insert_by_value    (leaf_t **l, int32_t key);
 int32_t     tr_insert_by_value_rc (leaf_t **l, int32_t key);
 leaf_t    * tr_find_leaf          (leaf_t *l, int32_t key);

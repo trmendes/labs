@@ -8,13 +8,14 @@ leaf_t * tr_create() {
     return root;
 }
 
-int32_t tr_destroy(leaf_t ** root) {
-    if (*root == NULL)
-	return ERR_TREE_NULL;
+int32_t tr_destroy(leaf_t * root) {
     if (root == NULL)
-	return EMPTY_TREE;
+	return ERR_TREE_NULL;
 
-    //TODO Implementar
+    tr_destroy(root->left);
+    tr_destroy(root->right);
+    free(root);
+    root = NULL;
 
     return SUCCESS;
 }
