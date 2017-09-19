@@ -5,45 +5,43 @@
 #include "trace.h"
 
 dllist *dl_create() {
-    dllist *l = calloc(1, sizeof(dllist));
+    dllist *l = (dllist *) calloc(1, sizeof(dllist));
     return l;
 }
 
 int8_t dl_destroy(dllist **l) {
-    if (*l == NULL)
+    if (*l == (dllist *) NULL)
 	return ERR_NO_LIST;
-    if ((*l)->head == NULL)
+    if ((*l)->head == (node *) NULL)
 	return ERR_EMPTY_LIST;
 
     node *p = (*l)->head;
 
-    while (p != NULL) {
-	dl_print(*l, "Antes :", 0, 0);
+    while (p != (node *) NULL) {
 	(*l)->head = p->next;
 	free(p);
 	p = (*l)->head;
-	dl_print(*l, "Depois:", -1, 0);
     }
 
-    (*l)->tail = NULL;
-    *l = NULL;
+    (*l)->tail = (node *) NULL;
+    *l = (dllist *) NULL;
 
     return SUCCESS;
 }
 
 void dl_print(dllist *l, char *headermsg, int32_t index, int8_t reverse) {
-    if (l == NULL)
+    if (l == (dllist *) NULL)
 	return;
-    if (headermsg != NULL)
+    if (headermsg != (char *) NULL)
 	printf("%s%s%s ",ANSI_COLOR_RED, headermsg, ANSI_COLOR_RESET);
 
     int32_t i = 0;
-    node *p = NULL;
+    node *p = (node *) NULL;
 
     if (reverse) {
 	p = l->tail;
 	printf("NULL");
-	while (p != NULL) {
+	while (p != (node *) NULL) {
 	    printf("%s->", ANSI_COLOR_RED);
 	    if (index == i) {
 		printf("%s", ANSI_COLOR_YELLOW);
@@ -58,7 +56,7 @@ void dl_print(dllist *l, char *headermsg, int32_t index, int8_t reverse) {
     } else {
 	p = l->head;
 	printf("NULL");
-	while (p != NULL) {
+	while (p != (node *) NULL) {
 	    printf("%s->", ANSI_COLOR_RED);
 	    if (index == i) {
 		printf("%s", ANSI_COLOR_YELLOW);
@@ -75,22 +73,21 @@ void dl_print(dllist *l, char *headermsg, int32_t index, int8_t reverse) {
 }
 
 int8_t dl_insert_beginning(dllist *l, int32_t value) {
-    if (l == NULL)
+    if (l == (dllist *) NULL)
 	return ERR_NO_LIST;
 
-    node *nn = calloc(1, sizeof(node));
+    node *nn = (node *) calloc(1, sizeof(node));
 
-    if (nn == NULL)
+    if (nn == (node *) NULL)
 	return ERR_MALLOC_FAIL;
 
-    dl_print(l, "Antes :", -1, 0);
     nn->id = l->tail_id++;
     nn->data = value;
-    nn->prev = NULL;
+    nn->prev = (node *) NULL;
 
     node *p = l->head;
 
-    if (p == NULL) {
+    if (p == (node *) NULL) {
 	l->tail = nn;
     } else {
 	nn->next = p;
@@ -98,26 +95,24 @@ int8_t dl_insert_beginning(dllist *l, int32_t value) {
     }
     l->head = nn;
     l->len++;
-    dl_print(l, "Depois:", 0, 0);
 
     return SUCCESS;
 }
 
 int8_t dl_insert_tail(dllist *l, int32_t value) {
-    if (l == NULL)
+    if (l == (dllist *) NULL)
 	return ERR_NO_LIST;
 
-    node *nn = calloc(1, sizeof(node));
+    node *nn = (node *) calloc(1, sizeof(node));
 
-    if (nn == NULL)
+    if (nn == (node *) NULL)
 	return ERR_MALLOC_FAIL;
 
-    dl_print(l, "Antes :", -1, 0);
     nn->id = l->tail_id++;
     nn->data = value;
     node *p = l->tail;
 
-    if (l->head == NULL) {
+    if (l->head == (node *) NULL) {
 	l->head = nn;
 	l->tail = nn;
     } else {
@@ -127,30 +122,26 @@ int8_t dl_insert_tail(dllist *l, int32_t value) {
     }
     l->len++;
 
-    dl_print(l, "Depois:", l->len-1, 0);
-
-    return 0;
+    return SUCCESS;
 }
 
 int8_t dl_insert_after(dllist *l, int32_t key, int32_t value) {
-    if (l == NULL)
+    if (l == (dllist *) NULL)
 	return ERR_NO_LIST;
-    if (l->head == NULL)
+    if (l->head == (node *) NULL)
 	return ERR_EMPTY_LIST;
 
-    node *nn = calloc(1, sizeof(node));
+    node *nn = (node *) calloc(1, sizeof(node));
 
-    if (nn == NULL)
+    if (nn == (node *) NULL)
 	return ERR_MALLOC_FAIL;
 
-    dl_print(l, "Antes :", -1, 0);
     nn->id = l->tail_id++;
     nn->data = value;
 
     node *p = l->head;
-    int32_t i = 0;
 
-    while (p != NULL) {
+    while (p != (node *) NULL) {
 	if (p->data == key) {
 	    nn->next = p->next;
 	    p->next = nn;
@@ -161,33 +152,28 @@ int8_t dl_insert_after(dllist *l, int32_t key, int32_t value) {
 	    break;
 	}
 	p = p->next;
-	i++;
     }
 
-    dl_print(l, "Depois:", i+1, 0);
-
-    return 0;
+    return SUCCESS;
 }
 
 int8_t dl_insert_before(dllist *l, int32_t key, int32_t value) {
-    if (l == NULL)
+    if (l == (dllist *) NULL)
 	return ERR_NO_LIST;
-    if (l->head == NULL)
+    if (l->head == (node *) NULL)
 	return ERR_EMPTY_LIST;
 
-    node *nn = calloc(1, sizeof(node));
+    node *nn = (node *) calloc(1, sizeof(node));
 
-    if (nn == NULL)
+    if (nn == (node *) NULL)
 	return ERR_MALLOC_FAIL;
 
-    dl_print(l, "Antes :", -1, 0);
     nn->id = l->tail_id++;
     nn->data = value;
 
     node *p = l->head;
-    int32_t i = 0;
 
-    while (p != NULL) {
+    while (p != (node *) NULL) {
 	if (p->data == key) {
 	    if (p == l->head) {
 		l->head = nn;
@@ -199,49 +185,42 @@ int8_t dl_insert_before(dllist *l, int32_t key, int32_t value) {
 
 	    break;
 	}
-	i++;
 	p = p->next;
     }
 
-    dl_print(l, "Depois:", i, 0);
-
-    return 0;
+    return SUCCESS;
 }
 
 int8_t dl_remove_beginning(dllist *l) {
-    if (l == NULL)
+    if (l == (dllist *) NULL)
 	return ERR_NO_LIST;
-    if (l->head == NULL)
+    if (l->head == (node *) NULL)
 	return ERR_EMPTY_LIST;
 
     node *p = l->head;
 
-    dl_print(l, "Antes :", 0, 0);
     l->head = p->next;
-    p->next = NULL;
+    p->next = (node *) NULL;
 
     free(p);
 
     l->len--;
 
-    dl_print(l, "Depois:", -1, 0);
-
-    return 0;
+    return SUCCESS;
 }
 
 int8_t dl_remove_tail(dllist *l) {
-    if (l == NULL)
+    if (l == (dllist *) NULL)
 	return ERR_NO_LIST;
-    if (l->head == NULL)
+    if (l->head == (node *) NULL)
 	return ERR_EMPTY_LIST;
 
     node *p = l->tail;
 
-    dl_print(l, "Antes :", l->len-1, 0);
     if (p == l->head) {
-	l->head = NULL;
+	l->head = (node *) NULL;
     } else {
-	p->prev->next = NULL;
+	p->prev->next = (node *) NULL;
 	l->tail = p->prev;
     }
 
@@ -249,31 +228,26 @@ int8_t dl_remove_tail(dllist *l) {
 
     l->len--;
 
-    dl_print(l, "Depois:", -1, 0);
-
-    return 0;
+    return SUCCESS;
 
 }
 
 int8_t dl_remove_next(dllist *l, int32_t key) {
-    if (l == NULL)
+    if (l == (dllist *) NULL)
 	return ERR_NO_LIST;
-    if (l->head == NULL)
+    if (l->head == (node *) NULL)
 	return ERR_EMPTY_LIST;
 
     node *p = l->head;
-    node *r = NULL;
-    int32_t i = 0;
+    node *r = (node *) NULL;
 
-    while (p->next != NULL) {
+    while (p->next != (node *) NULL) {
 	if (p->id == key) {
-	    dl_print(l, "Antes :", i+1, 0);
-
 	    r = p->next;
 
-	    if (r->next == NULL) {
+	    if (r->next == (node *) NULL) {
 		l->tail = p;
-		p->next = NULL;
+		p->next = (node *) NULL;
 	    } else {
 		r->next->prev = p;
 		p->next = r->next;
@@ -281,11 +255,9 @@ int8_t dl_remove_next(dllist *l, int32_t key) {
 
 	    free(r);
 	    l->len--;
-	    r = NULL;
-	    dl_print(l, "Depois:", -1, 0);
+	    r = (node *) NULL;
 	    break;
 	}
-	i++;
 	p = p->next;
     }
 
@@ -293,36 +265,31 @@ int8_t dl_remove_next(dllist *l, int32_t key) {
 }
 
 int8_t dl_remove_prev(dllist *l, int32_t key) {
-    if (l == NULL)
+    if (l == (dllist *) NULL)
 	return ERR_NO_LIST;
-    if (l->head == NULL)
+    if (l->head == (node *) NULL)
 	return ERR_EMPTY_LIST;
 
     node *p = l->head->next;
-    node *r = NULL;
-    int32_t i = 1;
+    node *r = (node *) NULL;
 
-    while (p != NULL) {
+    while (p != (node *) NULL) {
 	if (p->id == key) {
-	    dl_print(l, "Antes :", i-1, 0);
 	    r = p->prev;
 	    if (r == l->head) {
 		l->head = p;
-		p->prev = NULL;
+		p->prev = (node *) NULL;
 	    } else {
 		p->prev = r->prev;
 		r->prev->next = p;
 	    }
 	    free(r);
 	    l->len--;
-	    r = NULL;
+	    r = (node *) NULL;
 	    break;
 	}
 	p = p->next;
     }
-
-    if (p != NULL)
-	dl_print(l, "Depois:", -1, 0);
 
     return SUCCESS;
 }
