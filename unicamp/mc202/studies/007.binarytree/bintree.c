@@ -15,15 +15,15 @@ int32_t tr_destroy(leaf_t * root) {
     tr_destroy(root->left);
     tr_destroy(root->right);
     free(root);
-    root = NULL;
+    root = (leaf_t *) NULL;
 
     return SUCCESS;
 }
 
 int32_t tr_insert_by_value_rc(leaf_t **l, int32_t key) {
-    if (*l == NULL) {
+    if (*l == (leaf_t *) NULL) {
 	leaf_t * leaf = (leaf_t *) calloc(1, sizeof(leaf_t));
-	if (leaf == NULL)
+	if (leaf == (leaf_t *) NULL)
 	    return ERR_MALLOC;
 	leaf->data.id = key;
 	*l = leaf;
@@ -175,23 +175,23 @@ leaf_t * tr_find_suc(leaf_t *l) {
 void tr_replace(leaf_t ** r, leaf_t *a, leaf_t *b);
 
 int32_t tr_delete(leaf_t **r, int32_t key) {
-    if (*r == NULL)
+    if (*r == (leaf_t *) NULL)
 	return ERR_TREE_NULL;
 
     leaf_t * toremove = tr_find_leaf(*r, key);
 
-    if (toremove == NULL)
+    if (toremove == (leaf_t *) NULL)
 	return ERR_NO_LEAF;
 
-    if (toremove->left == NULL) {
+    if (toremove->left == (leaf_t *) NULL) {
 	tr_replace(r, toremove, toremove->right);
     }
-    else if (toremove->right == NULL) {
+    else if (toremove->right == (leaf_t *) NULL) {
 	tr_replace(r, toremove, toremove->left);
     }
     else {
 	leaf_t * min = tr_find_min(toremove->right);
-	if (min != NULL) {
+	if (min != (leaf_t *) NULL) {
 	    if (min->parent != toremove) {
 		tr_replace(r, min, min->right);
 		min->right = toremove->right;
@@ -204,7 +204,7 @@ int32_t tr_delete(leaf_t **r, int32_t key) {
     }
 
     free(toremove);
-    toremove = NULL;
+    toremove = (leaf_t *) NULL;
 
     return SUCCESS;
 }
@@ -220,7 +220,7 @@ void tr_replace(leaf_t **r, leaf_t * u, leaf_t * v) {
 	u->parent->right = v;
     }
 
-    if (v != NULL) {
+    if (v != (leaf_t *) NULL) {
 	v->parent = u->parent;
     }
 }
