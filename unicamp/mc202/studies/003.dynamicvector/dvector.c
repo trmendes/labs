@@ -5,12 +5,12 @@
 #include "trace.h"
 
 dvector * dv_create(int32_t size) {
-    dvector *v = calloc(1, sizeof(dvector));
-    if (v == NULL)
+    dvector *v = (dvector *) calloc(1, sizeof(dvector));
+    if (v == (dvector *) NULL)
 	goto RETURN;
-    v->array = calloc(size, sizeof(int32_t));
+    v->array = (int32_t *) calloc(size, sizeof(int32_t));
 
-    if (v->array == NULL) {
+    if (v->array == (int32_t *) NULL) {
 	free(v);
     }
 
@@ -24,13 +24,13 @@ RETURN:
 }
 
 int8_t dv_realloc(dvector *v) {
-    if (v == NULL)
+    if (v == (dvector *) NULL)
 	return ERR_NO_VECTOR;
 
     int32_t ns = v->size + v->orsize;
     int32_t * nv = calloc(ns, sizeof(int32_t));
 
-    if (nv == NULL)
+    if (nv == (int32_t *) NULL)
 	return ERR_CANT_EXPAND;
 
     for (int32_t i = 0, j = v->head_idx+1; i < v->len; i++, j++) {
@@ -49,7 +49,7 @@ int8_t dv_realloc(dvector *v) {
 }
 
 void dv_destroy(dvector *v) {
-    if (v == NULL)
+    if (v == (dvector *) NULL)
 	return;
     if (v->array)
 	free(v->array);
@@ -57,10 +57,10 @@ void dv_destroy(dvector *v) {
 }
 
 int8_t dv_insert_head(dvector *v, int32_t value) {
-    if (v == NULL)
+    if (v == (dvector *) NULL)
 	return ERR_NO_VECTOR;
 
-    if (v->array == NULL)
+    if (v->array == (int32_t *) NULL)
 	return ERR_NO_ARRAY;
 
     if (v->size == v->len) {
@@ -76,10 +76,10 @@ int8_t dv_insert_head(dvector *v, int32_t value) {
 }
 
 int8_t dv_remove_head(dvector *v) {
-    if (v == NULL)
+    if (v == (dvector *) NULL)
 	return ERR_NO_VECTOR;
 
-    if (v->array == NULL)
+    if (v->array == (int32_t *) NULL)
 	return ERR_NO_ARRAY;
 
     if (v->len <= 0)
@@ -96,10 +96,10 @@ int8_t dv_remove_head(dvector *v) {
 }
 
 int8_t dv_insert_tail(dvector *v, int32_t value) {
-    if (v == NULL)
+    if (v == (dvector *) NULL)
 	return ERR_NO_VECTOR;
 
-    if (v->array == NULL)
+    if (v->array == (int32_t *) NULL)
 	return ERR_NO_ARRAY;
 
     if (v->size == v->len) {
@@ -116,10 +116,10 @@ int8_t dv_insert_tail(dvector *v, int32_t value) {
 }
 
 int8_t dv_remove_tail(dvector *v) {
-    if (v == NULL)
+    if (v == (dvector *) NULL)
 	return ERR_NO_VECTOR;
 
-    if (v->array == NULL)
+    if (v->array == (int32_t *) NULL)
 	return ERR_NO_ARRAY;
 
     if (v->len <= 0)
@@ -137,9 +137,9 @@ int8_t dv_remove_tail(dvector *v) {
 }
 
 void dv_print_array_info(dvector *v) {
-    if (v == NULL)
+    if (v == (dvector *) NULL)
 	return;
-    if (v->array == NULL)
+    if (v->array == (int32_t *) NULL)
 	return;
 
     printf("\n-----------------------------------------------------\n");
@@ -150,12 +150,12 @@ void dv_print_array_info(dvector *v) {
 }
 
 void dv_print(dvector *v, char *head) {
-    if (v == NULL)
+    if (v == (dvector *) NULL)
 	return;
-    if (v->array == NULL)
+    if (v->array == (int32_t *) NULL)
 	return;
 
-    if (head != NULL)
+    if (head != (char *) NULL)
 	printf("%s%s%s\n", ANSI_COLOR_RED, head, ANSI_COLOR_RESET);
 
     int32_t tail_idx = (((v->head_idx + 1) + v->len) % v->size) - 1;
