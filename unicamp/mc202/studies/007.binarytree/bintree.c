@@ -15,6 +15,7 @@ int32_t tr_destroy(leaf_t * root) {
     tr_destroy(root->left);
     tr_destroy(root->right);
     free(root);
+    root = NULL;
 
     return SUCCESS;
 }
