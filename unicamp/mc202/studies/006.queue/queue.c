@@ -3,17 +3,17 @@
 #include <stdio.h>
 
 queue_t * qe_create() {
-    queue_t * q = calloc(1, sizeof(queue_t));
+    queue_t * q = (queue_t *) calloc(1, sizeof(queue_t));
     return q;
 }
 
 int qe_destroy(queue_t *q) {
-    if (q == NULL)
+    if (q == (queue_t *) NULL)
 	return ERR_QUEUE_NULL;
 
     node_t *p = q->head;
 
-    while (p != NULL) {
+    while (p != (node_t *) NULL) {
 	q->head = p->next;
 	free(p);
 	p = q->head;;
@@ -25,14 +25,17 @@ int qe_destroy(queue_t *q) {
 }
 
 int qe_insert(queue_t *q, node_t * data) {
-    if (q == NULL)
+    if (q == (queue_t *) NULL)
 	return ERR_QUEUE_NULL;
 
-    if (q->head == NULL) {
+    if (data == (node_t *) NULL)
+	return ERR_NULL_ARG;
+
+    if (q->head == (node_t *) NULL) {
 	q->head = data;
 	q->tail = data;
     } else {
-	data->prev = NULL;
+	data->prev = (node_t *) NULL;
 	data->next = q->head;
 	q->head->prev = data;
 	q->head = data;
@@ -44,22 +47,22 @@ int qe_insert(queue_t *q, node_t * data) {
 }
 
 node_t *qe_get(queue_t *q) {
-    if (q == NULL)
-	return NULL;
-    if (q->head == NULL)
-	return NULL;
+    if (q == (queue_t *) NULL)
+	return (node_t *) NULL;
+    if (q->head == (node_t *) NULL)
+	return (node_t *) NULL;
 
-    node_t *p = NULL;
+    node_t *p = (node_t *) NULL;
 
     if (q->head == q->tail) {
 	p = q->tail;
-	q->head = NULL;
-	q->tail = NULL;
+	q->head = (node_t *) NULL;
+	q->tail = (node_t *) NULL;
     } else {
 	p = q->tail;
-	q->tail->prev->next = NULL;
+	q->tail->prev->next = (node_t *) NULL;
 	q->tail = q->tail->prev;
-	p->prev = NULL;
+	p->prev = (node_t *) NULL;
     }
 
     q->len--;
@@ -68,20 +71,20 @@ node_t *qe_get(queue_t *q) {
 }
 
 int qe_len(queue_t *q) {
-    if (q == NULL)
+    if (q == (queue_t *) NULL)
 	return ERR_QUEUE_NULL;
 
     return q->len;
 }
 
 void qe_print(queue_t *q) {
-    if (q == NULL)
+    if (q == (queue_t *) NULL)
 	return;
-    if (q->head == NULL)
+    if (q->head == (node_t *) NULL)
 	return;
 
     node_t *p = q->head;
-    while (p != NULL) {
+    while (p != (node_t *) NULL) {
 	printf("[%d] ", p->id);
 	p = p->next;
     }

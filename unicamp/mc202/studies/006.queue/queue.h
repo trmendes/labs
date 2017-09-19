@@ -1,6 +1,7 @@
 #ifndef __QUEUE_H__
 #define __QUEUE_H__
 
+#define ERR_NULL_ARG    -3
 #define ERR_QUEUE_NULL  -1
 #define ERR_QUEUE_EMPTY -2
 #define SUCCESS          0
