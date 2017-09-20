@@ -55,6 +55,7 @@ int32_t tr_insert_by_value(leaf_t ** l, int32_t key) {
 	    if (key < potencialSpace->data.id) {
 		if (potencialSpace->left == (leaf_t *) NULL) {
 		    potencialSpace->left = leaf;
+		    leaf->parent = potencialSpace;
 		    break;
 		} else {
 		    potencialSpace = potencialSpace->left;
@@ -62,15 +63,17 @@ int32_t tr_insert_by_value(leaf_t ** l, int32_t key) {
 	    } else if (key > potencialSpace->data.id) {
 		if (potencialSpace->right == (leaf_t *) NULL) {
 		    potencialSpace->right= leaf;
+		    leaf->parent = potencialSpace;
 		    break;
 		} else {
 		    potencialSpace = potencialSpace->right;
 		}
+	    } else if (key == potencialSpace->data.id) {
+		break;
 	    }
 	}
     }
 
-    leaf->parent = potencialSpace;
 
     return SUCCESS;
 }
