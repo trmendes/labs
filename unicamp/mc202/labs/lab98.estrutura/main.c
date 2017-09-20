@@ -28,17 +28,11 @@ int main(int argc, char **argv) {
 		qe_insert(queue, data);
 	    } else if (command == REMOVE_POP) {
 		ret = st_pop(stack);
-		if (ret == data) {
-		    isStack = 1;
-		} else {
+		if (ret != data)
 		    isStack = 0;
-		}
 		ret = qe_get(queue);
-		if (ret == data) {
-		    isQueue = 1;
-		} else {
+		if (ret != data)
 		    isQueue = 0;
-		}
 	    }
 	}
 
@@ -53,6 +47,9 @@ int main(int argc, char **argv) {
 	    printf("duvida\n");
 	if ((!isStack) && (!isQueue))
 	    printf("impossivel\n");
+
+	isStack = 1;
+	isQueue = 1;
     }
 
     return EXIT_SUCCESS;
