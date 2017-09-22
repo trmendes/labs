@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "bith.h"
+#include "bits.h"
 
 #define ELEMENTS 100
 
