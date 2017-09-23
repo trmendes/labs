@@ -3,11 +3,11 @@ TARGET   = lab
 
 CC       = gcc
 # compiling flags here
-CFLAGS   = -std=c99 -Wall -I.
+CFLAGS   = -std=c99 -g -Wall -I.
 
 LINKER   = gcc
 # linking flags here
-LFLAGS   = -Wall -I. -lm
+LFLAGS   = -Wall -g -I. -lm
 
 # change these to proper directories where each file should be
 OBJDIR   = obj
@@ -31,3 +31,7 @@ $(OBJECTS): %.o : %.c
 clean:
 	@$(rm) $(OBJECTS) $(TARGET)
 	@echo "Cleanup complete!"
+
+.PHONY: run
+run:
+	@./$(TARGET)
