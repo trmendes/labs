@@ -59,7 +59,6 @@ int32_t tr_insert_by_value(leaf_t **l, int32_t key) {
 
 	/* AVL */
 	while (p->parent != (leaf_t *) NULL) {
-	    printf("-----> Fator de %d: %d\n", p->parent->data.id, p->parent->avl_factor);
 
 	    if (p->parent->left == p) {
 		--p->parent->avl_factor;
@@ -67,11 +66,22 @@ int32_t tr_insert_by_value(leaf_t **l, int32_t key) {
 		++p->parent->avl_factor;
 	    }
 
-	    if (p->parent->avl_factor > AVL_MAX) {
-		tr_avl_rotete_left(l, &p);
-	    } else if (p->avl_factor < AVL_MIN) {
-		tr_avl_rotete_right(l, &p);
+	    printf("-----> Fator de %d: %d\n", p->parent->data.id, p->parent->avl_factor);
+
+	    if (p->parent->avl_factor == AVL_MIN) {
+		if (p->avl_factor == 1) {
+		    tr_avl_rotate_left(l, p);
+		    p = p->parent;
+		} 
+		tr_avl_rotate_right(l, p->parent);
+	    } else if (p->parent->avl_factor == AVL_MAX) {
+		if (p->avl_factor == -1) {
+		    tr_avl_rotate_right(l, p);
+		    p = p->parent;
+		}
+		tr_avl_rotate_left(l, p->parent);
 	    }
+
 	    if (p->parent != NULL) {
 		p = p->parent;
 	    }
@@ -81,57 +91,68 @@ int32_t tr_insert_by_value(leaf_t **l, int32_t key) {
     return SUCCESS;
 }
 
-int32_t tr_avl_rotete_right(leaf_t ** root, leaf_t ** pivot) {
-    if (pivot == NULL)
+int32_t tr_avl_rotate_right(leaf_t ** root, leaf_t * oldr) {
+    if (oldr == NULL)
 	return ERR_TREE_NULL;
     printf("\n---------------------------------\n");
     tr_print(*root, PRE_ORDER);
 
-    leaf_t * oldr = (*pivot)->parent;
+    leaf_t * pivot = oldr->left;
 
-    if (oldr->parent == NULL)
-	*root = *pivot;
-    else
-	oldr->parent->left = *pivot;
+    printf("\n(R) Balanceado em: %d <-> %d\n", oldr->data.id, pivot->data.id);
 
-    oldr->left = (*pivot)->right;
-    (*pivot)->right = oldr;
+    if (oldr->parent == (leaf_t *) NULL)
+	*root = pivot;
+    else {
+	if (oldr->parent->left == oldr)
+	    oldr->parent->left = pivot;
+	else
+	    oldr->parent->right = pivot;
+    }
 
-    (*pivot)->parent = oldr->parent;
-    oldr->parent = *pivot;
+    oldr->left = pivot->right;
+    pivot->right = oldr;
 
-    (*pivot)->avl_factor = 0;
+    pivot->parent = oldr->parent;
+    oldr->parent = pivot;
+
+    pivot->avl_factor = 0;
     oldr->avl_factor = 0;
 
-    printf("\n(R) Balanceado em: %d\n",(*pivot)->data.id);
     tr_print(*root, PRE_ORDER);
+
     printf("\n---------------------------------\n");
     return SUCCESS;
 }
 
-int32_t tr_avl_rotete_left(leaf_t ** root, leaf_t ** pivot) {
-    if (pivot == NULL)
+int32_t tr_avl_rotate_left(leaf_t ** root, leaf_t * oldr) {
+    if (oldr == NULL)
 	return ERR_TREE_NULL;
     printf("\n---------------------------------\n");
     tr_print(*root, PRE_ORDER);
 
-    leaf_t * oldr = (*pivot)->parent;
+    leaf_t * pivot = oldr->right;
 
-    if (oldr->parent == NULL)
-	*root = *pivot;
-    else
-	oldr->parent->left = *pivot;
+    printf("\n(L) Balanceado em: %d <-> %d\n", oldr->data.id, pivot->data.id);
 
-    oldr->right = (*pivot)->left;
-    (*pivot)->left = oldr;
+    if (oldr->parent == (leaf_t *) NULL)
+	*root = pivot;
+    else {
+	if (oldr->parent->left == oldr)
+	    oldr->parent->left = pivot;
+	else
+	    oldr->parent->right = pivot;
+    }
 
-    (*pivot)->parent = oldr->parent;
-    oldr->parent = *pivot;
+    oldr->right = pivot->left;
+    pivot->left = oldr;
 
+    pivot->parent = oldr->parent;
+    oldr->parent = pivot;
+
+    pivot->avl_factor = 0;
     oldr->avl_factor = 0;
-    (*pivot)->avl_factor = 0;
 
-    printf("\n(L) Balanceado em: %d\n",(*pivot)->data.id);
     tr_print(*root, PRE_ORDER);
     printf("\n---------------------------------\n");
 

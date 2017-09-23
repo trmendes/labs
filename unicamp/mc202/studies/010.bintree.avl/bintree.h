@@ -9,8 +9,8 @@
 #define ERR_TREE_NULL  -1
 #define SUCCESS         0
 
-#define AVL_MIN        -1
-#define AVL_MAX         1
+#define AVL_MIN        -2
+#define AVL_MAX         2
 
 typedef struct data_s {
     int32_t    id;
@@ -40,7 +40,7 @@ leaf_t    * tr_find_pre           (leaf_t *l);
 leaf_t    * tr_find_suc           (leaf_t *l);
 int32_t     tr_delete             (leaf_t **l, int32_t key);
 void        tr_print              (leaf_t * root, printType_e pType);
-int32_t     tr_avl_rotete_left    (leaf_t ** root, leaf_t ** leaf);
-int32_t     tr_avl_rotete_right   (leaf_t ** root, leaf_t ** leaf);
+int32_t     tr_avl_rotate_left    (leaf_t ** root, leaf_t * leaf);
+int32_t     tr_avl_rotate_right   (leaf_t ** root, leaf_t * leaf);
 
 #endif
