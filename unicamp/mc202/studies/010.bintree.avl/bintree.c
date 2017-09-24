@@ -253,14 +253,16 @@ int32_t tr_delete(leaf_t **l, int32_t key) {
 	replacement = tr_find_min(p->right);
 
 	if (replacement != (leaf_t *) NULL) {
-	    tr_replace(l, replacement, replacement->right);
-	    replacement->right = p->right;
-	    replacement->right->parent = replacement;
+	    if (replacement->parent != p) {
+		tr_replace(l, replacement, replacement->right);
+		replacement->right = p->right;
+		replacement->right->parent = replacement;
+	    }
+	    tr_replace(l, p, replacement);
+	    replacement->left = p->left;
+	    replacement->left->parent = replacement;
 	}
 
-	tr_replace(l, p, replacement);
-	replacement->left = p->left;
-	replacement->left->parent = replacement;
     }
 
     free(p);
