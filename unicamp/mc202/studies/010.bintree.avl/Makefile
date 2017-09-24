@@ -3,7 +3,7 @@ TARGET   = lab
 
 CC       = gcc
 # compiling flags here
-CFLAGS   = -std=c99 -g -Wall -I.
+CFLAGS   = -std=c99 -g -Wall -D AVL -I.
 
 LINKER   = gcc
 # linking flags here

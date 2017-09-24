@@ -21,7 +21,9 @@ typedef struct leaf_s {
     struct leaf_s * left;
     struct leaf_s * right;
     struct leaf_s * parent;
+#ifdef AVL
     int8_t          avl_factor;
+#endif
 } leaf_t;
 
 typedef enum printType {
@@ -40,7 +42,9 @@ leaf_t    * tr_find_pre           (leaf_t *l);
 leaf_t    * tr_find_suc           (leaf_t *l);
 int32_t     tr_delete             (leaf_t **l, int32_t key);
 void        tr_print              (leaf_t * root, printType_e pType);
+#ifdef AVL
 int32_t     tr_avl_rotate_left    (leaf_t ** root, leaf_t * leaf);
 int32_t     tr_avl_rotate_right   (leaf_t ** root, leaf_t * leaf);
+#endif
 
 #endif

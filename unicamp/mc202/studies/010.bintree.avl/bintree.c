@@ -29,14 +29,12 @@ int32_t tr_insert_by_value(leaf_t **l, int32_t key) {
 
     if (*l == NULL) {
 	*l = leaf;
-	printf("(ROOT) Inseri o %d\n", leaf->data.id);
     } else {
 	while (p != NULL) {
 	    if (key < p->data.id) {
 		if (p->left == (leaf_t *) NULL) {
 		    p->left = leaf;
 		    leaf->parent = p;
-		    printf("(L   ) Inseri o %d\n", leaf->data.id);
 		    break;
 		} else {
 		    p = p->left;
@@ -45,7 +43,6 @@ int32_t tr_insert_by_value(leaf_t **l, int32_t key) {
 		if (p->right == (leaf_t *) NULL) {
 		    p->right = leaf;
 		    leaf->parent = p;
-		    printf("(R   ) Inseri o %d\n", leaf->data.id);
 		    break;
 		} else {
 		    p = p->right;
@@ -54,7 +51,7 @@ int32_t tr_insert_by_value(leaf_t **l, int32_t key) {
 		break;
 	    }
 	}
-
+#ifdef AVL
 	p = leaf;
 
 	/* AVL */
@@ -86,11 +83,13 @@ int32_t tr_insert_by_value(leaf_t **l, int32_t key) {
 		p = p->parent;
 	    }
 	}
+#endif
     }
 
     return SUCCESS;
 }
 
+#ifdef AVL
 int32_t tr_avl_rotate_right(leaf_t ** root, leaf_t * oldr) {
     if (oldr == NULL)
 	return ERR_TREE_NULL;
@@ -158,6 +157,7 @@ int32_t tr_avl_rotate_left(leaf_t ** root, leaf_t * oldr) {
 
     return SUCCESS;
 }
+#endif
 
 leaf_t * tr_find_leaf(leaf_t *l , int32_t key) {
     if (l == (leaf_t *) NULL)
@@ -233,8 +233,52 @@ leaf_t * tr_find_suc(leaf_t *l) {
     return parent;
 }
 
+void tr_replace(leaf_t ** root, leaf_t * old, leaf_t * new);
+
 int32_t tr_delete(leaf_t **l, int32_t key) {
+    if (*l == (leaf_t *) NULL)
+	return ERR_TREE_NULL;
+
+    leaf_t * p = tr_find_leaf(*l, key);
+    leaf_t * replacement = (leaf_t *) NULL;
+
+    if (p == (leaf_t *) NULL)
+	return ERR_NO_LEAF;
+
+    if (p->left == (leaf_t *) NULL) {
+	tr_replace(l, p, p->right);
+    } else if (p->right == (leaf_t *) NULL) {
+	tr_replace(l, p, p->left);
+    } else {
+	replacement = tr_find_min(p->right);
+
+	if (replacement != (leaf_t *) NULL) {
+	    tr_replace(l, replacement, replacement->right);
+	    replacement->right = p->right;
+	    replacement->right->parent = replacement;
+	}
+
+	tr_replace(l, p, replacement);
+	replacement->left = p->left;
+	replacement->left->parent = replacement;
+    }
+
+    free(p);
+    p = NULL;
+
     return SUCCESS;
+}
+
+void tr_replace(leaf_t ** root, leaf_t * old, leaf_t * new) {
+    if (old->parent == (leaf_t *) NULL)
+	*root = new;
+    else if (old == old->parent->left)
+	old->parent->left = new;
+    else
+	old->parent->right = new;
+
+    if (new != (leaf_t *) NULL)
+	new->parent = old->parent;
 }
 
 void tr_print(leaf_t * root, printType_e pType) {
