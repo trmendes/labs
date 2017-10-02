@@ -15,10 +15,15 @@ int32_t main() {
     hp_insert_max(h, 48);
     hp_insert_max(h, 60);
     hp_print(h);
-    hp_remove_max(h);
-    hp_remove_max(h);
-    hp_remove_max(h);
+    hp_sort(h);
+    hp_print(h);
     hp_remove_max(h);
     hp_print(h);
+    hp_remove_max(h);
+    hp_print(h);
+    hp_remove_max(h);
+    //hp_remove_max(h);
+    hp_print(h);
+    //hp_print(h);
     return EXIT_SUCCESS;
 }

@@ -88,6 +88,34 @@ int32_t hp_remove_max(heap_ctrl_t * heap) {
     heap->array[0] = heap->array[heap->next];
     heap->array[heap->next] = (data_t *) NULL;
 
+    hp_heapfy_max(heap);
+
+    return SUCCESS;
+}
+
+int32_t hp_remove_min(heap_ctrl_t * heap) {
+    if (heap == (heap_ctrl_t *) NULL)
+	return ERR_HEAP_NULL;
+
+    if (heap->next == 0)
+	return ERR_HEAP_EMPTY;
+
+    if (heap->array[0] != (data_t *) NULL)
+	free(heap->array[0]);
+
+    --heap->next;
+    heap->array[0] = heap->array[heap->next];
+    heap->array[heap->next] = (data_t *) NULL;
+
+    hp_heapfy_min(heap);
+
+    return SUCCESS;
+}
+
+int32_t hp_heapfy_max(heap_ctrl_t * heap) {
+    if (heap == (heap_ctrl_t *) NULL)
+	return ERR_HEAP_NULL;
+
     size_t l, r;
     data_t * tmp;
     int32_t parent = 0;
@@ -126,19 +154,9 @@ int32_t hp_remove_max(heap_ctrl_t * heap) {
     return SUCCESS;
 }
 
-int32_t hp_remove_min(heap_ctrl_t * heap) {
+int32_t hp_heapfy_min(heap_ctrl_t * heap) {
     if (heap == (heap_ctrl_t *) NULL)
 	return ERR_HEAP_NULL;
-
-    if (heap->next == 0)
-	return ERR_HEAP_EMPTY;
-
-    if (heap->array[0] != (data_t *) NULL)
-	free(heap->array[0]);
-
-    --heap->next;
-    heap->array[0] = heap->array[heap->next];
-    heap->array[heap->next] = (data_t *) NULL;
 
     size_t l, r;
     data_t * tmp;
@@ -174,6 +192,28 @@ int32_t hp_remove_min(heap_ctrl_t * heap) {
 	    }
 	}
     }
+
+    return SUCCESS;
+}
+
+int32_t hp_sort(heap_ctrl_t * heap) {
+    if (heap == (heap_ctrl_t *) NULL)
+	return ERR_HEAP_NULL;
+
+    data_t ** sorted = (data_t **) calloc(heap->size, sizeof(data_t **));
+    int32_t i;
+
+    for (i = (heap->next - 1); i >= 0; --i) {
+	sorted[i] = heap->array[0];
+	heap->array[0] = heap->array[i];
+	heap->array[i] = (data_t *) NULL;
+
+	printf("Heapfy for: %d\n", sorted[i]->data);
+	hp_heapfy_max(heap);
+    }
+
+    for (i = 0; i < heap->next; ++i)
+	heap->array[i] = sorted[i];
 
     return SUCCESS;
 }
