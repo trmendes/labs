@@ -126,21 +126,21 @@ int32_t hp_heapfy_max(heap_ctrl_t * heap) {
 	if (heap->array[r] == (data_t *) NULL) {
 	    if (heap->array[l] == (data_t *) NULL)
 		break;
-	    if (heap->array[l]->data > parent) {
+	    if (heap->array[l]->data >= heap->array[parent]->data) {
 		tmp = heap->array[l];
 		heap->array[l] = heap->array[parent];
 		heap->array[parent] = tmp;
 		parent = l;
-	    } else {
+	     } else {
 		break;
 	    }
 	} else {
-	    if ((heap->array[l]->data >= parent) && (heap->array[l]->data > heap->array[r]->data)) {
+	    if ((heap->array[l]->data >= heap->array[parent]->data) && (heap->array[l]->data > heap->array[r]->data)) {
 		tmp = heap->array[l];
 		heap->array[l] = heap->array[parent];
 		heap->array[parent] = tmp;
 		parent = l;
-	    } else if ((heap->array[r]->data >= parent) && (heap->array[r]->data > heap->array[l]->data)) {
+	    } else if ((heap->array[r]->data >= heap->array[parent]->data) && (heap->array[r]->data > heap->array[l]->data)) {
 		tmp = heap->array[r];
 		heap->array[r] = heap->array[parent];
 		heap->array[parent] = tmp;
@@ -168,7 +168,7 @@ int32_t hp_heapfy_min(heap_ctrl_t * heap) {
 	if (heap->array[r] == (data_t *) NULL) {
 	    if (heap->array[l] == (data_t *) NULL)
 		break;
-	    if (heap->array[l]->data < parent) {
+	    if (heap->array[l]->data < heap->array[parent]->data) {
 		tmp = heap->array[l];
 		heap->array[l] = heap->array[parent];
 		heap->array[parent] = tmp;
@@ -177,12 +177,12 @@ int32_t hp_heapfy_min(heap_ctrl_t * heap) {
 		break;
 	    }
 	} else {
-	    if ((heap->array[l]->data <= parent) && (heap->array[l]->data < heap->array[r]->data)) {
+	    if ((heap->array[l]->data <= heap->array[parent]->data) && (heap->array[l]->data < heap->array[r]->data)) {
 		tmp = heap->array[l];
 		heap->array[l] = heap->array[parent];
 		heap->array[parent] = tmp;
 		parent = l;
-	    } else if ((heap->array[r]->data <= parent) && (heap->array[r]->data < heap->array[l]->data)) {
+	    } else if ((heap->array[r]->data <= heap->array[parent]->data) && (heap->array[r]->data < heap->array[l]->data)) {
 		tmp = heap->array[r];
 		heap->array[r] = heap->array[parent];
 		heap->array[parent] = tmp;
@@ -201,6 +201,7 @@ int32_t hp_sort(heap_ctrl_t * heap) {
 	return ERR_HEAP_NULL;
 
     data_t ** sorted = (data_t **) calloc(heap->size, sizeof(data_t **));
+
     int32_t i;
 
     for (i = (heap->next - 1); i >= 0; --i) {
@@ -208,12 +209,13 @@ int32_t hp_sort(heap_ctrl_t * heap) {
 	heap->array[0] = heap->array[i];
 	heap->array[i] = (data_t *) NULL;
 
-	printf("Heapfy for: %d\n", sorted[i]->data);
 	hp_heapfy_max(heap);
     }
 
-    for (i = 0; i < heap->next; ++i)
+    for (i = 0; i < (int32_t) heap->next; ++i)
 	heap->array[i] = sorted[i];
+
+    free(sorted);
 
     return SUCCESS;
 }
