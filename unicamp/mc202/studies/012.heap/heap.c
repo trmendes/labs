@@ -220,6 +220,15 @@ int32_t hp_sort(heap_ctrl_t * heap) {
     return SUCCESS;
 }
 
+int32_t hp_get_head(heap_ctrl_t * heap) {
+    if (heap == (heap_ctrl_t *) NULL)
+	return ERR_HEAP_NULL;
+    if (heap->next == 0)
+	return ERR_HEAP_EMPTY;
+
+    return heap->array[0]->data;
+}
+
 void hp_print(heap_ctrl_t * heap) {
     if (heap == (heap_ctrl_t *) NULL)
 	return;

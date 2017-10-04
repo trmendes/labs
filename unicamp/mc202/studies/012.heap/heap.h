@@ -29,6 +29,7 @@ int32_t       hp_remove_max    (heap_ctrl_t * heap);
 int32_t       hp_remove_min    (heap_ctrl_t * heap);
 int32_t       hp_heapfy_max    (heap_ctrl_t * heap);
 int32_t       hp_heapfy_min    (heap_ctrl_t * heap);
+int32_t       hp_get_head      (heap_ctrl_t * heap);
 int32_t       hp_sort          (heap_ctrl_t * heap);
 void          hp_print         (heap_ctrl_t * heap);
 #endif
