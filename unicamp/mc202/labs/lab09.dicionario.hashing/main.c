@@ -9,14 +9,14 @@
 #define REMOVE "r"
 #define DONE   "f"
 
-#define BUFMAX 100
+#define BUFMAX 250
 
 int32_t main() {
     char cmd[BUFMAX];
     char data[BUFMAX];
     int32_t ret;
 
-    hash_t * h = hs_create(97);
+    hash_t * h = hs_create(5249);
 
     while (1) {
 	ret = scanf("%s ", cmd);

@@ -8,7 +8,7 @@
 #define ERR_HEAP_NULL  -1
 #define SUCCESS         0
 
-#define CHARMAX       100
+#define CHARMAX       250
 
 typedef struct data_s {
     char    data[CHARMAX];
@@ -24,7 +24,7 @@ void          hs_destroy       ( hash_t ** hash);
 int8_t        hs_insert_key    ( hash_t * hash, char * data);
 void          hs_find_key      ( hash_t * hash, char * data);
 int32_t       hs_remove_key    ( hash_t * hash, char * data);
-int32_t       hs_hash_sum      ( hash_t * hash, char * data);
+unsigned long hs_hash_sdbm     ( char *str);
 unsigned long hs_hash_djb2     ( char *str);
 
 #endif
