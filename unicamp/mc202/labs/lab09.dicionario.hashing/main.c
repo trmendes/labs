@@ -16,7 +16,7 @@ int32_t main() {
     char data[BUFMAX];
     int32_t ret;
 
-    hash_t * h = hs_create(5249);
+    hash_t * h = hs_create(6007);
 
     while (1) {
 	ret = scanf("%s ", cmd);

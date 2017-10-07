@@ -39,8 +39,8 @@ int8_t hs_insert_key(hash_t * hash, char * data) {
     strcpy(node->data, data);
 
     if (hash->array[index] == (data_t *) NULL) {
+	node->idx = hash->hashidx++;
 	hash->array[index] = node;
-	printf("Inserido Index: %ld -- %s\n", index, data);
     } else {
 	oindex = index;
 	collision = hash->hashsize - (hs_hash_sdbm(data) % hash->hashsize);
@@ -54,7 +54,7 @@ int8_t hs_insert_key(hash_t * hash, char * data) {
 		return ERR_NO_SPACE;
 	}
 
-	printf("Inserido Index: %ld - [COLLISION] -- %s\n", index, data);
+	node->idx = oindex;
 	hash->array[index] = node;
     }
 
@@ -88,9 +88,10 @@ void hs_find_key( hash_t * hash, char * data) {
     }
 
     if (node == (data_t *) NULL)
-	printf("nao encontrado -- %s\n", data);
-    else
-	printf("encontrado %ld -- %s\n", index, data);
+	printf("nao encontrado\n");
+    else {
+	printf("encontrado %d\n", node->idx);
+    }
 }
 
 int32_t hs_remove_key( hash_t * hash, char * data) {
@@ -119,7 +120,6 @@ int32_t hs_remove_key( hash_t * hash, char * data) {
 	    break;
     }
 
-    printf("Removido %s\n",data);
     return SUCCESS;
 }
 /* http://www.cse.yorku.ca/~oz/hash.html */

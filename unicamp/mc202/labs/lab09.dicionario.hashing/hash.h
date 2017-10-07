@@ -12,11 +12,13 @@
 
 typedef struct data_s {
     char    data[CHARMAX];
+    int32_t idx;
 } data_t;
 
 typedef struct hash_s {
-    int32_t    hashsize;
-    data_t  ** array;
+    int32_t          hashsize;
+    int32_t          hashidx;
+    data_t        ** array;
 } hash_t;
 
 hash_t      * hs_create        ( int32_t hashsize);
