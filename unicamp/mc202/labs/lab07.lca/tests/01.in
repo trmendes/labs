@@ -1,0 +1,16 @@
+9 15
+link 2 1
+link 3 2
+link 4 3
+link 5 4
+link 6 4
+link 7 3
+cut 5
+link 8 2
+link 9 1
+cut 8
+lca 6 9
+lca 3 4
+lca 7 7
+lca 2 1
+lca 1 6
