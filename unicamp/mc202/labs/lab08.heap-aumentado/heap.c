@@ -6,6 +6,7 @@
 heap_ctrl_t * hp_create(size_t size) {
     heap_ctrl_t * h = (heap_ctrl_t *) calloc(1, sizeof(heap_ctrl_t));
     h->array = (data_t **) calloc(size, sizeof(data_t *));
+    h->map = tr_create();
     h->size = size;
     return h;
 }
@@ -22,6 +23,7 @@ void hp_destroy(heap_ctrl_t ** heap) {
     }
 
     free((*heap)->array);
+    tr_destroy((*heap)->map);
     free(*heap);
     *heap = (heap_ctrl_t *) NULL;
 }
@@ -33,17 +35,17 @@ int32_t hp_insert_min(heap_ctrl_t * heap, int32_t key, int32_t pri) {
     if (heap->next == heap->size - 1)
 	return ERR_HEAP_FULL;
 
-    uint32_t i;
+    int32_t i;
 
-    for (i = 0; i < heap->next; ++i) {
-	if (heap->array[i]->key == key)
-	    return ERR_REPT_KEY;
-    }
+    i = tr_find_get_key_idx(heap->map, key);
+    if (i != ERR_NO_LEAF)
+	return ERR_REPT_KEY;
 
     data_t * data = (data_t *) calloc(1, sizeof(data_t));
     data->price = pri;
     data->key = key;
 
+    tr_insert_by_value(&heap->map, key, heap->next);
     heap->array[heap->next] = data;
 
     hp_heapify_botton_up(heap, heap->next);
@@ -64,6 +66,9 @@ data_t * hp_remove_min(heap_ctrl_t * heap) {
     tmp = heap->array[0];
 
     --heap->next;
+
+    tr_delete(&heap->map, heap->array[0]->key);
+
     heap->array[0] = heap->array[heap->next];
     heap->array[heap->next] = (data_t *) NULL;
 
@@ -87,6 +92,9 @@ int32_t hp_heapify_botton_up(heap_ctrl_t * heap, int32_t parent) {
 	    parent = (parent - 1) / 2;
 
 	if (heap->array[parent]->price >= pri) {
+	    tr_update_idx(heap->map, heap->array[parent]->key, leaf);
+	    tr_update_idx(heap->map, heap->array[leaf]->key, parent);
+
 	    heap->array[leaf] = heap->array[parent];
 	    heap->array[parent] = tmp;
 	    leaf = parent;
@@ -111,6 +119,9 @@ int32_t hp_heapify_top_down(heap_ctrl_t * heap, int32_t parent) {
 
 	if (heap->array[r] == (data_t *) NULL) {
 	    if (heap->array[l]->price < heap->array[parent]->price) {
+		tr_update_idx(heap->map, heap->array[parent]->key, l);
+		tr_update_idx(heap->map, heap->array[l]->key, parent);
+
 		tmp = heap->array[l];
 		heap->array[l] = heap->array[parent];
 		heap->array[parent] = tmp;
@@ -120,11 +131,17 @@ int32_t hp_heapify_top_down(heap_ctrl_t * heap, int32_t parent) {
 	    }
 	} else {
 	    if ((heap->array[l]->price <= heap->array[parent]->price) && (heap->array[l]->price < heap->array[r]->price)) {
+		tr_update_idx(heap->map, heap->array[parent]->key, l);
+		tr_update_idx(heap->map, heap->array[l]->key, parent);
+
 		tmp = heap->array[l];
 		heap->array[l] = heap->array[parent];
 		heap->array[parent] = tmp;
 		parent = l;
 	    } else if ((heap->array[r]->price <= heap->array[parent]->price) && (heap->array[r]->price < heap->array[l]->price)) {
+		tr_update_idx(heap->map, heap->array[parent]->key, r);
+		tr_update_idx(heap->map, heap->array[r]->key, parent);
+
 		tmp = heap->array[r];
 		heap->array[r] = heap->array[parent];
 		heap->array[parent] = tmp;
@@ -144,13 +161,16 @@ int32_t hp_change_pri(heap_ctrl_t * heap, int32_t key, int32_t new_pri) {
 
     int32_t i, ovalue = new_pri;
 
-    for (i = 0; i < (int32_t) heap->next; ++i) {
-	if (heap->array[i]->key == key) {
-	    ovalue = heap->array[i]->price;
-	    heap->array[i]->price = new_pri;
-	    break;
-	}
-    }
+    i = tr_find_get_key_idx(heap->map, key);
+
+    if ((i < 0) || (i > (int32_t) heap->size))
+	return ERR_NO_LEAF;
+
+    if (heap->array[i] == (data_t *) NULL)
+	return ERR_NO_LEAF;
+
+    ovalue = heap->array[i]->price;
+    heap->array[i]->price = new_pri;
 
     if (ovalue > new_pri) {
 	hp_heapify_botton_up(heap,i);
