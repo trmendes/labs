@@ -18,19 +18,45 @@ class Simple: Gtk.Window {
 	    Gtk.main_quit();
 	});
 
+	/* Create a Box layout */
+	Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+
 	/* A new Button */
-	Gtk.Button btn = new Gtk.Button.with_label("Simple Button");
+	Gtk.Button add = new Gtk.Button.with_label("ADD");
+	Gtk.Button sub = new Gtk.Button.with_label("SUB");
+
+	/* A new Label */
+	Gtk.Label label = new Gtk.Label("Value: %d".printf(this.click_counter));
+
+	/* Pack all in our Box Layout */
+	box.pack_start(label, false, false, 0);
+	box.pack_start(add, false, false, 0);
+	box.pack_start(sub, false, false, 0);
 
 	/* Add a propose to this button */
-	btn.clicked.connect(() => {
-	    btn.set_label("Click me (%d)".printf(++this.click_counter));
+	add.clicked.connect(() => {
+	    this.add_func();
+	    label.set_label("Value %d".printf(this.click_counter));
+	});
+
+	sub.clicked.connect(() => {
+	    this.sub_func();
+	    label.set_label("Value %d".printf(this.click_counter));
 	});
 
 	/* Add it to the window */
-	this.add(btn);
+	this.add(box);
 
 	/* Display Window */
 	this.show_all();
+    }
+
+    public void add_func() {
+	++this.click_counter;
+    }
+
+    public void sub_func() {
+	--this.click_counter;
     }
 }
 
