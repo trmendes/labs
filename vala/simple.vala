@@ -29,9 +29,12 @@ class Simple: Gtk.Window {
 	Gtk.Label label = new Gtk.Label("Value: %d".printf(this.click_counter));
 
 	/* Pack all in our Box Layout */
-	box.pack_start(label, false, false, 0);
-	box.pack_start(add, false, false, 0);
-	box.pack_start(sub, false, false, 0);
+	box.pack_start(label, false, false, 2);
+	box.pack_start(add, false, false, 2);
+	box.pack_start(sub, false, false, 2);
+
+	/* Give everything equal space among the window */
+	box.set_homogeneous(true);
 
 	/* Add a propose to this button */
 	add.clicked.connect(() => {
