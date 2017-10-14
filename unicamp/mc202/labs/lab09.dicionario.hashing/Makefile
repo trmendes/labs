@@ -3,11 +3,11 @@ TARGET   = lab
 
 CC       = gcc
 # compiling flags here
-CFLAGS   = -std=c99 -g -Wall -I.
+CFLAGS   = -std=c99 -pg -Wall -I.
 
 LINKER   = gcc
 # linking flags here
-LFLAGS   = -Wall -g -I. -lm
+LFLAGS   = -Wall -std=c99 -pg -I. -lm
 
 # change these to proper directories where each file should be
 OBJDIR   = obj
@@ -29,7 +29,7 @@ $(OBJECTS): %.o : %.c
 
 .PHONY: clean
 clean:
-	@$(rm) $(OBJECTS) $(TARGET) 00.out 01.out 02.out 03.out 04.out 07.out
+	@$(rm) $(OBJECTS) $(TARGET) gmon.out 00.out 01.out 02.out 03.out 04.out 07.out
 	@echo "Cleanup complete!"
 
 .PHONY: run
