@@ -1,7 +1,8 @@
 #ifndef __HASH_H__
-#define __HASH_H
+#define __HASH_H__
 
 #include <stdint.h>
+#include <stdlib.h>
 
 #define ERR_NO_SPACE   -3
 #define ERR_WRONG_DATA -2
@@ -26,7 +27,8 @@ void          hs_destroy       ( hash_t ** hash);
 int8_t        hs_insert_key    ( hash_t * hash, char * data);
 void          hs_find_key      ( hash_t * hash, char * data);
 int32_t       hs_remove_key    ( hash_t * hash, char * data);
-unsigned long hs_hash_sdbm     ( char *str);
 unsigned long hs_hash_djb2     ( char *str);
+int32_t       hs_hash1         ( unsigned long key, size_t size);
+int32_t       hs_hash2         ( unsigned long key, size_t size);
 
 #endif

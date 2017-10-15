@@ -32,26 +32,29 @@ int8_t hs_insert_key(hash_t * hash, char * data) {
 	    return ERR_HEAP_NULL;
 
     data_t * node = (data_t *) NULL;
-    unsigned long index = hs_hash_djb2(data) % hash->hashsize;
-    unsigned long collision, oindex = 0;
+    int32_t collision, oindex = 0;
+    unsigned long key = hs_hash_djb2(data);
+    int32_t index = hs_hash1(key, hash->hashsize);
 
     node = (data_t *) calloc(1, sizeof(data_t));
-    strcpy(node->data, data);
+    strncpy(node->data, data, CHARMAX);
 
     if (hash->array[index] == (data_t *) NULL) {
 	node->idx = hash->hashidx++;
 	hash->array[index] = node;
     } else {
 	oindex = index;
-	collision = hash->hashsize - (hs_hash_sdbm(data) % hash->hashsize);
+	collision = hash->hashsize - (hs_hash2(key, hash->hashsize));
 
 	if (collision == 0)
 	    collision = 1;
 
 	while (hash->array[index] != (data_t *) NULL) {
 	    index = (index + collision) % hash->hashsize;
-	    if (index == oindex)
+	    if (index == oindex) {
+		free(node);
 		return ERR_NO_SPACE;
+	    }
 	}
 
 	node->idx = oindex;
@@ -67,12 +70,16 @@ void hs_find_key( hash_t * hash, char * data) {
 	    return;
 
     data_t * node = (data_t *) NULL;
-    unsigned long index, oindex, collision;
+    unsigned long key;
+    int32_t index, oindex, collision;
 
-    index = hs_hash_djb2(data) % hash->hashsize;
+    key = hs_hash_djb2(data);
+    index = hs_hash1(key, hash->hashsize);
     node = hash->array[index];
     oindex = index;
-    collision = hash->hashsize - (hs_hash_sdbm(data) % hash->hashsize);
+    collision = hash->hashsize - (hs_hash2(key, hash->hashsize));
+    if (collision == 0)
+	collision = 1;
 
     while (node != (data_t *) NULL) {
 	if (strcmp(node->data, data) == 0) {
@@ -98,13 +105,15 @@ int32_t hs_remove_key( hash_t * hash, char * data) {
     if (hash == (hash_t *) NULL)
 	return ERR_HEAP_NULL;
 
-    unsigned long collision, index, oindex;
+    unsigned long key;
+    int32_t collision, index, oindex;
     data_t * node = (data_t *) NULL;
 
-    index = hs_hash_djb2(data) % hash->hashsize;
+    key = hs_hash_djb2(data);
+    index = hs_hash1(key, hash->hashsize);
     node = hash->array[index];
     oindex = index;
-    collision = hash->hashsize - (hs_hash_sdbm(data) % hash->hashsize);
+    collision = hash->hashsize - (hs_hash2(key, hash->hashsize));
     if (collision == 0)
 	collision = 1;
 
@@ -132,13 +141,11 @@ unsigned long hs_hash_djb2(char *str) {
 
     return hash;
 }
-/* http://www.cse.yorku.ca/~oz/hash.html */
-unsigned long hs_hash_sdbm(char *str) {
-    unsigned long hash = 0;
-    int c;
 
-    while ((c = *str++))
-	hash = c + (hash << 6) + (hash << 16) - hash;
+int32_t hs_hash1(unsigned long key, size_t size) {
+    return key % size;
+}
 
-    return hash;
+int32_t hs_hash2(unsigned long key, size_t size) {
+    return (key + 10) % size;
 }

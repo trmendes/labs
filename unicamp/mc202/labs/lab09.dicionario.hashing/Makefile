@@ -3,11 +3,11 @@ TARGET   = lab
 
 CC       = gcc
 # compiling flags here
-CFLAGS   = -std=c99 -pg -Wall -I.
+CFLAGS   = -std=c99 -Wall -g -I.
 
 LINKER   = gcc
 # linking flags here
-LFLAGS   = -Wall -std=c99 -pg -I. -lm
+LFLAGS   = -Wall -std=c99 -g -I. -lm
 
 # change these to proper directories where each file should be
 OBJDIR   = obj
