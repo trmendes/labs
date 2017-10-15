@@ -84,13 +84,13 @@ void hs_find_key( hash_t * hash, char * data) {
     while (node != (data_t *) NULL) {
 	if (strcmp(node->data, data) == 0) {
 	    break;
-	}
+	} else {
+	    index = (index + collision) % hash->hashsize;
+	    node = hash->array[index];
 
-	index = (index + collision) % hash->hashsize;
-	node = hash->array[index];
-
-	if (index == oindex) {
-	    break;
+	    if (index == oindex) {
+		break;
+	    }
 	}
     }
 
@@ -121,12 +121,13 @@ int32_t hs_remove_key( hash_t * hash, char * data) {
 	if (strcmp(node->data, data) == 0) {
 	    free(hash->array[index]);
 	    hash->array[index] = (data_t *) NULL;
-	}
-	index = (index + collision) % hash->hashsize;
-	node = hash->array[index];
-
-	if (index == oindex)
 	    break;
+	} else {
+	    index = (index + collision) % hash->hashsize;
+	    node = hash->array[index];
+	    if (index == oindex)
+		break;
+	}
     }
 
     return SUCCESS;
