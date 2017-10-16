@@ -14,9 +14,23 @@ class Simple: Gtk.Window {
 
 	/* Tell it to end whenever the user wants */
 	this.destroy.connect(() => {
-	    stdout.printf("Bye...\n");
+	    stdout.printf("Bye...and thanks for all the fishies\n");
 	    Gtk.main_quit();
 	});
+
+	/* Box layout */
+	Gtk.Box textBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+	/* A text box */
+	Gtk.Entry text = new Gtk.Entry();
+
+	/* A button */
+	Gtk.Button button = new Gtk.Button.with_label("What?!");
+	button.clicked.connect( () => {
+	    stdout.printf("%s - %d\n", text.get_text(), this.click_counter);
+	});
+
+	textBox.pack_start(text, true, true, 2);
+	textBox.pack_start(button, true, true, 2);
 
 	/* Create a Box layout */
 	Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
@@ -47,8 +61,14 @@ class Simple: Gtk.Window {
 	    label.set_label("Value %d".printf(this.click_counter));
 	});
 
+	/* Main container */
+
+	Gtk.Box main = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
+	main.pack_start(box, true, true, 10);
+	main.pack_start(textBox, true, true, 10);
+
 	/* Add it to the window */
-	this.add(box);
+	this.add(main);
 
 	/* Display Window */
 	this.show_all();
