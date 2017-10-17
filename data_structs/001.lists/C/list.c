@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "list.h"
 
-list_t * list_init(void (*destroy) (void **), int32_t (*compare)(const void *, const void *), void (*print)(void *)) {
+list_t * list_init(void (*destroy) (void **), int32_t (*compare)(const void *, const void *), void (*print)(const void *)) {
     if (destroy == NULL) {
 	errno = ERR_LST_ARGS_NULL;
 	return (list_t *) NULL;

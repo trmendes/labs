@@ -9,6 +9,6 @@ typedef struct data_s {
 
 int32_t   compare (const void *key1, const void *key2);
 void      destroy (void **data);
-void      print   (void *data);
+void      print   (const void *data);
 
 #endif

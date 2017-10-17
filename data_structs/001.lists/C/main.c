@@ -103,7 +103,7 @@ void destroy(void **data) {
     *data = (void *) NULL;
 }
 
-void print(void *data) {
+void print(const void *data) {
     data_t * tmp = (data_t *) data;
     printf("%d ", tmp->key);
 }

@@ -21,12 +21,12 @@ typedef struct list_s {
     size_t           size;
     int32_t          (*compare) (const void *key1, const void *key2);
     void             (*destroy) (void **data);
-    void             (*print)   (void *data);
+    void             (*print)   (const void *data);
     lst_element_t   *head;
     lst_element_t   *tail;
 } list_t;
 
-list_t *        list_init           (void (*destroy)(void **), int32_t (*compare)(const void *, const void *), void (*print)(void *));
+list_t *        list_init           (void (*destroy)(void **), int32_t (*compare)(const void *, const void *), void (*print)(const void *));
 void            list_destroy        (list_t **list);
 lst_element_t * list_find_element   (list_t *list, const void *data);
 int8_t          list_ins_next       (list_t *list, const void * element, const void *data);
