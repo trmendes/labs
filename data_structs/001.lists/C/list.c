@@ -93,7 +93,7 @@ int8_t list_ins_next(list_t *list, const void *element, const void *data) {
 	++list->size;
     } else {
 	/* double check if element lives inside of our list */
-	/* It is necessary because to prevent the use of a node that is
+	/* It is necessary to avoid the use of a node that is
 	 * not on our list */
 	if (element != (void *) NULL)
 	    prev_element = list_find_element(list, element);
@@ -130,7 +130,7 @@ int8_t list_rem_next(list_t *list, const void * element, const void **data) {
 	--list->size;
     } else {
 	/* double check if element lives inside of our list */
-	/* It is necessary because to prevent the use of a node that is
+	/* It is necessary to avoid the use of a node that is
 	 * not on our list */
 	if (element != (void *) NULL)
 	    prev_element = list_find_element(list, element);
