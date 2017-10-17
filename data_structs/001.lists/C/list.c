@@ -172,7 +172,7 @@ void list_print_elements(list_t *list) {
 
     lst_element_t * element = list->head;
 
-    if (list->head > 0) {
+    if (list->size > 0) {
 	printf("[ ");
 	while (element != (lst_element_t *) NULL) {
 	    list->print(element->data);
