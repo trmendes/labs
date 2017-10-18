@@ -200,7 +200,7 @@ int32_t hp_sort(heap_ctrl_t * heap) {
     if (heap == (heap_ctrl_t *) NULL)
 	return ERR_HEAP_NULL;
 
-    data_t ** sorted = (data_t **) calloc(heap->size, sizeof(data_t **));
+    data_t ** sorted = (data_t **) calloc(heap->size, sizeof(data_t *));
 
     int32_t i;
 
