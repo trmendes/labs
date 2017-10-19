@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "sort_alg.h"
-
+#include "sort.h"
+#include "heap.h"
 
 void sort_glibqsort (void *vector, const size_t len, const size_t block, int32_t (*compare)(const void *, const void *)) {
     clock_t start, end;
@@ -158,33 +158,133 @@ void sort_shell(void *vector, const size_t len, const size_t block, int32_t (*co
 	return;
     }
 
-    char * first = (char *) calloc(1, block);
+    char * tmp = (char *) calloc(1, block);
 
-    if (first == (char *) NULL) {
+    if (tmp == (char *) NULL) {
 	errno = SORT_ERR_MALLOC;
 	return;
     }
 
-    size_t i;
-    int32_t window = floor(len / 2);
+    size_t i, j;
+    int32_t gap = floor(len / 2);
     char * array = (char *) vector;
 
-    while (window > 1) {
-	for (i = 0; i < len - window ; i+=window) {
-	    if (compare(&array[i * block], &array[(i + window) * block]) > 0) {
-		memcpy(first, &array[i * block], block);
-		memcpy(&array[i * block], &array[(i + window) * block], block);
-		memcpy(&array[(i + window) * block], first, block);
+    while (gap > 0) {
+	for (i = gap; i < len ; ++i) {
+	    memcpy(tmp, &array[i * block], block);
+	    j = i;
+	    while (((int32_t) j >= gap) && (compare(&array[(j - gap) * block], tmp) > 1)) {
+		memcpy(&array[j * block], &array[(j - gap) * block], block);
+		j -= gap;
 	    }
+	    memcpy(&array[j * block], tmp, block);
 	}
-	window = floor(window / 2);
+	gap = floor(gap / 2);
     }
 
-    memset(first, 0x00, block);
-    free(first);
+    memset(tmp, 0x00, block);
+    free(tmp);
     /* ---------------------------------------------------------------------*/
     /* END OF CODE */
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("shell_sort,%lu,%f\n", len, cpu_time_used);
+}
+
+void sort_quick(void *vector, const size_t len, const size_t block, int32_t (*compare)(const void *, const void *)) {
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+    /* CODE */
+    /* ---------------------------------------------------------------------*/
+    if (vector == (void *) NULL) {
+	errno = SORT_ERR_VECTOR_NULL;
+	return;
+    }
+
+    if (len <= 1)
+	return;
+
+    char * tmp = (char *) calloc(1, block);
+
+    if (tmp == (char *) NULL) {
+	errno = SORT_ERR_MALLOC;
+	return;
+    }
+
+    char * array = (char *) vector;
+
+    size_t i = 0, j = len;
+    size_t pivotIdx = floor(len / 2);
+
+    printf("Pivot: %ld | len %ld\n", pivotIdx, len);
+
+    for (i = 0; i <= pivotIdx || j > pivotIdx; ++i, --j) {
+	memcpy(tmp, &array[i * block], block);
+	if (compare(tmp, &array[j * block]) > 0) {
+	    memcpy(&array[i * block], &array[j * block], block);
+	    memcpy(&array[j * block], tmp, block);
+	}
+    }
+
+    if (len > 2) {
+	sort_quick(array, pivotIdx + 1, block, compare);
+	sort_quick(&array[(pivotIdx + 1) * block], pivotIdx - 1, block, compare);
+    }
+
+    memset(tmp, 0x00, block);
+    free(tmp);
+    /* ---------------------------------------------------------------------*/
+    /* END OF CODE */
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("quick_sort,%lu,%f\n", len, cpu_time_used);
+}
+
+void sort_heap(void *vector, const size_t len, const size_t block, int32_t (*compare)(const void *, const void *)) {
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+    /* CODE */
+    /* ---------------------------------------------------------------------*/
+    if (vector == (void *) NULL) {
+	errno = SORT_ERR_VECTOR_NULL;
+	return;
+    }
+
+    char * array = (char *) NULL;
+
+    heap_ctrl_t * heap = hp_create(len, compare, destroy_heap);
+
+    if (heap == (heap_ctrl_t *) NULL) {
+	errno = ERR_HEAP_MALLOC;
+	return;
+    }
+
+    size_t i;
+    array = (char *) vector;
+
+    for (i = 0; i < len; ++i) {
+	char * data = (char *) calloc(1, block);
+	memcpy(data, &array[(i * block)], block);
+	hp_insert(heap, data);
+    }
+
+    //hp_sort(heap, &vector, len, block);
+
+    for (i = 0; i < len; ++i) {
+	int32_t a = *(int32_t *) hp_get_head(heap);
+	printf("%d\n", a);
+    }
+
+
+    //hp_destroy(heap);
+    /* ---------------------------------------------------------------------*/
+    /* END OF CODE */
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("heap_sort,%lu,%f\n", len, cpu_time_used);
+}
+
+void destroy_heap(void ** data) {
 }
