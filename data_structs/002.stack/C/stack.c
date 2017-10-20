@@ -24,8 +24,10 @@ stack_t * stack_init(void (*destroy) (void **), void (*print)(const void *)) {
 }
 
 void stack_destroy(stack_t **stack) {
-    if (*stack == (stack_t *) NULL)
+    if (*stack == (stack_t *) NULL) {
+	errno = STK_NULL;
 	return;
+    }
 
     stack_element_t *element = (stack_element_t *) (*stack)->top;
     stack_element_t *prev_element = (stack_element_t *) NULL;
@@ -42,6 +44,7 @@ void stack_destroy(stack_t **stack) {
     memset(*stack, 0x00, sizeof(stack_t));
     free(*stack);
     *stack = (stack_t *) NULL;
+    errno = STK_SUCCESS;
 }
 
 int8_t stack_push(stack_t *stack, const void *data) {
@@ -57,9 +60,11 @@ int8_t stack_push(stack_t *stack, const void *data) {
 
     if (stack->top != (stack_element_t *) NULL) {
 	new_element->next = stack->top;
+	stack->top = new_element;
+    } else {
+	stack->top = new_element;
     }
 
-    stack->top = new_element;
     ++stack->len;
 
     return STK_SUCCESS;
@@ -76,14 +81,19 @@ void * stack_pop(stack_t *stack) {
 	return (void *) NULL;
     }
 
-    void * data = (void *) NULL;
+    if (stack->top == (stack_element_t *) NULL) {
+	errno = STK_EMPTY;
+	return (void *) NULL;
+    }
 
-    data = stack->top->data;
+    stack_element_t * new_top = stack->top->next;
 
-    if (stack->top != (stack_element_t *) NULL)
-	stack->top = stack->top->next;
-
+    void * data = stack->top->data;
+    memset(stack->top, 0x00, sizeof(stack_element_t));
+    free(stack->top);
+    stack->top = (stack_element_t *) NULL;
     --stack->len;
+    stack->top = new_top;
 
     errno = STK_SUCCESS;
     return data;
