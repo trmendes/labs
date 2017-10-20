@@ -29,8 +29,10 @@ list_t * dlist_init(void (*destroy) (void **), int32_t (*compare)(const void *, 
 }
 
 void dlist_destroy(list_t **list) {
-    if (*list == (list_t *) NULL)
+    if (*list == (list_t *) NULL) {
+	errno = ERR_LST_NULL;
 	return;
+    }
 
     lst_element_t *element = (lst_element_t *) (*list)->head;
     lst_element_t *prev_element = (lst_element_t *) NULL;
@@ -48,6 +50,7 @@ void dlist_destroy(list_t **list) {
     memset(*list, 0x00, sizeof(list_t));
     free(*list);
     *list = (list_t *) NULL;
+    errno = LST_SUCCESS;
 }
 
 lst_element_t * dlist_find_element(list_t *list, const void *data) {
