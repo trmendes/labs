@@ -119,26 +119,30 @@ int8_t list_rem_next(list_t *list, const void * element, const void **data) {
     if (list->size == 0)
 	return LST_EMPTY_LIST;
 
-    lst_element_t * prev_element = (lst_element_t *) NULL;
+    lst_element_t * next_element = (lst_element_t *) NULL;
     lst_element_t * element_ptr = (lst_element_t *) NULL;
 
     /* if element == null we remove the head */
     if (element == (void *) NULL) {
 	*data = list->head->data;
-	element_ptr = list->head;
-	list->head = element_ptr->next;
+	next_element = list->head;
+	list->head = next_element->next;
 	--list->size;
     } else {
 	/* double check if element lives inside of our list */
 	/* It is necessary to avoid the use of a node that is
 	 * not on our list */
 	if (element != (void *) NULL)
-	    prev_element = list_find_element(list, element);
+	    element_ptr = list_find_element(list, element);
 
-	if ((prev_element != (lst_element_t *) NULL) && (prev_element->next != (lst_element_t *) NULL)) {
-	    *data = prev_element->next->data;
-	    element_ptr = prev_element->next;
-	    prev_element->next = element_ptr->next;
+	if ((element_ptr != (lst_element_t *) NULL) && (element_ptr->next != (lst_element_t *) NULL)) {
+	    next_element = element_ptr->next;
+	    *data = next_element->data;
+
+	    if (next_element->next == (lst_element_t *) NULL)
+		list->tail = element_ptr;
+
+	    element_ptr->next = next_element->next;
 	    --list->size;
 	} else {
 	    element_ptr = (lst_element_t *) NULL;
@@ -148,9 +152,9 @@ int8_t list_rem_next(list_t *list, const void * element, const void **data) {
     if (list->size == 0)
 	list->tail = list->head;
 
-    if (element_ptr != (lst_element_t *) NULL) {
-	memset(element_ptr, 0x00, sizeof(lst_element_t));
-	free(element_ptr);
+    if (next_element != (lst_element_t *) NULL) {
+	memset(next_element, 0x00, sizeof(lst_element_t));
+	free(next_element);
     }
 
     return LST_SUCCESS;
