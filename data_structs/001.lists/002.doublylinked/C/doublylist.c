@@ -183,8 +183,8 @@ int8_t dlist_rem_next(list_t *list, const void * element, const void **data) {
     /* if element == null we remove the head */
     if (element == (void *) NULL) {
 	*data = list->head->data;
-	element_ptr = list->head;
-	list->head = element_ptr->next;
+	next_element = list->head;
+	list->head = next_element->next;
 	--list->size;
     } else {
 	/* double check if element lives inside of our list */
@@ -234,8 +234,8 @@ int8_t dlist_rem_prev(list_t *list, const void * element, const void **data) {
     /* if element == null we remove the head */
     if (element == (void *) NULL) {
 	*data = list->head->data;
-	element_ptr = list->head;
-	list->head = element_ptr->next;
+	prev_element = list->head;
+	list->head = prev_element->next;
 	--list->size;
     } else {
 	/* double check if element lives inside of our list */
