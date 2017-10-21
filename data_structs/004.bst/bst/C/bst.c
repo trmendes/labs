@@ -139,7 +139,6 @@ int8_t bst_remove(bst_tree_t *tree, void *data) {
 	return BST_DATA_NOT_FOUND;
 
     if (leaf_to_remove->left == (bst_leaf_t *) NULL) {
-	printf("Removendo sem filho em left\n");
 	bst_remove_swap(&(tree->root), leaf_to_remove, leaf_to_remove->right);
     } else if (leaf_to_remove->right == (bst_leaf_t *) NULL) {
 	bst_remove_swap(&(tree->root), leaf_to_remove, leaf_to_remove->left);
