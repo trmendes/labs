@@ -9,39 +9,39 @@
 int32_t main() {
     list_t * list = list_init(destroy, compare, print);
     data_t * data = NULL;
-    data_t * dataprev = (data_t *) calloc(1, sizeof(*dataprev));
+    data_t * dataprev = calloc(1, sizeof(*dataprev));
     data_t * remove = NULL;
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 1;
     list_ins_next(list, NULL, data);
 
     dataprev->key = 1;
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 2;
     list_ins_next(list, dataprev, data);
 
     dataprev->key = 2;
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 3;
     list_ins_next(list, dataprev, data);
 
     dataprev->key = 3;
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 4;
     list_ins_next(list, dataprev, data);
 
     dataprev->key = 4;
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 6;
     list_ins_next(list, dataprev, data);
 
     dataprev->key = 4;
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 5;
     list_ins_next(list, dataprev, data);
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 0;
     list_ins_next(list, NULL, data);
 

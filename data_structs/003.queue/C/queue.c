@@ -12,7 +12,7 @@ queue_t * queue_init(destroy_ft destroy, print_ft print) {
 	return NULL;
     }
 
-    queue_t *queue = (queue_t *) calloc(1, sizeof(*queue));
+    queue_t *queue = calloc(1, sizeof(*queue));
 
     if (queue == NULL)
 	return NULL;
@@ -51,7 +51,7 @@ int8_t queue_add(queue_t *queue, const void *data) {
     if (queue == NULL)
 	return QUEUE_NULL;
 
-    que_element_t * new_element = (que_element_t *) calloc(1, sizeof(*new_element));
+    que_element_t * new_element = calloc(1, sizeof(*new_element));
 
     if (new_element == NULL)
 	return QUEUE_FAIL_MALLOC;

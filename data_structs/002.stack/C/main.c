@@ -9,23 +9,23 @@
 int32_t main() {
     stack_t * stack = stack_init(destroy, print);
 
-    data_t * data = (data_t *) calloc(1, sizeof(*data));
+    data_t * data = calloc(1, sizeof(*data));
     data->key = 0;
     stack_push(stack, data);
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 1;
     stack_push(stack, data);
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 2;
     stack_push(stack, data);
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 3;
     stack_push(stack, data);
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 4;
     stack_push(stack, data);
 

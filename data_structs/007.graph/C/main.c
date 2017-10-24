@@ -10,25 +10,25 @@ int32_t main() {
     graph_t * graph = graph_init(compare, destroy, print);
     data_t * data = NULL;
     data_t * dataB = NULL;
-    dataB = (data_t *) calloc(1, sizeof(*data));
+    dataB = calloc(1, sizeof(*data));
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 1;
     graph_ins_vert(graph, data);
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 2;
     graph_ins_vert(graph, data);
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 3;
     graph_ins_vert(graph, data);
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 4;
     graph_ins_vert(graph, data);
 
-    data = (data_t *) calloc(1, sizeof(*data));
+    data = calloc(1, sizeof(*data));
     data->key = 5;
     graph_ins_vert(graph, data);
 

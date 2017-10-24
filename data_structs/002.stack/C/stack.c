@@ -11,7 +11,7 @@ stack_t * stack_init(destroy_ft destroy, print_ft print) {
 	return NULL;
     }
 
-    stack_t *stack = (stack_t *) calloc(1, sizeof(*stack));
+    stack_t *stack = calloc(1, sizeof(*stack));
 
     if (stack == NULL)
 	return NULL;
@@ -51,7 +51,7 @@ int8_t stack_push(stack_t *stack, const void *data) {
     if (stack == NULL)
 	return STK_NULL;
 
-    stack_element_t * new_element = (stack_element_t *) calloc(1, sizeof(*new_element));
+    stack_element_t * new_element = calloc(1, sizeof(*new_element));
 
     if (new_element == NULL)
 	return STK_FAIL_MALLOC;

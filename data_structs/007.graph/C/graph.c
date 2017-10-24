@@ -16,7 +16,7 @@ graph_t * graph_init(compare_ft compare, destroy_ft destroy, print_ft print) {
 	return (graph_t *) NULL;
     }
 
-    graph_t * graph = (graph_t *) calloc(1, sizeof(*graph));
+    graph_t * graph = calloc(1, sizeof(*graph));
 
     if (graph == NULL) {
 	errno = GRAPH_FAIL_MALLOC;
@@ -87,7 +87,7 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
     if (element != NULL)
 	return GRAPH_VERTEX_EXISTS;
 
-    graph_adj_t * adj_element = (graph_adj_t *) calloc(1, sizeof(*adj_element));
+    graph_adj_t * adj_element = calloc(1, sizeof(*adj_element));
 
     if (adj_element == NULL)
 	return GRAPH_ARGS_NULL;
