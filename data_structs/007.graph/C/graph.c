@@ -23,6 +23,8 @@ graph_t * graph_init(compare_ft compare, destroy_ft destroy, print_ft print) {
 	return (graph_t *) NULL;
     }
 
+    /* FIXME: Find out the best way of implement the compare
+     * and the destroy function for this second layer */
     graph->adjacents = list_init(destroy, compare, NULL);
 
     if (graph->adjacents == (list_t *) NULL) {
@@ -91,6 +93,9 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
 	return GRAPH_ARGS_NULL;
 
     adj_element->v = (void *) data;
+
+    /* FIXME: Find out the best way of implement the compare
+     * and the destroy function for this second layer */
     adj_element->adjacents = list_init(graph->destroy, graph->compare, NULL);
 
     if (adj_element->adjacents == NULL) {
