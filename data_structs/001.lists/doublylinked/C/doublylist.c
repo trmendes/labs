@@ -42,12 +42,12 @@ void dlist_destroy(list_t **list) {
 	prev_element = element;
 	element = element->next;
 
-	memset(prev_element, 0x00, sizeof(lst_element_t));
+	memset(prev_element, 0x00, sizeof(*prev_element));
 	free(prev_element);
 	prev_element = NULL;
     }
 
-    memset(*list, 0x00, sizeof(list_t));
+    memset(*list, 0x00, sizeof(**list));
     free(*list);
     *list = NULL;
     errno = LST_SUCCESS;
@@ -115,7 +115,7 @@ int8_t dlist_ins_next(list_t *list, const void *element, const void *data) {
 	    prev_element->next = new_element;
 	    ++list->size;
 	} else {
-	    memset(new_element, 0x00, sizeof(lst_element_t));
+	    memset(new_element, 0x00, sizeof(*new_element));
 	    free(new_element);
 	}
     }
@@ -166,7 +166,7 @@ int8_t dlist_ins_prev(list_t *list, const void *element, const void *data) {
 	    }
 	    ++list->size;
 	} else {
-	    memset(new_element, 0x00, sizeof(lst_element_t));
+	    memset(new_element, 0x00, sizeof(*new_element));
 	    free(new_element);
 	}
     }
@@ -218,7 +218,7 @@ int8_t dlist_rem_next(list_t *list, const void * element, const void **data) {
 	list->tail = list->head;
 
     if (next_element != NULL) {
-	memset(next_element, 0x00, sizeof(lst_element_t));
+	memset(next_element, 0x00, sizeof(*next_element));
 	free(next_element);
     }
 
@@ -269,7 +269,7 @@ int8_t dlist_rem_prev(list_t *list, const void * element, const void **data) {
 	list->tail = list->head;
 
     if (prev_element != NULL) {
-	memset(prev_element, 0x00, sizeof(lst_element_t));
+	memset(prev_element, 0x00, sizeof(*prev_element));
 	free(prev_element);
     }
 

@@ -28,7 +28,7 @@ graph_t * graph_init(compare_ft compare, destroy_ft destroy, print_ft print) {
     graph->adjacents = list_init(destroy, compare, NULL);
 
     if (graph->adjacents == NULL) {
-	memset(graph, 0x00, sizeof(graph_t));
+	memset(graph, 0x00, sizeof(*graph));
 	free(graph);
 	errno = GRAPH_FAIL_MALLOC;
 	return NULL;
@@ -69,7 +69,7 @@ void graph_destroy_element(void ** data) {
 
     graph_adj_t * element = (graph_adj_t *) *data;
 
-    memset(element, 0x00, sizeof(graph_adj_t));
+    memset(element, 0x00, sizeof(*element));
     free(element);
     *data = NULL;
 }
@@ -99,7 +99,7 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
     adj_element->adjacents = list_init(graph->destroy, graph->compare, NULL);
 
     if (adj_element->adjacents == NULL) {
-	memset(adj_element, 0x00, sizeof(graph_adj_t));
+	memset(adj_element, 0x00, sizeof(*adj_element));
 	free(adj_element);
 	return GRAPH_FAIL_MALLOC;
     }
@@ -107,7 +107,7 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
     retval = list_ins_next(graph->adjacents, NULL, adj_element);
 
     if (retval != LST_SUCCESS) {
-	memset(adj_element, 0x00, sizeof(graph_adj_t));
+	memset(adj_element, 0x00, sizeof(*adj_element));
 	free(adj_element);
 	return GRAPH_FAIL_MALLOC;
     }
@@ -139,7 +139,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * dataA, const void * dataB) {
     element_node = list_find_element(graph->adjacents, elementB) ;
 
     if (element_node == NULL) {
-	memset(elementB, 0x00, sizeof(graph_adj_t));
+	memset(elementB, 0x00, sizeof(*elementB));
 	free(elementB);
 	return GRAPH_VERTEX_NOT_FOUND;
     }
@@ -147,7 +147,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * dataA, const void * dataB) {
     elementB->v = (void *) dataB;
 
     if (list_find_element(graph->adjacents, elementB) == NULL) {
-	memset(elementB, 0x00, sizeof(graph_adj_t));
+	memset(elementB, 0x00, sizeof(*elementB));
 	free(elementB);
 	return GRAPH_VERTEX_NOT_FOUND;
     }
@@ -157,7 +157,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * dataA, const void * dataB) {
     retval = list_ins_next(elementA->adjacents, NULL, elementB);
 
     if (retval != LST_SUCCESS) {
-	memset(elementB, 0x00, sizeof(graph_adj_t));
+	memset(elementB, 0x00, sizeof(*elementB));
 	free(elementB);
 	return GRAPH_FAIL_MALLOC;
     }

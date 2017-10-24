@@ -35,17 +35,17 @@ int32_t main() {
 
     data = (data_t *) queue_get(queue);
     printf("Queue GET %d\n", data->key);
-    memset(data, 0x00, sizeof(data_t));
+    memset(data, 0x00, sizeof(*data));
     free(data);
 
     data = (data_t *) queue_get(queue);
     printf("Queue GET %d\n", data->key);
-    memset(data, 0x00, sizeof(data_t));
+    memset(data, 0x00, sizeof(*data));
     free(data);
 
     data = (data_t *) queue_get(queue);
     printf("Queue GET %d\n", data->key);
-    memset(data, 0x00, sizeof(data_t));
+    memset(data, 0x00, sizeof(*data));
     free(data);
 
     queue_destroy(&queue);
@@ -56,7 +56,7 @@ int32_t main() {
 void destroy(void **data) {
     data_t *tmp = (data_t *) *data;
     printf("Removed: %d [destroy]\n", tmp->key);
-    memset(tmp, 0x00, sizeof(data_t));
+    memset(tmp, 0x00, sizeof(*tmp));
     free(tmp);
     *data = NULL;
 }

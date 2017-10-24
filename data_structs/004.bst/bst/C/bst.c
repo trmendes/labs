@@ -51,7 +51,7 @@ void bst_destroy_leaf(bst_leaf_t * leaf, bst_tree_t * tree) {
     bst_destroy_leaf(leaf->right, tree);
 
     tree->destroy(&leaf->data);
-    memset(leaf, 0x00, sizeof(bst_leaf_t));
+    memset(leaf, 0x00, sizeof(*leaf));
     free(leaf);
 }
 
@@ -63,7 +63,7 @@ void bst_destroy(bst_tree_t **tree) {
 
     bst_destroy_leaf((*tree)->root, *tree);
 
-    memset((*tree), 0x00, sizeof(bst_tree_t));
+    memset((*tree), 0x00, sizeof(**tree));
     free(*tree);
     *tree = NULL;
 
@@ -168,7 +168,7 @@ int8_t bst_remove(bst_tree_t *tree, void *data) {
     }
 
     tree->destroy(&(leaf_to_remove->data));
-    memset(leaf_to_remove, 0x00, sizeof(bst_leaf_t));
+    memset(leaf_to_remove, 0x00, sizeof(*leaf_to_remove));
     free(leaf_to_remove);
 
     return BST_SUCCESS;

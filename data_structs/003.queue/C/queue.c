@@ -38,11 +38,11 @@ void queue_destroy(queue_t **queue) {
 	prev_element = element;
 	element = element->next;
 
-	memset(prev_element, 0x00, sizeof(que_element_t));
+	memset(prev_element, 0x00, sizeof(*prev_element));
 	free(prev_element);
 	prev_element = NULL;
     }
-    memset(*queue, 0x00, sizeof(queue_t));
+    memset(*queue, 0x00, sizeof(**queue));
     free(*queue);
     *queue = NULL;
 }
@@ -90,7 +90,7 @@ void * queue_get(queue_t *queue) {
 
     data = queue->tail->data;
 
-    memset(queue->tail, 0x00, sizeof(que_element_t));
+    memset(queue->tail, 0x00, sizeof(*(queue->tail)));
     free(queue->tail);
     queue->tail = NULL;
 

@@ -37,11 +37,11 @@ void stack_destroy(stack_t **stack) {
 	prev_element = element;
 	element = element->next;
 
-	memset(prev_element, 0x00, sizeof(stack_element_t));
+	memset(prev_element, 0x00, sizeof(*prev_element));
 	free(prev_element);
 	prev_element = NULL;
     }
-    memset(*stack, 0x00, sizeof(stack_t));
+    memset(*stack, 0x00, sizeof(**stack));
     free(*stack);
     *stack = NULL;
     errno = STK_SUCCESS;
@@ -89,7 +89,7 @@ void * stack_pop(stack_t *stack) {
     stack_element_t * new_top = stack->top->next;
 
     void * data = stack->top->data;
-    memset(stack->top, 0x00, sizeof(stack_element_t));
+    memset(stack->top, 0x00, sizeof(*(stack->top)));
     free(stack->top);
     stack->top = NULL;
     --stack->len;

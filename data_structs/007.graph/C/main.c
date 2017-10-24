@@ -81,7 +81,7 @@ int32_t compare(const void * const key1, const void * const key2) {
 void destroy(void **data) {
     data_t *tmp = (data_t *) *data;
     printf("Removed: %d [destroy]\n", tmp->key);
-    memset(tmp, 0x00, sizeof(data_t));
+    memset(tmp, 0x00, sizeof(*tmp));
     free(tmp);
     *data = NULL;
 }
