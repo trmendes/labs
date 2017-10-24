@@ -68,20 +68,14 @@ int32_t main() {
     dataB->key = 3;
     graph_ins_edge(graph, data, dataB);
 
+    /* FIXME: Still have to call free and destroy */
     return EXIT_SUCCESS;
 }
 
 int32_t compare(const void * const key1, const void * const key2) {
     data_t * a = (data_t *)key1;
     data_t * b = (data_t *)key2;
-    if (a->key == b->key)
-	return 0;
-    if (a->key < b->key)
-	return -1;
-    if (a->key > b->key)
-	return 1;
-
-    return 0;
+    return a->key - b->key;
 }
 
 void destroy(void **data) {
