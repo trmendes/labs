@@ -18,20 +18,20 @@ graph_t * graph_init(compare_ft compare, destroy_ft destroy, print_ft print) {
 
     graph_t * graph = (graph_t *) calloc(1, sizeof(graph_t));
 
-    if (graph == (graph_t *) NULL) {
+    if (graph == NULL) {
 	errno = GRAPH_FAIL_MALLOC;
-	return (graph_t *) NULL;
+	return NULL;
     }
 
     /* FIXME: Find out the best way of implement the compare
      * and the destroy function for this second layer */
     graph->adjacents = list_init(destroy, compare, NULL);
 
-    if (graph->adjacents == (list_t *) NULL) {
+    if (graph->adjacents == NULL) {
 	memset(graph, 0x00, sizeof(graph_t));
 	free(graph);
 	errno = GRAPH_FAIL_MALLOC;
-	return (graph_t *) NULL;
+	return NULL;
     }
 
     graph->compare = compare;
@@ -43,16 +43,16 @@ graph_t * graph_init(compare_ft compare, destroy_ft destroy, print_ft print) {
 }
 
 void graph_destroy(graph_t ** graph) {
-    if (*graph == (graph_t *) NULL) {
+    if (*graph == NULL) {
 	errno = GRAPH_ARGS_NULL;
 	return;
     }
 
-    graph_adj_t * element = (graph_adj_t *) NULL;
+    graph_adj_t * element = NULL;
 
     while (1) {
 	    list_rem_next((void *) ((*graph)->adjacents), NULL, (const void **) &element);
-	    if (element == (graph_adj_t *) NULL)
+	    if (element == NULL)
 		break;
 	    while (1) {
 		list_rem_next((void *) *graph, NULL, (const void **) &element);
@@ -62,7 +62,7 @@ void graph_destroy(graph_t ** graph) {
 }
 
 void graph_destroy_element(void ** data) {
-    if (*data == (void *) NULL) {
+    if (*data == NULL) {
 	errno = GRAPH_ARGS_NULL;
 	return;
     }
@@ -75,21 +75,21 @@ void graph_destroy_element(void ** data) {
 }
 
 int8_t graph_ins_vert(graph_t * graph, const void * data) {
-    if ((graph == (graph_t *) NULL) || (data == (void *) NULL))
+    if ((graph == NULL) || (data == NULL))
 	return GRAPH_ARGS_NULL;
 
-    node * element = (node *) NULL;
+    node * element = NULL;
     int8_t retval;
 
     element = list_find_element(graph->adjacents, data);
 
     /* We do not allow repeated elements */
-    if (element != (node *) NULL)
+    if (element != NULL)
 	return GRAPH_VERTEX_EXISTS;
 
     graph_adj_t * adj_element = (graph_adj_t *) calloc(1, sizeof(graph_adj_t));
 
-    if (adj_element == (graph_adj_t *) NULL)
+    if (adj_element == NULL)
 	return GRAPH_ARGS_NULL;
 
     adj_element->v = (void *) data;
@@ -120,15 +120,15 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
 }
 
 int8_t graph_ins_edge(graph_t * graph, const void * dataA, const void * dataB) {
-    if ((graph == (graph_t *) NULL) || (dataA == (void *) NULL) || (dataB == (void *) NULL))
+    if ((graph == NULL) || (dataA == NULL) || (dataB == NULL))
 	return GRAPH_ARGS_NULL;
 
     int8_t retval;
 
-    node * element_node = (node *) NULL;
+    node * element_node = NULL;
 
-    graph_adj_t * elementA = (graph_adj_t *) NULL;
-    graph_adj_t * elementB = (graph_adj_t *) NULL;
+    graph_adj_t * elementA = NULL;
+    graph_adj_t * elementB = NULL;
 
     /* We are using elementB here as temp variable
      * latter on we will use it to hold the value of
@@ -138,7 +138,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * dataA, const void * dataB) {
 
     element_node = list_find_element(graph->adjacents, elementB) ;
 
-    if (element_node == (node *) NULL) {
+    if (element_node == NULL) {
 	memset(elementB, 0x00, sizeof(graph_adj_t));
 	free(elementB);
 	return GRAPH_VERTEX_NOT_FOUND;
@@ -146,7 +146,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * dataA, const void * dataB) {
 
     elementB->v = (void *) dataB;
 
-    if (list_find_element(graph->adjacents, elementB) == (node *) NULL) {
+    if (list_find_element(graph->adjacents, elementB) == NULL) {
 	memset(elementB, 0x00, sizeof(graph_adj_t));
 	free(elementB);
 	return GRAPH_VERTEX_NOT_FOUND;

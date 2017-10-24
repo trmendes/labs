@@ -9,13 +9,13 @@
 queue_t * queue_init(destroy_ft destroy, print_ft print) {
     if (destroy == NULL) {
 	errno = QUEUE_ARGS_FAIL;
-	return (queue_t *) NULL;
+	return NULL;
     }
 
     queue_t *queue = (queue_t *) calloc(1, sizeof(queue_t));
 
-    if (queue == (queue_t *) NULL)
-	return (queue_t *) NULL;
+    if (queue == NULL)
+	return NULL;
 
     queue->destroy = destroy;
     queue->print = print;
@@ -25,40 +25,40 @@ queue_t * queue_init(destroy_ft destroy, print_ft print) {
 }
 
 void queue_destroy(queue_t **queue) {
-    if (*queue == (queue_t *) NULL) {
+    if (*queue == NULL) {
 	errno = QUEUE_NULL;
 	return;
     }
 
     que_element_t *element = (que_element_t *) (*queue)->head;
-    que_element_t *prev_element = (que_element_t *) NULL;
+    que_element_t *prev_element = NULL;
 
-    while (element != (que_element_t *) NULL) {
+    while (element != NULL) {
 	(*queue)->destroy((void **) &(element->data));
 	prev_element = element;
 	element = element->next;
 
 	memset(prev_element, 0x00, sizeof(que_element_t));
 	free(prev_element);
-	prev_element = (que_element_t *) NULL;
+	prev_element = NULL;
     }
     memset(*queue, 0x00, sizeof(queue_t));
     free(*queue);
-    *queue = (queue_t *) NULL;
+    *queue = NULL;
 }
 
 int8_t queue_add(queue_t *queue, const void *data) {
-    if (queue == (queue_t *) NULL)
+    if (queue == NULL)
 	return QUEUE_NULL;
 
     que_element_t * new_element = (que_element_t *) calloc(1, sizeof(que_element_t));
 
-    if (new_element == (que_element_t *) NULL)
+    if (new_element == NULL)
 	return QUEUE_FAIL_MALLOC;
 
     new_element->data = (void *) data;
 
-    if (queue->head == (void *) NULL) {
+    if (queue->head == NULL) {
 	queue->tail = new_element;
 	queue->head = new_element;
     } else {
@@ -72,16 +72,16 @@ int8_t queue_add(queue_t *queue, const void *data) {
 }
 
 void * queue_get(queue_t *queue) {
-    if (queue == (queue_t *) NULL) {
+    if (queue == NULL) {
 	errno = QUEUE_NULL;
-	return (void *) NULL;
+	return NULL;
     }
     if (queue->len == 0) {
 	errno = QUEUE_EMPTY;
-	return (void *) NULL;
+	return NULL;
     }
 
-    void * data = (void *) NULL;
+    void * data = NULL;
     que_element_t * new_tail = queue->head;
 
     while (new_tail->next != queue->tail) {
@@ -92,10 +92,10 @@ void * queue_get(queue_t *queue) {
 
     memset(queue->tail, 0x00, sizeof(que_element_t));
     free(queue->tail);
-    queue->tail = (que_element_t *) NULL;
+    queue->tail = NULL;
 
     queue->tail = new_tail;
-    new_tail->next = (que_element_t *) NULL;
+    new_tail->next = NULL;
 
     --queue->len;
 
@@ -108,7 +108,7 @@ void * queue_get(queue_t *queue) {
 }
 
 void queue_print_elements(queue_t *queue) {
-    if (queue == (queue_t *) NULL) {
+    if (queue == NULL) {
 	errno = QUEUE_NULL;
 	return;
     }
@@ -125,7 +125,7 @@ void queue_print_elements(queue_t *queue) {
 
     if (queue->len > 0) {
 	printf("[ ");
-	while (element != (que_element_t *) NULL) {
+	while (element != NULL) {
 	    queue->print(element->data);
 	    element = element->next;
 	}

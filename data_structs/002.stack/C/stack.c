@@ -8,13 +8,13 @@
 stack_t * stack_init(destroy_ft destroy, print_ft print) {
     if (destroy == NULL) {
 	errno = STK_FAIL_ARGS;
-	return (stack_t *) NULL;
+	return NULL;
     }
 
     stack_t *stack = (stack_t *) calloc(1, sizeof(stack_t));
 
-    if (stack == (stack_t *) NULL)
-	return (stack_t *) NULL;
+    if (stack == NULL)
+	return NULL;
 
     stack->destroy = destroy;
     stack->print = print;
@@ -24,41 +24,41 @@ stack_t * stack_init(destroy_ft destroy, print_ft print) {
 }
 
 void stack_destroy(stack_t **stack) {
-    if (*stack == (stack_t *) NULL) {
+    if (*stack == NULL) {
 	errno = STK_NULL;
 	return;
     }
 
     stack_element_t *element = (stack_element_t *) (*stack)->top;
-    stack_element_t *prev_element = (stack_element_t *) NULL;
+    stack_element_t *prev_element = NULL;
 
-    while (element != (stack_element_t *) NULL) {
+    while (element != NULL) {
 	(*stack)->destroy((void **) &(element->data));
 	prev_element = element;
 	element = element->next;
 
 	memset(prev_element, 0x00, sizeof(stack_element_t));
 	free(prev_element);
-	prev_element = (stack_element_t *) NULL;
+	prev_element = NULL;
     }
     memset(*stack, 0x00, sizeof(stack_t));
     free(*stack);
-    *stack = (stack_t *) NULL;
+    *stack = NULL;
     errno = STK_SUCCESS;
 }
 
 int8_t stack_push(stack_t *stack, const void *data) {
-    if (stack == (stack_t *) NULL)
+    if (stack == NULL)
 	return STK_NULL;
 
     stack_element_t * new_element = (stack_element_t *) calloc(1, sizeof(stack_element_t));
 
-    if (new_element == (stack_element_t *) NULL)
+    if (new_element == NULL)
 	return STK_FAIL_MALLOC;
 
     new_element->data = (void *) data;
 
-    if (stack->top != (stack_element_t *) NULL) {
+    if (stack->top != NULL) {
 	new_element->next = stack->top;
 	stack->top = new_element;
     } else {
@@ -71,19 +71,19 @@ int8_t stack_push(stack_t *stack, const void *data) {
 }
 
 void * stack_pop(stack_t *stack) {
-    if (stack == (stack_t *) NULL) {
+    if (stack == NULL) {
 	errno = STK_NULL;
-	return (void *) NULL;
+	return NULL;
     }
 
     if (stack->len == 0) {
 	errno = STK_EMPTY;
-	return (void *) NULL;
+	return NULL;
     }
 
-    if (stack->top == (stack_element_t *) NULL) {
+    if (stack->top == NULL) {
 	errno = STK_EMPTY;
-	return (void *) NULL;
+	return NULL;
     }
 
     stack_element_t * new_top = stack->top->next;
@@ -91,7 +91,7 @@ void * stack_pop(stack_t *stack) {
     void * data = stack->top->data;
     memset(stack->top, 0x00, sizeof(stack_element_t));
     free(stack->top);
-    stack->top = (stack_element_t *) NULL;
+    stack->top = NULL;
     --stack->len;
     stack->top = new_top;
 
@@ -100,7 +100,7 @@ void * stack_pop(stack_t *stack) {
 }
 
 void stack_print_elements(stack_t *stack) {
-    if (stack == (stack_t *) NULL) {
+    if (stack == NULL) {
 	errno = STK_NULL;
 	return;
     }
@@ -118,7 +118,7 @@ void stack_print_elements(stack_t *stack) {
 
     if (stack->len > 0) {
 	printf("[ ");
-	while (element != (stack_element_t *) NULL) {
+	while (element != NULL) {
 	    stack->print(element->data);
 	    element = element->next;
 	}

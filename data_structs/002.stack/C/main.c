@@ -62,7 +62,7 @@ void destroy(void **data) {
     printf("Removed: %d [destroy]\n", tmp->key);
     memset(tmp, 0x00, sizeof(data_t));
     free(tmp);
-    *data = (void *) NULL;
+    *data = NULL;
 }
 
 void print(const void * const data) {

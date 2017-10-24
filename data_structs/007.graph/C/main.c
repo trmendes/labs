@@ -8,8 +8,8 @@
 
 int32_t main() {
     graph_t * graph = graph_init(compare, destroy, print);
-    data_t * data = (data_t *) NULL;
-    data_t * dataB = (data_t *) NULL;
+    data_t * data = NULL;
+    data_t * dataB = NULL;
     dataB = (data_t *) calloc(1, sizeof(data_t));
 
     data = (data_t *) calloc(1, sizeof(data_t));
@@ -83,7 +83,7 @@ void destroy(void **data) {
     printf("Removed: %d [destroy]\n", tmp->key);
     memset(tmp, 0x00, sizeof(data_t));
     free(tmp);
-    *data = (void *) NULL;
+    *data = NULL;
 }
 
 void print(const void * const data) {

@@ -9,11 +9,11 @@
 int32_t main() {
     bst_tree_t * tree = bst_init(compare, destroy, print);
 
-    data_t * data = (data_t *) NULL;
-    data_t * data_min = (data_t *) NULL;
-    data_t * data_max = (data_t *) NULL;
-    data_t * data_suc = (data_t *) NULL;
-    data_t * data_pre = (data_t *) NULL;
+    data_t * data =  NULL;
+    data_t * data_min = NULL;
+    data_t * data_max = NULL;
+    data_t * data_suc = NULL;
+    data_t * data_pre = NULL;
     data_t * data_tmp = (data_t *) calloc(1, sizeof(data_t));
 
     data = (data_t *) calloc(1, sizeof(data_t));
@@ -88,7 +88,7 @@ int32_t main() {
 
     data_tmp->key = 17;
     data_suc = bst_find_suc(tree, data_tmp);
-    if (data_suc != (data_t *) NULL) {
+    if (data_suc != NULL) {
 	    printf("Suc of %d is %d\n", data_tmp->key, data_suc->key);
     } else {
 	printf("There is no suc of %d\n", data_tmp->key);
@@ -96,7 +96,7 @@ int32_t main() {
 
     data_tmp->key = 54;
     data_pre = bst_find_pre(tree, data_tmp);
-    if (data_pre != (data_t *) NULL) {
+    if (data_pre != NULL) {
 	    printf("Pre of %d is %d\n", data_tmp->key, data_pre->key);
     } else {
 	printf("There is no pre of %d\n", data_tmp->key);
@@ -138,7 +138,7 @@ void destroy(void **data) {
     printf("Removed: %d [destroy]\n", tmp->key);
     memset(tmp, 0x00, sizeof(data_t));
     free(tmp);
-    *data = (void *) NULL;
+    *data = NULL;
 }
 
 void print(const void * const data) {

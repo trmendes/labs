@@ -8,9 +8,9 @@
 
 int32_t main() {
     list_t * list = dlist_init(destroy, compare, print);
-    data_t * data = (data_t *) NULL;
+    data_t * data = NULL;
     data_t * dataprev = (data_t *) calloc(1, sizeof(data_t));
-    data_t * remove = (data_t *) NULL;
+    data_t * remove = NULL;
 
     data = (data_t *) calloc(1, sizeof(data_t));
     data->key = 1;
@@ -48,7 +48,7 @@ int32_t main() {
     dlist_print_elements(list);
 
     dlist_rem_prev(list, NULL, (const void **) &remove);
-    if (remove != (data_t *) NULL) {
+    if (remove != NULL) {
 	printf("Removed: %d\n", remove->key);
 	free(remove);
 	remove = NULL;
@@ -58,7 +58,7 @@ int32_t main() {
 
     dataprev->key = 4;
     dlist_rem_prev(list, dataprev, (const void **) &remove);
-    if (remove != (data_t *) NULL) {
+    if (remove != NULL) {
 	printf("Removed: %d\n", remove->key);
 	free(remove);
 	remove = NULL;
@@ -68,7 +68,7 @@ int32_t main() {
 
     dataprev->key = 1;
     dlist_rem_prev(list, dataprev, (const void **) &remove);
-    if (remove != (data_t *) NULL) {
+    if (remove != NULL) {
 	printf("Removed: %d\n", remove->key);
 	free(remove);
 	remove = NULL;
@@ -85,14 +85,8 @@ int32_t main() {
 int32_t compare(const void * const key1, const void * const key2) {
     data_t * a = (data_t *)key1;
     data_t * b = (data_t *)key2;
-    if (a->key == b->key)
-	return 0;
-    if (a->key < b->key)
-	return -1;
-    if (a->key > b->key)
-	return 1;
 
-    return 0;
+    return a->key - b->key;
 }
 
 void destroy(void **data) {
@@ -100,7 +94,7 @@ void destroy(void **data) {
     printf("Removed: %d [destroy]\n", tmp->key);
     memset(tmp, 0x00, sizeof(data_t));
     free(tmp);
-    *data = (void *) NULL;
+    *data = NULL;
 }
 
 void print(const void * const data) {
