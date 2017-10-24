@@ -14,69 +14,69 @@ int32_t main() {
     data_t * data_max = NULL;
     data_t * data_suc = NULL;
     data_t * data_pre = NULL;
-    data_t * data_tmp = (data_t *) calloc(1, sizeof(data_t));
+    data_t * data_tmp = (data_t *) calloc(1, sizeof(*data));
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 54;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 27;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 17;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 41;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 19;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 23;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 37;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 47;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 83;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 71;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 67;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 68;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 69;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 91;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 90;
     bst_insert(tree, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 99;
     bst_insert(tree, data);
 

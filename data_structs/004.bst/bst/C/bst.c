@@ -28,7 +28,7 @@ bst_tree_t * bst_init(compare_ft compare, destroy_ft destroy, print_ft print) {
 	return NULL;
     }
 
-    bst_tree_t * tree = (bst_tree_t *) calloc(1, sizeof(bst_tree_t));
+    bst_tree_t * tree = (bst_tree_t *) calloc(1, sizeof(*tree));
 
     if (tree == NULL) {
 	errno = BST_FAIL_MALLOC;
@@ -80,7 +80,7 @@ int8_t bst_insert(bst_tree_t *tree, void *data) {
     bst_leaf_t * potential_parent = NULL;
     bst_leaf_t * new_leaf = NULL;
 
-    new_leaf = (bst_leaf_t *) calloc(1, sizeof(bst_leaf_t));
+    new_leaf = (bst_leaf_t *) calloc(1, sizeof(*new_leaf));
 
     if (new_leaf == NULL) {
 	return BST_FAIL_MALLOC;

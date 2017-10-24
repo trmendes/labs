@@ -16,7 +16,7 @@ graph_t * graph_init(compare_ft compare, destroy_ft destroy, print_ft print) {
 	return (graph_t *) NULL;
     }
 
-    graph_t * graph = (graph_t *) calloc(1, sizeof(graph_t));
+    graph_t * graph = (graph_t *) calloc(1, sizeof(*graph));
 
     if (graph == NULL) {
 	errno = GRAPH_FAIL_MALLOC;
@@ -87,7 +87,7 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
     if (element != NULL)
 	return GRAPH_VERTEX_EXISTS;
 
-    graph_adj_t * adj_element = (graph_adj_t *) calloc(1, sizeof(graph_adj_t));
+    graph_adj_t * adj_element = (graph_adj_t *) calloc(1, sizeof(*adj_element));
 
     if (adj_element == NULL)
 	return GRAPH_ARGS_NULL;
@@ -133,7 +133,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * dataA, const void * dataB) {
     /* We are using elementB here as temp variable
      * latter on we will use it to hold the value of
      * dataB as it should (saving memory) */
-    elementB = (graph_adj_t *) calloc(1, sizeof(graph_adj_t));
+    elementB = (graph_adj_t *) calloc(1, sizeof(*elementB));
     elementB->v = (void *) dataA;
 
     element_node = list_find_element(graph->adjacents, elementB) ;

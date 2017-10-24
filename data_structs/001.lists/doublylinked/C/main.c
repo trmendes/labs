@@ -9,39 +9,39 @@
 int32_t main() {
     list_t * list = dlist_init(destroy, compare, print);
     data_t * data = NULL;
-    data_t * dataprev = (data_t *) calloc(1, sizeof(data_t));
+    data_t * dataprev = (data_t *) calloc(1, sizeof(*dataprev));
     data_t * remove = NULL;
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 1;
     dlist_ins_prev(list, NULL, data);
 
     dataprev->key = 1;
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 2;
     dlist_ins_prev(list, dataprev, data);
 
     dataprev->key = 2;
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 3;
     dlist_ins_prev(list, dataprev, data);
 
     dataprev->key = 3;
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 4;
     dlist_ins_prev(list, dataprev, data);
 
     dataprev->key = 4;
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 6;
     dlist_ins_prev(list, dataprev, data);
 
     dataprev->key = 10;
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 5;
     dlist_ins_prev(list, NULL, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 0;
     dlist_ins_prev(list, NULL, data);
 

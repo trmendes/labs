@@ -11,23 +11,23 @@ int32_t main() {
 
     data_t * data = NULL;
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 1;
     queue_add(queue, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 2;
     queue_add(queue, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 3;
     queue_add(queue, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 4;
     queue_add(queue, data);
 
-    data = (data_t *) calloc(1, sizeof(data_t));
+    data = (data_t *) calloc(1, sizeof(*data));
     data->key = 5;
     queue_add(queue, data);
 

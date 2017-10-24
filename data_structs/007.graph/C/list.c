@@ -15,7 +15,7 @@ list_t * list_init(destroy_ft destroy, compare_ft compare, print_ft print) {
 	return (list_t *) NULL;
     }
 
-    list_t *list = (list_t *) calloc(1, sizeof(list_t));
+    list_t *list = (list_t *) calloc(1, sizeof(*list));
 
     if (list == (list_t *) NULL)
 	return (list_t *) NULL;
@@ -78,7 +78,7 @@ int8_t list_ins_next(list_t *list, const void *element, const void *data) {
     if (list == (list_t *) NULL)
 	return ERR_LST_NULL;
 
-    lst_element_t * new_element = (lst_element_t *) calloc(1, sizeof(lst_element_t));
+    lst_element_t * new_element = (lst_element_t *) calloc(1, sizeof(*new_element));
     lst_element_t * prev_element = (lst_element_t *) NULL;
 
     if (new_element == (lst_element_t *) NULL)
