@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "stack.h"
 
-stack_t * stack_init(void (*destroy) (void **), void (*print)(const void *)) {
+stack_t * stack_init(destroy_ft destroy, print_ft print) {
     if (destroy == NULL) {
 	errno = STK_FAIL_ARGS;
 	return (stack_t *) NULL;

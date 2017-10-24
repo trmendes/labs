@@ -82,7 +82,7 @@ int32_t main() {
     return EXIT_SUCCESS;
 }
 
-int32_t compare(const void *key1, const void *key2) {
+int32_t compare(const void * const key1, const void * const key2) {
     data_t * a = (data_t *)key1;
     data_t * b = (data_t *)key2;
     if (a->key == b->key)
@@ -103,7 +103,7 @@ void destroy(void **data) {
     *data = (void *) NULL;
 }
 
-void print(const void *data) {
+void print(const void * const data) {
     data_t * tmp = (data_t *) data;
     printf("%d ", tmp->key);
 }

@@ -11,7 +11,10 @@
 #define QUEUE_ARGS_FAIL        -1
 #define QUEUE_SUCCESS           0
 
-typedef struct que_element_s {
+typedef void (*destroy_ft) (void **data);
+typedef void (*print_ft)   (const void * const data);
+
+ typedef struct que_element_s {
     void                 *data;
     struct que_element_s *next;
 } que_element_t;
@@ -24,7 +27,7 @@ typedef struct queue_s {
     que_element_t   *tail;
 } queue_t;
 
-queue_t * queue_init           (void (*destroy)(void **), void (*print)(const void *));
+queue_t * queue_init           (destroy_ft destroy, print_ft print);
 void      queue_destroy        (queue_t **queue);
 int8_t    queue_add            (queue_t *queue, const void *data);
 void *    queue_get            (queue_t *queue);

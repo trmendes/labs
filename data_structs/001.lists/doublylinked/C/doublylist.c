@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "doublylist.h"
 
-list_t * dlist_init(void (*destroy) (void **), int32_t (*compare)(const void *, const void *), void (*print)(const void *)) {
+list_t * dlist_init(destroy_ft destroy, compare_ft compare, print_ft print) {
     if (destroy == NULL) {
 	errno = ERR_LST_ARGS_NULL;
 	return (list_t *) NULL;

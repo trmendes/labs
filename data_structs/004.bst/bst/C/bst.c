@@ -7,7 +7,7 @@
 #include "bst.h"
 #include "bst_priv.h"
 
-bst_tree_t * bst_init(int32_t (*compare)(const void *, const void *), void (*destroy)(void **), void (*print)(const void *)) {
+bst_tree_t * bst_init(compare_ft compare, destroy_ft destroy, print_ft print) {
     if (compare == NULL) {
 	errno = BST_FAIL_ARGS;
 	return (void *) NULL;
@@ -308,7 +308,7 @@ bst_leaf_t * bst_find_suc_leaf(bst_tree_t *tree, void *data) {
     return potential_suc;
 }
 
-void bst_print_tree(bst_tree_t const *tree, const bst_transversal_e type) {
+void bst_print_tree(bst_tree_t const * const tree, const bst_transversal_e type) {
     if (tree == (bst_tree_t *) NULL) {
 	errno = BST_NULL;
 	return;

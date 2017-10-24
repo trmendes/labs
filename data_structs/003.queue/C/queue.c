@@ -6,7 +6,7 @@
 
 #include "queue.h"
 
-queue_t * queue_init(void (*destroy) (void **), void (*print)(const void *)) {
+queue_t * queue_init(destroy_ft destroy, print_ft print) {
     if (destroy == NULL) {
 	errno = QUEUE_ARGS_FAIL;
 	return (queue_t *) NULL;

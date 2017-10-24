@@ -12,6 +12,10 @@
 #define ERR_LST_DESTROY_NULL -1
 #define LST_SUCCESS           0
 
+typedef int32_t (*compare_ft) (const void * const key1, const void * const key2);
+typedef void    (*destroy_ft) (void **data);
+typedef void    (*print_ft)   (const void * const data);
+
 typedef struct lst_element_s {
     void                 *data;
     struct lst_element_s *next;
@@ -19,14 +23,14 @@ typedef struct lst_element_s {
 
 typedef struct list_s {
     size_t           size;
-    int32_t          (*compare) (const void *key1, const void *key2);
-    void             (*destroy) (void **data);
-    void             (*print)   (const void *data);
+    compare_ft       compare;
+    destroy_ft       destroy;
+    print_ft         print;
     lst_element_t   *head;
     lst_element_t   *tail;
 } list_t;
 
-list_t *        list_init           (void (*destroy)(void **), int32_t (*compare)(const void *, const void *), void (*print)(const void *));
+list_t *        list_init           (destroy_ft destroy, compare_ft compare, print_ft print);
 void            list_destroy        (list_t **list);
 lst_element_t * list_find_element   (list_t *list, const void *data);
 int8_t          list_ins_next       (list_t *list, const void * element, const void *data);

@@ -11,6 +11,9 @@
 #define STK_FAIL_ARGS        -1
 #define STK_SUCCESS           0
 
+typedef void (*destroy_ft) (void **data);
+typedef void (*print_ft)   (const void * const data);
+
 typedef struct stack_element_s {
     void                   *data;
     struct stack_element_s *next;
@@ -23,7 +26,7 @@ typedef struct stack_s {
     stack_element_t   *top;
 } stack_t;
 
-stack_t * stack_init            (void (*destroy)(void **), void (*print)(const void *));
+stack_t * stack_init            (destroy_ft destroy, print_ft print);
 void      stack_destroy         (stack_t **stack);
 void    * stack_pop             (stack_t *stack);
 int8_t    stack_push            (stack_t *stack, const void *data);
