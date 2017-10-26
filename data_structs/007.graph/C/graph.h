@@ -11,25 +11,27 @@
 #define GRAPH_ARGS_NULL        -1
 #define GRAPH_SUCCESS           0
 
-typedef lst_element_t node;
-
-typedef int32_t (*compare_ft) (const void * const dataA, const void * const dataB);
+typedef int32_t (*compare_ft) (const void * const data_a, const void * const data_b);
 typedef void    (*destroy_ft) (void ** data);
 typedef void    (*print_ft)   (const void * const data);
+
+typedef struct graph_api_s {
+    compare_ft   compare;
+    destroy_ft   destroy;
+    print_ft     print;
+} graph_api_t;
 
 typedef struct graph_s {
     size_t       vcounter;
     size_t       ecounter;
-    list_t      *adjacents;
-    compare_ft   compare;
-    destroy_ft   destroy;
-    print_ft     print;
+    list_t      *vertexs;
+    graph_api_t  api;
 } graph_t;
 
-typedef struct graph_adj_s {
+typedef struct graph_vertex_s {
     void        *v;
     list_t      *adjacents;
-} graph_adj_t;
+} graph_vertex_t;
 
 graph_t    * graph_init     (compare_ft compare, destroy_ft destroy, print_ft print);
 void         graph_destroy  (graph_t **);

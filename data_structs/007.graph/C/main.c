@@ -7,10 +7,14 @@
 #include "graph.h"
 
 int32_t main() {
-    graph_t * graph = graph_init(compare, destroy, print);
+    graph_t * graph = graph_init(main_compare, main_destroy, main_print);
     data_t * data = NULL;
-    data_t * dataB = NULL;
-    dataB = calloc(1, sizeof(*data));
+
+    data_t * data_a = NULL;
+    data_t * data_b = NULL;
+
+    data_a = calloc(1, sizeof(*data_a));
+    data_b = calloc(1, sizeof(*data_b));
 
     data = calloc(1, sizeof(*data));
     data->key = 1;
@@ -32,53 +36,65 @@ int32_t main() {
     data->key = 5;
     graph_ins_vert(graph, data);
 
-    data->key = 1;
-    dataB->key = 2;
-    graph_ins_edge(graph, data, dataB);
+    /**********************************************/
 
-    data->key = 1;
-    dataB->key = 3;
-    graph_ins_edge(graph, data, dataB);
+    data_a->key = 1;
+    data_b->key = 2;
+    graph_ins_edge(graph, data_a, data_b);
 
-    data->key = 2;
-    dataB->key = 5;
-    graph_ins_edge(graph, data, dataB);
+    data_a->key = 1;
+    data_b->key = 3;
+    graph_ins_edge(graph, data_a, data_b);
 
-    data->key = 2;
-    dataB->key = 3;
-    graph_ins_edge(graph, data, dataB);
+    //bla
+    data_a->key = 2;
+    data_b->key = 5;
+    graph_ins_edge(graph, data_a, data_b);
 
-    data->key = 4;
-    dataB->key = 2;
-    graph_ins_edge(graph, data, dataB);
+    data_a->key = 2;
+    data_b->key = 3;
+    graph_ins_edge(graph, data_a, data_b);
 
-    data->key = 4;
-    dataB->key = 1;
-    graph_ins_edge(graph, data, dataB);
+    data_a->key = 4;
+    data_b->key = 2;
+    graph_ins_edge(graph, data_a, data_b);
 
-    data->key = 4;
-    dataB->key = 5;
-    graph_ins_edge(graph, data, dataB);
+    data_a->key = 4;
+    data_b->key = 1;
+    graph_ins_edge(graph, data_a, data_b);
 
-    data->key = 5;
-    dataB->key = 3;
-    graph_ins_edge(graph, data, dataB);
+    //bla
+    data_a->key = 4;
+    data_b->key = 5;
+    graph_ins_edge(graph, data_a, data_b);
 
-    data->key = 3;
-    dataB->key = 3;
-    graph_ins_edge(graph, data, dataB);
+    data_a->key = 5;
+    data_b->key = 3;
+    graph_ins_edge(graph, data_a, data_b);
 
-    /* FIXME: Still have to call free and destroy */
+    data_a->key = 3;
+    data_b->key = 3;
+    graph_ins_edge(graph, data_a, data_b);
+
+    //bla
+    data_a->key = 20;
+    data_b->key = 3;
+    graph_ins_edge(graph, data_a, data_b);
+
+/* FIXME: Still have to call free and destroy */
+
+    free(data_a);
+    free(data_b);
     return EXIT_SUCCESS;
 }
 
-int32_t compare(const void * const key1, const void * const key2) {
+int32_t main_compare(const void * const key1, const void * const key2) {
     data_t * a = (data_t *)key1;
     data_t * b = (data_t *)key2;
     return a->key - b->key;
 }
 
-void destroy(void **data) {
+void main_destroy(void **data) {
     data_t *tmp = (data_t *) *data;
     printf("Removed: %d [destroy]\n", tmp->key);
     memset(tmp, 0x00, sizeof(*tmp));
@@ -86,7 +102,7 @@ void destroy(void **data) {
     *data = NULL;
 }
 
-void print(const void * const data) {
+void main_print(const void * const data) {
     data_t * tmp = (data_t *) data;
     printf("%d ", tmp->key);
 }

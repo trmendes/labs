@@ -4,11 +4,14 @@
 #include <errno.h>
 #include <stdio.h>
 
+#include "main.h"
 #include "list.h"
 #include "graph.h"
 
 /* Private prototypes */
-void graph_destroy_element(void **);
+void    graph_destroy_element(void **);
+int32_t graph_compare_element(const void * const data_a, const void * const data_b);
+void    graph_print_element(const void * const data);
 
 graph_t * graph_init(compare_ft compare, destroy_ft destroy, print_ft print) {
     if ((compare == NULL) || (destroy == NULL)) {
@@ -23,20 +26,18 @@ graph_t * graph_init(compare_ft compare, destroy_ft destroy, print_ft print) {
 	return NULL;
     }
 
-    /* FIXME: Find out the best way of implement the compare
-     * and the destroy function for this second layer */
-    graph->adjacents = list_init(destroy, compare, NULL);
+    graph->vertexs = list_init(graph_destroy_element, graph_compare_element, graph_print_element);
 
-    if (graph->adjacents == NULL) {
+    if (graph->vertexs == NULL) {
 	memset(graph, 0x00, sizeof(*graph));
 	free(graph);
 	errno = GRAPH_FAIL_MALLOC;
 	return NULL;
     }
 
-    graph->compare = compare;
-    graph->destroy = destroy;
-    graph->print = print;
+    graph->api.compare = compare;
+    graph->api.destroy = destroy;
+    graph->api.print = print;
 
     errno = GRAPH_SUCCESS;
     return graph;
@@ -47,68 +48,40 @@ void graph_destroy(graph_t ** graph) {
 	errno = GRAPH_ARGS_NULL;
 	return;
     }
-
-    graph_adj_t * element = NULL;
-
-    while (1) {
-	    list_rem_next((void *) ((*graph)->adjacents), NULL, (const void **) &element);
-	    if (element == NULL)
-		break;
-	    while (1) {
-		list_rem_next((void *) *graph, NULL, (const void **) &element);
-
-	    }
-    }
-}
-
-void graph_destroy_element(void ** data) {
-    if (*data == NULL) {
-	errno = GRAPH_ARGS_NULL;
-	return;
-    }
-
-    graph_adj_t * element = (graph_adj_t *) *data;
-
-    memset(element, 0x00, sizeof(*element));
-    free(element);
-    *data = NULL;
+    //FIXME: Implement
 }
 
 int8_t graph_ins_vert(graph_t * graph, const void * data) {
     if ((graph == NULL) || (data == NULL))
 	return GRAPH_ARGS_NULL;
 
-    node * element = NULL;
     int8_t retval;
-
-    element = list_find_element(graph->adjacents, data);
+    graph_vertex_t * new_vertex = calloc(1, sizeof(*new_vertex));
+    new_vertex->v = (void *) data;
 
     /* We do not allow repeated elements */
-    if (element != NULL)
+    if (list_lookup(graph->vertexs, new_vertex) != NULL) {
+	memset(new_vertex, 0x00, sizeof(*new_vertex));
+	free(new_vertex);
 	return GRAPH_VERTEX_EXISTS;
+    }
 
-    graph_adj_t * adj_element = calloc(1, sizeof(*adj_element));
+    if (new_vertex == NULL)
+	return GRAPH_FAIL_MALLOC;
 
-    if (adj_element == NULL)
-	return GRAPH_ARGS_NULL;
+    new_vertex->adjacents = list_init(graph_destroy_element, graph_compare_element, graph_print_element);
 
-    adj_element->v = (void *) data;
-
-    /* FIXME: Find out the best way of implement the compare
-     * and the destroy function for this second layer */
-    adj_element->adjacents = list_init(graph->destroy, graph->compare, NULL);
-
-    if (adj_element->adjacents == NULL) {
-	memset(adj_element, 0x00, sizeof(*adj_element));
-	free(adj_element);
+    if (new_vertex->adjacents == NULL) {
+	memset(new_vertex, 0x00, sizeof(*new_vertex));
+	free(new_vertex);
 	return GRAPH_FAIL_MALLOC;
     }
 
-    retval = list_ins_next(graph->adjacents, NULL, adj_element);
+    retval = list_ins_next(graph->vertexs, NULL, new_vertex);
 
     if (retval != LST_SUCCESS) {
-	memset(adj_element, 0x00, sizeof(*adj_element));
-	free(adj_element);
+	memset(new_vertex, 0x00, sizeof(*new_vertex));
+	free(new_vertex);
 	return GRAPH_FAIL_MALLOC;
     }
 
@@ -116,55 +89,55 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
 
     printf("Adicionando Vertice %d -- [LEN: %ld]\n", *((int32_t *) data), graph->vcounter);
 
+    list_print_elements(graph->vertexs);
+
     return GRAPH_SUCCESS;
 }
 
-int8_t graph_ins_edge(graph_t * graph, const void * dataA, const void * dataB) {
-    if ((graph == NULL) || (dataA == NULL) || (dataB == NULL))
+int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b) {
+    if ((graph == NULL) || (data_a == NULL) || (data_b == NULL))
 	return GRAPH_ARGS_NULL;
 
     int8_t retval;
 
-    node * element_node = NULL;
+    graph_vertex_t * element_tmp = NULL;
+    graph_vertex_t * element_a = NULL;
+    graph_vertex_t * element_b = NULL;
 
-    graph_adj_t * elementA = NULL;
-    graph_adj_t * elementB = NULL;
+    element_tmp = calloc(1, sizeof(*element_tmp));
+    element_tmp->v = (void *) data_a;
 
-    /* We are using elementB here as temp variable
-     * latter on we will use it to hold the value of
-     * dataB as it should (saving memory) */
-    elementB = (graph_adj_t *) calloc(1, sizeof(*elementB));
-    elementB->v = (void *) dataA;
+    element_a = list_lookup(graph->vertexs, element_tmp) ;
 
-    element_node = list_find_element(graph->adjacents, elementB) ;
-
-    if (element_node == NULL) {
-	memset(elementB, 0x00, sizeof(*elementB));
-	free(elementB);
+    if (element_a == NULL) {
+	memset(element_tmp, 0x00, sizeof(*element_tmp));
+	free(element_tmp);
 	return GRAPH_VERTEX_NOT_FOUND;
     }
 
-    elementB->v = (void *) dataB;
+    element_tmp->v = (void *) data_b;
 
-    if (list_find_element(graph->adjacents, elementB) == NULL) {
-	memset(elementB, 0x00, sizeof(*elementB));
-	free(elementB);
+    element_b = list_lookup(graph->vertexs, element_tmp);
+
+    if (element_b == NULL) {
+	memset(element_tmp, 0x00, sizeof(*element_tmp));
+	free(element_tmp);
 	return GRAPH_VERTEX_NOT_FOUND;
     }
 
-    elementA = (graph_adj_t *) element_node->data;
-
-    retval = list_ins_next(elementA->adjacents, NULL, elementB);
+    retval = list_ins_next(element_a->adjacents, NULL, element_b);
 
     if (retval != LST_SUCCESS) {
-	memset(elementB, 0x00, sizeof(*elementB));
-	free(elementB);
+	memset(element_tmp, 0x00, sizeof(*element_tmp));
+	free(element_tmp);
 	return GRAPH_FAIL_MALLOC;
     }
 
     ++graph->ecounter;
 
-    printf("Adicionando aresta entre %d e %d-- [LEN: %ld]\n", *((int32_t *) dataA), *((int32_t *) dataB), graph->ecounter);
+    printf("Adicionando aresta entre %d e %d-- [LEN: %ld]\n", *((int32_t *) data_a), *((int32_t *) data_b), graph->ecounter);
+
+    list_print_elements(element_a->adjacents);
 
     return GRAPH_SUCCESS;
 }
@@ -175,4 +148,27 @@ int8_t       graph_rem_edge (graph_t *, const void *, const void *);
 int32_t      graph_vcount   (graph_t *);
 int32_t      graph_ecount   (graph_t *);
 
+void graph_destroy_element(void ** data) {
+    //FIXME: I don't know which approach would be the best
+    // to have access to the data from the first layer (main)
+    graph_vertex_t *vertex = (graph_vertex_t *) *data;
+    main_destroy(vertex->v);
+    memset(vertex, 0x00, sizeof(*vertex));
+    free(vertex);
+    *data = NULL;
+}
 
+int32_t graph_compare_element(const void * const data_a, const void * const data_b) {
+    //FIXME: I don't know which approach would be the best
+    // to have access to the data from the first layer (main)
+    graph_vertex_t * vertex_a = (graph_vertex_t *) data_a;
+    graph_vertex_t * vertex_b = (graph_vertex_t *) data_b;
+    return main_compare(vertex_a->v, vertex_b->v);
+}
+
+void graph_print_element(const void * const data) {
+    //FIXME: I don't know which approach would be the best
+    // to have access to the data from the first layer (main)
+    graph_vertex_t * vertex = (graph_vertex_t *) data;
+    main_print(vertex->v);
+}
