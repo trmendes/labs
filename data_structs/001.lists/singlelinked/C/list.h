@@ -32,7 +32,8 @@ typedef struct list_s {
 
 list_t *        list_init           (destroy_ft destroy, compare_ft compare, print_ft print);
 void            list_destroy        (list_t **list);
-lst_element_t * list_find_element   (list_t *list, const void *data);
+void   *        list_lookup         (list_t *list, const void *data);
+void   *        list_lookup_next    (list_t *list, const void *data);
 int8_t          list_ins_next       (list_t *list, const void * element, const void *data);
 int8_t          list_rem_next       (list_t *list, const void * element, const void **data);
 void            list_print_elements (list_t *list);

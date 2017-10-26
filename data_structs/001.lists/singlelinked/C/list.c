@@ -5,6 +5,9 @@
 #include <stdio.h>
 #include "list.h"
 
+/* Private Prototypes */
+lst_element_t * list_find_element(list_t *list, const void *data);
+
 list_t * list_init(destroy_ft destroy, compare_ft compare, print_ft print) {
     if (destroy == NULL) {
 	errno = ERR_LST_ARGS_NULL;
@@ -46,10 +49,52 @@ void list_destroy(list_t **list) {
 	free(prev_element);
 	prev_element = NULL;
     }
+
     memset(*list, 0x00, sizeof(**list));
     free(*list);
     *list = NULL;
     errno = LST_SUCCESS;
+}
+
+void * list_lookup(list_t *list, const void *data) {
+    if (list == NULL) {
+	errno = ERR_LST_NULL;
+	return NULL;
+    }
+    if (data == NULL) {
+	errno = ERR_LST_ARGS_NULL;
+	return NULL;
+    }
+
+    lst_element_t * element = list_find_element(list, data);
+
+    if (element == NULL)
+	return NULL;
+
+    return element->data;
+}
+
+void *list_lookup_next(list_t *list, const void *data) {
+    if (list == NULL) {
+	errno = ERR_LST_NULL;
+	return NULL;
+    }
+
+    void * retdata = NULL;
+    lst_element_t * element = NULL;
+
+    if ((data == NULL) && (list->head != NULL)) {
+	retdata = list->head->data;
+    } else if (data != NULL) {
+	element = list_find_element(list, data);
+	if (element != NULL)
+	    if (element->next != NULL)
+		retdata = element->next->data;
+    }
+
+    errno = LST_SUCCESS;
+
+    return retdata;
 }
 
 lst_element_t * list_find_element(list_t *list, const void *data) {

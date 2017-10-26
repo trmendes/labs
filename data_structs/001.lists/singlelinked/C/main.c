@@ -74,6 +74,36 @@ int32_t main() {
 	remove = NULL;
     }
 
+    dataprev->key = 7;
+    data = list_lookup(list, dataprev);
+    if (data != NULL) {
+	printf("%d is on the list [%d]\n", data->key, dataprev->key);
+    } else {
+	printf("%d isn't on the list\n", dataprev->key);
+    }
+
+    dataprev = NULL;
+    data = list_lookup_next(list, dataprev);
+    if (dataprev == NULL) {
+	if (data == NULL) {
+	    printf("Empty list\n");
+	} else {
+	    printf("First element of the list is: %d\n", data->key);
+	}
+    } else {
+	if (data != NULL) {
+	    printf("next of %d is %d\n", dataprev->key, data->key);
+	} else {
+	    printf("next of %d is NULL or %d does not exists\n", dataprev->key, dataprev->key);
+	}
+    }
+
+    dataprev = NULL;
+    while ((dataprev = list_lookup_next(list, dataprev)) != NULL) {
+	    printf(" %d ", dataprev->key);
+    }
+    printf("\n");
+
     list_print_elements(list);
 
     free(dataprev);
