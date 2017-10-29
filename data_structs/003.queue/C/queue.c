@@ -81,21 +81,19 @@ void * queue_get(queue_t *queue) {
 	return NULL;
     }
 
+    que_element_t * new_head = NULL;
+
     void * data = NULL;
-    que_element_t * new_tail = queue->head;
 
-    while (new_tail->next != queue->tail) {
-	new_tail = new_tail->next;
-    }
+    data = queue->head->data;
 
-    data = queue->tail->data;
+    new_head = queue->head->next;
 
-    memset(queue->tail, 0x00, sizeof(*(queue->tail)));
-    free(queue->tail);
-    queue->tail = NULL;
+    memset(queue->head, 0x00, sizeof(*(queue->head)));
+    free(queue->head);
+    queue->head = NULL;
 
-    queue->tail = new_tail;
-    new_tail->next = NULL;
+    queue->head = new_head;
 
     --queue->len;
 

@@ -34,19 +34,25 @@ int32_t main() {
     queue_print_elements(queue);
 
     data = (data_t *) queue_get(queue);
-    printf("Queue GET %d\n", data->key);
-    memset(data, 0x00, sizeof(*data));
-    free(data);
+    if (data != NULL) {
+	printf("Queue GET %d\n", data->key);
+	memset(data, 0x00, sizeof(*data));
+	free(data);
+    }
 
     data = (data_t *) queue_get(queue);
-    printf("Queue GET %d\n", data->key);
-    memset(data, 0x00, sizeof(*data));
-    free(data);
+    if (data != NULL) {
+	printf("Queue GET %d\n", data->key);
+	memset(data, 0x00, sizeof(*data));
+	free(data);
+    }
 
     data = (data_t *) queue_get(queue);
-    printf("Queue GET %d\n", data->key);
-    memset(data, 0x00, sizeof(*data));
-    free(data);
+    if (data != NULL) {
+	printf("Queue GET %d\n", data->key);
+	memset(data, 0x00, sizeof(*data));
+	free(data);
+    }
 
     queue_destroy(&queue);
 
