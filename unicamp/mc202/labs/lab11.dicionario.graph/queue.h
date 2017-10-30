@@ -21,16 +21,14 @@ typedef void (*print_ft)   (const void * const data);
 
 typedef struct queue_s {
     size_t           len;
-    void             (*destroy) (void **data);
-    void             (*print)   (const void *data);
     que_element_t   *head;
     que_element_t   *tail;
 } queue_t;
 
-queue_t * queue_init           (destroy_ft destroy, print_ft print);
-void      queue_destroy        (queue_t **queue);
+queue_t * queue_init           ();
+void      queue_destroy        (queue_t **queue, destroy_ft destroy);
 int8_t    queue_add            (queue_t *queue, const void *data);
 void *    queue_get            (queue_t *queue);
-void      queue_print_elements (queue_t *queue);
+void      queue_print_elements (queue_t *queue, print_ft print);
 
 #endif

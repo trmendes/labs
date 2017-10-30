@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 #define BUFMAX 21
+#define DICMAX 20000
 
 typedef struct data_s {
     char   word[BUFMAX];

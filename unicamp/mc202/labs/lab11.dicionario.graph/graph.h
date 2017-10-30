@@ -22,8 +22,6 @@ typedef void    (*destroy_ft) (void ** data);
 typedef void    (*print_ft)   (const void * const data);
 
 typedef struct graph_api_s {
-    compare_ft          compare;
-    destroy_ft          destroy;
     print_ft            print;
 } graph_api_t;
 
@@ -48,7 +46,7 @@ typedef struct graph_vertex_s {
     graph_bfs_t         bfs;
 } graph_vertex_t;
 
-graph_t    * graph_init               (compare_ft compare, destroy_ft destroy, print_ft print);
+graph_t    * graph_init               (print_ft print);
 void         graph_destroy            (graph_t **);
 
 int8_t       graph_ins_vert           (graph_t *, const void *);

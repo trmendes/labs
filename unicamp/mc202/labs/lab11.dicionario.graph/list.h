@@ -23,19 +23,16 @@ typedef struct lst_element_s {
 
 typedef struct list_s {
     size_t           size;
-    compare_ft       compare;
-    destroy_ft       destroy;
-    print_ft         print;
     lst_element_t   *head;
     lst_element_t   *tail;
 } list_t;
 
-list_t *        list_init           (destroy_ft destroy, compare_ft compare, print_ft print);
-void            list_destroy        (list_t **list);
-void   *        list_lookup         (list_t *list, const void *data);
-void   *        list_lookup_next    (list_t *list, const void *data);
-int8_t          list_ins_next       (list_t *list, const void * element, const void *data);
-int8_t          list_rem_next       (list_t *list, const void * element, const void **data);
-void            list_print_elements (list_t *list);
+list_t *        list_init           ();
+void            list_destroy        (list_t **list, destroy_ft destroy);
+void   *        list_lookup         (list_t *list, const void *data, compare_ft compare);
+void   *        list_lookup_next    (list_t *list, const void *data, compare_ft compare);
+int8_t          list_ins_next       (list_t *list, const void * element, const void *data, compare_ft compare);
+int8_t          list_rem_next       (list_t *list, const void * element, const void **data, compare_ft compare_ft);
+void            list_print_elements (list_t *list, print_ft print);
 
 #endif

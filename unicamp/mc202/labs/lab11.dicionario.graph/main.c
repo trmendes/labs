@@ -15,7 +15,7 @@ int32_t main() {
     size_t i;
     int8_t swaps;
 
-    graph_t * dic = graph_init(main_compare, main_destroy, main_print);
+    graph_t * dic = graph_init(main_print);
 
     while (1) {
 
@@ -56,7 +56,7 @@ int32_t main() {
     }
 
     printf("%d\n", hops);
-    //graph_destroy(&dic);
+    graph_destroy(&dic);
 
     return EXIT_SUCCESS;
 }
