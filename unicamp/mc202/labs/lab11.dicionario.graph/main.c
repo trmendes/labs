@@ -28,23 +28,26 @@ int32_t main() {
 	data_vertex_a->word_size = strlen(word);
 	strncpy(data_vertex_a->word, word, sizeof(data_vertex_a->word));
 
-	graph_ins_vert(dic, data_vertex_a);
-
-	data_vertex_b = NULL;
-	while ((data_vertex_b = graph_lookup_next_vertex(dic, data_vertex_b)) != NULL) {
-	    swaps = 0;
-	    if (data_vertex_b->word_size == strlen(word)) {
-		for (i = 0; i < strlen(word); ++i) {
-		    if (data_vertex_b->word[i] != word[i])
-			++swaps;
-		    if (swaps > 1)
-			break;
+	if (graph_ins_vert(dic, data_vertex_a) == GRAPH_SUCCESS) {
+	    data_vertex_b = NULL;
+	    while ((data_vertex_b = graph_lookup_next_vertex(dic, data_vertex_b)) != NULL) {
+		swaps = 0;
+		if (data_vertex_b->word_size == strlen(word)) {
+		    for (i = 0; i < strlen(word); ++i) {
+			if (data_vertex_b->word[i] != word[i])
+			    ++swaps;
+			if (swaps > 1)
+			    break;
+		    }
+		}
+		if (swaps == 1) {
+		    graph_ins_edge(dic, data_vertex_a, data_vertex_b);
+		    graph_ins_edge(dic, data_vertex_b, data_vertex_a);
 		}
 	    }
-	    if (swaps == 1) {
-		graph_ins_edge(dic, data_vertex_a, data_vertex_b);
-		graph_ins_edge(dic, data_vertex_b, data_vertex_a);
-	    }
+	} else {
+	    memset(data_vertex_a, 0x00, sizeof(*data_vertex_a));
+	    free(data_vertex_a);
 	}
     }
 
@@ -69,7 +72,7 @@ int32_t main_compare(const void * const key1, const void * const key2) {
 
 void main_destroy(void **data) {
     data_t *tmp = (data_t *) *data;
-    printf("Removed: %s [destroy]\n", tmp->word);
+    /* printf("Removed: %s [destroy]\n", tmp->word); */
     memset(tmp, 0x00, sizeof(*tmp));
     free(tmp);
     *data = NULL;
