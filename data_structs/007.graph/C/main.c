@@ -7,9 +7,8 @@
 #include "graph.h"
 
 int32_t main() {
-    graph_t * graph = graph_init(main_compare, main_destroy, main_print);
+    graph_t * graph = graph_init(main_print);
     data_t * data = NULL;
-
     data_t * data_a = NULL;
     data_t * data_b = NULL;
 
@@ -46,7 +45,6 @@ int32_t main() {
     data_b->key = 3;
     graph_ins_edge(graph, data_a, data_b);
 
-    //bla
     data_a->key = 2;
     data_b->key = 5;
     graph_ins_edge(graph, data_a, data_b);
@@ -63,7 +61,6 @@ int32_t main() {
     data_b->key = 1;
     graph_ins_edge(graph, data_a, data_b);
 
-    //bla
     data_a->key = 4;
     data_b->key = 5;
     graph_ins_edge(graph, data_a, data_b);
@@ -76,14 +73,18 @@ int32_t main() {
     data_b->key = 3;
     graph_ins_edge(graph, data_a, data_b);
 
-    //bla
     data_a->key = 20;
     data_b->key = 3;
     graph_ins_edge(graph, data_a, data_b);
 
-/* FIXME: Still have to call free and destroy */
+    data_a->key = 1;
+    graph_bfs(graph, data_a);
 
+    graph_destroy(&graph);
+
+    memset(data_a, 0x00, sizeof(*data_a));
     free(data_a);
+    memset(data_b, 0x00, sizeof(*data_b));
     free(data_b);
     return EXIT_SUCCESS;
 }
