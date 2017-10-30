@@ -31,7 +31,7 @@ int32_t main() {
     data->key = 5;
     queue_add(queue, data);
 
-    queue_print_elements(queue);
+    queue_print_elements(queue, print);
 
     data = (data_t *) queue_get(queue);
     if (data != NULL) {
@@ -54,7 +54,7 @@ int32_t main() {
 	free(data);
     }
 
-    queue_destroy(&queue);
+    queue_destroy(&queue, destroy);
 
     return EXIT_SUCCESS;
 }

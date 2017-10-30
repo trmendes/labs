@@ -6,25 +6,17 @@
 
 #include "queue.h"
 
-queue_t * queue_init(destroy_ft destroy, print_ft print) {
-    if (destroy == NULL) {
-	errno = QUEUE_ARGS_FAIL;
-	return NULL;
-    }
-
+queue_t * queue_init() {
     queue_t *queue = calloc(1, sizeof(*queue));
 
     if (queue == NULL)
 	return NULL;
 
-    queue->destroy = destroy;
-    queue->print = print;
-
     errno = QUEUE_SUCCESS;
     return queue;
 }
 
-void queue_destroy(queue_t **queue) {
+void queue_destroy(queue_t **queue, destroy_ft destroy) {
     if (*queue == NULL) {
 	errno = QUEUE_NULL;
 	return;
@@ -34,7 +26,8 @@ void queue_destroy(queue_t **queue) {
     que_element_t *prev_element = NULL;
 
     while (element != NULL) {
-	(*queue)->destroy((void **) &(element->data));
+	if (destroy != NULL)
+	    destroy((void **) &(element->data));
 	prev_element = element;
 	element = element->next;
 
@@ -105,7 +98,7 @@ void * queue_get(queue_t *queue) {
     return data;
 }
 
-void queue_print_elements(queue_t *queue) {
+void queue_print_elements(queue_t *queue, print_ft print) {
     if (queue == NULL) {
 	errno = QUEUE_NULL;
 	return;
@@ -114,7 +107,7 @@ void queue_print_elements(queue_t *queue) {
 	errno = QUEUE_EMPTY;
 	return;
     }
-    if (queue->print == NULL) {
+    if (print == NULL) {
 	errno = QUEUE_FUNCTION_NULL;
 	return;
     }
@@ -124,7 +117,7 @@ void queue_print_elements(queue_t *queue) {
     if (queue->len > 0) {
 	printf("[ ");
 	while (element != NULL) {
-	    queue->print(element->data);
+	    print(element->data);
 	    element = element->next;
 	}
 	printf("]\n");
