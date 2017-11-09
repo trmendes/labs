@@ -26,8 +26,6 @@ typedef struct graph_api_s {
 } graph_api_t;
 
 typedef struct graph_s {
-    size_t              vcounter;
-    size_t              ecounter;
     list_t             *vertexs;
     graph_api_t         api;
 } graph_t;
@@ -42,15 +40,21 @@ typedef struct graph_bfs_s {
 
 typedef struct graph_vertex_s {
     void               *v;
-    list_t             *adjacents;
+    list_t             *edges;
+    int32_t             degree;
     graph_bfs_t         bfs;
 } graph_vertex_t;
+
+typedef struct graph_edge_s {
+    int32_t             cost;
+    graph_vertex_t    * vertex;
+} graph_edge_t;
 
 graph_t    * graph_init               (print_ft print);
 void         graph_destroy            (graph_t **);
 
 int8_t       graph_ins_vert           (graph_t *, const void *);
-int8_t       graph_ins_edge           (graph_t *, const void *, const void *);
+int8_t       graph_ins_edge           (graph_t *, const void *, const void *, int32_t);
 
 int8_t       graph_rem_vert           (graph_t *, void **);
 int8_t       graph_rem_edge           (graph_t *, const void *, const void *);
