@@ -39,43 +39,43 @@ int32_t main() {
 
     data_a->key = 1;
     data_b->key = 2;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b, 1);
 
     data_a->key = 1;
     data_b->key = 3;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b, 2);
 
     data_a->key = 2;
     data_b->key = 5;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b, 3);
 
     data_a->key = 2;
     data_b->key = 3;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b, 4);
 
     data_a->key = 4;
     data_b->key = 2;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b ,3);
 
     data_a->key = 4;
     data_b->key = 1;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b, 2);
 
     data_a->key = 4;
     data_b->key = 5;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b, 1);
 
     data_a->key = 5;
     data_b->key = 3;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b, 2);
 
     data_a->key = 3;
     data_b->key = 3;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b, 3);
 
     data_a->key = 20;
     data_b->key = 3;
-    graph_ins_edge(graph, data_a, data_b);
+    graph_ins_edge(graph, data_a, data_b, 4);
 
     data_a->key = 1;
     graph_bfs(graph, data_a);
