@@ -37,6 +37,7 @@ heap_t * hp_init(size_t heap_size, compare_ft compare, print_ft print) {
 
     heap->api.compare = compare;
     heap->api.print = print;
+    heap->size = heap_size;
 
     errno = HEAP_SUCCESS;
     return heap;
@@ -229,6 +230,8 @@ void hp_heapfy_down(heap_t * heap) {
 		htree[p] = htree[l];
 		htree[l] = tmp;
 		p = l;
+	    } else {
+		break;
 	    }
 	} else {
 	    if ((heap->api.compare(htree[l], htree[p]) > 0) && (heap->api.compare(htree[l], htree[r]) > 0)) {
@@ -242,10 +245,15 @@ void hp_heapfy_down(heap_t * heap) {
 		htree[p] = htree[r];
 		htree[r] = tmp;
 		p = r;
+	    } else {
+		break;
 	    }
 	}
 	l = HEAP_LEFT(p);
 	r = HEAP_RIGHT(p);
+
+	if (r >= heap->size)
+	    break;
     }
 }
 
