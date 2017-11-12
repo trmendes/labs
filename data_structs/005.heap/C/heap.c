@@ -186,10 +186,14 @@ void hp_heapfy_up(heap_t * heap) {
 		}
 	    }
 	} else {
-	    if (heap->api.compare(htree[r], htree[p]) > 0) {
+	    if ((heap->api.compare(htree[r], htree[p]) > 0) && (heap->api.compare(htree[r], htree[l]) > 0)) {
 		tmp = htree[p];
 		htree[p] = htree[r];
 		htree[r] = tmp;
+	    } else if ((heap->api.compare(htree[l], htree[p]) > 0) && (heap->api.compare(htree[l], htree[r]) > 0)) {
+		tmp = htree[p];
+		htree[p] = htree[l];
+		htree[l] = tmp;
 	    }
 	}
 

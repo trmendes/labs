@@ -23,6 +23,7 @@ typedef struct heap_s {
     int32_t       mark;
     void       ** heap;
     heap_api_t    api;
+    size_t        size;
 } heap_t;
 
 
