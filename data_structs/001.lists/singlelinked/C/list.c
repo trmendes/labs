@@ -6,14 +6,24 @@
 #include "list.h"
 
 /* Private Prototypes */
-lst_element_t * list_find_element(list_t *list, const void *data, compare_ft compare);
+lst_element_t * list_find_element(list_t *list, const void *data);
 
-list_t * list_init() {
+list_t * list_init(compare_ft compare, print_ft print) {
+
+    if (compare == NULL) {
+	errno = ERR_LST_ARGS_NULL;
+	return NULL;
+    }
 
     list_t *list = calloc(1, sizeof(*list));
 
-    if (list == NULL)
+    if (list == NULL) {
+	errno = ERR_LST_MALLOC;
 	return NULL;
+    }
+
+    list->api.compare = compare;
+    list->api.print = print;
 
     errno = LST_SUCCESS;
     return list;
@@ -45,12 +55,7 @@ void list_destroy(list_t **list, destroy_ft destroy) {
     errno = LST_SUCCESS;
 }
 
-void * list_lookup(list_t *list, const void *data, compare_ft compare) {
-    if (compare == NULL) {
-	errno = ERR_LST_ARGS_NULL;
-	return NULL;
-    }
-
+void * list_lookup(list_t *list, const void *data) {
     if (list == NULL) {
 	errno = ERR_LST_NULL;
 	return NULL;
@@ -60,7 +65,7 @@ void * list_lookup(list_t *list, const void *data, compare_ft compare) {
 	return NULL;
     }
 
-    lst_element_t * element = list_find_element(list, data, compare);
+    lst_element_t * element = list_find_element(list, data);
 
     if (element == NULL)
 	return NULL;
@@ -68,11 +73,7 @@ void * list_lookup(list_t *list, const void *data, compare_ft compare) {
     return element->data;
 }
 
-void *list_lookup_next(list_t *list, const void *data, compare_ft compare) {
-    if (compare == NULL) {
-	errno = ERR_LST_ARGS_NULL;
-	return NULL;
-    }
+void *list_lookup_next(list_t *list, const void *data) {
     if (list == NULL) {
 	errno = ERR_LST_NULL;
 	return NULL;
@@ -84,7 +85,7 @@ void *list_lookup_next(list_t *list, const void *data, compare_ft compare) {
     if ((data == NULL) && (list->head != NULL)) {
 	retdata = list->head->data;
     } else if (data != NULL) {
-	element = list_find_element(list, data, compare);
+	element = list_find_element(list, data);
 	if (element != NULL)
 	    if (element->next != NULL)
 		retdata = element->next->data;
@@ -95,11 +96,7 @@ void *list_lookup_next(list_t *list, const void *data, compare_ft compare) {
     return retdata;
 }
 
-lst_element_t * list_find_element(list_t *list, const void *data, compare_ft compare) {
-    if (compare == NULL) {
-	errno = ERR_LST_ARGS_NULL;
-	return NULL;
-    }
+lst_element_t * list_find_element(list_t *list, const void *data) {
     if (list == NULL) {
 	errno = ERR_LST_NULL;
 	return NULL;
@@ -112,7 +109,7 @@ lst_element_t * list_find_element(list_t *list, const void *data, compare_ft com
     lst_element_t * element = list->head;
 
     while (element != NULL) {
-	if (compare(element->data, data) == 0) {
+	if (list->api.compare(element->data, data) == 0) {
 	    return element;
 	}
 	element = element->next;
@@ -121,7 +118,7 @@ lst_element_t * list_find_element(list_t *list, const void *data, compare_ft com
     return NULL;
 }
 
-int8_t list_ins_next(list_t *list, const void *element, const void *data, compare_ft compare) {
+int8_t list_ins_next(list_t *list, const void *element, const void *data) {
     if (list == NULL)
 	return ERR_LST_NULL;
 
@@ -146,7 +143,7 @@ int8_t list_ins_next(list_t *list, const void *element, const void *data, compar
 	/* It is necessary to avoid the use of a node that is
 	 * not on our list */
 	if (element != NULL)
-	    prev_element = list_find_element(list, element, compare);
+	    prev_element = list_find_element(list, element);
 
 	if (prev_element != NULL) {
 	    if (prev_element->next == NULL)
@@ -163,7 +160,57 @@ int8_t list_ins_next(list_t *list, const void *element, const void *data, compar
     return LST_SUCCESS;
 }
 
-int8_t list_rem_next(list_t *list, const void * element, const void **data, compare_ft compare) {
+int8_t list_ins_in_order(list_t *list, const void *data) {
+    if (list == NULL)
+	return ERR_LST_NULL;
+
+    lst_element_t * new_element = calloc(1, sizeof(*new_element));
+    lst_element_t * element = NULL;
+    lst_element_t * prev_element = NULL;
+
+    if (new_element == NULL)
+	return ERR_LST_MALLOC;
+
+    new_element->data = (void *) data;
+
+    element = list->head;
+    prev_element = list->head;
+
+    while (element != NULL) {
+	if (list->api.compare(data, element->data) >= 0)
+	    prev_element = element;
+	else
+	    break;
+	element = element->next;
+    }
+
+    if (prev_element == NULL) {
+	list->head = new_element;
+	list->tail = new_element;
+    } else {
+	if (prev_element == list->head) {
+	    if (list->api.compare(data, prev_element->data) >= 0) {
+		new_element->next = prev_element->next;
+		prev_element->next = new_element;
+	    } else {
+		list->head = new_element;
+		new_element->next = prev_element;
+	    }
+	} else {
+	    new_element->next = prev_element->next;
+	    prev_element->next = new_element;
+	}
+
+	if (element == NULL)
+	    list->tail = new_element;
+    }
+
+    ++list->size;
+
+    return LST_SUCCESS;
+}
+
+int8_t list_rem_next(list_t *list, const void * element, const void **data) {
     if (list == NULL)
 	return ERR_LST_NULL;
     if (list->size == 0)
@@ -183,7 +230,7 @@ int8_t list_rem_next(list_t *list, const void * element, const void **data, comp
 	/* It is necessary to avoid the use of a node that is
 	 * not on our list */
 	if (element != NULL)
-	    element_ptr = list_find_element(list, element, compare);
+	    element_ptr = list_find_element(list, element);
 
 	if ((element_ptr != NULL) && (element_ptr->next != NULL)) {
 	    next_element = element_ptr->next;
@@ -210,7 +257,7 @@ int8_t list_rem_next(list_t *list, const void * element, const void **data, comp
     return LST_SUCCESS;
 }
 
-void list_print_elements(list_t *list, print_ft print) {
+void list_print_elements(list_t *list) {
     if (list == NULL) {
 	errno = ERR_LST_NULL;
 	return;
@@ -219,7 +266,7 @@ void list_print_elements(list_t *list, print_ft print) {
 	errno = LST_EMPTY_LIST;
 	return;
     }
-    if (print == NULL) {
+    if (list->api.print == NULL) {
 	errno = LST_FUNCTION_NULL;
 	return;
     }
@@ -229,7 +276,7 @@ void list_print_elements(list_t *list, print_ft print) {
     if (list->size > 0) {
 	printf("[ ");
 	while (element != NULL) {
-	    print(element->data);
+	    list->api.print(element->data);
 	    element = element->next;
 	}
 	printf("]\n");
