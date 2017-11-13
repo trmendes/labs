@@ -10,8 +10,8 @@
 #define HEAP_LEFT(X)   ( ( X << 1 ) + 1 )
 #define HEAP_RIGHT(X)  ( ( X << 1 ) + 2 )
 
-void hp_heapfy_down(heap_t * heap);
-void hp_heapfy_up(heap_t * heap);
+void hp_heapfy_down (heap_t * heap, int32_t start);
+void hp_heapfy_up   (heap_t * heap, int32_t start);
 
 heap_t * hp_init(size_t heap_size, compare_ft compare, print_ft print) {
     if (compare == NULL) {
@@ -73,9 +73,9 @@ int32_t hp_insert(heap_t * heap, void * data) {
 
     heap->heap[heap->mark] = data;
 
-    ++heap->mark;
+    hp_heapfy_up(heap, heap->mark);
 
-    hp_heapfy_up(heap);
+    ++heap->mark;
 
     return HEAP_SUCCESS;
 }
@@ -100,7 +100,7 @@ void * hp_lookup(heap_t * heap) {
     return heap->heap[0];
 }
 
-void * hp_get(heap_t * heap) {
+void * hp_extract(heap_t * heap) {
     if (heap == NULL) {
 	errno = HEAP_ERR_NULL_PARS;
 	return NULL;
@@ -123,10 +123,42 @@ void * hp_get(heap_t * heap) {
     heap->heap[0] = heap->heap[heap->mark];
     heap->heap[heap->mark] = NULL;
 
-    hp_heapfy_down(heap);
+    hp_heapfy_down(heap, 0);
 
     return data;
- }
+}
+
+int32_t hp_update(heap_t * heap, void * data, void * new_data, update_ft update) {
+    if ((heap == NULL) || (data == NULL) || (new_data == NULL) || (update == NULL))
+	return HEAP_ERR_NULL_PARS;
+
+    if (heap->heap == NULL)
+	return HEAP_ERR_NULL_PARS;
+
+    void * to_update = NULL;
+    size_t i;
+    int32_t mark = heap->mark - 1;
+
+    for (i = 0; i < heap->size; ++i) {
+	if (heap->heap[i] == data) {
+	    to_update = heap->heap[i];
+	    break;
+	}
+    }
+
+    if (to_update == NULL)
+	return HEAP_ERR_DATA_NFOUND;
+
+    update(to_update, new_data);
+
+    heap->heap[i] = heap->heap[mark];
+    heap->heap[mark] = to_update;
+
+    hp_heapfy_up(heap, mark);
+
+    return HEAP_SUCCESS;
+
+}
 
 void hp_print(heap_t * heap) {
     if (heap == NULL) {
@@ -153,7 +185,7 @@ void hp_print(heap_t * heap) {
     printf("\n");
 }
 
-void hp_heapfy_up(heap_t * heap) {
+void hp_heapfy_up(heap_t * heap, int32_t start) {
     if (heap == NULL) {
 	errno = HEAP_ERR_NULL_PARS;
 	return;
@@ -170,9 +202,8 @@ void hp_heapfy_up(heap_t * heap) {
 
     void ** htree = heap->heap;
     void * tmp = NULL;
-    int32_t mark = heap->mark - 1;
 
-    int32_t p = HEAP_PARENT(mark);
+    int32_t p = HEAP_PARENT(start);
     int32_t l = HEAP_LEFT(p);
     int32_t r = HEAP_RIGHT(p);
 
@@ -203,7 +234,7 @@ void hp_heapfy_up(heap_t * heap) {
     }
 }
 
-void hp_heapfy_down(heap_t * heap) {
+void hp_heapfy_down(heap_t * heap, int32_t start) {
     if (heap == NULL) {
 	errno = HEAP_ERR_NULL_PARS;
 	return;
@@ -221,7 +252,7 @@ void hp_heapfy_down(heap_t * heap) {
     void ** htree = heap->heap;
     void * tmp = NULL;
 
-    int32_t p = 0;
+    int32_t p = start;
     int32_t l = HEAP_LEFT(p);
     int32_t r = HEAP_RIGHT(p);
 
