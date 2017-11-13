@@ -2,6 +2,7 @@
 #define __GRAPH_H__
 
 #include <stdint.h>
+#include <limits.h>
 
 #include "list.h"
 
@@ -12,8 +13,10 @@
 #define GRAPH_ARGS_NULL        -1
 #define GRAPH_SUCCESS           0
 
-#define GRAPH_BFS_VISTED        1
-#define GRAPH_BFS_NVISITED      0
+#define GRAPH_VERTEX_VISTED     1
+#define GRAPH_VERTEX_NVISITED   0
+
+#define GRAPH_INFINIT INT_MAX
 
 typedef list_t adj_list_t;
 
@@ -27,27 +30,30 @@ typedef struct graph_api_s {
 
 typedef struct graph_s {
     list_t             *vertexs;
+    int32_t             vcnt;
+    int32_t             ecnt;
     graph_api_t         api;
 } graph_t;
 
 typedef struct graph_vertex_s graph_vertex_t;
 
-typedef struct graph_bfs_s {
+typedef struct graph_info_s {
     uint8_t             status;
     int32_t             distance;
+    int32_t             degree;
     graph_vertex_t    * parent;
-} graph_bfs_t;
+} graph_info_t;
 
 typedef struct graph_vertex_s {
     void               *v;
     list_t             *edges;
-    int32_t             degree;
-    graph_bfs_t         bfs;
+    graph_info_t        info;
 } graph_vertex_t;
 
 typedef struct graph_edge_s {
     int32_t             cost;
     graph_vertex_t    * vertex;
+    graph_vertex_t    * incident;
 } graph_edge_t;
 
 graph_t    * graph_init               (print_ft print);
@@ -62,8 +68,11 @@ int8_t       graph_rem_edge           (graph_t *, const void *, const void *);
 int32_t      graph_vcount             (graph_t *);
 int32_t      graph_ecount             (graph_t *);
 
-void       * graph_lookup_next_vertex (graph_t * graph, void * data);
+void       * graph_lookup_next_vertex (graph_t *, void *);
 
-int32_t      graph_bfs                (graph_t * graph, void * start_point);
+int32_t      graph_bfs                (graph_t *, void *);
+int32_t      graph_dijkstra           (graph_t *, void *);
+int32_t      graph_mst_prism          (graph_t *, void *);
 
+void         graph_print_vertexes     (graph_t *);
 #endif

@@ -16,6 +16,11 @@ typedef int32_t (*compare_ft) (const void * const key1, const void * const key2)
 typedef void    (*destroy_ft) (void **data);
 typedef void    (*print_ft)   (const void * const data);
 
+typedef struct lst_api_s {
+    compare_ft    compare;
+    print_ft      print;
+} lst_api_t;
+
 typedef struct lst_element_s {
     void                 *data;
     struct lst_element_s *next;
@@ -25,14 +30,16 @@ typedef struct list_s {
     size_t           size;
     lst_element_t   *head;
     lst_element_t   *tail;
+    lst_api_t        api;
 } list_t;
 
-list_t *        list_init           ();
+list_t *        list_init           (compare_ft compare, print_ft print);
 void            list_destroy        (list_t **list, destroy_ft destroy);
-void   *        list_lookup         (list_t *list, const void *data, compare_ft compare);
-void   *        list_lookup_next    (list_t *list, const void *data, compare_ft compare);
-int8_t          list_ins_next       (list_t *list, const void * element, const void *data, compare_ft compare);
-int8_t          list_rem_next       (list_t *list, const void * element, const void **data, compare_ft compare_ft);
-void            list_print_elements (list_t *list, print_ft print);
+void   *        list_lookup         (list_t *list, const void *data);
+void   *        list_lookup_next    (list_t *list, const void *data);
+int8_t          list_ins_next       (list_t *list, const void *element, const void *data);
+int8_t          list_ins_in_order   (list_t *list, const void *data);
+int8_t          list_rem_next       (list_t *list, const void *element, const void **data);
+void            list_print_elements (list_t *list);
 
 #endif

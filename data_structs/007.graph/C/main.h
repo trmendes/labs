@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 typedef struct data_s {
-    int32_t key;
+    char key;
 } data_t;
 
 int32_t   main_compare (const void * const key1, const void * const key2);
