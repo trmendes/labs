@@ -16,6 +16,9 @@
 #define GRAPH_VERTEX_VISTED     1
 #define GRAPH_VERTEX_NVISITED   0
 
+#define GRAPH_EDGE_DUAL         1
+#define GRAPH_EDGE_NDUAL        0
+
 #define GRAPH_INFINIT INT_MAX
 
 typedef list_t adj_list_t;
@@ -60,15 +63,13 @@ graph_t    * graph_init               (print_ft print);
 void         graph_destroy            (graph_t **);
 
 int8_t       graph_ins_vert           (graph_t *, const void *);
-int8_t       graph_ins_edge           (graph_t *, const void *, const void *, int32_t);
+int8_t       graph_ins_edge           (graph_t *, const void *, const void *, int32_t, int8_t);
 
 int8_t       graph_rem_vert           (graph_t *, void **);
 int8_t       graph_rem_edge           (graph_t *, const void *, const void *);
 
 int32_t      graph_vcount             (graph_t *);
 int32_t      graph_ecount             (graph_t *);
-
-void       * graph_lookup_next_vertex (graph_t *, void *);
 
 int32_t      graph_bfs                (graph_t *, void *);
 int32_t      graph_dijkstra           (graph_t *, void *);

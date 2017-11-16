@@ -15,7 +15,7 @@ int32_t main() {
     data_a = calloc(1, sizeof(*data_a));
     data_b = calloc(1, sizeof(*data_b));
 
-    data = calloc(1, sizeof(*data));
+    data = calloc(0, sizeof(*data));
     data->key = 'A';
     graph_ins_vert(graph, data);
 
@@ -31,51 +31,52 @@ int32_t main() {
     data->key = 'D';
     graph_ins_vert(graph, data);
 
-    data = calloc(1, sizeof(*data));
-    data->key = 'E';
-    graph_ins_vert(graph, data);
+    /* data = calloc(1, sizeof(*data)); */
+    /* data->key = 'E'; */
+    /* graph_ins_vert(graph, data); */
 
-    data = calloc(1, sizeof(*data));
-    data->key = 'F';
-    graph_ins_vert(graph, data);
+    /* data = calloc(1, sizeof(*data)); */
+    /* data->key = 'F'; */
+    /* graph_ins_vert(graph, data); */
 
     /**********************************************/
 
     data_a->key = 'A';
-    data_b->key = 'C';
-    graph_ins_edge(graph, data_a, data_b, 7);
+    data_b->key = 'B';
+    graph_ins_edge(graph, data_a, data_b, 20, GRAPH_EDGE_NDUAL);
 
-    data_a->key = 'A';
-    data_b->key = 'E';
-    graph_ins_edge(graph, data_a, data_b, 9);
+    data_a->key = 'B';
+    data_b->key = 'C';
+    graph_ins_edge(graph, data_a, data_b, 10, GRAPH_EDGE_NDUAL);
 
     data_a->key = 'C';
     data_b->key = 'D';
-    graph_ins_edge(graph, data_a, data_b, 1);
-
-    data_a->key = 'C';
-    data_b->key = 'B';
-    graph_ins_edge(graph, data_a, data_b, 5);
-
-    data_a->key = 'C';
-    data_b->key = 'F';
-    graph_ins_edge(graph, data_a, data_b, 2);
-
-    data_a->key = 'B';
-    data_b->key = 'F';
-    graph_ins_edge(graph, data_a, data_b, 6);
+    graph_ins_edge(graph, data_a, data_b, 15, GRAPH_EDGE_NDUAL);
 
     data_a->key = 'D';
-    data_b->key = 'F';
-    graph_ins_edge(graph, data_a, data_b, 2);
+    data_b->key = 'A';
+    graph_ins_edge(graph, data_a, data_b, 5, GRAPH_EDGE_NDUAL);
 
-    data_a->key = 'E';
-    data_b->key = 'F';
-    graph_ins_edge(graph, data_a, data_b, 1);
+    /* data_a->key = 'C'; */
+    /* data_b->key = 'F'; */
+    /* graph_ins_edge(graph, data_a, data_b, 2, GRAPH_EDGE_NDUAL); */
+
+    /* data_a->key = 'B'; */
+    /* data_b->key = 'F'; */
+    /* graph_ins_edge(graph, data_a, data_b, 6, GRAPH_EDGE_NDUAL); */
+
+    /* data_a->key = 'D'; */
+    /* data_b->key = 'F'; */
+    /* graph_ins_edge(graph, data_a, data_b, 2, GRAPH_EDGE_NDUAL); */
+
+    /* data_a->key = 'E'; */
+    /* data_b->key = 'F'; */
+    /* graph_ins_edge(graph, data_a, data_b, 1, GRAPH_EDGE_NDUAL); */
 
     data_a->key = 'A';
     graph_bfs(graph, data_a);
     graph_mst_prism(graph, data_a);
+    graph_dijkstra(graph, data_a);
 
     graph_destroy(&graph);
 

@@ -58,7 +58,7 @@ void hp_destroy(heap_t * heap, destroy_ft destroy) {
 	}
     }
 
-    memset(heap->heap, 0x00, sizeof(*(heap->heap)));
+    memset(heap->heap, 0x00, heap->size * sizeof(*(heap->heap)));
     free(heap->heap);
     memset(heap, 0x00, sizeof(*heap));
     free(heap);

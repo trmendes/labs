@@ -109,7 +109,7 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
     return GRAPH_SUCCESS;
 }
 
-int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b, int32_t cost) {
+int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b, int32_t cost, int8_t dual) {
     if ((graph == NULL) || (data_a == NULL) || (data_b == NULL))
 	return GRAPH_ARGS_NULL;
 
@@ -117,6 +117,10 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
     graph_vertex_t * element_a = NULL;
     graph_vertex_t * element_b = NULL;
     graph_edge_t   * edge_a = calloc(1, sizeof(*edge_a));
+    graph_edge_t   * edge_b = NULL;
+
+    if (dual == GRAPH_EDGE_DUAL)
+	edge_b = calloc(1, sizeof(*edge_b));
 
     element_tmp = calloc(1, sizeof(*element_tmp));
     element_tmp->v = (void *) data_a;
@@ -126,6 +130,12 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
     if (element_a == NULL) {
 	memset(edge_a, 0x00, sizeof(*edge_a));
 	free(edge_a);
+
+	if (edge_b != NULL) {
+	    memset(edge_b, 0x00, sizeof(*edge_b));
+	    free(edge_b);
+	}
+
 	memset(element_tmp, 0x00, sizeof(*element_tmp));
 	free(element_tmp);
 	return GRAPH_VERTEX_NOT_FOUND;
@@ -141,59 +151,40 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
     if (element_b == NULL) {
 	memset(edge_a, 0x00, sizeof(*edge_a));
 	free(edge_a);
+	if (edge_b != NULL) {
+	    memset(edge_b, 0x00, sizeof(*edge_b));
+	    free(edge_b);
+	}
 	return GRAPH_VERTEX_NOT_FOUND;
     }
+
+    printf("Add [edge] ");
+    graph_print_vertex(element_a);
 
     edge_a->vertex = element_a;
     edge_a->incident = element_b;
     edge_a->cost = cost;
     ++element_a->info.degree;
-
     list_ins_next(element_a->edges, NULL, edge_a);
-    //list_ins_next(element_b->edges, NULL, edge_b);
+
+    if (edge_b != NULL) {
+	edge_b->vertex = element_b;
+	edge_b->incident = element_a;
+	edge_b->cost = cost;
+	list_ins_next(element_b->edges, NULL, edge_b);
+	printf("<-> ");
+    } else {
+	printf("-> ");
+    }
+
+    ++element_b->info.degree;
+    graph_print_vertex(element_b);
+    printf("| cost %d\n", edge_a->cost);
+
 
     ++graph->ecnt;
 
-    printf("Add [edge] ");
-    graph->api.print(data_a);
-    printf(" -> ");
-    graph->api.print(data_b);
-    printf("| cost %d\n", edge_a->cost);
-
-return GRAPH_SUCCESS;
-}
-
-void * graph_lookup_next_vertex(graph_t * graph, void * data) {
-    if (graph == NULL) {
-	errno = GRAPH_ARGS_NULL;
-	return NULL;
-    }
-
-    void * ret_data = NULL;
-    graph_vertex_t * vertex = NULL;
-    graph_vertex_t * ret_vertex = NULL;
-
-    if (data == NULL) {
-	ret_vertex = list_lookup_next(graph->vertexs, NULL);
-    } else {
-	vertex = calloc(1, sizeof(*vertex));
-
-	if (vertex == NULL) {
-	    errno = GRAPH_FAIL_MALLOC;
-	    return NULL;
-	}
-
-	vertex->v = data;
-	ret_vertex = list_lookup_next(graph->vertexs, vertex);
-	memset(vertex, 0x00, sizeof(*vertex));
-	free(vertex);
-    }
-
-    if (ret_vertex != NULL)
-	ret_data = ret_vertex->v;
-
-    errno = GRAPH_SUCCESS;
-    return ret_data;
+        return GRAPH_SUCCESS;
 }
 
 int8_t       graph_rem_vert (graph_t *, void **);
@@ -250,7 +241,6 @@ int32_t graph_bfs(graph_t * graph, void * start_point) {
     graph_print_vertex(vertex);
     printf("\n------------------------------------------\n");
 
-    graph_print_vertexes(graph);
     while ((vertex = queue_get(queue)) != NULL) {
 	edge = NULL;
 	while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
@@ -317,20 +307,21 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
     }
 
     while ((vertex = hp_extract(hmst)) != NULL) {
-	edge = NULL;
-	printf("Vertex ");
-	graph_print_vertex(vertex);
-	printf("\n");
-	while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
-	    new_distance = edge->vertex->info.distance + edge->cost;
-	    if (edge->incident->info.distance > new_distance) {
-		hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
-		edge->incident->info.parent = edge->vertex;
+	if (vertex->info.distance != GRAPH_INFINIT) {
+	    edge = NULL;
+	    while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
+		new_distance = edge->vertex->info.distance + edge->cost;
+		if (edge->incident->info.distance > new_distance) {
+		    hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
+		    edge->incident->info.parent = edge->vertex;
+		    graph_print_edge(edge);
+		    printf("\n");
+		}
 	    }
 	}
     }
 
-    hp_destroy(hmst, NULL);
+    //hp_destroy(hmst, NULL);
 
     return GRAPH_SUCCESS;
 }
@@ -341,25 +332,56 @@ int32_t graph_dijkstra(graph_t * graph, void * start_point) {
 
     printf("\n---> Running Dijkstra <---\n");
 
-    graph_vertex_t * reset = NULL;
-    graph_vertex_t * vmin = NULL;
-    graph_edge_t * edge = NULL;
-    heap_t * heap = hp_init(graph->vcnt, graph_compare_edge, graph_print_edge);
+    graph_vertex_t * reset  = NULL;
+    graph_vertex_t * vertex_tmp = calloc(1, sizeof(*vertex_tmp));
+    graph_vertex_t * vertex = NULL;
+    graph_edge_t   * edge = NULL;
+    int32_t new_distance;
 
-    if (heap == NULL)
+    if (vertex_tmp == NULL)
+	return GRAPH_FAIL_MALLOC;
+
+    vertex_tmp->v = start_point;
+
+    vertex = list_lookup(graph->vertexs, vertex_tmp);
+
+    memset(vertex_tmp, 0x00, sizeof(*vertex_tmp));
+    free(vertex_tmp);
+
+    if (vertex == NULL)
+	return GRAPH_VERTEX_NOT_FOUND;
+
+    heap_t * hmst = hp_init(graph->vcnt, graph_compare_vertex_distance, graph_print_vertex_distance);
+
+    if (hmst == NULL)
 	return GRAPH_FAIL_MALLOC;
 
     while ((reset = list_lookup_next(graph->vertexs, reset)) != NULL) {
 	reset->info.parent = NULL;
-	reset->info.distance = GRAPH_INFINIT;
+
+	if (reset == vertex)
+	    reset->info.distance = 0;
+	else
+	    reset->info.distance = GRAPH_INFINIT;
+
+	hp_insert(hmst, reset);
     }
 
-    while ((vmin = hp_extract(heap)) != NULL) {
-	edge = NULL;
-	while ((edge = list_lookup_next(vmin->edges, edge)) != NULL) {
-	   //if (vmin->info.distance +  
+    while ((vertex = hp_extract(hmst)) != NULL) {
+	if (vertex->info.distance != GRAPH_INFINIT) {
+	    edge = NULL;
+	    while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
+		new_distance = vertex->info.distance + edge->cost;
+		if (new_distance < edge->incident->info.distance) {
+		    hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
+		    edge->incident->info.parent = edge->vertex;
+		}
+	    }
 	}
     }
+
+    graph_print_vertexes(graph);
+    //hp_destroy(hmst, NULL);
 
     return GRAPH_SUCCESS;
 }
@@ -419,9 +441,7 @@ void graph_destroy_edge(void ** data) {
 }
 
 int32_t graph_compare_edge(const void * const data_a, const void * const data_b) {
-    graph_edge_t * edge_a = (graph_edge_t *) data_a;
-    graph_edge_t * edge_b = (graph_edge_t *) data_b;
-    return edge_b->cost - edge_a->cost;
+    return data_a - data_b;
 }
 
 void graph_print_edge(const void * const data) {
@@ -446,11 +466,10 @@ void graph_print_vertexes(graph_t * graph) {
     while ((vertex = list_lookup_next(graph->vertexs, vertex)) != NULL) {
 	printf("V: ");
 	graph_print_vertex(vertex);
-	printf(" - D: %d\n", vertex->info.degree);
-	printf("[ ");
+	printf(" - Degree: %d | Distance %d\n", vertex->info.degree, vertex->info.distance);
 	while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
 	    graph_print_edge(edge);
 	}
-	printf("]\n");
+	printf("\n\n");
     }
 }
