@@ -72,7 +72,7 @@ int32_t      graph_vcount             (graph_t *);
 int32_t      graph_ecount             (graph_t *);
 
 int32_t      graph_bfs                (graph_t *, void *);
-int32_t      graph_dijkstra           (graph_t *, void *);
+int32_t      graph_dijkstra           (graph_t *, void *, adj_list_t *);
 int32_t      graph_mst_prism          (graph_t *, void *);
 
 void         graph_print_vertexes     (graph_t *);

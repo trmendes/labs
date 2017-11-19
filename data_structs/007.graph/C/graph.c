@@ -297,6 +297,7 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
 
     while ((reset = list_lookup_next(graph->vertexs, reset)) != NULL) {
 	reset->info.parent = NULL;
+	reset->info.status = GRAPH_VERTEX_NVISITED;
 
 	if (reset == vertex)
 	    reset->info.distance = 0;
@@ -307,16 +308,19 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
     }
 
     while ((vertex = hp_extract(hmst)) != NULL) {
+	vertex->info.status = GRAPH_VERTEX_VISTED;
 	if (vertex->info.distance != GRAPH_INFINIT) {
 	    edge = NULL;
 	    while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
-		new_distance = edge->vertex->info.distance + edge->cost;
-		if (edge->incident->info.distance > new_distance) {
-		    hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
-		    edge->incident->info.parent = edge->vertex;
-		    graph_print_edge(edge);
-		    printf("\n");
-		}
+		if (edge->incident->info.status == GRAPH_VERTEX_NVISITED) {
+		    new_distance = edge->cost;
+		    if (edge->incident->info.distance > new_distance) {
+			hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
+			edge->incident->info.parent = edge->vertex;
+			graph_print_edge(edge);
+			printf("\n");
+		    }
+		}	
 	    }
 	}
     }
@@ -326,9 +330,15 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
     return GRAPH_SUCCESS;
 }
 
-int32_t graph_dijkstra(graph_t * graph, void * start_point) {
+int32_t graph_dijkstra(graph_t * graph, void * start_point, adj_list_t * shortest_path) {
     if ((graph == NULL) || (start_point == NULL))
 	return GRAPH_ARGS_NULL;
+
+    if (shortest_path == NULL)
+	shortest_path = list_init(graph_compare_edge, graph_print_edge);
+
+    if (shortest_path == NULL)
+	return GRAPH_FAIL_MALLOC;
 
     printf("\n---> Running Dijkstra <---\n");
 
@@ -375,12 +385,13 @@ int32_t graph_dijkstra(graph_t * graph, void * start_point) {
 		if (new_distance < edge->incident->info.distance) {
 		    hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
 		    edge->incident->info.parent = edge->vertex;
+		    list_ins_next(shortest_path, NULL, edge);
 		}
 	    }
 	}
     }
 
-    graph_print_vertexes(graph);
+    list_print_elements(shortest_path);
     //hp_destroy(hmst, NULL);
 
     return GRAPH_SUCCESS;
