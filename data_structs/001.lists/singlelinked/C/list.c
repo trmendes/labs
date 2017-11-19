@@ -131,12 +131,15 @@ int8_t list_ins_next(list_t *list, const void *element, const void *data) {
     new_element->data = (void *) data;
 
     /* if element == NULL it means we want to insert the new element
-     * at the beginning of our list */
+     * at the tail of our list */
     if (element == NULL) {
-	if (list->size == 0)
+	if (list->size == 0) {
 	    list->tail = new_element;
-	new_element->next = list->head;
-	list->head = new_element;
+	    list->head = new_element;
+	} else{
+	    list->tail->next = new_element;
+	    list->tail = new_element;
+	}
 	++list->size;
     } else {
 	/* double check if element lives inside of our list */
