@@ -1,8 +1,9 @@
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
 #include <errno.h>
+#include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "list.h"
 
 /* Private Prototypes */
@@ -35,12 +36,12 @@ void list_destroy(list_t **list, destroy_ft destroy) {
 	return;
     }
 
-    lst_element_t *element = (lst_element_t *) (*list)->head;
+    lst_element_t *element = (*list)->head;
     lst_element_t *prev_element = NULL;
 
     while (element != NULL) {
 	if (destroy != NULL)
-	    destroy((void **) &(element->data));
+	    destroy(&(element->data));
 	prev_element = element;
 	element = element->next;
 
