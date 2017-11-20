@@ -1,8 +1,8 @@
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
 #include <errno.h>
+#include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "queue.h"
 
@@ -22,12 +22,12 @@ void queue_destroy(queue_t **queue, destroy_ft destroy) {
 	return;
     }
 
-    que_element_t *element = (que_element_t *) (*queue)->head;
+    que_element_t *element = (*queue)->head;
     que_element_t *prev_element = NULL;
 
     while (element != NULL) {
 	if (destroy != NULL)
-	    destroy((void **) &(element->data));
+	    destroy(&(element->data));
 	prev_element = element;
 	element = element->next;
 
