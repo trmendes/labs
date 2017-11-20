@@ -87,7 +87,7 @@ int32_t main() {
     return EXIT_SUCCESS;
 }
 
-int32_t main_compare(const void * const key1, const void * const key2) {
+int32_t main_compare(void * key1, void * key2) {
     data_t * a = (data_t *)key1;
     data_t * b = (data_t *)key2;
     return a->key - b->key;
@@ -101,7 +101,7 @@ void main_destroy(void **data) {
     *data = NULL;
 }
 
-void main_print(const void * const data) {
+void main_print(void * data) {
     data_t * tmp = (data_t *) data;
     printf("%c ", tmp->key);
 }

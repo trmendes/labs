@@ -7,8 +7,8 @@ typedef struct data_s {
     char key;
 } data_t;
 
-int32_t   main_compare (const void * const key1, const void * const key2);
+int32_t   main_compare (void * key1, void * key2);
 void      main_destroy (void **data);
-void      main_print   (const void * const data);
+void      main_print   (void * data);
 
 #endif

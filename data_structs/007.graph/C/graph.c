@@ -1,27 +1,27 @@
+#include <errno.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
-#include <stdio.h>
 
-#include "main.h"
-#include "list.h"
-#include "queue.h"
-#include "heap.h"
 #include "graph.h"
+#include "heap.h"
+#include "list.h"
+#include "main.h"
+#include "queue.h"
 
 /* Private prototypes */
-void    graph_destroy_vertex          (void **);
-int32_t graph_compare_vertex          (const void * const data_a, const void * const data_b);
-void    graph_print_vertex            (const void * const data);
+void    graph_destroy_vertex          (void ** data);
+int32_t graph_compare_vertex          (void * data_a, void * data_b);
+void    graph_print_vertex            (void * data);
 
 int32_t graph_update_vertex_distance  (void * to_update, void * new_data);
-int32_t graph_compare_vertex_distance (const void * const data_a, const void * const data_b);
-void    graph_print_vertex_distance   (const void * const data);
+int32_t graph_compare_vertex_distance (void * data_a, void * data_b);
+void    graph_print_vertex_distance   (void * data);
 
-void    graph_destroy_edge            (void **);
-int32_t graph_compare_edge            (const void * const data_a, const void * const data_b);
-void    graph_print_edge              (const void * const data);
+void    graph_destroy_edge            (void ** data);
+int32_t graph_compare_edge            (void * data_a, void * data_b);
+void    graph_print_edge              (void * data);
 
 graph_t * graph_init(print_ft print) {
     graph_t * graph = calloc(1, sizeof(*graph));
@@ -65,13 +65,13 @@ void graph_destroy(graph_t ** graph) {
     *graph = NULL;
 }
 
-int8_t graph_ins_vert(graph_t * graph, const void * data) {
+int8_t graph_ins_vert(graph_t * graph, void * data) {
     if ((graph == NULL) || (data == NULL))
         return GRAPH_ARGS_NULL;
 
     int8_t retval;
     graph_vertex_t * new_vertex = calloc(1, sizeof(*new_vertex));
-    new_vertex->v = (void *) data;
+    new_vertex->v = data;
 
     /* We do not allow repeated elements */
     if (list_lookup(graph->vertexs, new_vertex) != NULL) {
@@ -109,7 +109,8 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
     return GRAPH_SUCCESS;
 }
 
-int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b, int32_t cost, int8_t dual) {
+int8_t graph_ins_edge(graph_t * graph, void * data_a, void *
+        data_b, int32_t cost, int8_t dual) {
     if ((graph == NULL) || (data_a == NULL) || (data_b == NULL))
         return GRAPH_ARGS_NULL;
 
@@ -123,7 +124,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
         edge_b = calloc(1, sizeof(*edge_b));
 
     element_tmp = calloc(1, sizeof(*element_tmp));
-    element_tmp->v = (void *) data_a;
+    element_tmp->v = data_a;
 
     element_a = list_lookup(graph->vertexs, element_tmp) ;
 
@@ -141,7 +142,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
         return GRAPH_VERTEX_NOT_FOUND;
     }
 
-    element_tmp->v = (void *) data_b;
+    element_tmp->v = data_b;
 
     element_b = list_lookup(graph->vertexs, element_tmp);
 
@@ -181,17 +182,10 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
     graph_print_vertex(element_b);
     printf("| cost %d\n", edge_a->cost);
 
-
     ++graph->ecnt;
 
     return GRAPH_SUCCESS;
 }
-
-int8_t       graph_rem_vert (graph_t *, void **);
-int8_t       graph_rem_edge (graph_t *, const void *, const void *);
-
-int32_t      graph_vcount   (graph_t *);
-int32_t      graph_ecount   (graph_t *);
 
 int32_t graph_bfs(graph_t * graph, void * start_point) {
     if ((graph == NULL) || (start_point == NULL))
@@ -290,7 +284,8 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
     if (vertex == NULL)
         return GRAPH_VERTEX_NOT_FOUND;
 
-    heap_t * hmst = hp_init(graph->vcnt, graph_compare_vertex_distance, graph_print_vertex_distance);
+    heap_t * hmst = hp_init(graph->vcnt, graph_compare_vertex_distance,
+            graph_print_vertex_distance);
 
     if (hmst == NULL)
         return GRAPH_FAIL_MALLOC;
@@ -315,7 +310,8 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
                 if (edge->incident->info.status == GRAPH_VERTEX_NVISITED) {
                     new_distance = edge->cost;
                     if (edge->incident->info.distance > new_distance) {
-                        hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
+                        hp_update(hmst, edge->incident, &new_distance,
+                                graph_update_vertex_distance);
                         edge->incident->info.parent = edge->vertex;
                         graph_print_edge(edge);
                         printf("\n");
@@ -330,12 +326,11 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
     return GRAPH_SUCCESS;
 }
 
-int32_t graph_dijkstra(graph_t * graph, void * start_point, adj_list_t * shortest_path) {
+int32_t graph_dijkstra(graph_t * graph, void * start_point) {
     if ((graph == NULL) || (start_point == NULL))
         return GRAPH_ARGS_NULL;
 
-    if (shortest_path == NULL)
-        shortest_path = list_init(graph_compare_edge, graph_print_edge);
+    list_t * shortest_path = list_init(graph_compare_edge, graph_print_edge);
 
     if (shortest_path == NULL)
         return GRAPH_FAIL_MALLOC;
@@ -361,13 +356,15 @@ int32_t graph_dijkstra(graph_t * graph, void * start_point, adj_list_t * shortes
     if (vertex == NULL)
         return GRAPH_VERTEX_NOT_FOUND;
 
-    heap_t * hmst = hp_init(graph->vcnt, graph_compare_vertex_distance, graph_print_vertex_distance);
+    heap_t * hmst = hp_init(graph->vcnt, graph_compare_vertex_distance,
+            graph_print_vertex_distance);
 
     if (hmst == NULL)
         return GRAPH_FAIL_MALLOC;
 
     while ((reset = list_lookup_next(graph->vertexs, reset)) != NULL) {
         reset->info.parent = NULL;
+        reset->info.status = GRAPH_VERTEX_NVISITED;
 
         if (reset == vertex)
             reset->info.distance = 0;
@@ -378,14 +375,18 @@ int32_t graph_dijkstra(graph_t * graph, void * start_point, adj_list_t * shortes
     }
 
     while ((vertex = hp_extract(hmst)) != NULL) {
+        vertex->info.status = GRAPH_VERTEX_VISTED;
         if (vertex->info.distance != GRAPH_INFINIT) {
             edge = NULL;
             while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
-                new_distance = vertex->info.distance + edge->cost;
-                if (new_distance < edge->incident->info.distance) {
-                    hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
-                    edge->incident->info.parent = edge->vertex;
-                    list_ins_next(shortest_path, NULL, edge);
+                if (edge->incident->info.status == GRAPH_VERTEX_NVISITED) {
+                    new_distance = vertex->info.distance + edge->cost;
+                    if (new_distance < edge->incident->info.distance) {
+                        hp_update(hmst, edge->incident, &new_distance,
+                                graph_update_vertex_distance);
+                        edge->incident->info.parent = edge->vertex;
+                        list_ins_next(shortest_path, NULL, edge);
+                    }
                 }
             }
         }
@@ -407,7 +408,7 @@ void graph_destroy_vertex(void ** data) {
     *data = NULL;
 }
 
-int32_t graph_compare_vertex(const void * const data_a, const void * const data_b) {
+int32_t graph_compare_vertex(void * data_a, void * data_b) {
     //FIXME: I don't know which approach would be the best one
     // to have access to the data from the first layer (main)
     graph_vertex_t * vertex_a = (graph_vertex_t *) data_a;
@@ -415,7 +416,7 @@ int32_t graph_compare_vertex(const void * const data_a, const void * const data_
     return main_compare(vertex_a->v, vertex_b->v);
 }
 
-void graph_print_vertex(const void * const data) {
+void graph_print_vertex(void * data) {
     //FIXME: I don't know which approach would be the best one
     // to have access to the data from the first layer (main)
     graph_vertex_t * vertex = (graph_vertex_t *) data;
@@ -430,13 +431,13 @@ int32_t graph_update_vertex_distance(void * to_update, void * new_data) {
     return GRAPH_SUCCESS;
 }
 
-int32_t graph_compare_vertex_distance(const void * const data_a, const void * const data_b) {
+int32_t graph_compare_vertex_distance(void * data_a, void * data_b) {
     graph_vertex_t * vertex_a = (graph_vertex_t *) data_a;
     graph_vertex_t * vertex_b = (graph_vertex_t *) data_b;
     return vertex_b->info.distance - vertex_a->info.distance;
 }
 
-void graph_print_vertex_distance(const void * const data) {
+void graph_print_vertex_distance(void * data) {
     //FIXME: I don't know which approach would be the best one
     // to have access to the data from the first layer (main)
     graph_vertex_t * vertex = (graph_vertex_t *) data;
@@ -451,11 +452,11 @@ void graph_destroy_edge(void ** data) {
     *data = NULL;
 }
 
-int32_t graph_compare_edge(const void * const data_a, const void * const data_b) {
+int32_t graph_compare_edge(void * data_a, void * data_b) {
     return data_a - data_b;
 }
 
-void graph_print_edge(const void * const data) {
+void graph_print_edge(void * data) {
     graph_edge_t * edge = (graph_edge_t *) data;
     printf("| ");
     graph_print_vertex(edge->vertex);
@@ -477,7 +478,8 @@ void graph_print_vertexes(graph_t * graph) {
     while ((vertex = list_lookup_next(graph->vertexs, vertex)) != NULL) {
         printf("V: ");
         graph_print_vertex(vertex);
-        printf(" - Degree: %d | Distance %d\n", vertex->info.degree, vertex->info.distance);
+        printf(" - Degree: %d | Distance %d\n", vertex->info.degree,
+                vertex->info.distance);
         while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
             graph_print_edge(edge);
         }
