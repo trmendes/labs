@@ -1,10 +1,10 @@
 #include <stdint.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
-#include "main.h"
 #include "heap.h"
+#include "main.h"
 
 int32_t main() {
     heap_t * heap = hp_init(17, compare, print);
