@@ -6,9 +6,9 @@
 
 #include "heap.h"
 
-#define HEAP_PARENT(X) ( ( X - 1 ) >> 1 )
-#define HEAP_LEFT(X)   ( ( X << 1 ) + 1 )
-#define HEAP_RIGHT(X)  ( ( X << 1 ) + 2 )
+#define HEAP_PARENT(X) ( ( (X) - 1 ) >> 1 )
+#define HEAP_LEFT(X)   ( ( (X) << 1 ) + 1 )
+#define HEAP_RIGHT(X)  ( ( (X) << 1 ) + 2 )
 
 void hp_heapfy_down (heap_t * heap, int32_t start);
 void hp_heapfy_up   (heap_t * heap, int32_t start);

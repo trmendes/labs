@@ -47,7 +47,7 @@ int32_t main() {
 
     dlist_print_elements(list);
 
-    dlist_rem_prev(list, NULL, (const void **) &remove);
+    dlist_rem_prev(list, NULL, (void **) &remove);
     if (remove != NULL) {
         printf("Removed: %d\n", remove->key);
         free(remove);
@@ -57,7 +57,7 @@ int32_t main() {
     dlist_print_elements(list);
 
     dataprev->key = 4;
-    dlist_rem_prev(list, dataprev, (const void **) &remove);
+    dlist_rem_prev(list, dataprev, (void **) &remove);
     if (remove != NULL) {
         printf("Removed: %d\n", remove->key);
         free(remove);
@@ -67,7 +67,7 @@ int32_t main() {
     dlist_print_elements(list);
 
     dataprev->key = 1;
-    dlist_rem_prev(list, dataprev, (const void **) &remove);
+    dlist_rem_prev(list, dataprev, (void **) &remove);
     if (remove != NULL) {
         printf("Removed: %d\n", remove->key);
         free(remove);
@@ -82,7 +82,7 @@ int32_t main() {
     return EXIT_SUCCESS;
 }
 
-int32_t compare(const void * const key1, const void * const key2) {
+int32_t compare(void * key1, void * key2) {
     data_t * a = (data_t *)key1;
     data_t * b = (data_t *)key2;
 
@@ -97,7 +97,7 @@ void destroy(void **data) {
     *data = NULL;
 }
 
-void print(const void * const data) {
+void print(void * data) {
     data_t * tmp = (data_t *) data;
     printf("%d ", tmp->key);
 }

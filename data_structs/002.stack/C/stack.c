@@ -48,7 +48,7 @@ void stack_destroy(stack_t **stack) {
     errno = STK_SUCCESS;
 }
 
-int8_t stack_push(stack_t *stack, const void *data) {
+int8_t stack_push(stack_t *stack, void *data) {
     if (stack == NULL)
         return STK_NULL;
 

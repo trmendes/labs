@@ -8,8 +8,8 @@ typedef struct data_s {
 } data_t;
 
 int32_t   update  (void * data_a, void * data_b);
-int32_t   compare (const void * const key1, const void * const key2);
+int32_t   compare (void * key1, void * key2);
 void      destroy (void **data);
-void      print   (const void * const data);
+void      print   (void * data);
 
 #endif

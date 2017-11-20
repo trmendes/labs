@@ -8,6 +8,6 @@ typedef struct data_s {
 } data_t;
 
 void      destroy (void **data);
-void      print   (const void * const data);
+void      print   (void * data);
 
 #endif

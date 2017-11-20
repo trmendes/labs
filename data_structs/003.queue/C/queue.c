@@ -40,7 +40,7 @@ void queue_destroy(queue_t **queue, destroy_ft destroy) {
     *queue = NULL;
 }
 
-int8_t queue_add(queue_t *queue, const void *data) {
+int8_t queue_add(queue_t *queue, void *data) {
     if (queue == NULL)
         return QUEUE_NULL;
 
@@ -49,7 +49,7 @@ int8_t queue_add(queue_t *queue, const void *data) {
     if (new_element == NULL)
         return QUEUE_FAIL_MALLOC;
 
-    new_element->data = (void *) data;
+    new_element->data = data;
 
     if (queue->head == NULL) {
         queue->tail = new_element;

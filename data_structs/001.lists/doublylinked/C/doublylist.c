@@ -54,7 +54,7 @@ void dlist_destroy(list_t **list) {
     errno = LST_SUCCESS;
 }
 
-lst_element_t * dlist_find_element(list_t *list, const void *data) {
+lst_element_t * dlist_find_element(list_t *list, void *data) {
     if (list == NULL) {
         errno = ERR_LST_NULL;
         return NULL;
@@ -76,7 +76,7 @@ lst_element_t * dlist_find_element(list_t *list, const void *data) {
     return NULL;
 }
 
-int8_t dlist_ins_next(list_t *list, const void *element, const void *data) {
+int8_t dlist_ins_next(list_t *list, void *element, void *data) {
     if (list == NULL)
         return ERR_LST_NULL;
 
@@ -86,7 +86,7 @@ int8_t dlist_ins_next(list_t *list, const void *element, const void *data) {
     if (new_element == NULL)
         return ERR_LST_MALLOC;
 
-    new_element->data = (void *) data;
+    new_element->data = data;
 
     /* if element == NULL it means we want to insert the new element
      * at the beginning of our list */
@@ -124,7 +124,7 @@ int8_t dlist_ins_next(list_t *list, const void *element, const void *data) {
     return LST_SUCCESS;
 }
 
-int8_t dlist_ins_prev(list_t *list, const void *element, const void *data) {
+int8_t dlist_ins_prev(list_t *list, void *element, void *data) {
     if (list == NULL)
         return ERR_LST_NULL;
 
@@ -134,7 +134,7 @@ int8_t dlist_ins_prev(list_t *list, const void *element, const void *data) {
     if (new_element == NULL)
         return ERR_LST_MALLOC;
 
-    new_element->data = (void *) data;
+    new_element->data = data;
 
     /* if element == NULL it means we want to insert the new element
      * at the beginning of our list */
@@ -175,7 +175,7 @@ int8_t dlist_ins_prev(list_t *list, const void *element, const void *data) {
     return LST_SUCCESS;
 }
 
-int8_t dlist_rem_next(list_t *list, const void * element, const void **data) {
+int8_t dlist_rem_next(list_t *list, void * element, void **data) {
     if (list == NULL)
         return ERR_LST_NULL;
     if (list->size == 0)
@@ -226,7 +226,7 @@ int8_t dlist_rem_next(list_t *list, const void * element, const void **data) {
     return LST_SUCCESS;
 }
 
-int8_t dlist_rem_prev(list_t *list, const void * element, const void **data) {
+int8_t dlist_rem_prev(list_t *list, void * element, void **data) {
     if (list == NULL)
         return ERR_LST_NULL;
     if (list->size == 0)

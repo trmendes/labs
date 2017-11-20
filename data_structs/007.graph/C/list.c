@@ -7,7 +7,7 @@
 #include "list.h"
 
 /* Private Prototypes */
-lst_element_t * list_find_element(list_t *list, const void *data);
+lst_element_t * list_find_element(list_t *list, void *data);
 
 list_t * list_init(compare_ft compare, print_ft print) {
 
@@ -56,7 +56,7 @@ void list_destroy(list_t **list, destroy_ft destroy) {
     errno = LST_SUCCESS;
 }
 
-void * list_lookup(list_t *list, const void *data) {
+void * list_lookup(list_t *list, void *data) {
     if (list == NULL) {
         errno = ERR_LST_NULL;
         return NULL;
@@ -74,7 +74,7 @@ void * list_lookup(list_t *list, const void *data) {
     return element->data;
 }
 
-void *list_lookup_next(list_t *list, const void *data) {
+void *list_lookup_next(list_t *list, void *data) {
     if (list == NULL) {
         errno = ERR_LST_NULL;
         return NULL;
@@ -97,7 +97,7 @@ void *list_lookup_next(list_t *list, const void *data) {
     return retdata;
 }
 
-lst_element_t * list_find_element(list_t *list, const void *data) {
+lst_element_t * list_find_element(list_t *list, void *data) {
     if (list == NULL) {
         errno = ERR_LST_NULL;
         return NULL;
@@ -119,7 +119,7 @@ lst_element_t * list_find_element(list_t *list, const void *data) {
     return NULL;
 }
 
-int8_t list_ins_next(list_t *list, const void *element, const void *data) {
+int8_t list_ins_next(list_t *list, void *element, void *data) {
     if (list == NULL)
         return ERR_LST_NULL;
 
@@ -164,7 +164,7 @@ int8_t list_ins_next(list_t *list, const void *element, const void *data) {
     return LST_SUCCESS;
 }
 
-int8_t list_ins_in_order(list_t *list, const void *data) {
+int8_t list_ins_in_order(list_t *list, void *data) {
     if (list == NULL)
         return ERR_LST_NULL;
 
@@ -214,7 +214,7 @@ int8_t list_ins_in_order(list_t *list, const void *data) {
     return LST_SUCCESS;
 }
 
-int8_t list_rem_next(list_t *list, const void * element, const void **data) {
+int8_t list_rem_next(list_t *list, void * element, void **data) {
     if (list == NULL)
         return ERR_LST_NULL;
     if (list->size == 0)

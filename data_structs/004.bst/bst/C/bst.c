@@ -9,13 +9,15 @@
 /* Private prototypes */
 
 void         bst_destroy_leaf      (bst_leaf_t * leaf, bst_tree_t * tree);
-void         bst_remove_swap       (bst_leaf_t **r, bst_leaf_t * u, bst_leaf_t * v);
+void         bst_remove_swap       (bst_leaf_t **r, bst_leaf_t * u, bst_leaf_t
+		* v);
 void       * bst_find_data_leaf    (bst_tree_t * tree, void *data);
 bst_leaf_t * bst_find_max_leaf     (bst_leaf_t * leaf);
 bst_leaf_t * bst_find_min_leaf     (bst_leaf_t * leaf);
 bst_leaf_t * bst_find_pre_leaf     (bst_tree_t * tree, void *data);
 bst_leaf_t * bst_find_suc_leaf     (bst_tree_t * tree, void *data);
-void         bst_print_tree_leaf   (bst_leaf_t * leaf, const bst_transversal_e type, bst_tree_t const * tree);
+void         bst_print_tree_leaf   (bst_leaf_t * leaf, bst_transversal_e type,
+		bst_tree_t * tree);
 
 bst_tree_t * bst_init(compare_ft compare, destroy_ft destroy, print_ft print) {
     if (compare == NULL) {
@@ -318,7 +320,7 @@ bst_leaf_t * bst_find_suc_leaf(bst_tree_t *tree, void *data) {
     return potential_suc;
 }
 
-void bst_print_tree(bst_tree_t const * const tree, const bst_transversal_e type) {
+void bst_print_tree(bst_tree_t * tree, bst_transversal_e type) {
     if (tree == NULL) {
         errno = BST_NULL;
         return;
@@ -331,7 +333,8 @@ void bst_print_tree(bst_tree_t const * const tree, const bst_transversal_e type)
     errno = BST_SUCCESS;
 }
 
-void bst_print_tree_leaf(bst_leaf_t * leaf, const bst_transversal_e type, bst_tree_t const * tree) {
+void bst_print_tree_leaf(bst_leaf_t * leaf, bst_transversal_e type, bst_tree_t
+		* tree) {
     if (leaf == NULL)
         return;
 

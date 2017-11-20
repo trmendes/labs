@@ -65,7 +65,7 @@ void destroy(void **data) {
     *data = NULL;
 }
 
-void print(const void * const data) {
+void print(void * data) {
     data_t * tmp = (data_t *) data;
     printf("%d ", tmp->key);
 }

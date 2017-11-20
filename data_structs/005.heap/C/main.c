@@ -91,7 +91,7 @@ int32_t update(void * data_a, void * data_b) {
     to_update->key = *newvalue;
     return HEAP_SUCCESS;
 }
-int32_t compare(const void * const key1, const void * const key2) {
+int32_t compare(void * key1, void * key2) {
     data_t * a = (data_t *)key1;
     data_t * b = (data_t *)key2;
     //printf("Compare: %d %d: %d\n", a->key, b->key, (a->key - b->key));
@@ -106,7 +106,7 @@ void destroy(void **data) {
     *data = NULL;
 }
 
-void print(const void * const data) {
+void print(void * data) {
     data_t * tmp = (data_t *) data;
     printf("%d ", tmp->key);
 }

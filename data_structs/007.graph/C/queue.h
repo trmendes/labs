@@ -4,15 +4,15 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define QUEUE_FUNCTION_NULL    -5
-#define QUEUE_EMPTY            -4
-#define QUEUE_FAIL_MALLOC      -3
-#define QUEUE_NULL             -2
-#define QUEUE_ARGS_FAIL        -1
-#define QUEUE_SUCCESS           0
+#define QUEUE_FUNCTION_NULL    (-5)
+#define QUEUE_EMPTY            (-4)
+#define QUEUE_FAIL_MALLOC      (-3)
+#define QUEUE_NULL             (-2)
+#define QUEUE_ARGS_FAIL        (-1)
+#define QUEUE_SUCCESS          (0)
 
 typedef void (*destroy_ft) (void **data);
-typedef void (*print_ft)   (const void * const data);
+typedef void (*print_ft)   (void * data);
 
  typedef struct que_element_s {
     void                 *data;
@@ -27,7 +27,7 @@ typedef struct queue_s {
 
 queue_t * queue_init           ();
 void      queue_destroy        (queue_t **queue, destroy_ft destroy);
-int8_t    queue_add            (queue_t *queue, const void *data);
+int8_t    queue_add            (queue_t *queue, void *data);
 void *    queue_get            (queue_t *queue);
 void      queue_print_elements (queue_t *queue, print_ft print);
 
