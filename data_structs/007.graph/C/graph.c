@@ -9,6 +9,7 @@
 #include "list.h"
 #include "main.h"
 #include "queue.h"
+#include "stack.h"
 
 /* Private prototypes */
 void    graph_destroy_vertex          (void ** data);
@@ -187,7 +188,7 @@ int8_t graph_ins_edge(graph_t * graph, void * data_a, void *
     return GRAPH_SUCCESS;
 }
 
-int32_t graph_bfs(graph_t * graph, void * start_point) {
+int8_t graph_bfs(graph_t * graph, void * start_point) {
     if ((graph == NULL) || (start_point == NULL))
         return GRAPH_ARGS_NULL;
 
@@ -259,7 +260,7 @@ int32_t graph_bfs(graph_t * graph, void * start_point) {
     return longestpath;
 }
 
-int32_t graph_mst_prism(graph_t * graph, void * start_point) {
+int8_t graph_mst_prism(graph_t * graph, void * start_point) {
     if ((graph == NULL) || (start_point == NULL))
         return GRAPH_ARGS_NULL;
 
@@ -326,25 +327,36 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
     return GRAPH_SUCCESS;
 }
 
-int32_t graph_dijkstra(graph_t * graph, void * start_point) {
+int8_t graph_dijkstra(graph_t * graph, void * start_point) {
     if ((graph == NULL) || (start_point == NULL))
         return GRAPH_ARGS_NULL;
-
-    list_t * shortest_path = list_init(graph_compare_edge, graph_print_edge);
-
-    if (shortest_path == NULL)
-        return GRAPH_FAIL_MALLOC;
 
     printf("\n---> Running Dijkstra <---\n");
 
     graph_vertex_t * reset  = NULL;
-    graph_vertex_t * vertex_tmp = calloc(1, sizeof(*vertex_tmp));
+    graph_vertex_t * vertex_tmp = NULL;
     graph_vertex_t * vertex = NULL;
     graph_edge_t   * edge = NULL;
+    graph_vertex_t ** prev = NULL;
+    stack_t * shortest_path = NULL;
     int32_t new_distance;
+    int32_t idx = 0;
+    int32_t dist[graph->vcnt];
+
+    vertex_tmp = calloc(1, sizeof(*vertex_tmp));
 
     if (vertex_tmp == NULL)
         return GRAPH_FAIL_MALLOC;
+
+    prev = calloc(graph->ecnt, sizeof(*prev));
+
+    if (prev == NULL) {
+        memset(vertex_tmp, 0x00, sizeof(*vertex_tmp));
+        free(vertex_tmp);
+        return GRAPH_FAIL_MALLOC;
+    }
+
+    shortest_path = stack_init(NULL);
 
     vertex_tmp->v = start_point;
 
@@ -353,46 +365,70 @@ int32_t graph_dijkstra(graph_t * graph, void * start_point) {
     memset(vertex_tmp, 0x00, sizeof(*vertex_tmp));
     free(vertex_tmp);
 
-    if (vertex == NULL)
+    if (vertex == NULL) {
+        free(prev);
         return GRAPH_VERTEX_NOT_FOUND;
+    }
 
     heap_t * hmst = hp_init(graph->vcnt, graph_compare_vertex_distance,
             graph_print_vertex_distance);
 
-    if (hmst == NULL)
+    if (hmst == NULL) {
+        free(prev);
         return GRAPH_FAIL_MALLOC;
+    }
 
+    idx = 0;
     while ((reset = list_lookup_next(graph->vertexs, reset)) != NULL) {
         reset->info.parent = NULL;
         reset->info.status = GRAPH_VERTEX_NVISITED;
 
-        if (reset == vertex)
+        if (reset == vertex) {
             reset->info.distance = 0;
-        else
+            dist[idx] = 0;
+        } else {
             reset->info.distance = GRAPH_INFINIT;
+            dist[idx] = GRAPH_INFINIT;
+        }
+
+        ++idx;
 
         hp_insert(hmst, reset);
     }
 
+    idx = 0;
     while ((vertex = hp_extract(hmst)) != NULL) {
-        vertex->info.status = GRAPH_VERTEX_VISTED;
         if (vertex->info.distance != GRAPH_INFINIT) {
             edge = NULL;
             while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
-                if (edge->incident->info.status == GRAPH_VERTEX_NVISITED) {
-                    new_distance = vertex->info.distance + edge->cost;
-                    if (new_distance < edge->incident->info.distance) {
-                        hp_update(hmst, edge->incident, &new_distance,
-                                graph_update_vertex_distance);
-                        edge->incident->info.parent = edge->vertex;
-                        list_ins_next(shortest_path, NULL, edge);
-                    }
+                new_distance = vertex->info.distance + edge->cost;
+                if (new_distance < edge->incident->info.distance) {
+                    hp_update(hmst, edge->incident, &new_distance,
+                            graph_update_vertex_distance);
+                    edge->incident->info.parent = edge->vertex;
+                    prev[idx] = vertex;
+                    dist[idx] = new_distance;
+                    ++idx;
                 }
             }
         }
     }
 
-    list_print_elements(shortest_path);
+    idx = 0;
+    while (prev[idx] != NULL) {
+        stack_push(shortest_path, prev[idx]);
+        graph_print_vertex(prev[idx]);
+        printf(" | %d \n", dist[idx]);
+
+        ++idx;
+    }
+
+    free(prev);
+
+    while((vertex = stack_pop(shortest_path)) != NULL) {
+            }
+
+    //stack_destroy(&shortest_path, NULL);
     //hp_destroy(hmst, NULL);
 
     return GRAPH_SUCCESS;

@@ -21,8 +21,6 @@
 
 #define GRAPH_INFINIT INT_MAX
 
-typedef list_t adj_list_t;
-
 typedef int32_t (*compare_ft) (void * data_a, void * data_b);
 typedef void    (*destroy_ft) (void ** data);
 typedef void    (*print_ft)   (void * data);
@@ -72,9 +70,9 @@ int8_t       graph_rem_edge           (graph_t *, void *, void *);
 int32_t      graph_vcount             (graph_t *);
 int32_t      graph_ecount             (graph_t *);
 
-int32_t      graph_bfs                (graph_t *, void *);
-int32_t      graph_dijkstra           (graph_t *, void *);
-int32_t      graph_mst_prism          (graph_t *, void *);
+int8_t       graph_bfs                (graph_t *, void *);
+int8_t       graph_dijkstra           (graph_t *, void *);
+int8_t       graph_mst_prism          (graph_t *, void *);
 
 void         graph_print_vertexes     (graph_t *);
 #endif
