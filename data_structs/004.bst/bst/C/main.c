@@ -1,10 +1,10 @@
 #include <stdint.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
-#include "main.h"
 #include "bst.h"
+#include "main.h"
 
 int32_t main() {
     bst_tree_t * tree = bst_init(compare, destroy, print);
@@ -121,28 +121,28 @@ int32_t main() {
 }
 
 int32_t compare(const void * const key1, const void * const key2) {
-    data_t * a = (data_t *)key1;
-    data_t * b = (data_t *)key2;
-    if (a->key == b->key)
-	return 0;
-    if (a->key < b->key)
-	return -1;
-    if (a->key > b->key)
-	return 1;
+	data_t * a = (data_t *)key1;
+	data_t * b = (data_t *)key2;
+	if (a->key == b->key)
+		return 0;
+	if (a->key < b->key)
+		return -1;
+	if (a->key > b->key)
+		return 1;
 
-    return 0;
+	return 0;
 }
 
 void destroy(void **data) {
-    data_t *tmp = (data_t *) *data;
-    printf("Removed: %d [destroy]\n", tmp->key);
-    memset(tmp, 0x00, sizeof(*tmp));
-    free(tmp);
-    *data = NULL;
+	data_t *tmp = (data_t *) *data;
+	printf("Removed: %d [destroy]\n", tmp->key);
+	memset(tmp, 0x00, sizeof(*tmp));
+	free(tmp);
+	*data = NULL;
 }
 
 void print(const void * const data) {
-    data_t * tmp = (data_t *) data;
-    printf("%d ", tmp->key);
+	data_t * tmp = (data_t *) data;
+	printf("%d ", tmp->key);
 }
 
