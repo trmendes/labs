@@ -64,7 +64,7 @@ void hp_destroy(heap_t * heap, destroy_ft destroy) {
     free(heap);
 }
 
-int32_t hp_insert(heap_t * heap, void * data) {
+int8_t hp_insert(heap_t * heap, void * data) {
     if ((heap == NULL) || (data == NULL))
         return HEAP_ERR_NULL_PARS;
 
@@ -128,7 +128,7 @@ void * hp_extract(heap_t * heap) {
     return data;
 }
 
-int32_t hp_update(heap_t * heap, void * data, void * new_data, update_ft update) {
+int8_t hp_update(heap_t * heap, void * data, void * new_data, update_ft update) {
     if ((heap == NULL) || (data == NULL) || (new_data == NULL) || (update == NULL))
         return HEAP_ERR_NULL_PARS;
 

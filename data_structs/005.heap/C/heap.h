@@ -30,10 +30,10 @@ typedef struct heap_s {
 
 heap_t * hp_init    (size_t heap_size, compare_ft compare, print_ft print);
 void     hp_destroy (heap_t * heap, destroy_ft destroy);
-int32_t  hp_insert  (heap_t * heap, void * data);
+int8_t   hp_insert  (heap_t * heap, void * data);
 void   * hp_lookup  (heap_t * heap);
 void   * hp_extract (heap_t * heap);
-int32_t  hp_update  (heap_t * heap, void * data, void * new_data, update_ft
+int8_t   hp_update  (heap_t * heap, void * data, void * new_data, update_ft
 		update);
 void     hp_print   (heap_t * heap);
 
