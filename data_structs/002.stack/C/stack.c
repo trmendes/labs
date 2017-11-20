@@ -1,8 +1,9 @@
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
 #include <errno.h>
+#include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "stack.h"
 
 stack_t * stack_init(destroy_ft destroy, print_ft print) {
@@ -29,11 +30,11 @@ void stack_destroy(stack_t **stack) {
 	return;
     }
 
-    stack_element_t *element = (stack_element_t *) (*stack)->top;
+    stack_element_t *element = (*stack)->top;
     stack_element_t *prev_element = NULL;
 
     while (element != NULL) {
-	(*stack)->destroy((void **) &(element->data));
+	(*stack)->destroy(&(element->data));
 	prev_element = element;
 	element = element->next;
 
