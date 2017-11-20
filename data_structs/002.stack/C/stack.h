@@ -19,15 +19,18 @@ typedef struct stack_element_s {
     struct stack_element_s *next;
 } stack_element_t;
 
+typedef struct stack_api_s {
+    print_ft         print;
+} stack_api_t;
+
 typedef struct stack_s {
     size_t           len;
-    void             (*destroy) (void **data);
-    void             (*print)   (void *data);
-    stack_element_t   *top;
+    stack_api_t      api;
+    stack_element_t *top;
 } stack_t;
 
-stack_t * stack_init            (destroy_ft destroy, print_ft print);
-void      stack_destroy         (stack_t **stack);
+stack_t * stack_init            (print_ft print);
+void      stack_destroy         (stack_t **stack, destroy_ft destroy);
 void    * stack_pop             (stack_t *stack);
 int8_t    stack_push            (stack_t *stack, void *data);
 void      stack_print_elements  (stack_t *stack);

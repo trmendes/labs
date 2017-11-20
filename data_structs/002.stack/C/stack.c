@@ -6,25 +6,19 @@
 
 #include "stack.h"
 
-stack_t * stack_init(destroy_ft destroy, print_ft print) {
-    if (destroy == NULL) {
-        errno = STK_FAIL_ARGS;
-        return NULL;
-    }
-
+stack_t * stack_init(print_ft print) {
     stack_t *stack = calloc(1, sizeof(*stack));
 
     if (stack == NULL)
         return NULL;
 
-    stack->destroy = destroy;
-    stack->print = print;
+    stack->api.print = print;
 
     errno = STK_SUCCESS;
     return stack;
 }
 
-void stack_destroy(stack_t **stack) {
+void stack_destroy(stack_t **stack, destroy_ft destroy) {
     if (*stack == NULL) {
         errno = STK_NULL;
         return;
@@ -34,7 +28,8 @@ void stack_destroy(stack_t **stack) {
     stack_element_t *prev_element = NULL;
 
     while (element != NULL) {
-        (*stack)->destroy(&(element->data));
+		if (destroy != NULL)
+			destroy(&(element->data));
         prev_element = element;
         element = element->next;
 
@@ -57,7 +52,7 @@ int8_t stack_push(stack_t *stack, void *data) {
     if (new_element == NULL)
         return STK_FAIL_MALLOC;
 
-    new_element->data = (void *) data;
+    new_element->data = data;
 
     if (stack->top != NULL) {
         new_element->next = stack->top;
@@ -110,7 +105,7 @@ void stack_print_elements(stack_t *stack) {
         return;
     }
 
-    if (stack->print == NULL) {
+    if (stack->api.print == NULL) {
         errno = STK_FUNCTION_NULL;
         return;
     }
@@ -120,7 +115,7 @@ void stack_print_elements(stack_t *stack) {
     if (stack->len > 0) {
         printf("[ ");
         while (element != NULL) {
-            stack->print(element->data);
+            stack->api.print(element->data);
             element = element->next;
         }
         printf("]\n");

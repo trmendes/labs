@@ -7,7 +7,7 @@
 #include "stack.h"
 
 int32_t main() {
-    stack_t * stack = stack_init(destroy, print);
+    stack_t * stack = stack_init(print);
 
     data_t * data = calloc(1, sizeof(*data));
     data->key = 0;
@@ -52,7 +52,7 @@ int32_t main() {
 
     stack_print_elements(stack);
 
-    stack_destroy(&stack);
+    stack_destroy(&stack, destroy);
 
     return EXIT_SUCCESS;
 }
