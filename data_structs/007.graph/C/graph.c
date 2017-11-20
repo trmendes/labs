@@ -27,8 +27,8 @@ graph_t * graph_init(print_ft print) {
     graph_t * graph = calloc(1, sizeof(*graph));
 
     if (graph == NULL) {
-	errno = GRAPH_FAIL_MALLOC;
-	return NULL;
+        errno = GRAPH_FAIL_MALLOC;
+        return NULL;
     }
 
     graph->vertexs = list_init(graph_compare_vertex, graph_print_vertex);
@@ -36,10 +36,10 @@ graph_t * graph_init(print_ft print) {
     graph->api.print = print;
 
     if (graph->vertexs == NULL) {
-	memset(graph, 0x00, sizeof(*graph));
-	free(graph);
-	errno = GRAPH_FAIL_MALLOC;
-	return NULL;
+        memset(graph, 0x00, sizeof(*graph));
+        free(graph);
+        errno = GRAPH_FAIL_MALLOC;
+        return NULL;
     }
 
     errno = GRAPH_SUCCESS;
@@ -48,14 +48,14 @@ graph_t * graph_init(print_ft print) {
 
 void graph_destroy(graph_t ** graph) {
     if (*graph == NULL) {
-	errno = GRAPH_ARGS_NULL;
-	return;
+        errno = GRAPH_ARGS_NULL;
+        return;
     }
 
     graph_vertex_t * vertex = NULL;
 
     while ((vertex = list_lookup_next((*graph)->vertexs, vertex)) != NULL) {
-	list_destroy(&(vertex->edges), graph_destroy_edge);
+        list_destroy(&(vertex->edges), graph_destroy_edge);
     }
 
     list_destroy(&((*graph)->vertexs), graph_destroy_vertex);
@@ -67,7 +67,7 @@ void graph_destroy(graph_t ** graph) {
 
 int8_t graph_ins_vert(graph_t * graph, const void * data) {
     if ((graph == NULL) || (data == NULL))
-	return GRAPH_ARGS_NULL;
+        return GRAPH_ARGS_NULL;
 
     int8_t retval;
     graph_vertex_t * new_vertex = calloc(1, sizeof(*new_vertex));
@@ -75,29 +75,29 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
 
     /* We do not allow repeated elements */
     if (list_lookup(graph->vertexs, new_vertex) != NULL) {
-	memset(new_vertex, 0x00, sizeof(*new_vertex));
-	free(new_vertex);
-	return GRAPH_VERTEX_EXISTS;
+        memset(new_vertex, 0x00, sizeof(*new_vertex));
+        free(new_vertex);
+        return GRAPH_VERTEX_EXISTS;
     }
 
     if (new_vertex == NULL)
-	return GRAPH_FAIL_MALLOC;
+        return GRAPH_FAIL_MALLOC;
 
     new_vertex->edges = list_init(graph_compare_edge, graph_print_edge);
 
     if (new_vertex->edges == NULL) {
-	memset(new_vertex, 0x00, sizeof(*new_vertex));
-	free(new_vertex);
-	return GRAPH_FAIL_MALLOC;
+        memset(new_vertex, 0x00, sizeof(*new_vertex));
+        free(new_vertex);
+        return GRAPH_FAIL_MALLOC;
     }
 
     retval = list_ins_next(graph->vertexs, NULL, new_vertex);
 
     if (retval != LST_SUCCESS) {
-	list_destroy(&(new_vertex->edges), NULL);
-	memset(new_vertex, 0x00, sizeof(*new_vertex));
-	free(new_vertex);
-	return GRAPH_FAIL_MALLOC;
+        list_destroy(&(new_vertex->edges), NULL);
+        memset(new_vertex, 0x00, sizeof(*new_vertex));
+        free(new_vertex);
+        return GRAPH_FAIL_MALLOC;
     }
 
     ++graph->vcnt;
@@ -111,7 +111,7 @@ int8_t graph_ins_vert(graph_t * graph, const void * data) {
 
 int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b, int32_t cost, int8_t dual) {
     if ((graph == NULL) || (data_a == NULL) || (data_b == NULL))
-	return GRAPH_ARGS_NULL;
+        return GRAPH_ARGS_NULL;
 
     graph_vertex_t * element_tmp = NULL;
     graph_vertex_t * element_a = NULL;
@@ -120,7 +120,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
     graph_edge_t   * edge_b = NULL;
 
     if (dual == GRAPH_EDGE_DUAL)
-	edge_b = calloc(1, sizeof(*edge_b));
+        edge_b = calloc(1, sizeof(*edge_b));
 
     element_tmp = calloc(1, sizeof(*element_tmp));
     element_tmp->v = (void *) data_a;
@@ -128,17 +128,17 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
     element_a = list_lookup(graph->vertexs, element_tmp) ;
 
     if (element_a == NULL) {
-	memset(edge_a, 0x00, sizeof(*edge_a));
-	free(edge_a);
+        memset(edge_a, 0x00, sizeof(*edge_a));
+        free(edge_a);
 
-	if (edge_b != NULL) {
-	    memset(edge_b, 0x00, sizeof(*edge_b));
-	    free(edge_b);
-	}
+        if (edge_b != NULL) {
+            memset(edge_b, 0x00, sizeof(*edge_b));
+            free(edge_b);
+        }
 
-	memset(element_tmp, 0x00, sizeof(*element_tmp));
-	free(element_tmp);
-	return GRAPH_VERTEX_NOT_FOUND;
+        memset(element_tmp, 0x00, sizeof(*element_tmp));
+        free(element_tmp);
+        return GRAPH_VERTEX_NOT_FOUND;
     }
 
     element_tmp->v = (void *) data_b;
@@ -149,13 +149,13 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
     free(element_tmp);
 
     if (element_b == NULL) {
-	memset(edge_a, 0x00, sizeof(*edge_a));
-	free(edge_a);
-	if (edge_b != NULL) {
-	    memset(edge_b, 0x00, sizeof(*edge_b));
-	    free(edge_b);
-	}
-	return GRAPH_VERTEX_NOT_FOUND;
+        memset(edge_a, 0x00, sizeof(*edge_a));
+        free(edge_a);
+        if (edge_b != NULL) {
+            memset(edge_b, 0x00, sizeof(*edge_b));
+            free(edge_b);
+        }
+        return GRAPH_VERTEX_NOT_FOUND;
     }
 
     printf("Add [edge] ");
@@ -168,13 +168,13 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
     list_ins_next(element_a->edges, NULL, edge_a);
 
     if (edge_b != NULL) {
-	edge_b->vertex = element_b;
-	edge_b->incident = element_a;
-	edge_b->cost = cost;
-	list_ins_next(element_b->edges, NULL, edge_b);
-	printf("<-> ");
+        edge_b->vertex = element_b;
+        edge_b->incident = element_a;
+        edge_b->cost = cost;
+        list_ins_next(element_b->edges, NULL, edge_b);
+        printf("<-> ");
     } else {
-	printf("-> ");
+        printf("-> ");
     }
 
     ++element_b->info.degree;
@@ -184,7 +184,7 @@ int8_t graph_ins_edge(graph_t * graph, const void * data_a, const void * data_b,
 
     ++graph->ecnt;
 
-        return GRAPH_SUCCESS;
+    return GRAPH_SUCCESS;
 }
 
 int8_t       graph_rem_vert (graph_t *, void **);
@@ -195,7 +195,7 @@ int32_t      graph_ecount   (graph_t *);
 
 int32_t graph_bfs(graph_t * graph, void * start_point) {
     if ((graph == NULL) || (start_point == NULL))
-	return GRAPH_ARGS_NULL;
+        return GRAPH_ARGS_NULL;
 
     printf("\n---> Running BFS <---\n");
 
@@ -210,7 +210,7 @@ int32_t graph_bfs(graph_t * graph, void * start_point) {
     int32_t longestpath = 0;
 
     if (vertex_tmp == NULL)
-	return GRAPH_FAIL_MALLOC;
+        return GRAPH_FAIL_MALLOC;
 
     vertex_tmp->v = start_point;
 
@@ -220,18 +220,18 @@ int32_t graph_bfs(graph_t * graph, void * start_point) {
     free(vertex_tmp);
 
     if (vertex == NULL)
-	return GRAPH_VERTEX_NOT_FOUND;
+        return GRAPH_VERTEX_NOT_FOUND;
 
     while ((reset = list_lookup_next(graph->vertexs, reset)) != NULL) {
-	reset->info.parent = NULL;
-	reset->info.status = GRAPH_VERTEX_NVISITED;
-	reset->info.distance = 0;
+        reset->info.parent = NULL;
+        reset->info.status = GRAPH_VERTEX_NVISITED;
+        reset->info.distance = 0;
     }
 
     queue = queue_init();
 
     if (queue == NULL)
-	return GRAPH_FAIL_MALLOC;
+        return GRAPH_FAIL_MALLOC;
 
     vertex->info.status = GRAPH_VERTEX_VISTED;
     queue_add(queue, vertex);
@@ -242,22 +242,22 @@ int32_t graph_bfs(graph_t * graph, void * start_point) {
     printf("\n------------------------------------------\n");
 
     while ((vertex = queue_get(queue)) != NULL) {
-	edge = NULL;
-	while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
-	    if (edge->incident->info.status == GRAPH_VERTEX_NVISITED) {
-		graph_print_vertex(edge->incident);
-		edge->incident->info.parent = vertex;
-		edge->incident->info.distance = vertex->info.distance + 1;
-		edge->incident->info.status = GRAPH_VERTEX_VISTED;
-		queue_add(queue, edge->incident);
+        edge = NULL;
+        while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
+            if (edge->incident->info.status == GRAPH_VERTEX_NVISITED) {
+                graph_print_vertex(edge->incident);
+                edge->incident->info.parent = vertex;
+                edge->incident->info.distance = vertex->info.distance + 1;
+                edge->incident->info.status = GRAPH_VERTEX_VISTED;
+                queue_add(queue, edge->incident);
 
-		if (longestpath < edge->incident->info.distance)
-		    longestpath = edge->incident->info.distance;
+                if (longestpath < edge->incident->info.distance)
+                    longestpath = edge->incident->info.distance;
 
-		printf(" = distance: %d", edge->incident->info.distance);
-		printf("\n");
-	    }
-	}
+                printf(" = distance: %d", edge->incident->info.distance);
+                printf("\n");
+            }
+        }
     }
 
     queue_destroy(&queue, NULL);
@@ -267,7 +267,7 @@ int32_t graph_bfs(graph_t * graph, void * start_point) {
 
 int32_t graph_mst_prism(graph_t * graph, void * start_point) {
     if ((graph == NULL) || (start_point == NULL))
-	return GRAPH_ARGS_NULL;
+        return GRAPH_ARGS_NULL;
 
     printf("\n---> Running Prim MST <---\n");
 
@@ -278,7 +278,7 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
     int32_t new_distance;
 
     if (vertex_tmp == NULL)
-	return GRAPH_FAIL_MALLOC;
+        return GRAPH_FAIL_MALLOC;
 
     vertex_tmp->v = start_point;
 
@@ -288,41 +288,41 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
     free(vertex_tmp);
 
     if (vertex == NULL)
-	return GRAPH_VERTEX_NOT_FOUND;
+        return GRAPH_VERTEX_NOT_FOUND;
 
     heap_t * hmst = hp_init(graph->vcnt, graph_compare_vertex_distance, graph_print_vertex_distance);
 
     if (hmst == NULL)
-	return GRAPH_FAIL_MALLOC;
+        return GRAPH_FAIL_MALLOC;
 
     while ((reset = list_lookup_next(graph->vertexs, reset)) != NULL) {
-	reset->info.parent = NULL;
-	reset->info.status = GRAPH_VERTEX_NVISITED;
+        reset->info.parent = NULL;
+        reset->info.status = GRAPH_VERTEX_NVISITED;
 
-	if (reset == vertex)
-	    reset->info.distance = 0;
-	else
-	    reset->info.distance = GRAPH_INFINIT;
+        if (reset == vertex)
+            reset->info.distance = 0;
+        else
+            reset->info.distance = GRAPH_INFINIT;
 
-	hp_insert(hmst, reset);
+        hp_insert(hmst, reset);
     }
 
     while ((vertex = hp_extract(hmst)) != NULL) {
-	vertex->info.status = GRAPH_VERTEX_VISTED;
-	if (vertex->info.distance != GRAPH_INFINIT) {
-	    edge = NULL;
-	    while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
-		if (edge->incident->info.status == GRAPH_VERTEX_NVISITED) {
-		    new_distance = edge->cost;
-		    if (edge->incident->info.distance > new_distance) {
-			hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
-			edge->incident->info.parent = edge->vertex;
-			graph_print_edge(edge);
-			printf("\n");
-		    }
-		}	
-	    }
-	}
+        vertex->info.status = GRAPH_VERTEX_VISTED;
+        if (vertex->info.distance != GRAPH_INFINIT) {
+            edge = NULL;
+            while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
+                if (edge->incident->info.status == GRAPH_VERTEX_NVISITED) {
+                    new_distance = edge->cost;
+                    if (edge->incident->info.distance > new_distance) {
+                        hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
+                        edge->incident->info.parent = edge->vertex;
+                        graph_print_edge(edge);
+                        printf("\n");
+                    }
+                }
+            }
+        }
     }
 
     //hp_destroy(hmst, NULL);
@@ -332,13 +332,13 @@ int32_t graph_mst_prism(graph_t * graph, void * start_point) {
 
 int32_t graph_dijkstra(graph_t * graph, void * start_point, adj_list_t * shortest_path) {
     if ((graph == NULL) || (start_point == NULL))
-	return GRAPH_ARGS_NULL;
+        return GRAPH_ARGS_NULL;
 
     if (shortest_path == NULL)
-	shortest_path = list_init(graph_compare_edge, graph_print_edge);
+        shortest_path = list_init(graph_compare_edge, graph_print_edge);
 
     if (shortest_path == NULL)
-	return GRAPH_FAIL_MALLOC;
+        return GRAPH_FAIL_MALLOC;
 
     printf("\n---> Running Dijkstra <---\n");
 
@@ -349,7 +349,7 @@ int32_t graph_dijkstra(graph_t * graph, void * start_point, adj_list_t * shortes
     int32_t new_distance;
 
     if (vertex_tmp == NULL)
-	return GRAPH_FAIL_MALLOC;
+        return GRAPH_FAIL_MALLOC;
 
     vertex_tmp->v = start_point;
 
@@ -359,36 +359,36 @@ int32_t graph_dijkstra(graph_t * graph, void * start_point, adj_list_t * shortes
     free(vertex_tmp);
 
     if (vertex == NULL)
-	return GRAPH_VERTEX_NOT_FOUND;
+        return GRAPH_VERTEX_NOT_FOUND;
 
     heap_t * hmst = hp_init(graph->vcnt, graph_compare_vertex_distance, graph_print_vertex_distance);
 
     if (hmst == NULL)
-	return GRAPH_FAIL_MALLOC;
+        return GRAPH_FAIL_MALLOC;
 
     while ((reset = list_lookup_next(graph->vertexs, reset)) != NULL) {
-	reset->info.parent = NULL;
+        reset->info.parent = NULL;
 
-	if (reset == vertex)
-	    reset->info.distance = 0;
-	else
-	    reset->info.distance = GRAPH_INFINIT;
+        if (reset == vertex)
+            reset->info.distance = 0;
+        else
+            reset->info.distance = GRAPH_INFINIT;
 
-	hp_insert(hmst, reset);
+        hp_insert(hmst, reset);
     }
 
     while ((vertex = hp_extract(hmst)) != NULL) {
-	if (vertex->info.distance != GRAPH_INFINIT) {
-	    edge = NULL;
-	    while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
-		new_distance = vertex->info.distance + edge->cost;
-		if (new_distance < edge->incident->info.distance) {
-		    hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
-		    edge->incident->info.parent = edge->vertex;
-		    list_ins_next(shortest_path, NULL, edge);
-		}
-	    }
-	}
+        if (vertex->info.distance != GRAPH_INFINIT) {
+            edge = NULL;
+            while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
+                new_distance = vertex->info.distance + edge->cost;
+                if (new_distance < edge->incident->info.distance) {
+                    hp_update(hmst, edge->incident, &new_distance, graph_update_vertex_distance);
+                    edge->incident->info.parent = edge->vertex;
+                    list_ins_next(shortest_path, NULL, edge);
+                }
+            }
+        }
     }
 
     list_print_elements(shortest_path);
@@ -466,8 +466,8 @@ void graph_print_edge(const void * const data) {
 
 void graph_print_vertexes(graph_t * graph) {
     if (graph == NULL) {
-	errno = GRAPH_ARGS_NULL;
-	return;
+        errno = GRAPH_ARGS_NULL;
+        return;
     }
 
     printf("\n---> Graph Vertexes Info <----\n");
@@ -475,12 +475,12 @@ void graph_print_vertexes(graph_t * graph) {
     graph_edge_t * edge = NULL;
 
     while ((vertex = list_lookup_next(graph->vertexs, vertex)) != NULL) {
-	printf("V: ");
-	graph_print_vertex(vertex);
-	printf(" - Degree: %d | Distance %d\n", vertex->info.degree, vertex->info.distance);
-	while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
-	    graph_print_edge(edge);
-	}
-	printf("\n\n");
+        printf("V: ");
+        graph_print_vertex(vertex);
+        printf(" - Degree: %d | Distance %d\n", vertex->info.degree, vertex->info.distance);
+        while ((edge = list_lookup_next(vertex->edges, edge)) != NULL) {
+            graph_print_edge(edge);
+        }
+        printf("\n\n");
     }
 }

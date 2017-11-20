@@ -49,9 +49,9 @@ int32_t main() {
 
     dlist_rem_prev(list, NULL, (const void **) &remove);
     if (remove != NULL) {
-	printf("Removed: %d\n", remove->key);
-	free(remove);
-	remove = NULL;
+        printf("Removed: %d\n", remove->key);
+        free(remove);
+        remove = NULL;
     }
 
     dlist_print_elements(list);
@@ -59,9 +59,9 @@ int32_t main() {
     dataprev->key = 4;
     dlist_rem_prev(list, dataprev, (const void **) &remove);
     if (remove != NULL) {
-	printf("Removed: %d\n", remove->key);
-	free(remove);
-	remove = NULL;
+        printf("Removed: %d\n", remove->key);
+        free(remove);
+        remove = NULL;
     }
 
     dlist_print_elements(list);
@@ -69,9 +69,9 @@ int32_t main() {
     dataprev->key = 1;
     dlist_rem_prev(list, dataprev, (const void **) &remove);
     if (remove != NULL) {
-	printf("Removed: %d\n", remove->key);
-	free(remove);
-	remove = NULL;
+        printf("Removed: %d\n", remove->key);
+        free(remove);
+        remove = NULL;
     }
 
     dlist_print_elements(list);

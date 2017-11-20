@@ -89,17 +89,17 @@ int32_t main() {
     data_tmp->key = 17;
     data_suc = bst_find_suc(tree, data_tmp);
     if (data_suc != NULL) {
-	    printf("Suc of %d is %d\n", data_tmp->key, data_suc->key);
+        printf("Suc of %d is %d\n", data_tmp->key, data_suc->key);
     } else {
-	printf("There is no suc of %d\n", data_tmp->key);
+        printf("There is no suc of %d\n", data_tmp->key);
     }
 
     data_tmp->key = 54;
     data_pre = bst_find_pre(tree, data_tmp);
     if (data_pre != NULL) {
-	    printf("Pre of %d is %d\n", data_tmp->key, data_pre->key);
+        printf("Pre of %d is %d\n", data_tmp->key, data_pre->key);
     } else {
-	printf("There is no pre of %d\n", data_tmp->key);
+        printf("There is no pre of %d\n", data_tmp->key);
     }
 
     data_tmp->key = 17;
@@ -121,28 +121,28 @@ int32_t main() {
 }
 
 int32_t compare(const void * const key1, const void * const key2) {
-	data_t * a = (data_t *)key1;
-	data_t * b = (data_t *)key2;
-	if (a->key == b->key)
-		return 0;
-	if (a->key < b->key)
-		return -1;
-	if (a->key > b->key)
-		return 1;
+    data_t * a = (data_t *)key1;
+    data_t * b = (data_t *)key2;
+    if (a->key == b->key)
+        return 0;
+    if (a->key < b->key)
+        return -1;
+    if (a->key > b->key)
+        return 1;
 
-	return 0;
+    return 0;
 }
 
 void destroy(void **data) {
-	data_t *tmp = (data_t *) *data;
-	printf("Removed: %d [destroy]\n", tmp->key);
-	memset(tmp, 0x00, sizeof(*tmp));
-	free(tmp);
-	*data = NULL;
+    data_t *tmp = (data_t *) *data;
+    printf("Removed: %d [destroy]\n", tmp->key);
+    memset(tmp, 0x00, sizeof(*tmp));
+    free(tmp);
+    *data = NULL;
 }
 
 void print(const void * const data) {
-	data_t * tmp = (data_t *) data;
-	printf("%d ", tmp->key);
+    data_t * tmp = (data_t *) data;
+    printf("%d ", tmp->key);
 }
 
