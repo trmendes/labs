@@ -1,8 +1,9 @@
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
 #include <errno.h>
+#include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "doublylist.h"
 
 list_t * dlist_init(destroy_ft destroy, compare_ft compare, print_ft print) {
@@ -34,11 +35,11 @@ void dlist_destroy(list_t **list) {
 	return;
     }
 
-    lst_element_t *element = (lst_element_t *) (*list)->head;
+    lst_element_t *element = (*list)->head;
     lst_element_t *prev_element = NULL;
 
     while (element != NULL) {
-	(*list)->destroy((void **) &(element->data));
+	(*list)->destroy(&(element->data));
 	prev_element = element;
 	element = element->next;
 
