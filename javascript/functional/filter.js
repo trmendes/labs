@@ -1,3 +1,8 @@
+/* HIGHER-ORDER-FUNTIONS */
+/* A higher-order-function is a funtion
+ * that take other function as arguments
+ */
+
 /* Use filter to filter the dogs */
 
 var village = [
