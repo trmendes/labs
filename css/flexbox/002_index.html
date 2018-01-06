@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>FlexBox Exercice 02</title>
+        <style>
+
+.form-row {
+    padding: 10px 0;
+    display: flex;
+}
+
+.form-row label {
+    padding-right: 10px;
+    flex: 1;
+}
+
+.form-row input {
+    flex: 4;
+}
+
+.banner {
+    height: 400px;
+    max-width: 700px;
+    margin: 40px auto 40px auto;
+    background-color: #2a2a2a;
+    display: flex;
+}
+
+.center-me {
+    color: #FFF;
+    font-size: 50px;
+    margin: auto;
+}
+
+.equal-height-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.first {
+    background-color: cyan;
+    padding: 20px;
+    flex: 1;
+}
+
+.second {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.second-a {
+    background-color: #c0dbe2;
+    flex: 1;
+}
+
+.second-b {
+    background-color: #c0dba2;
+    flex: 1;
+}
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <form action="">
+                <div class="form-row">
+                    <label for="name">Name:</label>
+                    <input type="input" id="name">
+                </div>
+                <div class="form-row">
+                    <label for="favColor">Favorite Color:</label>
+                    <input type="text" id="favColor">
+                </div>
+            </form>
+    </body>
+
+    <div class="banner">
+        <div class="center-me">
+            Center Me Please
+        </div>
+    </div>
+
+    <div class="equal-height-container">
+        <div class="first">
+            <p>bla bla bla</p>
+        </div>
+        <div class="second">
+            <div class="second-a">A</div>
+            <div class="second-b">B</div>
+        </div>
+    </div>
+</html>
