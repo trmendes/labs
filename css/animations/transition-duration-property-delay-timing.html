@@ -14,10 +14,12 @@
     border-radius: 50px;
     transform-origin: 0 0;
     transform: translateX(100px);
-    transition-property: transform, background, border-radius;
-    transition-duration: 2s, 3s, 4s;
-    transition-delay: 1s, 2s, 3s;
-    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: transform 2s ease-in 1s, background 3s ease-in 2s, border-radius
+        4s ease-in 3s;
+    <!-- transition-property: transform, background, border-radius; -->
+    <!-- transition-duration: 2s, 3s, 4s; -->
+    <!-- transition-delay: 1s, 2s, 3s; -->
+    <!-- transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86); -->
     <!-- transition-timing-function: ease-in; -->
 }
 .block:not(:hover) {
