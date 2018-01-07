@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transition, Delay, Duration, Property</title>
+<style>
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+}
+.block:hover {
+    background-color: skyblue;
+    border-radius: 50px;
+    transform-origin: 0 0;
+    transform: translateX(100px);
+    transition-property: transform, background, border-radius;
+    transition-duration: 2s, 3s, 4s;
+    transition-delay: 1s, 2s, 3s;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    <!-- transition-timing-function: ease-in; -->
+}
+.block:not(:hover) {
+    background-color: orange;
+    border-radius: 0px;
+    transform-origin: 0 0;
+    transition-property: border-radius, background, transform;
+    transition-duration: 2s, 3s, 4s;
+    transition-delay: 1s, 2s, 3s;
+}
+
+</style>
+</head>
+<body>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+</body>
+</html>
