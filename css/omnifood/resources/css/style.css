@@ -205,6 +205,7 @@ header {
      * text */
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("img/hero.jpg");
+    background-attachment: fixed;
     /* If we resize the window the img will change to fill it */
     background-size: cover;
     background-position: center;
@@ -379,4 +380,46 @@ header {
 .twitter-link:visited {
     color: #555;
     border-bottom: 1px solid transparent;
+}
+
+/* ----------------------------------------------------------------------------
+ * TESTIMONIALS
+ * ----------------------------------------------------------------------------
+ */
+
+.section-testimonials {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("img/back-customers.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+blockquote:before {
+    display: block;
+    position: absolute;
+    top: -5px;
+    top-left: -5px;
+    content: "\201c";
+    font-size: 500%;
+}
+
+blockquote {
+    padding: 2%;
+    position: relative;
+    margin-top: 40px;
+    font-style: italic;
+    line-height: 145%;
+}
+
+cite {
+    display: block;
+    font-size: 90%;
+    margin-top: 25px;
+}
+
+cite img {
+    height: 45px;
+    margin-right: 10px;
+    border-radius: 50%;
 }
