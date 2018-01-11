@@ -89,6 +89,20 @@ section {
     margin-bottom: 10px;
 }
 
+.icon-small {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+
+    /* secrets to align text and icons */
+    line-height: 120%;
+    vertical-align: center;
+    margin-top: -5px;
+    margin-left: -30px;
+}
+
 /* ----------------------------------------------------------------------------
  * HEADINGS
  * ----------------------------------------------------------------------------
@@ -236,7 +250,6 @@ header {
     /* It will not be visible until we hover it */
     transition: border-bottom 0.2s;
     bottom-border: 2px solid transparent;
-
 }
 
 .main-nav li a:hover,
@@ -336,4 +349,34 @@ header {
     height: 50px;
     width: auto;
     margin-right: 10px;
+}
+
+/* ----------------------------------------------------------------------------
+ * CITIES
+ * ----------------------------------------------------------------------------
+ */
+
+.box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.city-feature {
+    margin-bottom: 5px;
+}
+
+.twitter-link:link,
+.twitter-link:visited {
+    color: #e67e22;
+    text-decoration: none;
+    border-bottom: 1px solid #e67e22;
+    padding-bottom: 1px;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+
+.twitter-link:hover,
+.twitter-link:visited {
+    color: #555;
+    border-bottom: 1px solid transparent;
 }
