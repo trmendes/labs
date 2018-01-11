@@ -36,21 +36,88 @@ html {
     margin: 0 auto;
 }
 
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+/* ----------------------------------------------------------------------------
+ * PARAGRAPHS
+ * ----------------------------------------------------------------------------
+ */
+
+.long-copy {
+    line-height: 145%;
+    /* Force wrap because the paragraph is to long */
+    width: 70%;
+    /* To center it (100 - 70)/2 */
+    margin-left: 15%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/* ----------------------------------------------------------------------------
+ * ICONS
+ * ----------------------------------------------------------------------------
+ */
+
+.icon-big {
+    display: block;
+    color: #e67e22;
+    font-size: 350%;
+    margin-bottom: 10px;
+}
+
 /* ----------------------------------------------------------------------------
  * HEADINGS
  * ----------------------------------------------------------------------------
  */
 
-h1 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: #fff;
+h1,
+h2,
+h3 {
     /* The basic font-size is 20px; */
-    font-size: 240%; /* 48px */
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 1px;
+}
+
+h1 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 240%; /* 48px */
     word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e26;
+    /* Everytime we use after we have to specify a content */
+    content: " ";
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+
 }
 
 /* ----------------------------------------------------------------------------
