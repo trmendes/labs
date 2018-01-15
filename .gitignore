@@ -5,3 +5,4 @@ unicamp/mc202/theory/*
 unicamp/mc504/theory/*
 angular.min.js
 lab
+*node_modules*
