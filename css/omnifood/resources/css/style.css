@@ -1,12 +1,12 @@
-/* ----------------------------------------------------------------------------
- * Orange color: #e67e26
- * ----------------------------------------------------------------------------
- */
+/*
+Orange color: #e67e22
 
-/* ----------------------------------------------------------------------------
- * BASIC SETUP
- * ----------------------------------------------------------------------------
- */
+*/
+
+
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
 
 * {
     margin: 0;
@@ -14,20 +14,18 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     background-color: #fff;
     color: #555;
     font-family: 'Lato', 'Arial', sans-serif;
-    font-size: 20px;
     font-weight: 300;
-    /* better rendering */
+    font-size: 20px;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
 }
 
-.clearfix {
-    zoom: 1
-}
+.clearfix {zoom: 1;}
 .clearfix:after {
     content: '.';
     clear: both;
@@ -36,15 +34,13 @@ body {
     visibility: hidden;
 }
 
-/* ----------------------------------------------------------------------------
- * REUSABLE COMPONENTS
- * ----------------------------------------------------------------------------
- */
+/* ----------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ----------------------------------------------- */
+
 
 .row {
-    /* This will be the only fixed value */
     max-width: 1140px;
-    /* This will center the content */
     margin: 0 auto;
 }
 
@@ -52,76 +48,23 @@ section {
     padding: 80px 0;
 }
 
-.section-meals {
-    padding: 0;
-}
-
 .box {
     padding: 1%;
 }
 
-/* ----------------------------------------------------------------------------
- * PARAGRAPHS
- * ----------------------------------------------------------------------------
- */
-
-.long-copy {
-    line-height: 145%;
-    /* Force wrap because the paragraph is to long */
-    width: 70%;
-    /* To center it (100 - 70)/2 */
-    margin-left: 15%;
-}
-
-.box p {
-    font-size: 90%;
-    line-height: 145%;
-}
-
-/* ----------------------------------------------------------------------------
- * ICONS
- * ----------------------------------------------------------------------------
- */
-
-.icon-big {
-    display: block;
-    color: #e67e22;
-    font-size: 350%;
-    margin-bottom: 10px;
-}
-
-.icon-small {
-    display: inline-block;
-    width: 30%;
-    text-align: center;
-    color: #e67e22;
-    font-size: 120%;
-
-    /* secrets to align text and icons */
-    line-height: 120%;
-    vertical-align: center;
-    margin-top: -5px;
-    margin-left: -30px;
-}
-
-/* ----------------------------------------------------------------------------
- * HEADINGS
- * ----------------------------------------------------------------------------
- */
-
+/* ----- HEADINGS ----- */
 h1,
 h2,
 h3 {
-    /* The basic font-size is 20px; */
     font-weight: 300;
     text-transform: uppercase;
 }
 
 h1 {
-    color: #fff;
     margin-top: 0;
     margin-bottom: 20px;
-    font-size: 240%; /* 48px */
+    color: #fff;
+    font-size: 240%;
     word-spacing: 4px;
     letter-spacing: 1px;
 }
@@ -134,27 +77,75 @@ h2 {
     letter-spacing: 1px;
 }
 
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
 h2:after {
     display: block;
     height: 2px;
-    background-color: #e67e26;
-    /* Everytime we use after we have to specify a content */
+    background-color: #e67e22;
     content: " ";
+    width: 100px;
     margin: 0 auto;
     margin-top: 30px;
 }
 
-h3 {
-    font-size: 110%;
-    margin-bottom: 15px;
-
+/* ----- PARAGRAPHS ----- */
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
 }
 
-/* ----------------------------------------------------------------------------
- * BUTTONS
- * ----------------------------------------------------------------------------
- */
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
 
+
+/* ----- ICONS ----- */
+.icon-big {
+    font-size: 350%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+    
+    /*secrets to align text and icons*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+/* ----- LINKS ----- */
+
+a:link,
+a:visited {
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* ----- BUTTONS ----- */
 .btn:link,
 .btn:visited,
 input[type=submit] {
@@ -163,7 +154,8 @@ input[type=submit] {
     font-weight: 300;
     text-decoration: none;
     border-radius: 200px;
-    transition: background-color 0.2s, color 0.2s, border 0.2s;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
 .btn-full:link,
@@ -185,65 +177,69 @@ input[type=submit] {
 .btn:active,
 input[type=submit]:hover,
 input[type=submit]:active {
-    background-color: #bf6516;
+    background-color: #cf6d17;
 }
 
 .btn-full:hover,
 .btn-full:active {
-    border: 1px solid #bf6512;
+    border: 1px solid #cf6d17;
 }
 
 .btn-ghost:hover,
 .btn-ghost:active {
-    border: 1px solid #bf6512;
+    border: 1px solid #cf6d17;
     color: #fff;
 }
 
-/* ----------------------------------------------------------------------------
- * HEADER
- * ----------------------------------------------------------------------------
- */
+
+/* ----------------------------------------------- */
+/* HEADER */
+/* ----------------------------------------------- */
 
 header {
-    /* Our header background */
-    /* we use linear-gradient to make our image darker because of the
-     * text */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("img/hero.jpg");
-    background-attachment: fixed;
-    /* If we resize the window the img will change to fill it */
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero-min.jpg);
     background-size: cover;
     background-position: center;
-    /* 100% of the viewport */
     height: 100vh;
+    background-attachment: fixed;
 }
 
 .hero-text-box {
     position: absolute;
     width: 1140px;
-    /* The next 3 lines are used to center the text */
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
 .logo {
-    float: left;
     height: 100px;
     width: auto;
+    float: left;
     margin-top: 20px;
 }
 
+.logo-black { 
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+}
+
+/* Main navi */
 .main-nav {
     float: right;
     list-style: none;
+    margin-top: 55px;
 }
 
-/* Select all the li inside main-nav */
 .main-nav li {
     display: inline-block;
     margin-left: 40px;
-    margin-top: 55px;
 }
 
 .main-nav li a:link,
@@ -252,30 +248,70 @@ header {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 90%; /* 18px */
-    /* It will not be visible until we hover it */
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
-    bottom-border: 2px solid transparent;
 }
 
 .main-nav li a:hover,
-.main-nav li a:visited {
-    border-bottom: 2px solid #e67e26;
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
 }
 
-/* ----------------------------------------------------------------------------
- * FEATURES
- * ----------------------------------------------------------------------------
- */
+
+/* Mobile navi */
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i {
+    font-size: 200%;
+    color: #fff;
+}
+
+
+/* Sticky navi */
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 9999;
+}
+
+.sticky .main-nav { margin-top: 18px; }
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 16px 0;
+    color: #555;
+}
+
+.sticky .logo { display: none; }
+.sticky .logo-black { display: block; }
+
+/* ----------------------------------------------- */
+/* FEATURES */
+/* ----------------------------------------------- */
 
 .section-features .long-copy {
     margin-bottom: 30px;
 }
 
-/* ----------------------------------------------------------------------------
- * MEALS
- * ----------------------------------------------------------------------------
- */
+
+/* ----------------------------------------------- */
+/* MEALS */
+/* ----------------------------------------------- */
+
+.section-meals {
+    padding: 0;
+}
 
 .meals-showcase {
     list-style: none;
@@ -289,42 +325,52 @@ header {
 }
 
 .meal-photo {
-    background-color: #000;
     width: 100%;
     margin: 0;
-    /* to "avoid" overflow */
     overflow: hidden;
+    background-color: #000;
 }
 
 .meal-photo img {
     opacity: 0.7;
     width: 100%;
     height: auto;
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
     transform: scale(1.15);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
 }
 
 .meal-photo img:hover {
     opacity: 1;
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
     transform: scale(1.03);
-    transition: transform 0.5s, opacity 0.5s;
 }
 
-/* ----------------------------------------------------------------------------
- * HOW IT WORKS
- * ----------------------------------------------------------------------------
- */
+
+
+/* ----------------------------------------------- */
+/* HOW IT WORKS SECTION */
+/* ----------------------------------------------- */
 
 .section-steps {
     background-color: #f4f4f4;
 }
 
-.steps-box:first-child {
-    text-align: right;
-    padding-right: 3%;
+.steps-box {
     margin-top: 30px;
 }
 
+
+.steps-box:first-child {
+    text-align: right;
+    padding-right: 3%;
+}
+
 .steps-box:last-child {
+    text-align: left;
     padding-left: 3%;
     margin-top: 70px;
 }
@@ -337,18 +383,27 @@ header {
     margin-bottom: 50px;
 }
 
+.works-step:last-of-type {
+    margin-bottom: 80px;
+}
+
 .works-step div {
     color: #e67e22;
-    border: 2px solid #e67e22;
-    display: inline-block;
-    border-radius: 50%;
-    height: 55px;
-    width: 55px;
-    text-align: center;
-    padding: 5px;
-    float: left;
     font-size: 150%;
+    height: 54px;
+    width: 54px;
+    border: 2px solid #e67e22;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
     margin-right: 25px;
+    float: left;
+    padding: 5px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+    border: 0;
 }
 
 .btn-app img {
@@ -357,10 +412,10 @@ header {
     margin-right: 10px;
 }
 
-/* ----------------------------------------------------------------------------
- * CITIES
- * ----------------------------------------------------------------------------
- */
+
+/* ----------------------------------------------- */
+/* CITIES */
+/* ----------------------------------------------- */
 
 .box img {
     width: 100%;
@@ -372,67 +427,53 @@ header {
     margin-bottom: 5px;
 }
 
-.twitter-link:link,
-.twitter-link:visited {
-    color: #e67e22;
-    text-decoration: none;
-    border-bottom: 1px solid #e67e22;
-    padding-bottom: 1px;
-    transition: border-bottom 0.2s, color 0.2s;
-}
 
-.twitter-link:hover,
-.twitter-link:visited {
-    color: #555;
-    border-bottom: 1px solid transparent;
-}
-
-/* ----------------------------------------------------------------------------
- * TESTIMONIALS
- * ----------------------------------------------------------------------------
- */
+/* ----------------------------------------------- */
+/* TESTIMONIALS */
+/* ----------------------------------------------- */
 
 .section-testimonials {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("img/back-customers.jpg");
-    background-attachment: fixed;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers-min.jpg);
     background-size: cover;
     color: #fff;
-}
-
-blockquote:before {
-    display: block;
-    position: absolute;
-    top: -5px;
-    top-left: -5px;
-    content: "\201c";
-    font-size: 500%;
+    background-attachment: fixed;
 }
 
 blockquote {
     padding: 2%;
-    position: relative;
-    margin-top: 40px;
     font-style: italic;
     line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+blockquote:before {
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
 }
 
 cite {
-    display: block;
     font-size: 90%;
     margin-top: 25px;
+    display: block;
 }
 
 cite img {
     height: 45px;
-    margin-right: 10px;
     border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
-/* ----------------------------------------------------------------------------
- * SIGN UP
- * ----------------------------------------------------------------------------
- */
+
+/* ----------------------------------------------- */
+/* SIGN UP */
+/* ----------------------------------------------- */
 
 .section-plans {
     background-color: #f4f4f4;
@@ -442,14 +483,13 @@ cite img {
     background-color: #fff;
     border-radius: 5px;
     width: 90%;
-    /* (100 - 90) / 2 = 5 */
     margin-left: 5%;
+    box-shadow: 0 2px 2px #efefef;
 }
 
 .plan-box div {
     padding: 15px;
     border-bottom: 1px solid #e8e8e8;
-    box-shadow: 0 2px 2px #efefef;
 }
 
 .plan-box div:first-child {
@@ -460,23 +500,24 @@ cite img {
 
 .plan-box div:last-child {
     text-align: center;
-    border: none;
+    border: 0;
 }
 
+
 .plan-price {
-    font-size: 200%;
+    font-size: 300%;
     margin-bottom: 10px;
-    font-weight: 300;
+    font-weight: 100;
     color: #e67e22;
 }
 
-.plan-price-meal {
-    font-size 80%;
+.plan-price span {
+    font-size: 30%;
+    font-weight: 300;
 }
 
-.plan-price span {
-    font-size: 30%; /* 30 % of 200% of 30px */
-    font-weight: 300;
+.plan-price-meal {
+    font-size: 80%;
 }
 
 .plan-box ul {
@@ -487,10 +528,10 @@ cite img {
     padding: 5px 0;
 }
 
-/* ----------------------------------------------------------------------------
- * FORM
- * ----------------------------------------------------------------------------
- */
+
+/* ----------------------------------------------- */
+/* FORM */
+/* ----------------------------------------------- */
 
 .contact-form {
     width: 60%;
@@ -515,21 +556,17 @@ input[type=checkbox] {
     margin: 10px 5px 10px 0;
 }
 
-/* ----------------------------------------------------------------------------
- * FOOTER
- * ----------------------------------------------------------------------------
- */
+*:focus {outline: none;}
+
+
+/* ----------------------------------------------- */
+/* FOOTER */
+/* ----------------------------------------------- */
 
 footer {
     background-color: #333;
     padding: 50px;
-}
-
-footer p {
-    color: #888;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 90%;
+    font-size: 80%;
 }
 
 .footer-nav {
@@ -550,16 +587,17 @@ footer p {
 
 .footer-nav li:last-child,
 .social-links li:last-child {
-    margin: 0;
+    margin-right: 0;
 }
 
 .footer-nav li a:link,
-.footer-nav li a:visited,
+.footer-nav li a:visited, 
 .social-links li a:link,
 .social-links li a:visited {
     text-decoration: none;
-    color: #888;
     border: 0;
+    color: #888;
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -568,10 +606,16 @@ footer p {
     color: #ddd;
 }
 
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%;
+}
+
 .ion-social-facebook,
+.ion-social-twitter,
 .ion-social-googleplus,
-.ion-social-instagram,
-.ion-social-twitter {
+.ion-social-instagram {
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -590,3 +634,39 @@ footer p {
 .ion-social-instagram:hover {
     color: #517fa4;
 }
+
+
+footer p {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+/* ----------------------------------------------- */
+/* Animations */
+/* ----------------------------------------------- */
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3
+{
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.js--wp-4 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated {
+    opacity: 1;
+}
+
+
