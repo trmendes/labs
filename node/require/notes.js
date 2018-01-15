@@ -1,11 +1,24 @@
 console.log("Starting notes.js");
 
-/* We use exports to export functions out of our modules */
-module.exports.addNote = () => {
-    console.log("addNode");
-    return "New note";
+let addNote = (title, body) => {
+    console.log(`Adding note ${title} - ${body}`);
+};
+
+let getAll = () => {
+    console.log("Listing all notes");
+};
+
+let getNote = (title) => {
+    console.log(`Fetching node ${title}`);
 }
 
-module.exports.add = (a, b) => {
-    return a + b;
+let removeNote = (title) => {
+    console.log(`Removing note ${title}`);
 }
+
+module.exports = {
+    addNote,
+    getAll,
+    getNote,
+    removeNote
+};
