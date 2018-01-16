@@ -4,13 +4,13 @@ const fs = require('fs');
 const _ = require('lodash');
 
 
-let  yarg_title_options = {
+const  yarg_title_options = {
     describe: 'Title of note',
     demand: true,
     alias: 't'
 };
 
-let yarg_body_options = {
+const yarg_body_options = {
     describe: 'Body of note',
     demand: true,
     alias: 'b'
