@@ -2,7 +2,34 @@ console.log('Starting app...');
 
 const fs = require('fs');
 const _ = require('lodash');
-const argv = require('yargs').argv;
+
+
+let  yarg_title_options = {
+    describe: 'Title of note',
+    demand: true,
+    alias: 't'
+};
+
+let yarg_body_options = {
+    describe: 'Body of note',
+    demand: true,
+    alias: 'b'
+};
+
+const argv = require('yargs')
+    .command('add', 'Add a new note', {
+        title: yarg_title_options,
+        body: yarg_body_options
+    })
+    .command('list', 'List all notes')
+    .command('read', 'Read a note', {
+        title: yarg_title_options
+    })
+    .command('remove', 'Remove a note', {
+        title: yarg_title_options
+    })
+    .help()
+    .argv;
 
 console.log("Yargs: ", argv);
 
