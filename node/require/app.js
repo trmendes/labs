@@ -4,18 +4,32 @@ const fs = require('fs');
 const _ = require('lodash');
 const argv = require('yargs').argv;
 
-const notes = require('./notes.js');
+console.log("Yargs: ", argv);
+
+const notesDb = require('./notes.js');
 
 let command = argv._[0];
 
 if (command === 'add') {
-    notes.addNote(argv.title, argv.body);
+    if (notesDb.addNote(argv.title, argv.body) === undefined) {
+        console.log("Fail: Duplicated note");
+    } else {
+        console.log("Success: Note created");
+    }
 } else if (command === 'list') {
-    notes.getAll();
+    let notes = notesDb.getAll();
+    notes.forEach((note) => {
+        notesDb.logNote(note);
+    });
+
 } else if (command === 'read') {
-    notes.getNote(argv.title);
+    let note = notesDb.getNote(argv.title);
+    (note !== undefined) ? notesDb.logNote(note) : console.log("Fail: Note not found");
 } else if (command === 'remove') {
-    notes.removeNote(argv.title);
+    console.log(`Removing note ${argv.title}`);
+    let removed = notesDb.removeNote(argv.title);
+    let msg = removed ? 'Success: Note was removed': 'Fail: Note note found';
+    console.log(msg);
 } else {
     console.log("Command not recognized");
 }
