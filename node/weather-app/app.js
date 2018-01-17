@@ -37,10 +37,17 @@ request({
      * internet is down, etc */
 
     if (error == null) {
-        let lat = body.results[0].geometry.location.lat;
-        let lng = body.results[0].geometry.location.lng;
-        console.log(`Address: ${body.results[0].formatted_address}`);
-        console.log(`Lat    : ${lat}`);
-        console.log(`Long   : ${lng}`);
+        if (body.status === "OK") {
+            let lat = body.results[0].geometry.location.lat;
+            let lng = body.results[0].geometry.location.lng;
+            console.log(`Address: ${body.results[0].formatted_address}`);
+            console.log(`Lat    : ${lat}`);
+            console.log(`Long   : ${lng}`);
+        } else {
+            console.log("Unable to find that address");
+        }
+
+    } else {
+        console.log("Unable to connect to Google serves.");
     }
 });
