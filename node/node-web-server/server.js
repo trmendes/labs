@@ -2,6 +2,9 @@ const express = require('express');
 
 let app = express();
 
+/* Setup a server that publish the public directory */
+app.use(express.static(__dirname + '/public'));
+
 /* Setup a handler (a router)
  *
  * What do we send back to the person who made the request */
@@ -23,4 +26,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('Console is up and running');
+});
