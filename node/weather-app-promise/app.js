@@ -1,15 +1,28 @@
 const yargs = require('yargs');
 const axios = require('axios');
+const fs = require('fs');
 
 const key = require('./forecastkey');
 const secretKey = key.getSecretKey();
 
 const argv = yargs.options({
     a: {
-        demand: true,
+        demand: false,
         alias: 'address',
         describe: 'Address to fetch weather for',
         /* to ALWAYS parse the arg as a string */
+        string: true
+    },
+    s: {
+        demand: false,
+        alias: 'set_default_location',
+        describe: 'Define a default location',
+        string: true
+    },
+    d: {
+        demand: false,
+        alias: 'use_default_address',
+        describe: 'Check the forecast using the default address',
         string: true
     }
 })
@@ -17,7 +30,35 @@ const argv = yargs.options({
     .alias('help', 'h')
     .argv;
 
-const encURI = encodeURIComponent(argv.address);
+
+let address = '';
+
+if (argv.s !== undefined) {
+    let newDefaultAddress = {
+        address: argv.s
+    };
+    fs.writeFileSync('default_location.json', JSON.stringify(newDefaultAddress));
+    return;
+}
+
+if (argv.a !== undefined) {
+    address = argv.a;
+} else if (argv.d !== undefined) {
+    try {
+        let defaultAddress = JSON.parse(fs.readFileSync('default_location.json'));
+        address = defaultAddress.address;
+        if (address === undefined)
+            throw new Error('error: Weird! We have a corrupet file. We are sorrry! Please, set a new default address using the -s option. Check --help for more info.');
+    } catch (error) {
+        console.warn(error.message);
+        return;
+    }
+} else {
+    console.warn('run the --help option to check how to use this app');
+    return;
+}
+
+const encURI = encodeURIComponent(address);
 let geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encURI}`;
 
 /* axios will return a Promise and as such we have to implement then and
