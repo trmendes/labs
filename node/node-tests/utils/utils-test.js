@@ -52,3 +52,19 @@ it ('should verify first and last names are set', () => {
         lastName: 'Rodolfo'
     });
 });
+
+/* done tells mocha that this function is not done until done is called */
+it ('should wait for the asyncAdd', (done) => {
+    utils.asyncAdd(4,3, (sum) => {
+        expect(sum).toBe(7).toBeA('number');
+        done();
+    });
+});
+
+/* Mocha will wait done call to decide wheather the test passed or not */
+it ('should wait for the asyncSquare', (done) => {
+    utils.asyncSquare(9, (square) => {
+        expect(square).toBe(81).toBeA('number');
+        done();
+    });
+});
