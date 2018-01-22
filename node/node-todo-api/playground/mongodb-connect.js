@@ -1,3 +1,5 @@
+/* This creates a var call MongoClient pulling out of the lib
+ * We do the same with ObjectID */
 const { MongoClient, ObjectID } = require('mongodb');
 
 MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
@@ -26,7 +28,11 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
             return console.log('Unable to insert todo', err);
         }
         console.log(JSON.stringify(res.ops, undefined, 2));
-    });
+        /* Since ObjectID holds a timestamp using 4 bytes we can call this function
+         * to print the Timestamp when this document was created
+         */
+        console.log(res.ops[0]._id.getTimestamp());
+ });
 
-    client.close();
+       client.close();
 });
