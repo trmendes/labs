@@ -1,10 +1,17 @@
 const expect = require('expect');
 const request = require('supertest');
+const {ObjectID} = require('mongodb');
 
 const { app } = require('./../server');
 const { Todo } = require('./../models/todo');
 
-const todos = [{text: "Todo #1"},{text: "Todo #2"}];
+const todos = [{
+    _id: new ObjectID(),
+    text: "Todo #1"
+},{
+    _id: new ObjectID(),
+    text: "Todo #2"
+}];
 
 /* It will run before each test case */
 /* A lifecycle method from supertest */
@@ -69,5 +76,33 @@ describe('GET /todos', () => {
             expect(res.body.length).toNotBe(0);
         })
         .end(done());
+    });
+});
+
+describe(`GET /todos/${todos[0]._id.toHexString()}`, () => {
+
+    it('should return todo doc', (done) => {
+        request(app)
+            .get(`/todos/${todos[0]._id.toHexString()}`)
+            .expect(200)
+            .expect((res) => {
+                expect(res.body.todo.text).toBe(todos[0].text);
+            })
+            .end(done);
+    });
+
+    it('should return a 404 if todo not found', (done) => {
+        let id = new ObjectID().toHexString();
+        request(app)
+        .get(`/todos/${id}`)
+        .expect(404)
+        .end(done);
+    });
+
+    it('should return 404 for a non-object id', (done) => {
+        request(app)
+        .get('/todos/123')
+        .expect(404)
+        .end(done);
     });
 });
