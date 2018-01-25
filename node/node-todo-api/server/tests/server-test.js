@@ -4,13 +4,16 @@ const request = require('supertest');
 const { app } = require('./../server');
 const { Todo } = require('./../models/todo');
 
+const todos = [{text: "Todo #1"},{text: "Todo #2"}];
+
 /* It will run before each test case */
 /* A lifecycle method from supertest */
 beforeEach((done) => {
     Todo.remove({}) /* Wipe out our todos */
     .then(() => {
-        done();
-    });
+        return Todo.insertMany(todos); /* to return a promise */
+    })
+    .then(done());
 });
 
 describe('POST /todos', () => {
@@ -31,7 +34,7 @@ describe('POST /todos', () => {
                     return done(err); /* If it fails stop it */
 
                 /* Fetch to check if the todo is there or not */
-                Todo.find().then((todos) => {
+                Todo.find({text}).then((todos) => {
                     /* Since we always delete the db before the test
                      * we must have only one document there
                      * and it must be === text
@@ -45,13 +48,26 @@ describe('POST /todos', () => {
 
     it('should not create todo with invalid data', (done) => {
         request(app)
-            .post({})
+            .post('/todos')
+            .send({})
             .expect(404)
             .end((err, resp) => {
                 Todo.find().then( (todos) => {
-                    expect(todos.length).toBe(0);
+                    expect(todos.length).toBe(todos.length);
                     done();
                 }).catch((e) => {done(e)});
             });
+    });
+});
+
+describe('GET /todos', () => {
+    it('should get all todos', (done) => {
+        request(app)
+        .get('/todos')
+        .expect(200)
+        .expect((res) => {
+            expect(res.body.length).toNotBe(0);
+        })
+        .end(done());
     });
 });
