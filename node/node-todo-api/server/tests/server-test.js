@@ -17,10 +17,10 @@ const todos = [{
 /* A lifecycle method from supertest */
 beforeEach((done) => {
     Todo.remove({}) /* Wipe out our todos */
-    .then(() => {
-        return Todo.insertMany(todos); /* to return a promise */
-    })
-    .then(done());
+        .then(() => {
+            return Todo.insertMany(todos); /* to return a promise */
+        })
+        .then(done());
 });
 
 describe('POST /todos', () => {
@@ -70,12 +70,12 @@ describe('POST /todos', () => {
 describe('GET /todos', () => {
     it('should get all todos', (done) => {
         request(app)
-        .get('/todos')
-        .expect(200)
-        .expect((res) => {
-            expect(res.body.length).toNotBe(0);
-        })
-        .end(done());
+            .get('/todos')
+            .expect(200)
+            .expect((res) => {
+                expect(res.body.length).toNotBe(0);
+            })
+            .end(done());
     });
 });
 
@@ -94,15 +94,15 @@ describe(`GET /todos/${todos[0]._id.toHexString()}`, () => {
     it('should return a 404 if todo not found', (done) => {
         let id = new ObjectID().toHexString();
         request(app)
-        .get(`/todos/${id}`)
-        .expect(404)
-        .end(done);
+            .get(`/todos/${id}`)
+            .expect(404)
+            .end(done);
     });
 
     it('should return 404 for a non-object id', (done) => {
         request(app)
-        .get('/todos/123')
-        .expect(404)
-        .end(done);
+            .get('/todos/123')
+            .expect(404)
+            .end(done);
     });
 });
