@@ -15,10 +15,21 @@ app.post('/todos', (req, res) => {
   });
 
   todo.save().then((doc) => {
-    res.send(doc);
+    res.status(200).send(doc);
   }, (e) => {
     res.status(400).send(e);
   });
+});
+
+app.get('/todos', (req, res) => {
+    Todo.find().then((todos) => {
+        res.status(200).send({
+            len: todos.length,
+            todos
+        });
+    }, (e) => {
+        res.status(400).send(e);
+    });
 });
 
 app.listen(3000, () => {
