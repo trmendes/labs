@@ -1,23 +1,34 @@
-/* This creates a var call MongoClient pulling out of the lib
- * We do the same with ObjectID */
-const { MongoClient, ObjectID } = require('mongodb');
+// const MongoClient = require('mongodb').MongoClient;
+const {MongoClient, ObjectID} = require('mongodb');
 
-MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
-    if (err)
+MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
+    if (err) {
         return console.log('Unable to connect to MongoDB server');
-
-    const db = client.db('TodoApp')
+    }
     console.log('Connected to MongoDB server');
 
-    //DeleteMany
+    // deleteMany
+    // db.collection('Todos').deleteMany({text: 'Eat lunch'}).then((result) => {
+    //   console.log(result);
+    // });
 
-    // db.collection('Todos').deleteMany({text: "Wash car 2"}).then((result) => console.log("Deleted: ", result));
+    // deleteOne
+    // db.collection('Todos').deleteOne({text: 'Eat lunch'}).then((result) => {
+    //   console.log(result);
+    // });
 
-    //DeleteOne - It will delete the first one the matches the creteria
-    //db.collection('Todos').deleteOne({text: "Wash car2"}).then((result) => console.log(result));
+    // findOneAndDelete
+    // db.collection('Todos').findOneAndDelete({completed: false}).then((result) => {
+    //   console.log(result);
+    // });
 
-    //FindOneAndDelete - It will return the object. Awesome for a UNDO option
-    db.collection('Todos').findOneAndDelete({text: "Wash car3"}).then((result) => console.log(result));
+    // db.collection('Users').deleteMany({name: 'Andrew'});
 
-    client.close();
+    db.collection('Users').findOneAndDelete({
+        _id: new ObjectID("57ac8d47878a299e5dc21bc8")
+    }).then((results) => {
+        console.log(JSON.stringify(results, undefined, 2));
+    });
+
+    // db.close();
 });

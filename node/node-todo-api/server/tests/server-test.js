@@ -1,87 +1,80 @@
-const expect = require("expect");
-const request = require("supertest");
-const {ObjectID} = require("mongodb");
+const expect = require('expect');
+const request = require('supertest');
+const {ObjectID} = require('mongodb');
 
-const { app } = require("./../server");
-const { Todo } = require("./../models/todo");
+const {app} = require('./../server');
+const {Todo} = require('./../models/todo');
 
 const todos = [{
     _id: new ObjectID(),
-    text: "Todo #1"
-},{
+    text: 'First test todo'
+}, {
     _id: new ObjectID(),
-    text: "Todo #2"
+    text: 'Second test todo'
 }];
 
-/* It will run before each test case */
-/* A lifecycle method from supertest */
 beforeEach((done) => {
-    Todo.remove({}) /* Wipe out our todos */
-        .then(() => {
-            return Todo.insertMany(todos); /* to return a promise */
-        })
-        .then(done());
+    Todo.remove({}).then(() => {
+        return Todo.insertMany(todos);
+    }).then(() => done());
 });
 
-describe("POST /todos", () => {
+describe('POST /todos', () => {
+    it('should create a new todo', (done) => {
+        let text = 'Test todo text';
 
-    it("should create a new todo", (done) => {
-        let text = "text from the todo text";
         request(app)
-            .post("/todos") /* SuperText lib */
-            .send({text}) /* SuperText lib */
-            .expect(200) /* Expect lib */
-        /* Next - a custom expect call  */
+            .post('/todos')
+            .send({text})
+            .expect(200)
             .expect((res) => {
                 expect(res.body.text).toBe(text);
             })
-        /* Check the data inside mongodb */
-            .end((err, resp) => {
-                if (err)
-                    return done(err); /* If it fails stop it */
+            .end((err, res) => {
+                if (err) {
+                    return done(err);
+                }
 
-                /* Fetch to check if the todo is there or not */
                 Todo.find({text}).then((todos) => {
-                    /* Since we always delete the db before the test
-                     * we must have only one document there
-                     * and it must be === text
-                     */
                     expect(todos.length).toBe(1);
                     expect(todos[0].text).toBe(text);
                     done();
-                }).catch((e) => { done(e);});
+                }).catch((e) => done(e));
             });
     });
 
-    it("should not create todo with invalid data", (done) => {
+    it('should not create todo with invalid body data', (done) => {
         request(app)
-            .post("/todos")
+            .post('/todos')
             .send({})
-            .expect(404)
-            .end((err, resp) => {
-                Todo.find().then( (todos) => {
-                    expect(todos.length).toBe(todos.length);
+            .expect(400)
+            .end((err, res) => {
+                if (err) {
+                    return done(err);
+                }
+
+                Todo.find().then((todos) => {
+                    expect(todos.length).toBe(2);
                     done();
-                }).catch((e) => {done(e);});
+                }).catch((e) => done(e));
             });
     });
 });
 
-describe("GET /todos", () => {
-    it("should get all todos", (done) => {
+describe('GET /todos', () => {
+    it('should get all todos', (done) => {
         request(app)
-            .get("/todos")
+            .get('/todos')
             .expect(200)
             .expect((res) => {
-                expect(res.body.length).toNotBe(0);
+                expect(res.body.todos.length).toBe(2);
             })
-            .end(done());
+            .end(done);
     });
 });
 
-describe(`GET /todos/${todos[0]._id.toHexString()}`, () => {
-
-    it("should return todo doc", (done) => {
+describe('GET /todos/:id', () => {
+    it('should return todo doc', (done) => {
         request(app)
             .get(`/todos/${todos[0]._id.toHexString()}`)
             .expect(200)
@@ -91,18 +84,55 @@ describe(`GET /todos/${todos[0]._id.toHexString()}`, () => {
             .end(done);
     });
 
-    it("should return a 404 if todo not found", (done) => {
-        let id = new ObjectID().toHexString();
+    it('should return 404 if todo not found', (done) => {
+        let hexId = new ObjectID().toHexString();
+
         request(app)
-            .get(`/todos/${id}`)
+            .get(`/todos/${hexId}`)
             .expect(404)
             .end(done);
     });
 
-    it("should return 404 for a non-object id", (done) => {
+    it('should return 404 for non-object ids', (done) => {
         request(app)
-            .get("/todos/123")
+            .get('/todos/123abc')
             .expect(404)
             .end(done);
     });
+});
+
+describe('DEL /todos/:id', () => {
+    it('should remove one doc', (done) => {
+        request(app)
+            .delete(`/todos/${todos[1]._id.toHexString()}`)
+            .expect(200)
+            .expect((res) => {
+                expect(res.body.text).toBe(todos[1].text);
+            })
+            .end((err) => {
+                if (err)
+                    return done(err);
+                Todo.findById(todos[1]._id.toHexString()).then((todo) => {
+                    expect(todo).toBe(null);
+                    done();
+                }).catch((e) => done(e));
+            });
+    });
+
+    it('should return 404 if todo not found', (done) => {
+        let hexId = new ObjectID().toHexString();
+        request(app).
+            delete(`/todos/${hexId}`).
+            expect(404).
+            end(done);
+    });
+
+    if('Should return 404 if ObjectId is invalid', (done) => {
+        let id = 123;
+        request(app).
+            delete(`/todos/${id}`).
+            expect(404).
+            end(done);
+    });
+
 });

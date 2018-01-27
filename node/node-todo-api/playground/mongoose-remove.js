@@ -4,19 +4,17 @@ const {mongoose} = require('./../server/db/mongoose');
 const {Todo} = require('./../server/models/todo');
 const {User} = require('./../server/models/user');
 
-//Mongoose give us
-//Todo.remove({}) -> ALL Todo.remove({someObj})
-
-// Todo.remove({}).then((result)=> {
-//     console.log(result);
+// Todo.remove({}).then((result) => {
+//   console.log(result);
 // });
+
+// Todo.findOneAndRemove
+// Todo.findByIdAndRemove
+
+// Todo.findOneAndRemove({_id: '57c4610dbb35fcbf6fda1154'}).then((todo) => {
 //
-Todo.findByIdAndRemove('5a6a25d38e5f0f7b309e1102').then((result) => {
-    console.log(result);
+// });
+
+Todo.findByIdAndRemove('57c4610dbb35fcbf6fda1154').then((todo) => {
+    console.log(todo);
 });
-
-Todo.findOneAndRemove({text: "Todo #2"}).then((result) => {
-    console.log(result);
-});
-
-
