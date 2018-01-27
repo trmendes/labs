@@ -1,16 +1,14 @@
-let express = require('express');
-let bodyParser = require('body-parser');
-let {ObjectID} = require('mongodb');
+let express = require("express");
+let bodyParser = require("body-parser");
+let {ObjectID} = require("mongodb");
 
-let {mongoose} = require('./db/mongoose');
-let {Todo} = require('./models/todo');
-let {User} = require('./models/user');
+let {Todo} = require("./models/todo");
 
 let app = express();
 
 app.use(bodyParser.json());
 
-app.post('/todos', (req, res) => {
+app.post("/todos", (req, res) => {
     let todo = new Todo({
         text: req.body.text
     });
@@ -22,7 +20,7 @@ app.post('/todos', (req, res) => {
     });
 });
 
-app.get('/todos', (req, res) => {
+app.get("/todos", (req, res) => {
     Todo.find().then((todos) => {
         res.status(200).send({
             len: todos.length,
@@ -33,7 +31,7 @@ app.get('/todos', (req, res) => {
     });
 });
 
-app.get('/todos/:id', (req , res) => {
+app.get("/todos/:id", (req , res) => {
     let id = req.params.id;
 
     if (!ObjectID.isValid(id)) {
@@ -46,12 +44,12 @@ app.get('/todos/:id', (req , res) => {
         }
 
         res.send({todo});
-    }).catch((e) => {
+    }).catch(() => {
         res.status(400).send();
     });
 });
 
-app.delete('/todos/:id', (req, res) => {
+app.delete("/todos/:id", (req, res) => {
     let id = req.params.id;
     if (!ObjectID.isValid(id)) {
         return res.status(404).send();
@@ -65,7 +63,7 @@ app.delete('/todos/:id', (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log('Started on port 3000');
+    console.log("Started on port 3000");
 });
 
 module.exports = { app };

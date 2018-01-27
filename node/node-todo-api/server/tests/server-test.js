@@ -1,9 +1,9 @@
-const expect = require('expect');
-const request = require('supertest');
-const {ObjectID} = require('mongodb');
+const expect = require("expect");
+const request = require("supertest");
+const {ObjectID} = require("mongodb");
 
-const { app } = require('./../server');
-const { Todo } = require('./../models/todo');
+const { app } = require("./../server");
+const { Todo } = require("./../models/todo");
 
 const todos = [{
     _id: new ObjectID(),
@@ -23,12 +23,12 @@ beforeEach((done) => {
         .then(done());
 });
 
-describe('POST /todos', () => {
+describe("POST /todos", () => {
 
-    it('should create a new todo', (done) => {
-        let text = 'text from the todo text';
+    it("should create a new todo", (done) => {
+        let text = "text from the todo text";
         request(app)
-            .post('/todos') /* SuperText lib */
+            .post("/todos") /* SuperText lib */
             .send({text}) /* SuperText lib */
             .expect(200) /* Expect lib */
         /* Next - a custom expect call  */
@@ -49,28 +49,28 @@ describe('POST /todos', () => {
                     expect(todos.length).toBe(1);
                     expect(todos[0].text).toBe(text);
                     done();
-                }).catch((e) => { done(e) })
+                }).catch((e) => { done(e);});
             });
     });
 
-    it('should not create todo with invalid data', (done) => {
+    it("should not create todo with invalid data", (done) => {
         request(app)
-            .post('/todos')
+            .post("/todos")
             .send({})
             .expect(404)
             .end((err, resp) => {
                 Todo.find().then( (todos) => {
                     expect(todos.length).toBe(todos.length);
                     done();
-                }).catch((e) => {done(e)});
+                }).catch((e) => {done(e);});
             });
     });
 });
 
-describe('GET /todos', () => {
-    it('should get all todos', (done) => {
+describe("GET /todos", () => {
+    it("should get all todos", (done) => {
         request(app)
-            .get('/todos')
+            .get("/todos")
             .expect(200)
             .expect((res) => {
                 expect(res.body.length).toNotBe(0);
@@ -81,7 +81,7 @@ describe('GET /todos', () => {
 
 describe(`GET /todos/${todos[0]._id.toHexString()}`, () => {
 
-    it('should return todo doc', (done) => {
+    it("should return todo doc", (done) => {
         request(app)
             .get(`/todos/${todos[0]._id.toHexString()}`)
             .expect(200)
@@ -91,7 +91,7 @@ describe(`GET /todos/${todos[0]._id.toHexString()}`, () => {
             .end(done);
     });
 
-    it('should return a 404 if todo not found', (done) => {
+    it("should return a 404 if todo not found", (done) => {
         let id = new ObjectID().toHexString();
         request(app)
             .get(`/todos/${id}`)
@@ -99,9 +99,9 @@ describe(`GET /todos/${todos[0]._id.toHexString()}`, () => {
             .end(done);
     });
 
-    it('should return 404 for a non-object id', (done) => {
+    it("should return 404 for a non-object id", (done) => {
         request(app)
-            .get('/todos/123')
+            .get("/todos/123")
             .expect(404)
             .end(done);
     });
