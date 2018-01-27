@@ -1,15 +1,16 @@
-let express = require('express');
-let bodyParser = require('body-parser');
-let {ObjectID} = require('mongodb');
+const _ = require('lodash');
+const express = require('express');
+const bodyParser = require('body-parser');
+const {ObjectID} = require('mongodb');
 
 /*TODO: Question
  * Why do I need this var here if I use it inside
  * Todo and Use */
-let {mongoose} = require('./db/mongoose');
-let {Todo} = require('./models/todo');
-let {User} = require('./models/user');
+const {mongoose} = require('./db/mongoose');
+const {Todo} = require('./models/todo');
+const {User} = require('./models/user');
 
-let app = express();
+const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
@@ -47,7 +48,7 @@ app.get('/todos/:id', (req, res) => {
         }
 
         res.send({todo});
-    }).catch((e) => {
+    }).catch(() => {
         res.status(400).send();
     });
 });
@@ -65,9 +66,40 @@ app.delete('/todos/:id', (req, res) => {
         }
 
         res.send(todo);
-    }).catch((e) => {
+    }).catch(() => {
         res.status(400).send();
     });
+});
+
+app.patch('/todos/:id', (req, res) => {
+    let id = req.params.id;
+    /* body is where we find the update info */
+    /* lodash.pick let use choose whatever we want to use from body */
+    /* The use can send us things we don't want to them to update such as
+     * completedAt so we use pick to choose which properties we want to work
+     * wish */
+    let body = _.pick(req.body, ['text', 'completed']);
+
+    if (!ObjectID.isValid(id)) {
+        return res.status(404).send();
+    }
+
+    if (_.isBoolean(body.completed) && body.completed) {
+        body.completedAt = new Date().getTime();
+    } else {
+        body.completed = false;
+        body.completedAt = null;
+    }
+
+    Todo.findByIdAndUpdate(id, {$set: body}, {new: true}).
+        then((todo) => {
+            if (!todo) {
+                return res.status(404).send();
+            }
+
+            res.status(200).send({todo});
+        }).
+        catch(() => res.status(400).send());
 });
 
 app.listen(port, () => {
