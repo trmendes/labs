@@ -1,7 +1,9 @@
-let mongoose = require('mongoose');
-let validator = require('validator');
+const mongoose = require('mongoose');
+const validator = require('validator');
+const jwt = require('jsonwebtoken');
+const _ = require('lodash');
 
-let User = mongoose.model('User', {
+let userObj = {
     email: {
         type: String,
         required: true,
@@ -28,6 +30,30 @@ let User = mongoose.model('User', {
             required: true
         }
     }]
-});
+};
+
+/* Overwrite a method to limit what comes back to the clint */
+let userSchema = new mongoose.Schema(userObj);
+
+userSchema.methods.toJSON = function() {
+    let userO = this.toObject();
+    return _.pick(userO, ['_id', 'email']);
+};
+
+/* Since we need this we can't use arrow functions */
+userSchema.methods.generateAuthToken = function() {
+    let user = this;
+    let access = 'auth';
+    let token = jwt.sign({
+        _id: user._id.toHexString(),
+        access
+    }, 'abc123').toString();
+    user.tokens.push({access, token});
+    return user.save().then(() => {
+        return token;
+    });
+};
+
+let User = mongoose.model('User', userSchema);
 
 module.exports = {User};
