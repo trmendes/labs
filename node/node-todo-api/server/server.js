@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
 
-/*TODO: Question
+/* TODO: Question
  * Why do I need this var here if I use it inside
  * Todo and Use */
 const {mongoose} = require('./db/mongoose');
@@ -16,6 +16,10 @@ const port = process.env.PORT;
 
 app.use(bodyParser.json());
 
+/* ---------------------------------------------------------------------------
+ * TODOS ROUTING
+ * ---------------------------------------------------------------------------
+ */
 app.post('/todos', (req, res) => {
     let todo = new Todo({
         text: req.body.text
@@ -101,6 +105,24 @@ app.patch('/todos/:id', (req, res) => {
             res.status(200).send({todo});
         }).
         catch(() => res.status(400).send());
+});
+
+/* ---------------------------------------------------------------------------
+ * USERS ROUTING
+ * ---------------------------------------------------------------------------
+ */
+
+app.post('/users', (req, res) => {
+    let body = _.pick(req.body, ['email', 'password']);
+    console.log(body);
+
+    let user = new User(body);
+
+    user.save().then((user) => {
+        res.status(200).send(user);
+    }).catch((e) => {
+        res.status(400).send(e);
+    });
 });
 
 app.listen(port, () => {
