@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const jwt = require('jsonwebtoken');
 const _ = require('lodash');
+const bcrypt = require('bcrypt');
 
 let userObj = {
     email: {
@@ -69,6 +70,19 @@ userSchema.statics.findByToken = function(token) {
         'tokens.access': 'auth'
     });
 };
+
+/* Before save to the database we want to do something with the data */
+userSchema.pre('save', function(next) {
+    let user = this;
+    if (user.isModified('password')) {
+        bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(user.password, salt, (err, hash) => {
+                user.password = hash;
+            });
+        });
+    }
+    next();
+});
 
 let User = mongoose.model('User', userSchema);
 
