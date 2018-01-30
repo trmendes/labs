@@ -57,6 +57,25 @@ userSchema.methods.generateAuthToken = function() {
     });
 };
 
+userSchema.statics.findByCredentials = function(email, password) {
+    let user = this;
+    return User.findOne({email}).then((user) => {
+        if (!user) {
+            return Promise.reject();
+        }
+        /* Since bcrypt does NOT suport Promise we return a new one */
+        return new Promise((resolve, reject) => {
+            bcrypt.compare(password, user.password, (err, res) => {
+                if (res) {
+                    resolve(user);
+                } else {
+                    reject();
+                }
+            });
+        });
+    });
+};
+
 /* This function must return a Promise */
 userSchema.statics.findByToken = function(token) {
     let decoded = null;
@@ -80,10 +99,12 @@ userSchema.pre('save', function(next) {
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(user.password, salt, (err, hash) => {
                 user.password = hash;
+                next();
             });
         });
+    } else {
+        next();
     }
-    next();
 });
 
 let User = mongoose.model('User', userSchema);

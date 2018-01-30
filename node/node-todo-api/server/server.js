@@ -1,3 +1,5 @@
+'use strict';
+
 require('./config/config');
 const _ = require('lodash');
 const express = require('express');
@@ -112,6 +114,17 @@ app.patch('/todos/:id', (req, res) => {
  * USERS ROUTING
  * ---------------------------------------------------------------------------
  */
+
+app.post('/users/login', (req, res) => {
+    let body = _.pick(req.body, ['email', 'password']);
+    User.findByCredentials(body.email, body.password).then((user) => {
+        return user.generateAuthToken().then((token) => {
+            res.header('x-auth', token).send(user);
+        });
+    }).catch((err) => {
+        res.status(400).send();
+    });
+});
 
 app.post('/users', (req, res) => {
     let body = _.pick(req.body, ['email', 'password']);
