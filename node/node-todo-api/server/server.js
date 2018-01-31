@@ -142,6 +142,17 @@ app.post('/users', (req, res) => {
     });
 });
 
+app.delete('/users/me/token', authenticate, (req, res) => {
+    /* Since the user is authenticated...we have access to its object using
+     * req.user / req.token
+     */
+    req.user.removeToken(req.token).then(() => {
+        res.status(200).send();
+    }, () => {
+        res.status(400).send();
+    });
+});
+
 app.listen(port, () => {
     console.log(`Started up at port ${port}`);
 });
