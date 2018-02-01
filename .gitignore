@@ -9,3 +9,4 @@ package-lock.json
 *node_modules*
 forecastkey.js
 .vim-bookmarks*
+config.json
