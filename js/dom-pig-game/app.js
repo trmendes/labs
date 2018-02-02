@@ -10,15 +10,20 @@ turn - The first player to reach 100 points on GLOBAL score wins the game
 
 */
 
+/* TODO
+ * SIX IN A ROLL - RESET SCORE
+ * TWO DICES - IF ONE OF THEM IS ONE - LOOSE CURRENT SCORE
+ * INPUT TYPE FOR MAX SCORE
+ */
+
 /* ---------------------------------------------------------------------------
  * PLAYERS
  * ---------------------------------------------------------------------------
  */
 
-let scores = [0, 0];
-let roundScore = 0;
-let activePlayer = 0; /* 0 - 1th player, 1 - 2sd player */
-let player = 0;
+const maxScore = 100;
+
+let scores, roundScore, player, sixInARollCnt;
 
 function updateScore(player, value) {
     document.getElementById(`score-${player}`).textContent = value;
@@ -31,34 +36,81 @@ function updateCurrentScore(player, value) {
 function swapPlayer() {
     updateCurrentScore(player, roundScore);
     updateScore(player, scores[player]);
+
     document.querySelector('.dice').style.display = 'none';
-    document.querySelector(`.player-${player}-panel`).classList.remove('active');
-    player = (player + 1) % 2;
-    document.querySelector(`.player-${player}-panel`).classList.add('active');
+    if (scores[player] >= maxScore) {
+        document.getElementById(`name-${player}`).textContent = "Winner";
+        document.querySelector(`.player-${player}-panel`).classList.
+            add('winner');
+        document.querySelector(`.player-${player}-panel`).classList.
+            remove('active');
+    } else {
+        document.querySelector(`.player-${player}-panel`).classList.
+            remove('active');
+        player = (player + 1) % 2;
+        document.querySelector(`.player-${player}-panel`).classList.
+            add('active');
+    }
 };
 
-updateScore(0,0);
-updateScore(1,0);
-updateCurrentScore(0, 0);
-updateCurrentScore(1, 0);
+function init() {
+    scores = [0, 0];
+    roundScore = 0;
+    player = 0;
+
+    updateScore(0,0);
+    updateScore(1,0);
+
+    updateCurrentScore(0, 0);
+    updateCurrentScore(1, 0);
+
+    document.querySelector('.dice1').style.display = 'none';
+    document.querySelector('.dice2').style.display = 'none';
+
+    document.getElementById('name-0').textContent = 'Player 1';
+    document.getElementById('name-1').textContent = 'Player 2';
+
+    document.querySelector('.player-0-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('winner');
+
+    document.querySelector('.player-0-panel').classList.add('active');
+    document.querySelector('.player-1-panel').classList.remove('active');
+}
+
+document.querySelector('.btn-new').addEventListener('click', () => {
+    init();
+});
 
 document.querySelector('.btn-roll').addEventListener('click', () => {
-    let dice = Math.floor(Math.random() * 6) + 1;
+    if (scores[player] >= maxScore) {
+        return;
+    }
 
-    document.querySelector('.dice').style.display = 'block';
-    document.querySelector('.dice').src = `dice-${dice}.png`;
+    let dice1 = Math.floor(Math.random() * 6) + 1;
+    let dice2 = Math.floor(Math.random() * 6) + 1;
 
-    if (dice == 1) {
+    document.querySelector('.dice1').style.display = 'block';
+    document.querySelector('.dice1').src = `dice-${dice}.png`;
+    document.querySelector('.dice2').style.display = 'block';
+    document.querySelector('.dice2').src = `dice-${dice}.png`;
+
+    if ((dice1 === 1) || (dice2 === 1)) {
         roundScore = 0;
         swapPlayer();
     } else {
-        roundScore += dice;
+        roundScore += (dice1 + dice2);
         updateCurrentScore(player, roundScore);
     }
 });
 
 document.querySelector('.btn-hold').addEventListener('click', () => {
+    if (scores[player] >= maxScore) {
+        return;
+    }
+
     scores[player]+= roundScore;
     roundScore = 0;
     swapPlayer();
 });
+
+init();
