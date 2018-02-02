@@ -18,8 +18,47 @@ turn - The first player to reach 100 points on GLOBAL score wins the game
 let scores = [0, 0];
 let roundScore = 0;
 let activePlayer = 0; /* 0 - 1th player, 1 - 2sd player */
+let player = 0;
 
-let dice = Math.floor(Math.random() * 6) + 1;
+function updateScore(player, value) {
+    document.getElementById(`score-${player}`).textContent = value;
+};
 
-// document.querySelector(`#current-${activePlayer}`).innerHTML = `<em>${dice}</em>`;
-document.querySelector(`#current-${activePlayer}`).textContent = dice;
+function updateCurrentScore(player, value) {
+    document.getElementById(`current-${player}`).textContent = value;
+};
+
+function swapPlayer() {
+    updateCurrentScore(player, roundScore);
+    updateScore(player, scores[player]);
+    document.querySelector('.dice').style.display = 'none';
+    document.querySelector(`.player-${player}-panel`).classList.remove('active');
+    player = (player + 1) % 2;
+    document.querySelector(`.player-${player}-panel`).classList.add('active');
+};
+
+updateScore(0,0);
+updateScore(1,0);
+updateCurrentScore(0, 0);
+updateCurrentScore(1, 0);
+
+document.querySelector('.btn-roll').addEventListener('click', () => {
+    let dice = Math.floor(Math.random() * 6) + 1;
+
+    document.querySelector('.dice').style.display = 'block';
+    document.querySelector('.dice').src = `dice-${dice}.png`;
+
+    if (dice == 1) {
+        roundScore = 0;
+        swapPlayer();
+    } else {
+        roundScore += dice;
+        updateCurrentScore(player, roundScore);
+    }
+});
+
+document.querySelector('.btn-hold').addEventListener('click', () => {
+    scores[player]+= roundScore;
+    roundScore = 0;
+    swapPlayer();
+});
