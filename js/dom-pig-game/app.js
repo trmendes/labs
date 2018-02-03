@@ -34,10 +34,11 @@ function updateCurrentScore(player, value) {
 };
 
 function swapPlayer() {
+    sixInARollCnt = 0;
     updateCurrentScore(player, roundScore);
     updateScore(player, scores[player]);
 
-    document.querySelector('.dice').style.display = 'none';
+    document.getElementById('dice-box').style.display = 'none';
     if (scores[player] >= maxScore) {
         document.getElementById(`name-${player}`).textContent = "Winner";
         document.querySelector(`.player-${player}-panel`).classList.
@@ -57,6 +58,7 @@ function init() {
     scores = [0, 0];
     roundScore = 0;
     player = 0;
+    sixInARollCnt = 0;
 
     updateScore(0,0);
     updateScore(1,0);
@@ -64,8 +66,7 @@ function init() {
     updateCurrentScore(0, 0);
     updateCurrentScore(1, 0);
 
-    document.querySelector('.dice1').style.display = 'none';
-    document.querySelector('.dice2').style.display = 'none';
+    document.getElementById('dice-box').style.display = 'none';
 
     document.getElementById('name-0').textContent = 'Player 1';
     document.getElementById('name-1').textContent = 'Player 2';
@@ -82,25 +83,38 @@ document.querySelector('.btn-new').addEventListener('click', () => {
 });
 
 document.querySelector('.btn-roll').addEventListener('click', () => {
+
     if (scores[player] >= maxScore) {
         return;
     }
 
-    let dice1 = Math.floor(Math.random() * 6) + 1;
-    let dice2 = Math.floor(Math.random() * 6) + 1;
+    let diceA = Math.floor(Math.random() * 6) + 1;
+    let diceB = Math.floor(Math.random() * 6) + 1;
 
-    document.querySelector('.dice1').style.display = 'block';
-    document.querySelector('.dice1').src = `dice-${dice}.png`;
-    document.querySelector('.dice2').style.display = 'block';
-    document.querySelector('.dice2').src = `dice-${dice}.png`;
+    document.getElementById('dice-box').style.display = 'block';
+    document.getElementById('dice1').src = `dice-${diceA}.png`;
+    document.getElementById('dice2').src = `dice-${diceB}.png`;
 
-    if ((dice1 === 1) || (dice2 === 1)) {
+    if ((diceA === 6) && (diceB === 6)) {
+        ++sixInARollCnt;
+    } else {
+        sixInARollCnt = 0;
+    }
+
+    if (sixInARollCnt === 2) {
         roundScore = 0;
+        scores[player] = 0;
         swapPlayer();
     } else {
-        roundScore += (dice1 + dice2);
-        updateCurrentScore(player, roundScore);
+        if ((diceA === 1) || (diceB === 1)) {
+            roundScore = 0;
+            swapPlayer();
+        } else {
+            roundScore += (diceA + diceB);
+            updateCurrentScore(player, roundScore);
+        }
     }
+    document.getElementById('score-msg').textContent = `Player ${player} [Six in a rox: ${sixInARollCnt}/2] [last dices values [${diceA}:${diceB}]]`;
 });
 
 document.querySelector('.btn-hold').addEventListener('click', () => {
