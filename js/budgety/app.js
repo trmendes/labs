@@ -46,21 +46,27 @@ let UIController = (
  */
 let controller = (
     (budgetCtrl, UICtrl) => {
-
-        let DOMStr = UICtrl.getDOMString();
-
+        /* Public */
+        let setupEventListeners = () => {
+            let DOMStr = UICtrl.getDOMString();
+            document.querySelector(DOMStr.inputBtn).addEventListener('click',
+                ctrlAddItem);
+            document.addEventListener('keypress', (event) => {
+                if (event.charCode === 0) {
+                    ctrlAddItem();
+                }
+            });
+        };
+        /* Private */
         let ctrlAddItem = () => {
             let input = UICtrl.getInput();
             console.log(input);
         };
 
-        document.querySelector(DOMStr.inputBtn).addEventListener('click',
-            ctrlAddItem);
-        document.addEventListener('keypress', (event) => {
-            if (event.charCode === 0) {
-                ctrlAddItem();
-            }
-        });
+        return {
+            init: () => setupEventListeners()
+        }
     }
 )(budgetController, UIController);
 
+controller.init();
