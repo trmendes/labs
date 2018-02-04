@@ -8,7 +8,53 @@
  */
 let budgetController = (
     () => {
-        return;
+        /* Private */
+        let data = {
+            allItens: {
+                exp: [],
+                inc: []
+            },
+            total: {
+                exp: 0,
+                inc: 0
+            }
+        }
+        /* Private */
+        let Expense = function(id, desc, value) {
+            this.id = id;
+            this.desc = desc;
+            this.value = value;
+        };
+        /* Private */
+        let Income = function(id, desc, value) {
+            this.id = id;
+            this.desc = desc;
+            this.value = value;
+        }
+        return {
+            addItem: (type, des, val) => {
+                let newItem;
+                let id = 0;
+
+                if (type === 'exp') {
+                    if (data.allItens.exp.length > 0) {
+                        id = data.allItens.exp[data.allItens.exp.length - 1].id
+                            + 1;
+                    }
+                    newItem = new Expense(id, des, val);
+                    data.allItens.exp.push(newItem);
+                } else {
+                    if (data.allItens.inc.length > 0) {
+                        id = data.allItens.inc[data.allItens.inc.length - 1].id
+                            + 1;
+                    }
+                    newItem = new Income(id, des, val);
+                    data.allItens.inc.push(newItem);
+                }
+                return newItem;
+            },
+            testData: () => console.log(data)
+        };
     }
 )();
 
@@ -60,7 +106,9 @@ let controller = (
         /* Private */
         let ctrlAddItem = () => {
             let input = UICtrl.getInput();
-            console.log(input);
+            console.log('adding...');
+            budgetCtrl.addItem(input.type, input.desc, input.value);
+            budgetCtrl.testData();
         };
 
         return {
