@@ -78,9 +78,8 @@ let UIController = (
                 return {
                     // type === inc = + || exp = -
                     type: document.querySelector(DOMStr.inputType).value,
-                    desc:
-                    parseFloat(document.querySelector(DOMStr.inputDesc).value),
-                    value: document.querySelector(DOMStr.inputValue).value
+                    desc: document.querySelector(DOMStr.inputDesc).value,
+                    value: parseFloat(document.querySelector(DOMStr.inputValue).value)
                 }
             },
             addListenItem: (obj, type) => {
@@ -137,13 +136,17 @@ let controller = (
             });
         };
         let updateBudget = () => {
-
+            return;
         };
         /* Private */
         let ctrlAddItem = () => {
             let input = UICtrl.getInput();
-            let nItem = budgetCtrl.addItem(input.type, input.desc, input.value);
-            UICtrl.addListenItem(nItem, input.type);
+            if (input.desc !== "" && !isNaN(input.value) &&
+                input.value > 0) {
+                let nItem = budgetCtrl.addItem(input.type, input.desc,
+                    input.value);
+                UICtrl.addListenItem(nItem, input.type);
+            }
             UICtrl.clearFields();
         };
 
