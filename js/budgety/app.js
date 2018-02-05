@@ -52,8 +52,7 @@ let budgetController = (
                     data.allItens.inc.push(newItem);
                 }
                 return newItem;
-            },
-            testData: () => console.log(data)
+            }
         };
     }
 )();
@@ -69,7 +68,9 @@ let UIController = (
             inputType: '.add__type',
             inputDesc: '.add__description',
             inputValue: '.add__value',
-            inputBtn: '.add__btn'
+            inputBtn: '.add__btn',
+            incContainer: '.income__list',
+            expContainer: '.expenses__list'
         }
 
         return {
@@ -77,9 +78,41 @@ let UIController = (
                 return {
                     // type === inc = + || exp = -
                     type: document.querySelector(DOMStr.inputType).value,
-                    desc: document.querySelector(DOMStr.inputDesc).value,
+                    desc:
+                    parseFloat(document.querySelector(DOMStr.inputDesc).value),
                     value: document.querySelector(DOMStr.inputValue).value
                 }
+            },
+            addListenItem: (obj, type) => {
+                let html, element;
+                if (type === 'inc') {
+                    html = '<div class="item clearfix" id="income-%id%"><div \
+                    class="item__description">%desc%</div><div class="right \
+                    clearfix"><div class="item__value">%value%</div><div \
+                    class="item__delete"><button class="item__delete--btn"><i \
+                    class="ion-ios-close-outline"></i></button></div></div></div>';
+                    element = document.querySelector(DOMStr.incContainer);
+                } else {
+                    html = '<div class="item clearfix" id="expense-%id%"><div \
+                    class="item__description">%desc%</div><div class="right \
+                    clearfix"><div class="item__value">%value%</div><div \
+                    class="item__percentage">21%</div><div \
+                    class="item__delete"><button class="item__delete--btn"><i \
+                    class="ion-ios-close-outline"></i></button></div></div></div>';
+                    element = document.querySelector(DOMStr.expContainer);
+                }
+                html = html.replace('%id', obj.id);
+                html = html.replace('%desc%', obj.desc);
+                html = html.replace('%value%', obj.value);
+                element.insertAdjacentHTML('beforeend', html);
+            },
+            clearFields: () => {
+                let fields = document.querySelectorAll(DOMStr.inputDesc + ', '
+                    + DOMStr.inputValue);
+                fields.forEach((el) => {
+                    el.value = '';
+                });
+                fields[0].focus();
             },
             getDOMString: () => DOMStr
         }
@@ -103,12 +136,15 @@ let controller = (
                 }
             });
         };
+        let updateBudget = () => {
+
+        };
         /* Private */
         let ctrlAddItem = () => {
             let input = UICtrl.getInput();
-            console.log('adding...');
-            budgetCtrl.addItem(input.type, input.desc, input.value);
-            budgetCtrl.testData();
+            let nItem = budgetCtrl.addItem(input.type, input.desc, input.value);
+            UICtrl.addListenItem(nItem, input.type);
+            UICtrl.clearFields();
         };
 
         return {
