@@ -62,6 +62,16 @@ let budgetController = (
                 }
                 return newItem;
             },
+            deleteItem: (type, id) => {
+                let idxToRemove = -1;
+                let ids = data.allItens[type].map((el, idx) => {
+                    return el.id;
+                });
+                let idx = ids.indexOf(id);
+                if (idx !== -1) {
+                    data.allItens[type].splice(idx, 1);
+                }
+            },
             calculateBudget: () => {
                 calculateTotal('exp');
                 calculateTotal('inc');
@@ -102,7 +112,8 @@ let UIController = (
             budgetLabel: '.budget__value',
             incLabel: '.budget__income--value',
             expLabel: '.budget__expenses--value',
-            percLabel: '.budget__expenses--percentage'
+            percLabel: '.budget__expenses--percentage',
+            container: '.container'
         }
 
         return {
@@ -117,14 +128,14 @@ let UIController = (
             addListenItem: (obj, type) => {
                 let html, element;
                 if (type === 'inc') {
-                    html = '<div class="item clearfix" id="income-%id%"><div \
+                    html = '<div class="item clearfix" id="inc-%id%"><div \
                     class="item__description">%desc%</div><div class="right \
                     clearfix"><div class="item__value">%value%</div><div \
                     class="item__delete"><button class="item__delete--btn"><i \
                     class="ion-ios-close-outline"></i></button></div></div></div>';
                     element = document.querySelector(DOMStr.incContainer);
                 } else {
-                    html = '<div class="item clearfix" id="expense-%id%"><div \
+                    html = '<div class="item clearfix" id="exp-%id%"><div \
                     class="item__description">%desc%</div><div class="right \
                     clearfix"><div class="item__value">%value%</div><div \
                     class="item__percentage">21%</div><div \
@@ -136,6 +147,10 @@ let UIController = (
                 html = html.replace('%desc%', obj.desc);
                 html = html.replace('%value%', obj.value);
                 element.insertAdjacentHTML('beforeend', html);
+            },
+            deleteItem: (toDelete) => {
+                let el = document.getElementById(toDelete);
+                el.parentNode.removeChild(el);
             },
             clearFields: () => {
                 let fields = document.querySelectorAll(DOMStr.inputDesc + ', '
@@ -191,6 +206,9 @@ let controller = (
                 }
             });
 
+            document.querySelector(DOMStr.container).addEventListener('click',
+                ctrlDeleteItem);
+
         };
 
         let updateBudget = () => {
@@ -198,6 +216,21 @@ let controller = (
             budgetCtrl.calculateBudget();
             budget = budgetCtrl.getBudget();
             UICtrl.displayBudget(budget);
+        };
+
+        let ctrlDeleteItem = (event) => {
+            /* SO UGLY */
+            let itemID = event.target.parentNode.parentNode.parentNode.id;
+            let splitID, type, id;
+
+            if (itemID) {
+                splitID = itemID.split('-');
+                type = splitID[0];
+                id = parseInt(splitID[1], 10);
+                budgetCtrl.deleteItem(type, id);
+                UICtrl.deleteItem(itemID);
+                updateBudget();
+            }
         };
 
         /* Private */
