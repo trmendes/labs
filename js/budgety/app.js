@@ -17,7 +17,9 @@ let budgetController = (
             total: {
                 exp: 0,
                 inc: 0
-            }
+            },
+            budget: 0,
+            percentage: -1
         }
         /* Private */
         let Expense = function(id, desc, value) {
@@ -31,6 +33,13 @@ let budgetController = (
             this.desc = desc;
             this.value = value;
         }
+        let calculateTotal = function(type) {
+            let sum = 0;
+            data.allItens[type].forEach((element) => {
+                sum += element.value;
+            });
+            data.total[type] = sum;
+        };
         return {
             addItem: (type, des, val) => {
                 let newItem;
@@ -52,6 +61,25 @@ let budgetController = (
                     data.allItens.inc.push(newItem);
                 }
                 return newItem;
+            },
+            calculateBudget: () => {
+                calculateTotal('exp');
+                calculateTotal('inc');
+                data.budget = data.total.inc - data.total.exp;
+                if (data.total.inc > 0) {
+                    data.percentage = Math.round(
+                        (data.total.exp / data.total.inc) * 100);
+                } else {
+                    data.percentage = -1;
+                }
+            },
+            getBudget: () => {
+                return {
+                    budget: data.budget,
+                    totalInc: data.total.inc,
+                    totalExp: data.total.exp,
+                    percentage: data.percentage
+                }
             }
         };
     }
@@ -70,7 +98,11 @@ let UIController = (
             inputValue: '.add__value',
             inputBtn: '.add__btn',
             incContainer: '.income__list',
-            expContainer: '.expenses__list'
+            expContainer: '.expenses__list',
+            budgetLabel: '.budget__value',
+            incLabel: '.budget__income--value',
+            expLabel: '.budget__expenses--value',
+            percLabel: '.budget__expenses--percentage'
         }
 
         return {
@@ -113,6 +145,21 @@ let UIController = (
                 });
                 fields[0].focus();
             },
+            displayBudget: (obj) => {
+                document.querySelector(DOMStr.budgetLabel).textContent =
+                    obj.budget;
+                document.querySelector(DOMStr.incLabel).textContent =
+                    obj.totalInc;
+                document.querySelector(DOMStr.expLabel).textContent =
+                    obj.totalExp;
+                if (obj.percentage >= 0) {
+                    document.querySelector(DOMStr.percLabel).textContent =
+                        obj.percentage + '%';
+                } else {
+                    document.querySelector(DOMStr.percLabel).textContent =
+                        '---';
+                }
+            },
             getDOMString: () => DOMStr
         }
     }
@@ -127,6 +174,15 @@ let controller = (
         /* Public */
         let setupEventListeners = () => {
             let DOMStr = UICtrl.getDOMString();
+
+            let topLabelInit = {
+                budget: 0,
+                totalInc: 0,
+                totalExp: 0,
+                percentage: -1
+            }
+            UICtrl.displayBudget(topLabelInit);
+
             document.querySelector(DOMStr.inputBtn).addEventListener('click',
                 ctrlAddItem);
             document.addEventListener('keypress', (event) => {
@@ -134,10 +190,16 @@ let controller = (
                     ctrlAddItem();
                 }
             });
+
         };
+
         let updateBudget = () => {
-            return;
+            let budget;
+            budgetCtrl.calculateBudget();
+            budget = budgetCtrl.getBudget();
+            UICtrl.displayBudget(budget);
         };
+
         /* Private */
         let ctrlAddItem = () => {
             let input = UICtrl.getInput();
@@ -146,6 +208,7 @@ let controller = (
                 let nItem = budgetCtrl.addItem(input.type, input.desc,
                     input.value);
                 UICtrl.addListenItem(nItem, input.type);
+                updateBudget();
             }
             UICtrl.clearFields();
         };
