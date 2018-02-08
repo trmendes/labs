@@ -23,10 +23,17 @@ class Park {
 };
 
 class Street {
-    constructor(name, buildYear, size = 10) {
+    constructor(name, buildYear, len = 10, size = 3) {
         this.name = name;
         this.buildYear = buildYear;
+        this.len = len;
         this.size = size;
+        this.classMap = new Map();
+        this.classMap.set(1, 'tiny');
+        this.classMap.set(2, 'small');
+        this.classMap.set(3, 'normal');
+        this.classMap.set(4, 'large');
+        this.classMap.set(5, 'huge');
     }
     getName() {
         return this.name;
@@ -36,6 +43,9 @@ class Street {
     }
     getSize() {
         return this.size;
+    }
+    getClassification() {
+        return this.map.get(this.size);
     }
 };
 
@@ -49,9 +59,9 @@ class City {
         ];
         this.streets = [
             new Street('Street A', 1950),
-            new Street('Street B', 1951, 20),
+            new Street('Street B', 1951, 20, 2),
             new Street('Street C', 1952),
-            new Street('Street D', 1953, 20)
+            new Street('Street D', 1953, 50, 5)
         ];
     }
     getName() {
