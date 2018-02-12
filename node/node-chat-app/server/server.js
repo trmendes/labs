@@ -25,10 +25,18 @@ app.use(express.static(publicPath));
  */
 const io = socketIO(server);
 
-io.on('connection', function (socket) {
+io.on('connection', (socket) => {
     console.log('a new connection from a client');
     socket.on('disconnect', () => {
         console.log('The same client went away');
+    });
+    socket.on('newMessage', (message) => {
+        console.log(`Got a message from ${message.name}`);
+        console.log(`It says: ${message.body}`);
+        socket.emit('newMessage', {
+            name: 'Tower',
+            body: `Welcome to the channel ${message.name}! Over!`
+        });
     });
 });
 
