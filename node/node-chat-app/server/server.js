@@ -26,20 +26,27 @@ app.use(express.static(publicPath));
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
-    console.log('a new connection from a client');
     socket.on('disconnect', () => {
         console.log('The same client went away');
     });
-    socket.on('newMessage', (message) => {
-        console.log(`Got a message from ${message.name}`);
+
+    socket.on('createMessage', (message) => {
+        console.log(`Got a message from ${message.from} to ${message.to}`);
         console.log(`It says: ${message.body}`);
-        socket.emit('newMessage', {
-            name: 'Tower',
-            body: `Welcome to the channel ${message.name}! Over!`
-        });
+
+        socket.emit('newMessage', createMsg(`${message.to}`, `${message.from}`,
+            `Got it ${message.from}!`));
     });
 });
 
+let createMsg = (from, to, body) => {
+    return {
+        from,
+        to,
+        body: body + '! Over!',
+        createdAt: new Date()
+    }
+};
 
 const port = process.env.PORT || 3000;
 

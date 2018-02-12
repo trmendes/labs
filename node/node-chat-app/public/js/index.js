@@ -2,7 +2,7 @@ socket = io.connect();
 
 socket.on('connect', () => {
 	console.log('connected to the server');
-    socket.emit('newMessage', createMsg('Lake', 'Lake speaking!!'));
+    socket.emit('createMessage', createMsg('Lake', 'Tower', 'Lake speaking!'));
 });
 
 socket.on('disconnect', () => {
@@ -10,13 +10,14 @@ socket.on('disconnect', () => {
 });
 
 socket.on('newMessage', (message) => {
-    console.log(`Got a new messagem from ${message.name}`);
+    console.log(`Got a new messagem from ${message.from} to ${message.to}`);
     console.log(`It says: ${message.body}`);
 });
 
-let createMsg = (sender, body) => {
+let createMsg = (from, to, body) => {
     return {
-        name: sender,
-        body: body + '! Over!';
+        from,
+        to,
+        body: body + '! Over!'
     };
 };
