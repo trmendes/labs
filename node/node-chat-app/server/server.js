@@ -10,6 +10,8 @@ const publicPath = path.join(__dirname, '..', 'public');
 const socketIO = require('socket.io');
 const server = http.createServer(app);
 
+const { createMsg } = require('./utils/message');
+
 /* A middleware to take all requests to the public
  * directory
  */
@@ -56,17 +58,7 @@ io.on('connection', (socket) => {
     });
 });
 
-let createMsg = (from, to, body) => {
-    return {
-        from,
-        to,
-        body,
-        createdAt: new Date().getTime()
-    }
-};
-
 const port = process.env.PORT || 3000;
-
 
 /* Not using the app to listen
  * using the http server
