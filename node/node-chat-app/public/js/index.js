@@ -19,6 +19,16 @@ socket.emit('createMessage', {
   console.log('Got it', data);
 });
 
+jQuery('#message-form').on('submit', function (event) {
+    /* Prevent the page to refresh */
+    event.preventDefault();
+    socket.emit('createMessage', {
+        from: 'User',
+        text: jQuery('[name=message]').val()
+    }, function () {
+    });
+});
+
 let createMsg = (from, to, body) => {
     return {
         from,
