@@ -10,23 +10,18 @@ socket.on('disconnect', () => {
 
 socket.on('newMessage', (message) => {
     console.log(`${message.body}`);
-});
-
-socket.emit('createMessage', {
-  from: 'Frank',
-  text: 'Hi'
-}, function (data) {
-  console.log('Got it', data);
+    let li = jQuery('<li></li>');
+    li.text(`${message.from}: ${message.body}`);
+    jQuery('#messages').append(li);
 });
 
 jQuery('#message-form').on('submit', function (event) {
     /* Prevent the page to refresh */
     event.preventDefault();
-    socket.emit('createMessage', {
-        from: 'User',
-        text: jQuery('[name=message]').val()
-    }, function () {
-    });
+    let msg = jQuery('[name=message]').val();
+    socket.emit('createMessage', createMsg('Client', 'Server', msg),
+        function () {
+        });
 });
 
 let createMsg = (from, to, body) => {
