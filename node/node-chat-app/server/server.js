@@ -28,33 +28,23 @@ app.use(express.static(publicPath));
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
+    console.log('New user connected');
+
+    socket.emit('newMessage', createMsg('Server',
+        'Client',
+        'Welcome to the chat app'));
+
+    socket.broadcast.emit('newMessage', createMsg('Server',
+        'Client',
+        `New user connected`));
+
+    socket.on('createMessage', (message, callback) => {
+        console.log(`CreateMessage: ${message.body}`);
+        io.emit('newMessage', createMsg(message.from, message.to, message.body));
+        callback('This is from the server.');
+    });
     socket.on('disconnect', () => {
         console.log('The same client went away');
-    });
-
-    socket.on('createMessage', (message) => {
-        console.log(`${message.body}`);
-
-        if (message.to === 'Server') {
-            if (message.body === 'joined') {
-                socket.broadcast.emit('newMessage', createMsg('server',
-                    'Clients',
-                    `New user ${message.from} joined the chat`));
-            }
-        }
-
-        /* Socket.emit emits a message to a single connection */
-        // socket.emit('newMessage', createMsg(`${message.to}`, `${message.from}`,
-        //     `Got it ${message.from}!`));
-
-        /* io.emit emits a broadcast message */
-        // io.emit('newMessage', createMsg(`${message.to}`, `${message.from}`,
-        //     `Got it ${message.from}!`));
-
-        /* socket.broadcast.emit will broadcast a message to everyone bu the one
-         * who sent the message
-         */
-        // socket.broadcast.emit('newMessage', message);
     });
 });
 
