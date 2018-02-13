@@ -31,11 +31,28 @@ io.on('connection', (socket) => {
     });
 
     socket.on('createMessage', (message) => {
-        console.log(`Got a message from ${message.from} to ${message.to}`);
-        console.log(`It says: ${message.body}`);
+        console.log(`${message.body}`);
 
-        socket.emit('newMessage', createMsg(`${message.to}`, `${message.from}`,
-            `Got it ${message.from}!`));
+        if (message.to === 'Server') {
+            if (message.body === 'joined') {
+                socket.broadcast.emit('newMessage', createMsg('server',
+                    'Clients',
+                    `New user ${message.from} joined the chat`));
+            }
+        }
+
+        /* Socket.emit emits a message to a single connection */
+        // socket.emit('newMessage', createMsg(`${message.to}`, `${message.from}`,
+        //     `Got it ${message.from}!`));
+
+        /* io.emit emits a broadcast message */
+        // io.emit('newMessage', createMsg(`${message.to}`, `${message.from}`,
+        //     `Got it ${message.from}!`));
+
+        /* socket.broadcast.emit will broadcast a message to everyone bu the one
+         * who sent the message
+         */
+        // socket.broadcast.emit('newMessage', message);
     });
 });
 
@@ -43,8 +60,8 @@ let createMsg = (from, to, body) => {
     return {
         from,
         to,
-        body: body + '! Over!',
-        createdAt: new Date()
+        body,
+        createdAt: new Date().getTime()
     }
 };
 
