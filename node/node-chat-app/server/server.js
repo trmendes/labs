@@ -10,7 +10,7 @@ const publicPath = path.join(__dirname, '..', 'public');
 const socketIO = require('socket.io');
 const server = http.createServer(app);
 
-const { createMsg } = require('./utils/message');
+const { createMsg, createLocationMsg } = require('./utils/message');
 
 /* A middleware to take all requests to the public
  * directory
@@ -44,10 +44,12 @@ io.on('connection', (socket) => {
     });
 
     socket.on('createLocationMessage', (message, callback) => {
-        let msg = `lat: ${message.body.lat}, log: ${message.body.log}`;
-        io.emit('newMessage', createMsg('Server', 'Client', msg));
+        io.emit('newLocationMessage', createLocationMsg('Server', 'Client',
+            message.body.lat,
+            message.body.log));
         callback('ACK');
     });
+
     socket.on('disconnect', () => {
         console.log('The same client went away');
     });

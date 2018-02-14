@@ -7,4 +7,13 @@ let createMsg = (from, to, body) => {
     }
 };
 
-module.exports = { createMsg };
+let createLocationMsg = (from, to, lat, log) => {
+    return {
+        from,
+        to,
+        url: `https://nominatim.openstreetmap.org/search?q=${lat},${log}`,
+        createdAt: new Date().getTime()
+    };
+};
+
+module.exports = { createMsg, createLocationMsg };
