@@ -1,9 +1,13 @@
+const moment = require('moment');
+
+const date = moment();
+
 let createMsg = (from, to, body) => {
     return {
         from,
         to,
         body,
-        createdAt: new Date().getTime()
+        createdAt: date.valueOf()
     }
 };
 
@@ -12,7 +16,7 @@ let createLocationMsg = (from, to, lat, log) => {
         from,
         to,
         url: `https://nominatim.openstreetmap.org/search?q=${lat},${log}`,
-        createdAt: new Date().getTime()
+        createdAt: date.valueOf()
     };
 };
 
