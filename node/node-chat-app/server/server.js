@@ -39,9 +39,14 @@ io.on('connection', (socket) => {
         `New user connected`));
 
     socket.on('createMessage', (message, callback) => {
-        console.log('CreateMessage', JSON.stringify(message, null, 2));
         io.emit('newMessage', createMsg(message.from, message.to, message.body));
-        callback('This is from the server.');
+        callback('ACK');
+    });
+
+    socket.on('createLocationMessage', (message, callback) => {
+        let msg = `lat: ${message.body.lat}, log: ${message.body.log}`;
+        io.emit('newMessage', createMsg('Server', 'Client', msg));
+        callback('ACK');
     });
     socket.on('disconnect', () => {
         console.log('The same client went away');
