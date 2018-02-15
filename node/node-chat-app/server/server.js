@@ -11,6 +11,7 @@ const socketIO = require('socket.io');
 const server = http.createServer(app);
 
 const { createMsg, createLocationMsg } = require('./utils/message');
+const { isRealString } = require('./utils/validation');
 
 /* A middleware to take all requests to the public
  * directory
@@ -37,6 +38,15 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('newMessage', createMsg('Server',
         'Client',
         `New user connected`));
+
+    socket.on('join', (params, callback) => {
+        if (!isRealString(params.name) ||
+            !isRealString(params.room)) {
+            callback('Name and room name are required');
+        }
+
+        callback();
+    });
 
     socket.on('createMessage', (message, callback) => {
         io.emit('newMessage', createMsg(message.from, message.to, message.body));
