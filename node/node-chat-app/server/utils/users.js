@@ -11,13 +11,18 @@ class Users {
     };
 
     delUser(id) {
+        let newUserList = this.userList.filter(user => user.socketId !== id);
+        this.userList = newUserList;
     };
 
     getUser(id) {
+        return this.userList.filter(user => user.socketId === id)[0];
     };
 
     getUserList(room) {
-        //        return this.userList.filter((el) => el->room === "root");
+        return this.userList.
+            filter(user => user.room === room).
+            map(user => user.name);
     };
 
 };

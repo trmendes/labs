@@ -3,6 +3,14 @@ const expect = require('expect');
 const {Users} = require('./users');
 
 describe('Users', () => {
+    let users;
+    beforeEach(() => {
+        users = new Users();
+        users.addUser(1, 'Mike', 'nodejs');
+        users.addUser(2, 'Robert', 'nodejs');
+        users.addUser(3, 'Fernanda', 'react');
+    });
+
     it('should add a new user', () => {
         let users = new Users();
         let newUser = {
@@ -12,5 +20,34 @@ describe('Users', () => {
         };
         let ret = users.addUser(newUser.id, newUser.name, newUser.room);
         expect(users.userList).toEqual([ret]);
+    });
+
+    it('should return names for the users list', () => {
+        let userNamesNodeJS = users.getUserList('nodejs');
+        let userNamesReact = users.getUserList('react');
+        expect(userNamesNodeJS).toEqual(['Mike', 'Robert']);
+        expect(userNamesReact).toEqual(['Fernanda']);
+    });
+
+    it('should remove a user using an id', () => {
+        let lenAfterRemove = users.userList.length - 1;
+        users.delUser(1);
+        expect(lenAfterRemove).toBe(users.userList.length);
+    });
+
+    it('should not remove the user using an invalid id', () => {
+        let originalLen = users.userList.length;
+        users.delUser(200);
+        expect(originalLen).toBe(users.userList.length);
+    });
+
+    it ('should return the user using an id', () => {
+        let user = users.getUser(2);
+        expect(user.socketId).toBe(2);
+    });
+
+    it ('should not return the user name for an invalid id', () => {
+        let user = users.getUser(200);
+        expect(user).toBeUndefined();
     });
 });
