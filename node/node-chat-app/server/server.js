@@ -31,19 +31,22 @@ const io = socketIO(server);
 io.on('connection', (socket) => {
     console.log('New user connected');
 
-    socket.emit('newMessage', createMsg('Server',
-        'Client',
-        'Welcome to the chat app'));
-
-    socket.broadcast.emit('newMessage', createMsg('Server',
-        'Client',
-        `New user connected`));
-
     socket.on('join', (params, callback) => {
         if (!isRealString(params.name) ||
             !isRealString(params.room)) {
             callback('Name and room name are required');
         }
+
+        /* The sockets.io lib has a way to 'tag' a connection */
+        socket.join(params.room);
+
+        socket.emit('newMessage', createMsg('Server',
+            'Client',
+            'Welcome to the chat app'));
+
+        socket.broadcast.to(params.room).emit('newMessage', createMsg('Server',
+            `${params.name}`,
+            `New user ${params.name} connected`));
 
         callback();
     });
