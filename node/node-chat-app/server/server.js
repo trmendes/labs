@@ -50,26 +50,36 @@ io.on('connection', (socket) => {
         console.log(JSON.stringify(users.userList, null, 2));
 
         socket.emit('newMessage', createMsg('Server',
-            'Client',
+            params.name,
             'Welcome to the chat app'));
 
         socket.broadcast.to(params.room).emit('newMessage', createMsg('Server',
-            `${params.name}`,
+            'Broadcast',
             `New user ${params.name} connected`));
 
         callback();
     });
 
     socket.on('createMessage', (message, callback) => {
-        io.emit('newMessage', createMsg(message.from, message.to, message.body));
-        callback('ACK');
+        let user = users.getUser(socket.id);
+        if (user) {
+            io.to(user.room).emit('newMessage', createMsg(user.name,
+                'Broadcast', message.body));
+            callback('ACK');
+        } else {
+            callback('Invalid User');
+        }
     });
 
     socket.on('createLocationMessage', (message, callback) => {
-        io.emit('newLocationMessage', createLocationMsg('Server', 'Client',
-            message.body.lat,
-            message.body.log));
-        callback('ACK');
+        let user = users.getUser(socket.id);
+        if (user) {
+            io.to(user.room).emit('newLocationMessage', createLocationMsg(
+                'Server', 'Broadcast', message.body.lat, message.body.log));
+            callback('ACK');
+        } else {
+            callback('Invalid User');
+        }
     });
 
     socket.on('disconnect', () => {
@@ -82,7 +92,7 @@ io.on('connection', (socket) => {
             io.to(user.room).emit('updateUserList',
                 users.getUserList(user.room));
             io.to(user.room).emit('newMessage',
-                createMsg('Server', 'Client', `${user.name} has left`));
+                createMsg('Server', 'Broadcast', `${user.name} has left`));
         }
     });
 });

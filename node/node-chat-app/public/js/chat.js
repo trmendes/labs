@@ -51,7 +51,7 @@ jQuery('#message-form').on('submit', function (event) {
     /* Prevent the page to refresh */
     event.preventDefault();
     let msg = jQuery('[name=message]');
-    socket.emit('createMessage', createMsg('Client', 'Server', msg.val()),
+    socket.emit('createMessage', createMsg('Server', msg.val()),
         function () {
             console.log('ack');
             msg.val('');
@@ -70,8 +70,7 @@ locationButton.on('click', function() {
             log: position.coords.longitude
         };
 
-        socket.emit('createLocationMessage', createMsg('Client', 'Server',
-            msg),
+        socket.emit('createLocationMessage', createMsg('Server', msg),
             function() {
                 locationButton.removeAttr('disabled');
                 console.log('ack');
@@ -84,9 +83,8 @@ locationButton.on('click', function() {
 
 });
 
-let createMsg = (from, to, body) => {
+let createMsg = (to, body) => {
     return {
-        from,
         to,
         body
     };
