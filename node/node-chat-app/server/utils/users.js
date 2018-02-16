@@ -11,8 +11,10 @@ class Users {
     };
 
     delUser(id) {
+        let user = this.getUser(id);
         let newUserList = this.userList.filter(user => user.socketId !== id);
         this.userList = newUserList;
+        return user;
     };
 
     getUser(id) {

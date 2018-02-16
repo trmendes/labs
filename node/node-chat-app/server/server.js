@@ -12,6 +12,7 @@ const server = http.createServer(app);
 
 const { createMsg, createLocationMsg } = require('./utils/message');
 const { isRealString } = require('./utils/validation');
+const { Users } = require('./utils/users');
 
 /* A middleware to take all requests to the public
  * directory
@@ -28,17 +29,25 @@ app.use(express.static(publicPath));
  */
 const io = socketIO(server);
 
+const users = new Users();
+
 io.on('connection', (socket) => {
     console.log('New user connected');
 
     socket.on('join', (params, callback) => {
         if (!isRealString(params.name) ||
             !isRealString(params.room)) {
-            callback('Name and room name are required');
+            return callback('Name and room name are required');
         }
 
         /* The sockets.io lib has a way to 'tag' a connection */
         socket.join(params.room);
+
+        users.delUser(socket.id);
+        users.addUser(socket.id, params.name, params.room);
+        io.to(params.room).emit('updateUserList',
+            users.getUserList(params.room));
+        console.log(JSON.stringify(users.userList, null, 2));
 
         socket.emit('newMessage', createMsg('Server',
             'Client',
@@ -65,6 +74,16 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         console.log('The same client went away');
+        let user = users.delUser(socket.id);
+        console.log(JSON.stringify(users.userList, null, 2));
+        console.log('disconnect', user);
+        if (user) {
+            console.log('someone is leaving...');
+            io.to(user.room).emit('updateUserList',
+                users.getUserList(user.room));
+            io.to(user.room).emit('newMessage',
+                createMsg('Server', 'Client', `${user.name} has left`));
+        }
     });
 });
 

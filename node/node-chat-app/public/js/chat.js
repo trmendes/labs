@@ -13,6 +13,14 @@ socket.on('connect', () => {
     });
 });
 
+socket.on('updateUserList', (userListNames) => {
+    let ol = jQuery('<ol></ol>');
+    userListNames.forEach((userName) => {
+        ol.append(jQuery('<li></li>').text(userName));
+    });
+    jQuery('#users').html(ol);
+});
+
 socket.on('disconnect', () => {
 	console.log('disconnected from the server');
 });
