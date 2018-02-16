@@ -32,28 +32,29 @@ const io = socketIO(server);
 const users = new Users();
 
 io.on('connection', (socket) => {
-    console.log('New user connected');
-
     socket.on('join', (params, callback) => {
         if (!isRealString(params.name) ||
             !isRealString(params.room)) {
             return callback('Name and room name are required');
         }
 
-        /* The sockets.io lib has a way to 'tag' a connection */
-        socket.join(params.room);
+        let room = params.room.toLowerCase(params.room);
 
-        users.delUser(socket.id);
-        users.addUser(socket.id, params.name, params.room);
-        io.to(params.room).emit('updateUserList',
-            users.getUserList(params.room));
-        console.log(JSON.stringify(users.userList, null, 2));
+        if (users.addUser(socket.id, params.name, room) === undefined) {
+            return callback(`${params.name} is already in use`);
+        }
+
+        /* The sockets.io lib has a way to 'tag' a connection */
+        socket.join(room);
+
+        io.to(room).emit('updateUserList',
+            users.getUserList(room));
 
         socket.emit('newMessage', createMsg('Server',
             params.name,
             'Welcome to the chat app'));
 
-        socket.broadcast.to(params.room).emit('newMessage', createMsg('Server',
+        socket.broadcast.to(room).emit('newMessage', createMsg('Server',
             'Broadcast',
             `New user ${params.name} connected`));
 
@@ -83,12 +84,8 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
-        console.log('The same client went away');
         let user = users.delUser(socket.id);
-        console.log(JSON.stringify(users.userList, null, 2));
-        console.log('disconnect', user);
         if (user) {
-            console.log('someone is leaving...');
             io.to(user.room).emit('updateUserList',
                 users.getUserList(user.room));
             io.to(user.room).emit('newMessage',

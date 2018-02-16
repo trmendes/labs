@@ -50,4 +50,16 @@ describe('Users', () => {
         let user = users.getUser(200);
         expect(user).toBeUndefined();
     });
+
+    it ('should not allow 2 users with the same name', () => {
+        let user = users.addUser(10, 'Mike', 'nodejs');
+        expect(user).toBeUndefined();
+        user = users.addUser(10, 'MikeTheSecond', 'nodejs');
+        expect(user).not.toBeUndefined();
+    });
+
+    it ('should return all the available channels', () => {
+        let channels = users.getChannels();
+        expect(channels.length).toBe(users.userList.length);
+    });
 });

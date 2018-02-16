@@ -5,9 +5,11 @@ class Users {
     }
 
     addUser(socketId, name, room) {
-        let user = {socketId, name, room};
-        this.userList.push(user);
-        return user;
+        if (this.checkUserNameAvailability(name)) {
+            let user = {socketId, name, room};
+            this.userList.push(user);
+            return user;
+        }
     };
 
     delUser(id) {
@@ -27,6 +29,13 @@ class Users {
             map(user => user.name);
     };
 
+    getChannels() {
+        return this.userList.map(user => user.room);
+    }
+
+    checkUserNameAvailability(name) {
+        return this.userList.filter(user => user.name === name).length === 0;
+    }
 };
 
 module.exports = {Users}
