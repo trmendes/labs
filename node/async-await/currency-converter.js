@@ -1,17 +1,14 @@
 const axios = require('axios');
 
-const getExchangeRate = (from, to) => {
-    return axios.get(`https://api.fixer.io/latest?base=${from}`).then((res) => {
-        return res.data.rates[to];
-    });
+const getExchangeRate = async (from, to) => {
+    const res =  await axios.get(`https://api.fixer.io/latest?base=${from}`);
+    return res.data.rates[to];
 };
 
-const getCountries = currencyCode => {
-    return axios.get(
-        `https://restcountries.eu/rest/v2/currency/${currencyCode}`).
-        then(res => {
-            return res.data.map(contry => contry.name);
-        });
+const getCountries = async currencyCode => {
+    const res = await axios.get(
+        `https://restcountries.eu/rest/v2/currency/${currencyCode}`);
+    return res.data.map(contry => contry.name);
 };
 
 const convertCurrency = (from, to, amount) => {
