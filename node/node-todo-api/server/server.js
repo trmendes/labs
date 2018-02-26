@@ -152,15 +152,16 @@ app.post('/users', (req, res) => {
     });
 });
 
-app.delete('/users/me/token', authenticate, (req, res) => {
+app.delete('/users/me/token', authenticate, async (req, res) => {
     /* Since the user is authenticated...we have access to its object using
      * req.user / req.token (middleware/authenticate.js)
      */
-    req.user.removeToken(req.token).then(() => {
+    try {
+        await req.user.removeToken(req.token);
         res.status(200).send();
-    }, () => {
-        res.status(400).send();
-    });
+    } catch (e) {
+        res.status(400).send(e.message);
+    }
 });
 
 app.listen(port, () => {
