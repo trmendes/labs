@@ -78,10 +78,10 @@ console.log('Slice returns: ', retSlice);
 
 // SORT ------------------------------
 // SORT BY ID DESC
-let retSort = people.sort((eA, eB) => eB.id - eA.id);
-console.log('Sort returns: ', retSort);
+people.sort((eA, eB) => eB.id - eA.id);
+console.log('Sort does: ', people);
 // SORT BY NAME
-retSort = people.sort((eA, eB) => {
+people.sort((eA, eB) => {
     const nameA = eA.name.toUpperCase();
     const nameB = eB.name.toUpperCase();
     if (nameA < nameB) {
@@ -92,10 +92,24 @@ retSort = people.sort((eA, eB) => {
     }
     return 0;
 });
-console.log('Sort returns: ', retSort);
+console.log('Sort does: ', people);
+
 // SORT BY YEAR ASC
-retSort = people.sort((eA, eB) => eA.year - eB.year);
-console.log('Sort returns: ', retSort);
+people.sort((eA, eB) => eA.year - eB.year);
+console.log('Sort does: ', people);
+
+
+// SPLICE---------------------------
+// CHANGES THE CONTENT OF AN ARRAY BY ADDING OR REMOVING ELEMENTS
+// This will remove 2 elements from the position 1
+people.sort((eA, eB) => eA.id - eB.id);
+//console.log('before splice: ', people);
+//people.splice(2, 4);
+//console.log('after splice: ', people);
+console.table('before splice: ', people);
+// Start at the end of the array
+people.splice(-2, 4);
+console.table('after splice: ', people);
 
 
 
