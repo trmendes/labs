@@ -4,13 +4,15 @@ console.log('app.js  is running');
 
 const appRoot = document.getElementById('app');
 
-const template = <div><h1>This is JSX from app.js!...</h1><p>Cool!</p></div>;
+const app = {
+    title: 'Web page',
+    subtitle: 'This is our first example using JSX'
+};
 
-const template2 = (
+const template = (
     <div>
-        <h1>Zeh Silva</h1>
-        <p>Age: 345</p>
-        <p>Location: Nepal</p>
+        <h1>{app.title.toUpperCase()}</h1>
+        <p>{app.subtitle}</p>
     </div>);
 
-ReactDOM.render(template2, appRoot);
+ReactDOM.render(template, appRoot);
