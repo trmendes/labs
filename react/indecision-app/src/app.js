@@ -6,48 +6,45 @@ const appRoot = document.getElementById('app');
 
 const app = {
     title: 'Web page',
-    subtitle: 'This is our first example using JSX'
+    subtitle: 'This is our first example using JSX',
+    options: []
 };
 
+const onFormSubmit = (e) => {
+    /* Stop the full page refresh */
+    e.preventDefault();
+    const option = e.target.elements.opicao.value;
+    if (option) {
+        app.options.push(option);
+        e.target.opicao.value = '';
+        console.log(app.options);
+        renderApp();
+    }
+};
 
-let count = 0;
-
-const addOne = () => {
-    console.log('++ ', count);
-    ++count;
+const removeAll = () => {
+    app.options = [];
     renderApp();
 };
-const subOne = () => {
-    console.log('-- ', count);
-    --count;
-    renderApp();
-};
-const reset = () => {
-    console.log('reset');
-    count = 0;
-    renderApp();
-};
 
-// {app.subtitle && <p>{app.subtitle}</p>}
-/* if app.subtitle exists show <p>app.stubtitle</p>
- * else don't show anything
- */
-const template = (
+const renderApp = () => {
+    const template = (
     <div>
         <h1>{app.title.toUpperCase()}</h1>
         {app.subtitle && <p>{app.subtitle}</p>}
+        <p>{app.options.length > 0 ? 'Here are your options' : 'No Options'}</p>
+        <p>Options counter: {app.options.length}</p>
+        <ol>
+            <li>Item One</li>
+            <li>Item Two</li>
+        </ol>
+        <form onSubmit={onFormSubmit}>
+            <input type="text" name='opicao' placeholder="describe a new option"></input>
+            <button>Add Option</button>
+        </form>
+        <button onClick={removeAll}>Remove All</button>
     </div>);
-
-const renderApp = () => {
-    const templateCounter = (
-        <div>
-            <h1>Count: {count}</h1>
-            <button onClick={addOne}>+1</button>
-            <button onClick={subOne}>-1</button>
-            <button onClick={reset}>Reset</button>
-        </div>
-    );
-    ReactDOM.render(templateCounter, appRoot);
+    ReactDOM.render(template, appRoot);
 };
 
 renderApp();
