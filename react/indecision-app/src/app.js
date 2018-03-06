@@ -15,39 +15,39 @@ let count = 0;
 const addOne = () => {
     console.log('++ ', count);
     ++count;
+    renderApp();
 };
 const subOne = () => {
     console.log('-- ', count);
     --count;
+    renderApp();
 };
 const reset = () => {
     console.log('reset');
     count = 0;
+    renderApp();
 };
 
-/* class is a reserved world so we have
- * to use className
- * https://reactjs.org/docs/dom-elements.html
+// {app.subtitle && <p>{app.subtitle}</p>}
+/* if app.subtitle exists show <p>app.stubtitle</p>
+ * else don't show anything
  */
-const templateCounter = (
-    <div>
-        <h1>Count: {count}</h1>
-        <button onClick={addOne}>+1</button>
-        <button onClick={subOne}>-1</button>
-        <button onClick={reset}>Reset</button>
-    </div>
-);
-
-
 const template = (
     <div>
         <h1>{app.title.toUpperCase()}</h1>
         {app.subtitle && <p>{app.subtitle}</p>}
     </div>);
 
-// {app.subtitle && <p>{app.subtitle}</p>}
-/* if app.subtitle exists show <p>app.stubtitle</p>
- * else don't show anything
- */
+const renderApp = () => {
+    const templateCounter = (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={addOne}>+1</button>
+            <button onClick={subOne}>-1</button>
+            <button onClick={reset}>Reset</button>
+        </div>
+    );
+    ReactDOM.render(templateCounter, appRoot);
+};
 
-ReactDOM.render(templateCounter, appRoot);
+renderApp();
