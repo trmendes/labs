@@ -27,6 +27,12 @@ const removeAll = () => {
     renderApp();
 };
 
+let updateArray = () => {
+    let key = 0;
+        console.log(jsXOptions);
+    return jsXOptions;
+};
+
 const renderApp = () => {
     const template = (
     <div>
@@ -35,8 +41,9 @@ const renderApp = () => {
         <p>{app.options.length > 0 ? 'Here are your options' : 'No Options'}</p>
         <p>Options counter: {app.options.length}</p>
         <ol>
-            <li>Item One</li>
-            <li>Item Two</li>
+            {
+                app.options.map(el => <li key={el}>{el}</li>)
+            }
         </ol>
         <form onSubmit={onFormSubmit}>
             <input type="text" name='opicao' placeholder="describe a new option"></input>
