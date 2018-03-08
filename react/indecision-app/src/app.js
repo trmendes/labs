@@ -42,6 +42,20 @@ class IndecisionApp extends React.Component {
 
     }
 
+    componentDidMount() {
+        console.log('Component Did Mount');
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('Componet Did Update');
+        console.log(prevProps);
+        console.log(prevState);
+    }
+
+    componentWillUnmount() {
+        console.log('Componet Will Unmount');
+    }
+
     render() {
         const title = 'Indecision';
         const subtitle = 'Put your life in the hands of a computer!';
