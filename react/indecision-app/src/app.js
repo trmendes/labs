@@ -42,8 +42,18 @@ class Action extends React.Component {
 };
 
 class Options extends React.Component {
+    constructor(props) {
+        super(props);
+        /* We do this to have a better performance.
+         * This way we don't have to call bind for each time the componet
+         * gets a render call
+         */
+        this.handleRemoveAll = this.handleRemoveAll.bind(this);
+    }
+
     handleRemoveAll() {
         alert('it is gone');
+        console.log(this.props.options);
     }
 
     render() {
