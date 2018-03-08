@@ -60,59 +60,43 @@ class IndecisionApp extends React.Component {
                 <AddOptions
                     addOption={this.handleAddOption}
                 />
+                <User name='Andrew' age={27}/>
             </div>
         );
     };
 };
 
-class Header extends React.Component {
-    /* you must define render */
-    render() {
-        console.log(this.props);
-        return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <h2>{this.props.subtitle}</h2>
-            </div>
-        );
-    }
+const Header = (props) => {
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            <h2>{props.subtitle}</h2>
+        </div>
+    );
 };
 
-class Action extends React.Component {
-    render() {
-        return (
-            <div>
-                <button
-                    disabled={!this.props.hasOptions}
-                    onClick={this.props.pick}>What Should I do?</button>
-            </div>
-        );
-    }
+const Action = (props) => {
+    return (
+        <div>
+            <button
+                disabled={!props.hasOptions}
+                onClick={props.pick}>What Should I do?</button>
+        </div>
+    );
 };
 
-class Options extends React.Component {
-    //constructor(props) {
-        //super(props);
-        /* We do this to have a better performance.
-         * This way we don't have to call bind for each time the componet
-         * gets a render call
-         */
-        //this.handleRemoveAll = this.handleRemoveAll.bind(this);
-    //}
-
-        render() {
-        return (
-            <div>
-                {
-                    this.props.options.map
-                    (option => <Option key={option} optionText={option}/>)
-                }
-                <button
-                    disabled={!this.props.hasOptions}
-                    onClick={this.props.deleteOptions}>Remove All</button>
-            </div>
-        );
-    }
+const Options = (props) => {
+    return (
+        <div>
+            {
+                props.options.map
+                (option => <Option key={option} optionText={option}/>)
+            }
+            <button
+                disabled={!props.hasOptions}
+                onClick={props.deleteOptions}>Remove All</button>
+        </div>
+    );
 };
 
 class Option extends React.Component {
@@ -161,6 +145,15 @@ class AddOptions extends React.Component {
             </div>
         );
     }
+};
+
+const User = (props) => {
+    return (
+        <div>
+            <p>Name: {props.name}</p>
+            <p>Age: {props.age}</p>
+        </div>
+    );
 };
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
