@@ -4,31 +4,38 @@ import AddOptions from './AddOptions';
 import Header from './Header';
 import Action from './Action';
 import Options from './Options';
+import OptionModal from './OptionModal';
 
 class IndecisionApp extends React.Component {
     constructor(props) {
         super(props);
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
         this.handlePick = this.handlePick.bind(this);
+        this.handleCloseAlert = this.handleCloseAlert.bind(this);
         this.handleAddOption = this.handleAddOption.bind(this);
         this.handleDeleteOption = this.handleDeleteOption.bind(this);
 
         this.state = {
-            options: props.options
+            options: [],
+            selectedOption: undefined
         };
     }
 
     handlePick() {
         const idx = Math.floor(Math.random() * this.state.options.length);
-        alert(this.state.options[idx]);
+        const option = this.state.options[idx];
+        this.setState(() => ({selectedOption: option}));
     }
 
     handleDeleteOptions() {
         this.setState(() => ({options: []}));
     }
 
+    handleCloseAlert() {
+        this.setState(() => ({selectedOption: undefined}));
+    }
+
     handleDeleteOption(option) {
-        console.log(option);
         this.setState((prevState) => ({
             options: prevState.options.filter(opt => opt !== option)
         }));
@@ -55,8 +62,8 @@ class IndecisionApp extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         console.log('Componet Did Update');
-        console.log(prevProps);
-        console.log(prevState);
+        console.log('prev props', prevProps);
+        console.log('prev state', prevState);
     }
 
     componentWillUnmount() {
@@ -83,13 +90,13 @@ class IndecisionApp extends React.Component {
                 <AddOptions
                     addOption={this.handleAddOption}
                 />
+                <OptionModal
+                    selectedOption={this.state.selectedOption}
+                    closeAlert={this.handleCloseAlert}
+                />
             </div>
         );
     };
-};
-
-IndecisionApp.defaultProps = {
-    options: []
 };
 
 export default IndecisionApp;
