@@ -22,7 +22,7 @@ const AppRouter = () => (
                     component={AddExpense}
                 />
                 <Route
-                    path="/edit"
+                    path="/edit/:id"
                     component={EditExpense}
                 />
                 <Route
