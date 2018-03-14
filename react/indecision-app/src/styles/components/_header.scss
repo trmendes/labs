@@ -1,11 +1,9 @@
 .header {
-    background-color: $off-black;
+    background: $off-black;
+    color: white;
     margin-bottom: $xl-size;
     padding: $m-size 0;
-    color: white;
 }
-
-//BEM Name covencion - block element modifier
 
 .header__title {
     font-size: $l-size;
