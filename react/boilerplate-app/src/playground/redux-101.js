@@ -4,9 +4,11 @@ const store = createStore((prevState  = { count: 0 }, action) => {
     console.log('action: ', action);
     switch (action.type) {
         case 'INCREMENT':
-            return {count: prevState.count + 1};
+            const inc = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
+            return {count: prevState.count + inc};
         case 'DECREMENT':
-            return {count: prevState.count - 1};
+            const dec = typeof action.decrementBy === 'number' ? action.decrementBy : 1;
+            return {count: prevState.count - dec};
         case 'RESET':
             return {count: 0};
         default:
@@ -14,19 +16,25 @@ const store = createStore((prevState  = { count: 0 }, action) => {
     }
 });
 
-console.log(store.getState());
+/* Will be called everytime the state changes */
+const unsubiscribe = store.subscribe(() => {
+    console.log(store.getState());
+});
 
 store.dispatch({
-    type: 'INCREMENT'
+    type: 'INCREMENT',
+    incrementBy: 5
 });
-console.log(store.getState());
+
+/* From now on we have no notifications anymore */
+//unsubiscribe();
 
 store.dispatch({
     type: 'RESET'
 });
-console.log(store.getState());
 
 store.dispatch({
-    type: 'DECREMENT'
+    type: 'DECREMENT',
+    decrementBy: 3
 });
-console.log(store.getState());
+
