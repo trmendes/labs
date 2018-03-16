@@ -4,37 +4,44 @@ const store = createStore((prevState  = { count: 0 }, action) => {
     console.log('action: ', action);
     switch (action.type) {
         case 'INCREMENT':
-            const inc = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
-            return {count: prevState.count + inc};
+            return {count: prevState.count + action.incrementBy};
         case 'DECREMENT':
-            const dec = typeof action.decrementBy === 'number' ? action.decrementBy : 1;
-            return {count: prevState.count - dec};
+            return {count: prevState.count - action.decrementBy};
         case 'RESET':
             return {count: 0};
+        case 'SET':
+            return {count: action.count};
         default:
             return prevState;
     }
 });
+
+/* Action generators */
+
+const increment = (value) => ({
+    type: 'INCREMENT',
+    incrementBy: typeof value === 'number' ? value : 1
+});
+const decrement = (value) => ({
+    type: 'DECREMENT',
+    decrementBy: typeof value === 'number' ? value : 1
+});
+const reset = () => ({ type: 'RESET' });
+const set = value => ({ type: 'SET', count: value });
 
 /* Will be called everytime the state changes */
 const unsubiscribe = store.subscribe(() => {
     console.log(store.getState());
 });
 
-store.dispatch({
-    type: 'INCREMENT',
-    incrementBy: 5
-});
+store.dispatch(increment(5));
 
 /* From now on we have no notifications anymore */
 //unsubiscribe();
 
-store.dispatch({
-    type: 'RESET'
-});
+store.dispatch(reset());
 
-store.dispatch({
-    type: 'DECREMENT',
-    decrementBy: 3
-});
+store.dispatch(decrement(3));
+
+store.dispatch(set(101));
 
