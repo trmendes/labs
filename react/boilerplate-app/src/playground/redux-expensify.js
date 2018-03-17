@@ -17,8 +17,6 @@ const demoState = {
     }
 };
 
-// REMOVE_EXPENSE
-// EDIT_EXPENSE
 // SET_TEXT_FILTER
 // SORT_BY_DATE
 // SORT_BY_AMOUNT
@@ -44,6 +42,19 @@ const removeExpense = ({ id } = {}) => (
         id
     });
 
+const editExpense = (id, updates) => (
+    {
+        type: 'EDIT_EXPENSE',
+        id,
+        updates
+    });
+
+const setTextFilter = (text = '') => (
+    {
+        type: 'SET_TEXT_FILTER',
+        text
+    });
+
 // Expenses Reducer
 
 const expenseRecuderDefaultState = [];
@@ -55,6 +66,16 @@ const expenseReducer = (state = expenseRecuderDefaultState, action) => {
             return [...state, action.expense];
         case 'REMOVE_EXPENSE':
             return state.filter((exp) => exp.id !== action.id);
+        case 'EDIT_EXPENSE':
+            return state.map((exp) => {
+                if (exp.id === action.id) {
+                    return {
+                        ...exp,
+                        ...action.updates
+                    };
+                }
+                return exp;
+            });
         default:
             return state;
     }
@@ -69,6 +90,11 @@ const filterReducerDefaultState = {
 
 const filterReducer = (state = filterReducerDefaultState, action) => {
     switch (action.type) {
+        case 'SET_TEXT_FILTER':
+            return {
+                ...state,
+                text: action.text
+            };
         default:
             return state;
     }
@@ -84,7 +110,13 @@ const store = createStore(
 store.subscribe(() => console.log(store.getState()));
 
 const rent = store.dispatch(addExpense({description: 'Rent', amount: 300}));
-const coffee = store.dispatch(addExpense({description: 'Coffee', amount: 10}));
-store.dispatch(removeExpense({ id: coffee.expense.id }));
+const coffee = store.dispatch(addExpense({description: 'Coffee', amount: 3}));
 
-console.log(store.getState());
+store.dispatch(removeExpense({ id: rent.expense.id }));
+
+store.dispatch(editExpense(coffee.expense.id, { amount: 5 }));
+
+store.dispatch(setTextFilter('rent'));
+store.dispatch(setTextFilter(''));
+
+console.log(store.getState())
