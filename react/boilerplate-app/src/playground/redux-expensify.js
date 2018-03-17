@@ -160,7 +160,7 @@ const getVisibleExpenses = (expenses, filters) => {
     }).sort((a, b) => {
         if (sortBy === 'date') {
             return b.createdAt - a.createdAt;
-        } else (sortBy === 'amount') {
+        } else if (sortBy === 'amount') {
             return b.amount - a.amount;
         }
     });
