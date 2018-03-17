@@ -157,6 +157,12 @@ const getVisibleExpenses = (expenses, filters) => {
             text.toLowerCase());
 
         return startDateMatch && endDateMath && textMatch;
+    }).sort((a, b) => {
+        if (sortBy === 'date') {
+            return b.createdAt - a.createdAt;
+        } else (sortBy === 'amount') {
+            return b.amount - a.amount;
+        }
     });
 };
 
