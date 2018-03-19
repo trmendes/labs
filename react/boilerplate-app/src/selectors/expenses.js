@@ -1,5 +1,4 @@
-export default (expenses, filters) => {
-    const { text, sortBy, startDate, endDate } = filters;
+export default (expenses, { text, sortBy , startDate, endDate }) => {
     return expenses.filter((exp) => {
 
         const startDateMatch = typeof exp.startDate !== 'number' ||
