@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServerComponent implements OnInit {
 
   serverId: Number = 10;
-  serverName: String = '';
+  serverName: String = 'server_name';
   serverStatus: String = 'offilne';
   serverCreationStatus: String = 'No server was created!';
   allowNewServer: Boolean = false;
