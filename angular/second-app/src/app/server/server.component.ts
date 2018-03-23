@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
 
-  serverId = 10;
-  serverStatus = 'offilne';
-  serverCreationStatus = 'No server was created!';
-  allowNewServer = false;
+  serverId: Number = 10;
+  serverName: String = '';
+  serverStatus: String = 'offilne';
+  serverCreationStatus: String = 'No server was created!';
+  allowNewServer: Boolean = false;
 
   getServerStatus() {
     return this.serverStatus;
@@ -29,6 +30,10 @@ export class ServerComponent implements OnInit {
   onCreateServer() {
     this.serverCreationStatus = '\\o/ Server was created!';
     this.serverStatus = 'online';
+  }
+
+  onUpdateServerName(event: any) {
+    this.serverName = (<HTMLInputElement> event.target).value;
   }
 
 }

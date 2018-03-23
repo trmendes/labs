@@ -1,3 +1,5 @@
+<label>Server Name</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
@@ -6,5 +8,5 @@
 <p [innerText]="serverCreationStatus"></p>
 <hr>
 <p>
-  Server with ID {{ serverId }} is {{ getServerStatus() }}
+  Server with ID {{ serverId }} and name {{ serverName }} is {{ getServerStatus() }}
 </p>
