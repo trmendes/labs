@@ -8,12 +8,23 @@
 <br>
 <p [innerText]="serverCreationStatus"></p>
 <hr>
-<p *ngIf="serverCreated; else noServer">
+
+<p>
   Server with ID {{ serverId }} and name {{ serverName }} is {{ getServerStatus() }}
+</p>
+<hr>
+
+<p *ngIf="serverCreated; else noServer">
+  Server Status (ngIf): {{ getServerStatus() }}
 </p>
 <ng-template #noServer>
   <p>
-    Server Status: {{ getServerStatus() }}
+    Server Status (ngIf #else): {{ getServerStatus() }}
   </p>
 </ng-template>
+<hr>
+
 <p [ngStyle]="{backgroundColor: getColor()}">getColor for a style directive</p>
+<hr>
+
+<p *ngFor="let server of servers">We have a new server</p>

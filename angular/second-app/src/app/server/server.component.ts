@@ -13,6 +13,7 @@ export class ServerComponent implements OnInit {
   serverCreationStatus: String = 'No server was created!';
   allowNewServer: Boolean = false;
   serverCreated: Boolean = false;
+  servers: String[] = ['TestServerI', 'TestServerII'];
 
   getServerStatus() {
     return this.serverStatus;
@@ -24,7 +25,6 @@ export class ServerComponent implements OnInit {
       console.log(this.allowNewServer);
     }, 2000);
   }
-
 
   getColor() {
     return Math.random() >= 0.5 ? 'green' : 'red';
@@ -38,6 +38,7 @@ export class ServerComponent implements OnInit {
     this.serverCreationStatus = `\\o/ Server was created! Name:
     ${this.serverName}`;
     this.serverStatus = 'online';
+    this.servers.push(this.serverName);
   }
 
   onUpdateServerName(event: any) {
