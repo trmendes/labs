@@ -8,6 +8,11 @@
 <br>
 <p [innerText]="serverCreationStatus"></p>
 <hr>
-<p *ngIf="serverCreated">
+<p *ngIf="serverCreated; else noServer">
   Server with ID {{ serverId }} and name {{ serverName }} is {{ getServerStatus() }}
 </p>
+<ng-template #noServer>
+  <p>
+    Server Status: {{ getServerStatus() }}
+  </p>
+</ng-template>
