@@ -25,6 +25,11 @@ export class ServerComponent implements OnInit {
     }, 2000);
   }
 
+
+  getColor() {
+    return Math.random() >= 0.5 ? 'green' : 'red';
+  }
+
   ngOnInit() {
   }
 
