@@ -8,6 +8,6 @@
 <br>
 <p [innerText]="serverCreationStatus"></p>
 <hr>
-<p>
+<p *ngIf="serverCreated">
   Server with ID {{ serverId }} and name {{ serverName }} is {{ getServerStatus() }}
 </p>
