@@ -11,6 +11,17 @@
             <h1>{{ name }}</h1>
             <h2>{{ greet() }}</h2>
             <h3>{{ play('hockey') }}<h3>
+            <h1>Test some data bind</h1>
+            <p>You can use v-bind:</p>
+            <a v-bind:href=website>Check my website</a>
+            <p>Or use : only</p>
+            <a :href=website>Check my website</a>
+            <hr>
+            <input type="text" v-bind:value="name" />
+            <hr>
+            <p>Another way to show a link</p>
+            <p>Using v-html</p>
+            <p v-html="websiteTag"></p>
         </div>
         <script src="app.js"></script>
     </body>

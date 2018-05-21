@@ -1,7 +1,9 @@
 new Vue({
     el: "#vue-app",
     data: {
-        name: 'Thiago'
+        name: 'Thiago',
+        website: 'https://tmendes.gitlab.io/38lbackpack/',
+        websiteTag: '<a href="https://tmendes.gitlab.io/38lbackpack/">Another way to show my webpage</a>'
     },
     methods: {
         greet: function () {
