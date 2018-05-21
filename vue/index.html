@@ -7,7 +7,6 @@
         <script src="https://unpkg.com/vue"></script>
     </head>
     <body>
-        <p>Lets test it</p>
         <div id="vue-app">
             <h1>{{ name }}</h1>
             <h2>{{ greet() }}</h2>
@@ -51,6 +50,18 @@
             <div id="canvas2" class="canvas" @:mousemove="updateXY">
                 {{ x }}, {{ y }}
             </div>
+
+            <hr>
+
+            <h1>Keyboard events</h1>
+            <p>Using modifier enter. So fuctuion will be called only when user
+                press enter</p>
+            <label>Name:</label>
+            <input type="text" v-on:keyup.enter="logName" />
+            <label>Age:</label>
+            <input type="text" v-on:keyup.enter="logAge" />
+            <label>Field Alt Enter</label>
+            <input type="text" v-on:keyup.alt.enter="logAltEnter" />
         </div>
         <script src="app.js"></script>
     </body>
