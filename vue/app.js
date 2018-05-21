@@ -6,7 +6,9 @@ new Vue({
         websiteTag: '<a href="https://tmendes.gitlab.io/38lbackpack/">Another way to show my webpage</a>',
         age: 20,
         x: 0,
-        y: 0
+        y: 0,
+        available: false,
+        nearby: false
     },
     methods: {
         greet: function () {
@@ -33,6 +35,16 @@ new Vue({
         },
         logAltEnter: function() {
             console.log('you entered some text hitting alt enter after it');
+        }
+    },
+    computed: {
+        compClasses: function() {
+            /* Everytime availabe or nearby change this fucntion will
+             * run and return this object */
+            return {
+                available: this.available,
+                nearby: this.nearby
+            }
         }
     }
 });
