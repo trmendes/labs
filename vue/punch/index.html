@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Punch Bag</title>
+        <link href="styles.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <!-- bag img -->
+            <div id="bag" v-bind:class="{burst: ended}">
+            </div>
+            <!-- bag health -->
+            <div id="bag-health">
+                <div v-bind:style="{ width: health + '%' }"></div>
+            </div>
+            <!-- game controls -->
+            <div id="controls">
+                <button v-on:click="punch" v-show="!ended">Punch</button>
+                <button v-on:click="reset">Restart</button>
+            </div>
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>
