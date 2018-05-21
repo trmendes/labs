@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>My first Vue code</title>
+        <link href="style.css" rel="stylesheet" />
         <script src="https://unpkg.com/vue"></script>
     </head>
     <body>
@@ -22,6 +23,30 @@
             <p>Another way to show a link</p>
             <p>Using v-html</p>
             <p v-html="websiteTag"></p>
+            <hr>
+            <p>click Events v-on:click</p>
+            <h1>Age: {{ age }}</h1>
+            <p>Access the variable (v-on:click)</p>
+            <button v-on:click="age++">Add a Year</button>
+            <button v-on:click="age--">Sub a Year</button>
+            <br>
+            <p>Using a method (v-on:click)</p>
+            <button v-on:click="addAge(1)">Add a Year Methos</button>
+            <button v-on:click="subAge(1)">Sub a Year Methos</button>
+            <p>Double click events (v-on:dblclick)</p>
+            <button v-on:dblclick="addAge(10)">Add 10 Years Methos</button>
+            <button v-on:dblclick="subAge(10)">Sub 10 Years Methos</button>
+            <hr>
+            <div id="canvas1" class="canvas" v-on:mousemove="updateXY">
+                {{ x }}, {{ y }}
+            </div>
+
+            <hr>
+            <p>We can use @ instead of v-on</p>
+
+            <div id="canvas2" class="canvas" @:mousemove="updateXY">
+                {{ x }}, {{ y }}
+            </div>
         </div>
         <script src="app.js"></script>
     </body>
