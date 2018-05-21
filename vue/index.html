@@ -89,6 +89,9 @@
             <p v-if="error">Error msg because data.eror === {{ error }}</p>
             <p v-else-if="success">Success msg because data.success === {{
                 success }}</p>
+            <h2>The same result with v-show</h2>
+            <p v-show="error">Error Msg</p>
+            <p v-show="success">Success Msg</p>
          </div>
         <script src="app.js"></script>
     </body>
