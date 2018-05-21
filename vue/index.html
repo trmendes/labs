@@ -82,6 +82,13 @@
             <div v-bind:class="compClasses">
                 <span>What happen here?</span>
             </div>
+            <hr>
+            <h1>If and Else (v-if / v-else-if)</h1>
+            <button v-on:click="error = !error">Toggle Error Msg</button>
+            <button v-on:click="success = !success">Toggle Success Msg</button>
+            <p v-if="error">Error msg because data.eror === {{ error }}</p>
+            <p v-else-if="success">Success msg because data.success === {{
+                success }}</p>
          </div>
         <script src="app.js"></script>
     </body>
