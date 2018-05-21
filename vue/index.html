@@ -30,6 +30,10 @@
             <button v-on:click="age++">Add a Year</button>
             <button v-on:click="age--">Sub a Year</button>
             <br>
+            <p>Change age using event modifier ONCE (one time click)<p>
+            <button v-on:click.once="age++">Add a Year Once</button>
+            <button v-on:click.once="age--">Sub a Year Once</button>
+            <br>
             <p>Using a method (v-on:click)</p>
             <button v-on:click="addAge(1)">Add a Year Methos</button>
             <button v-on:click="subAge(1)">Sub a Year Methos</button>
