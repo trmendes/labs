@@ -1,0 +1,19 @@
+.canvas {
+    width: 600px;
+    padding: 200px 20px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.nearby span {
+    background-color: red
+}
+
+.available span {
+    background-color: green;
+}
+
+.available span:after {
+    content: "nearby",
+    margin-left: 10px;
+}
