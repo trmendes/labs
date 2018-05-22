@@ -26,6 +26,35 @@ export default {
     deleteNinja: function() {
       this.ninjas.pop();
     }
+  },
+  // lifecycle hooks
+  beforeCreate() {
+    alert('before Create');
+  },
+  created() {
+    /* Best place to fetch some data
+      from a db or anywhere */
+    alert('created');
+  },
+  beforeMount() {
+    alert('befor Mount');
+  },
+  mounted() {
+    /* The best place to manipulate a DOM */
+    alert('monted');
+  },
+  beforeUpdate() {
+    /* Any time we delete a Ninja VUE lifecycle
+    will end up at this part and this leads to
+    updated() to show the user a new screen */
+    alert('before update');
+  },
+  updated() {
+    /* A good place to manipulate a DOM
+      cause it will be called after any updates to the screen like
+    delete, edit, etc
+      */
+    alert('updated');
   }
 }
 </script>
