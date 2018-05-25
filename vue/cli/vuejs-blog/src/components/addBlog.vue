@@ -1,7 +1,7 @@
 <template>
   <div id="add-blog">
     <h2>Add a New Blog Post</h2>
-    <form>
+    <form v-if="!submited">
       <label>Title:</label>
       <input type="text" v-model.lazy="blog.title" required />
       <label>Content:</label>
@@ -30,7 +30,11 @@
         </ul>
         <p>Author: {{ blog.author }}</p>
       </div>
+      <button v-on:click.prevent="post">Add blog</button>
     </form>
+    <div v-if="submited">
+      <h3>Thanks for your post</h3>
+    </div>
   </div>
 </template>
 
@@ -47,10 +51,21 @@ export default {
       authors: ['Angular book author',
       'React book author',
       'Vue book author',
-      'Vim book author']
+      'Vim book author'],
+      submited: false
     }
   },
   methods: {
+    post: function() {
+      this.$http.post('http://jsonplaceholder.typicode.com/posts', {
+        title: this.blog.title,
+        body: this.blog.content,
+        userId: 1
+      }).then((data) => {
+        console.log(data);
+        this.submited = true;
+      });
+    }
   }
 }
 </script>
