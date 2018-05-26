@@ -4,12 +4,7 @@ import VueResource from 'vue-resource'
 
 Vue.use(VueResource);
 
-/* Custom directive */
-Vue.directive('raibow', {
-  bind(el, binding, virtualNode) {
-    el.style.color = "#" + Math.random().toString().slice(2,8);
-  }
-});
+/* Custom GLOBAL directive */
 
 Vue.directive('theme', {
   bind(el, binding, virtualNode) {
@@ -26,11 +21,7 @@ Vue.directive('theme', {
   }
 });
 
-/* Our filters */
-
-Vue.filter('filter-to-uppercase', function(value) {
-  return value.toUpperCase();
-});
+/* Our GLOBAL filters */
 
 Vue.filter('snippet', function(value) {
   return value.slice(0,100) + '...';
