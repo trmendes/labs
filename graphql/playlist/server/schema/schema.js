@@ -6,18 +6,19 @@ const {
     GraphQLString,
     GraphQLSchema,
     GraphQLID,
-    GraphQLInt
+    GraphQLInt,
+    GraphQLList
 } = graphql;
 
 const games = [
-    {name: 'Zelda', genre: 'Fantasy', id: '1', consoleId: '1'},
-    {name: 'F-Zero', genre: 'Race', id: '2', consoleId: '1'},
-    {name: 'Alex Kid', genre: 'Adventure', id: '3', consoleId: '2'}
+    { name: 'Zelda', genre: 'Fantasy', id: '1', consoleId: '1' },
+    { name: 'F-Zero', genre: 'Race', id: '2', consoleId: '1' },
+    { name: 'Alex Kid', genre: 'Adventure', id: '3', consoleId: '2' }
 ];
 
 const consoles = [
-    {name: 'Nintendo 16', year: 1990, id: '1', gamesId: ['1', '2']},
-    {name: 'Master System', yeard: 1991, id: '2', gamesId: ['3']}
+    { name: 'Nintendo 16', year: 1990, id: '1' },
+    { name: 'Master System', yeard: 1991, id: '2' }
 ];
 
 const GameType = new GraphQLObjectType({
@@ -40,7 +41,13 @@ const ConsoleType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         name: { type: GraphQLString },
-        year: { type: GraphQLInt }
+        year: { type: GraphQLInt },
+        games: {
+            type: new GraphQLList(GameType),
+            resolve(parent, args) {
+                return _.filter(games, { consoleId: parent.id });
+            }
+        }
     })
 });
 
@@ -59,6 +66,18 @@ const RootQuery = new GraphQLObjectType({
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
                 return _.find(consoles, { id: args.id });
+            }
+        },
+        games: {
+            type: new GraphQLList(GameType),
+            resolve(parent, args) {
+                return games;
+            }
+        },
+        consoles: {
+            type: new GraphQLList(ConsoleType),
+            resolve(parent, args) {
+                return consoles;
             }
         }
     }
