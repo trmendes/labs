@@ -1,0 +1,69 @@
+const graphql = require('graphql');
+const _ = require('lodash');
+
+const {
+    GraphQLObjectType,
+    GraphQLString,
+    GraphQLSchema,
+    GraphQLID,
+    GraphQLInt
+} = graphql;
+
+const games = [
+    {name: 'Zelda', genre: 'Fantasy', id: '1', consoleId: '1'},
+    {name: 'F-Zero', genre: 'Race', id: '2', consoleId: '1'},
+    {name: 'Alex Kid', genre: 'Adventure', id: '3', consoleId: '2'}
+];
+
+const consoles = [
+    {name: 'Nintendo 16', year: 1990, id: '1', gamesId: ['1', '2']},
+    {name: 'Master System', yeard: 1991, id: '2', gamesId: ['3']}
+];
+
+const GameType = new GraphQLObjectType({
+    name: 'Game',
+    fields: () => ({
+        id: { type: GraphQLID },
+        name: { type: GraphQLString },
+        genre: { type: GraphQLString },
+        console: {
+            type: ConsoleType,
+            resolve(parent, args) {
+                return _.find(consoles, {id: parent.consoleId} );
+            }
+        }
+    })
+});
+
+const ConsoleType = new GraphQLObjectType({
+    name: 'Console',
+    fields: () => ({
+        id: { type: GraphQLID },
+        name: { type: GraphQLString },
+        year: { type: GraphQLInt }
+    })
+});
+
+const RootQuery = new GraphQLObjectType({
+    name: 'RootQueryType',
+    fields: {
+        game: {
+            type: GameType,
+            args: { id: { type: GraphQLID } },
+            resolve(parent, args) {
+                return _.find(games, { id: args.id });
+            }
+        },
+        console: {
+            type: ConsoleType,
+            args: { id: { type: GraphQLID } },
+            resolve(parent, args) {
+                return _.find(consoles, { id: args.id });
+            }
+        }
+    }
+});
+
+module.exports = new GraphQLSchema({
+    query: RootQuery
+});
