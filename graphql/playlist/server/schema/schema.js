@@ -1,7 +1,11 @@
 const graphql = require('graphql');
 const _ = require('lodash');
 
+const Console = require('./../models/console');
+const Game = require('./../models/game');
+
 const {
+    GraphQLNonNull,
     GraphQLObjectType,
     GraphQLString,
     GraphQLSchema,
@@ -10,16 +14,7 @@ const {
     GraphQLList
 } = graphql;
 
-const games = [
-    { name: 'Zelda', genre: 'Fantasy', id: '1', consoleId: '1' },
-    { name: 'F-Zero', genre: 'Race', id: '2', consoleId: '1' },
-    { name: 'Alex Kid', genre: 'Adventure', id: '3', consoleId: '2' }
-];
 
-const consoles = [
-    { name: 'Nintendo 16', year: 1990, id: '1' },
-    { name: 'Master System', yeard: 1991, id: '2' }
-];
 
 const GameType = new GraphQLObjectType({
     name: 'Game',
@@ -30,7 +25,7 @@ const GameType = new GraphQLObjectType({
         console: {
             type: ConsoleType,
             resolve(parent, args) {
-                return _.find(consoles, {id: parent.consoleId} );
+                return Console.find( { id: parent.consoleId } );
             }
         }
     })
@@ -45,7 +40,7 @@ const ConsoleType = new GraphQLObjectType({
         games: {
             type: new GraphQLList(GameType),
             resolve(parent, args) {
-                return _.filter(games, { consoleId: parent.id });
+                return Game.find({ consoleId: parent.id });
             }
         }
     })
@@ -58,31 +53,69 @@ const RootQuery = new GraphQLObjectType({
             type: GameType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                return _.find(games, { id: args.id });
+                return Game.findById(args.id);
             }
         },
         console: {
             type: ConsoleType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                return _.find(consoles, { id: args.id });
+                return Console.findById(args.id);
             }
         },
         games: {
             type: new GraphQLList(GameType),
             resolve(parent, args) {
-                return games;
+                return Game.find({});
             }
         },
         consoles: {
             type: new GraphQLList(ConsoleType),
             resolve(parent, args) {
-                return consoles;
+                return Console.find({});
             }
         }
     }
 });
 
+const Mutation = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        addGame: {
+            type: GameType,
+            args: {
+                name: { type: GraphQLString },
+                genre: { type: GraphQLString },
+                consoleId: { type: GraphQLString }
+            },
+            resolve(parent, args) {
+                const game = new Game({
+                    name: new GraphQLNonNull(args.name),
+                    genre: new GraphQLNonNull(args.genre),
+                    consoleId: new GraphQLNonNull(args.consoleId)
+                });
+                return game.save();
+            }
+        },
+        addConsole: {
+            type: ConsoleType,
+            args: {
+                name: { type: new GraphQLNonNull(GraphQLString) },
+                year: { type: GraphQLInt }
+            },
+            resolve(parent, args) {
+                const console = new Console({
+                    name: args.name,
+                    year: args.year
+                });
+                return console.save();
+            }
+        }
+    }
+
+})
+
 module.exports = new GraphQLSchema({
-    query: RootQuery
+    query: RootQuery,
+    mutation: Mutation
 });
