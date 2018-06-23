@@ -62,10 +62,14 @@ async function createData() {
         nintendoClassic.games.push(game2);
         nintendoClassic.games.push(game3);
 
-        await game1.save();
-        await game2.save();
-        await game3.save();
-        await nintendoClassic.save();
+        const saveData = [
+            game1.save(),
+            game2.save(),
+            game3.save(),
+            nintendoClassic.save()
+        ];
+
+        await Promise.all(saveData);
 
         await findGame(nintendoClassic.id, game1.id);
         await checkIfGameIsPlayable(nintendoClassic.id, game1.id);
@@ -80,7 +84,7 @@ async function createData() {
 const findGame = async (consoleId, gameId) => {
     try {
         console.log('Find a Game');
-        const csl = await Console.findById(consoleId);
+        const csl = await Console.findById(consoleId).populate('games');
         const game = csl.games.find((game) => game.id === gameId);
         console.log(`Game: ${game}`);
     } catch (e) {
@@ -104,9 +108,9 @@ const removeGame = async (consoleId, gameId) => {
         console.log('Remove a game');
         const csl = await Console.findById(consoleId).populate('games');
         console.log(`Size before pull ${csl.games.length}`);
-        const ret = await Console.update(
-            { id: consoleId },
-            { $pull: { id: gameId } }
+        const ret = await Console.updateMany(
+            { _id: consoleId },
+            { $pullAll: { games: [gameId] } }
         );
         await csl.save();
         console.log(`Size after pull ${csl.games.length}`);
