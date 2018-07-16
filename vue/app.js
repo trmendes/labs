@@ -2,8 +2,8 @@ new Vue({
     el: "#vue-app",
     data: {
         name: 'Thiago',
-        website: 'https://tmendes.gitlab.io/38lbackpack/',
-        websiteTag: '<a href="https://tmendes.gitlab.io/38lbackpack/">Another way to show my webpage</a>',
+        website: 'https://tmendes.gitlab.io/28lbackpack/',
+        websiteTag: '<a href="https://tmendes.gitlab.io/28lbackpack/">Another way to show my webpage</a>',
         age: 20,
         x: 0,
         y: 0,
