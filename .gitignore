@@ -8,3 +8,6 @@ angular.min.js
 forecastkey.js
 .vim-bookmarks*
 config.json
+
+target
+*.rs.bk
