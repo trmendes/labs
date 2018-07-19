@@ -1,0 +1,6 @@
+[package]
+name = "for_labs"
+version = "0.1.0"
+authors = ["Thiago Mendes <thiago@posteo.de>"]
+
+[dependencies]
